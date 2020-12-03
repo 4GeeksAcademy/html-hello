@@ -1,0 +1,86 @@
+.contCentral{
+    width: 500px;
+    height: 350px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #999;
+    
+}
+.encabezadoPost{
+    width: 100%;
+    height: 75px;
+
+    padding: 2px;
+}
+.titulo{
+   
+    width: 70%;
+    height: 75px;
+
+    float: left;
+    font-family: 'Open Sans', sans-serif; 
+}
+.imagen{
+    width: 30%;
+    height: 75px;
+
+    float: right;
+}
+img{
+    width: 70px;
+    height: 70px;
+    float: right;
+    padding: 3px 4px 3px 0px;
+}
+.cuerpoPost{
+    width: 100%;
+    height: 175px;
+    margin-top: 5px;
+    padding: 2px;
+}
+.mensaje{
+    width: 50%;
+    height: 175px;
+
+    float: left;
+}
+p{
+    font-family: 'Open Sans', sans-serif; 
+    text-align: justify;
+}
+.formulario{
+    width: 50%;
+    height: 175px;
+    float: right;
+
+}
+input{
+    width: 225px;
+    height: 25px;
+    margin: 10px 0px 2px 25px;
+    text-decoration: gray;
+    border: none;
+    border-bottom: 3px solid rgb(185, 184, 184);
+    font-family: 'Open Sans', sans-serif; 
+}
+.piePost{
+    width: 100%;
+    height: 90px;
+
+    margin-top: 25px;
+    
+}
+.boton{
+    margin-top: 5px;
+    text-align: center;
+}
+a{
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+    background-color: rgb(158, 151, 151);
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif; 
+}
+i{
+    margin-left: 8px;
+}
