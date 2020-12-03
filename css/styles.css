@@ -1,0 +1,56 @@
+.contCentral{
+    width: 500px;
+    height: 350px;
+    padding: 10px;
+    background-color: black; 
+}
+.encabezadoPost{
+    width: 100%;
+    height: 75px;
+    background-color: chocolate;
+    padding: 2px;
+}
+.titulo{
+    width: 50%;
+    height: 75px;
+    background-color: rgb(26, 125, 150);
+    float: left;
+    
+}
+.imagen{
+    width: 50%;
+    height: 75px;
+    background-color: rgb(107, 35, 83);
+    float: right;
+}
+img{
+    width: 70px;
+    height: 70px;
+    float: right;
+    padding: 3px 4px 3px 0px;
+}
+.cuerpoPost{
+    width: 100%;
+    height: 175px;
+    background-color: rgb(93, 30, 210);
+    margin-top: 5px;
+    padding: 2px;
+}
+.mensaje{
+    width: 50%;
+    height: 175px;
+    background-color: rgb(87, 100, 31);
+    float: left;
+}
+.formulario{
+    width: 50%;
+    height: 175px;
+    background-color: rgb(100, 85, 75);
+    float: right;
+}
+.piePost{
+    width: 100%;
+    height: 90px;
+    background-color: rgb(66, 100, 82);
+    margin-top: 5px;
+}
