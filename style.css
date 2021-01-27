@@ -1,0 +1,47 @@
+body{
+    background: lightgray;
+    padding: 0px;
+    margin: 0px;
+}
+.header{
+    background: white;
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+}
+
+.content{
+    justify-content: center;
+}
+
+.card{
+    background: white;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 500px;
+}
+
+.card_header,.card_footer{
+    padding: 10px;
+}
+
+.card_header h4{
+    margin-top: 0px;
+    float: left
+}
+.card_header label{
+    color: lightgray;
+    float: right;
+}
+
+.card_body img{
+    width:500px;
+    height:340px;
+
+}
+
+.card_footer p{
+    margin-top: 0px;
+}
