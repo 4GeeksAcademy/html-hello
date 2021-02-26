@@ -1,0 +1,46 @@
+.post {
+    height: 600px;
+    background: blue;
+}
+
+.header {
+    height: 50px;
+    background: yellow;
+}
+.photo {
+    height: 300px;
+    background: red;
+
+}
+.icons {
+    height: 50px;
+    background: gray;
+}
+
+.likes {
+    height: 50px;
+    background: orange;
+}
+.description {
+    height: 150px;
+    background: black;
+}
+
+.generalWidth{
+    width: 450px;
+}
+.post {height: 600px; background: white;}
+.header {height: 50px; background: white; vertical-align: baseline;}
+.photo {height: 300px; background: white; display: flex; justify-content: center; align-items: center;}
+.icons {height: 50px; background: white;}
+.likes {height: 50px; background: white; display: flex; align-items: center;}
+.description {height: 150px; background: white; display: flex; display: flex; justify-content: center;}
+.generalWidth{width: 450px;}
+.htmlIcon {display: inline-block; background: white; margin: 10px;}
+.titleDescription {display: inline-block; background: white;padding: auto;}
+.dots {float: right; margin: 10px;}
+.heart {display: inline-block; background: white; margin: 5px; margin-left: 15px;}
+.comments {display: inline-block; background: white; margin: 5px;}
+.send {display: inline-block; background: white; margin: 5px;}
+.save {float: right; background: white; margin: 5px; margin-right: 15px;}
+p {margin: 15px; text-align: justify;}
