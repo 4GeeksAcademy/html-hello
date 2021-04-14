@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-            <script src="https://kit.fontawesome.com/58d5cbd9fe.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style2.css">
-    <title>Instagram Greek</title>
+    <title>Instagram Boostrap</title>
+    <script src="https://kit.fontawesome.com/58d5cbd9fe.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="contenedor">
-        
-        <div class="container">
+
+    <!-- Image and text -->
+    <div class="container-fluid">
+
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                   
+
                     <i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
 
                 <div class="dropdown">
@@ -33,77 +36,112 @@
                 </div>
             </div>
         </nav>
+    </div>
+    <!-- Botones -->
+    <nav class="nav nav-pills justify-content-center my-2">
+        <a href="index.html" class="nav-item nav-link"><i class="fas fa-th"></i></a>
+        <a href="feed.html" class="nav-item nav-link active"><i class="fa fa-stop"></i><a>
+    </nav>
+
+    <!-- imagenes -->
+    <div class="container-fluid bg-light">
+        <div class="row justify-content-center mb-5">
+            <div class="col-6">
+                <div class="card-header d-flex justify-content-between">
+                    <p><b>My first photo</b></p>
+                    <p>12/5</p>
+                </div>
+                <div class="card-body p-0 m-0">
+                    <img src="https://miro.medium.com/max/6956/1*FNghpM3llxbk9SFi9ymPug.jpeg" width="100%" alt="">
+                </div>
+                <div class="card-footer">
+                    <p><b>1230 Likes</b></p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, est!</p>
+                    <div class="row">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-ellipsis-v"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-         <nav class="nav nav-pills justify-content-center">
-        <a href="index.html" class="nav-item nav-link" ><i class="fas fa-th"></i></a>
-        <a href="feed.html" class="nav-item nav-link active" ><i class="fa fa-stop"></i><a>
-         </nav>
-        
-
-        <!-- 50% centrado, va a estar centrado y va a tener el flexbox ;) -->
-        <div class="centrador">
-            <!-- div1public 100% de su padre-->
-            <div class="public">
-                <header>
-                    <p><strong>My first photo</strong></p>
-                    <p class="gray">12/14</p>
-                </header>
-                <!-- 100% de su padre -->
-                <img width="100%" src="https://i.ytimg.com/vi/SspFc5jJfz4/sddefault.jpg" alt="">
-                <div class="descripcion">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.<strong>#BreatheCode</strong>
-                    </p>
+        <div class="row justify-content-center mb-5">
+            <div class="col-6">
+                <div class="card-header d-flex justify-content-between">
+                    <p><b>My first photo</b></p>
+                    <p>12/5</p>
+                </div>
+                <div class="card-body p-0 m-0">
+                    <img src="https://miro.medium.com/max/6956/1*FNghpM3llxbk9SFi9ymPug.jpeg" width="100%" alt="">
+                </div>
+                <div class="card-footer">
+                    <p><b>1230 Likes</b></p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, est!</p>
                 </div>
             </div>
-            <div class="public">
-                <header>
-                    <p><strong>My first photo</strong></p>
-                    <p class="gray">12/14</p>
-                </header>
-                <!-- 100% de su padre -->
-                <img width="100%" src="https://mk0lanoticiapwmx1x6a.kinstacdn.com/wp-content/uploads/2020/08/gato_png_crop1567201738546-jpg_673822677-1.jpg" alt="">
-                <div class="descripcion">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.<strong>#BreatheCode</strong>
-                    </p>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-6">
+                <div class="card-header d-flex justify-content-between">
+                    <p><b>My first photo</b></p>
+                    <p>12/5</p>
+                </div>
+                <div class="card-body p-0 m-0">
+                    <img src="https://miro.medium.com/max/6956/1*FNghpM3llxbk9SFi9ymPug.jpeg" width="100%" alt="">
+                </div>
+                <div class="card-footer">
+                    <p><b>1230 Likes</b></p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, est!</p>
                 </div>
             </div>
-            <div class="public">
-                <header>
-                    <p><strong>My first photo</strong></p>
-                    <p class="gray">12/14</p>
-                </header>
-                <!-- 100% de su padre -->
-                <img width="100%" src="https://i.pinimg.com/originals/4a/0e/c0/4a0ec0e1becca322dd9c5aee06a8e0a9.jpg" alt="">
-                <div class="descripcion">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.<strong>#BreatheCode</strong>
-                    </p>
+        </div>
+        <div class="row justify-content-center mb-5">
+            <div class="col-6">
+                <div class="card-header d-flex justify-content-between">
+                    <p><b>My first photo</b></p>
+                    <p>12/5</p>
+                </div>
+                <div class="card-body p-0 m-0">
+                    <img src="https://miro.medium.com/max/6956/1*FNghpM3llxbk9SFi9ymPug.jpeg" width="100%" alt="">
+                </div>
+                <div class="card-footer">
+                    <p><b>1230 Likes</b></p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, est!</p>
                 </div>
             </div>
-           
-            <div class="public">
-                <header>
-                    <p><strong>My first photo</strong></p>
-                    <p class="gray">12/14</p>
-                </header>
-                <!-- 100% de su padre -->
-                <img width="100%" src="https://nombresparalosgatos.com/wp-content/uploads/2019/01/nombres-gatos-graciosos.jpg" alt="">
-                <div class="descripcion">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.<strong>#BreatheCode</strong>
-                    </p>
+        </div>
+        <div class="row justify-content-center mb-5">
+            <div class="col-6">
+                <div class="card-header d-flex justify-content-between">
+                    <p><b>My first photo</b></p>
+                    <p>12/5</p>
+                </div>
+                <div class="card-body p-0 m-0">
+                    <img src="https://miro.medium.com/max/6956/1*FNghpM3llxbk9SFi9ymPug.jpeg" width="100%" alt="">
+                </div>
+                <div class="card-footer">
+                    <p><b>1230 Likes</b></p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, est!</p>
                 </div>
             </div>
         </div>
     </div>
- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
