@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/58d5cbd9fe.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body> 
+
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h1>Payment form example</h1>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-danger">Some fields are missing</div>
+                    </div>
+                </div>
+                <form action="">
+
+                    <div class="row">
+                        <div class="col-5">
+                            <label for="exampleInputText">Card #</label>
+                            <input type="text" class="form-control" id="exampleInputText" placeholder="XXXXXXXXXXXX">
+                        </div>
+                        <div class="col-3">
+                            <label for="exampleInputText">CVC #</label>
+                            <input type="text" class="form-control" id="exampleInputText" placeholder="00000">
+                        </div>
+                        <div class="col-4">
+                            <label for="exampleInputText">Amount #</label>
+                            <input type="text" class="form-control" id="exampleInputText" placeholder="Amount">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="exampleInputText">First Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-6">
+                            <label for="exampleInputText">Last Name</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="exampleInputText">City</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="col-3 ">
+                            <label for="exampleInputText">Nacionalidad</label>
+
+                            <select class="custom-select" id="inputGroupSelect04">
+                                <option selected>Soy de...</option>
+                                <option value="1">Uruguay</option>
+                                <option value="2">Argentina</option>
+                                <option value="3">Chile</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for="exampleInputText">Postal Code</label>
+                            <input type="text" class="form-control" placeholder="XXXXXXXXXXXX">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="exampleFormControlTextarea1">Example textarea</label>
+                            <div class="col-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class=" text-white input-group-text p-2 bg-dark rounded">
+                                            <input class="mx-2" name="fas" type="radio" aria-label="Radio button for following text input">
+                                            <!-- ICONO-1 -->
+                                            <i class="fab fa-cc-mastercard"></i>
+                                            <!--  -->
+                                            <input class="mx-2" name="fas" type="radio" aria-label="Radio button for following text input">
+                                            <!-- ICONO-2 -->
+                                            <i class="fab fa-cc-visa"></i>
+                                            <!--  -->
+                                            <input class="mx-2" name="fas" type="radio" aria-label="Radio button for following text input">
+                                            <!-- ICONO-3 -->
+                                            <i class="fab fa-cc-diners-club"></i>
+                                            <!--  -->
+                                            <input class="mx-2" name="fas" type="radio" aria-label="Radio button for following text input">
+                                            <!-- ICONO-4 -->
+                                            <i class="fab fa-cc-amex"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="exampleFormControlTextarea1">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer ">
+                <div class="row ">
+                    <div class="col-12 d-flex justify-content-end">
+                        <button class="btn btn-secondary mx-1" role="button"> Cancel</button>
+                        <button class="btn btn-primary " role="button"> Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
