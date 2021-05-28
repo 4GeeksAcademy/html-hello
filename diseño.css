@@ -1,3 +1,43 @@
-.cuerpo{
-    background-color: gray;
+#principal{
+    border: 0%;
+    align-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 8%;
+    padding-bottom: 10%;
+    background-color:gray;
 }
+#cabezera{
+    align-content: center;
+    position: relative;
+    width: 100%;
+    background-color: white;  
+}
+#cuerp{
+    position: relative;
+    display: block;
+    width: 80%;
+    background-color: white;
+}
+img{position: relative;
+width: 100%;
+align-content: center;}
+h1{
+    text-align: center;
+}
+#uno{
+    position: relative;
+    float: left;
+    text-align: left;
+    display: block;
+    width: 50%;
+}
+#dos {
+    color: darkturquoise;
+    width: auto;   
+    float: right;
+    display: block;
+    background-color: white; 
+}   
+#top{width: 100%;
+    position: relative;}
