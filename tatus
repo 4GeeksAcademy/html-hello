@@ -1,0 +1,169 @@
+[33mcommit 008fa5f198eb41bbe9b740cb18e6e9c585e0ecda[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/gif[m[33m)[m
+Author: Naiceiry <naiceirymp@gmail.com>
+Date:   Fri May 28 14:10:14 2021 +0000
+
+    gif final
+
+[33mcommit cd044cc959763200b89072d672f94e33b541b89f[m
+Author: Naiceiry <naiceirymp@gmail.com>
+Date:   Fri May 28 13:04:57 2021 +0000
+
+    primera actualizacion
+
+[33mcommit 152dcedd2b23e2cc4e53b0e015cedec0e860562a[m[33m ([m[1;31morigin/Naiceiry/gitpod-setup[m[33m)[m
+Author: Naiceiry <naiceirymp@gmail.com>
+Date:   Fri May 28 12:29:48 2021 +0000
+
+    Fully automate dev setup with Gitpod
+    
+    This commit implements a fully-automated development setup using Gitpod.io, an
+    online IDE for GitLab, GitHub, and Bitbucket that enables Dev-Environments-As-Code.
+    This makes it easy for anyone to get a ready-to-code workspace for any branch,
+    issue or pull request almost instantly with a single click.
+
+[33mcommit 9055b82b79764352931dd823d9185a3fd5d31e17[m[33m ([m[1;31mupstream/main[m[33m)[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Wed Dec 2 19:55:41 2020 -0500
+
+    Update README.md
+
+[33mcommit 77f807dc9ded6ff2cc169fdab71a414c16876d76[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Sun May 17 06:06:10 2020 +0000
+
+    added support for html strings
+
+[33mcommit 89907af017f59a44fc6b5a5f25d7ab5e18debfb3[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Sat May 16 13:21:14 2020 -0400
+
+    Update server.py
+
+[33mcommit be0e08b48775ea3edff989ba79247df096d0a55a[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Sat May 16 12:45:09 2020 -0400
+
+    Update server.py
+
+[33mcommit 864f1138ecaa3a5ed91fa0d92fe18b83dfc0fc53[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Fri May 15 02:17:59 2020 +0000
+
+    fixing the server.py
+
+[33mcommit 18d67bc6e011d0bf3380c0d42ca51d7baa53364b[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Fri May 15 01:43:50 2020 +0000
+
+    avoid cache
+
+[33mcommit b8545b25552886bdc7d9138231ec44f94a88e9dc[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Fri May 15 01:41:06 2020 +0000
+
+    avoid cache on flask
+
+[33mcommit 07e43b4a3a08a37e65c91eb851583406721da903[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Tue Apr 7 15:04:59 2020 -0400
+
+    Update README.md
+
+[33mcommit b5c7b9f4606e98527821003d4b14084191ae79ce[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Tue Apr 7 15:04:26 2020 -0400
+
+    Update README.md
+
+[33mcommit 5d7a6d0e2262a7e62d28c5b73ca6d22c13e25e8e[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Fri Mar 27 15:47:18 2020 -0400
+
+    Update README.md
+
+[33mcommit edb689df98e4e42a3a1587dee69760bf4746b251[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Thu Mar 26 21:34:27 2020 -0400
+
+    Update README.md
+
+[33mcommit dfc765e67df20579e8615c5727f675cebbac5b6a[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Thu Mar 26 14:11:37 2020 -0400
+
+    Update README.md
+
+[33mcommit d0db05f64c1838eb8f16aa55988eb668bbdee8a5[m
+Merge: 92a53f1 942eaaf
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Sat Sep 21 12:26:56 2019 -0400
+
+    Merge pull request #1 from nachovz/patch-1
+    
+    Update README.md
+
+[33mcommit 942eaafd35fbf01c604377b6d1b469792ed7ab47[m
+Author: Ignacio Cordoba <theignaciocordoba@gmail.com>
+Date:   Sat Sep 21 12:26:09 2019 -0400
+
+    Update README.md
+
+[33mcommit 92a53f1a7a9d8a2199d65fa098d949b08a02b219[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Mon Sep 16 18:44:51 2019 -0400
+
+    Update server.py
+
+[33mcommit 47c9647015277695b87b0e98918f0ce884e44f95[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Mon Sep 16 18:44:35 2019 -0400
+
+    Update server.py
+
+[33mcommit 91c22ccd9197f3305a5c4e4b3fd00db328d694e4[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Fri Sep 6 20:05:42 2019 -0400
+
+    Update README.md
+
+[33mcommit a2adc2ce34fe378cf3fc0fa06e7751b521cfc794[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Sat Sep 7 00:02:00 2019 +0000
+
+    validation to install flask
+
+[33mcommit 8f4b03e11d4e2fd0fbf6228064196b08a4753350[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Mon Aug 19 20:09:52 2019 +0000
+
+    using a manually made server to serve the files
+
+[33mcommit 5689b0509a7fb15a2012ebf87859e727132795fb[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Wed Apr 24 11:11:57 2019 -0400
+
+    Update README.md
+
+[33mcommit 4179be8d10676cf8fa77ffb431cf744f4db52121[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Wed Apr 24 11:10:26 2019 -0400
+
+    Update README.md
+
+[33mcommit 56615f2a3d276a8621d3c2a41803407c24fecd3f[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Wed Apr 24 11:09:57 2019 -0400
+
+    Update README.md
+
+[33mcommit 88410544eab1bd1ffaf5343b86028376be9ef6b5[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Wed Apr 24 10:47:14 2019 -0400
+
+    Update README.md
+
+[33mcommit d382b67c6447de6b09ca1d46e08388fb0ddf0505[m
+Author: Alejandro Sanchez <aalejo@gmail.com>
+Date:   Tue Apr 23 16:54:22 2019 -0400
+
+    Initial commit
