@@ -1,20 +1,35 @@
-div{
-    align-content: center;
-    padding: 0%;
-}
-.principal{
-    border-color: blue;
-    padding: 10%;
-    border-style: inset;
-
+#principal{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 0%;
+    background-color: white;
 }
 #descripcion{
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
     text-align: center;
-    text-decoration: blue;
+     background-color: white; 
 }
 #cabezera{
-    display: inline;
+    display: block;
+    background-color: white;  
+}
+#uno{
+    position: relative;
+    float: left;
+display: block;
+width: 40%;
+}
+#dos {
+    width: 60%;
+    float: right;
+    display: block;
+     background-color: white; 
+}
+#contador{
+     background-color: white; 
+}
+div{
+    margin: 0%;
 }
