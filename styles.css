@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(221, 221, 221);
+    margin: 0;
+}
+img{
+    max-width:100%;
+    max-height:100%;
+}
+.post{
+    background: white;
+    margin-top: 80px;
+}
+.container{
+    width: 500px;
+    margin: auto;
+}
+header{
+    background-color: white;
+    padding: 20px;
+}
+header h1{
+    margin: 0;
+}
+p{
+    padding: 20px;
+    margin: 0;
+}
+h3{
+    margin: 0;
+    width: 85%;
+    padding: 10px;
+}
+.postHeader{
+    display: flex;
+}
+.numbers{
+    padding: 10px;
+    color: rgb(153, 153, 153);
+}

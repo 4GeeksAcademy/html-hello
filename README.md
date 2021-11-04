@@ -19,8 +19,8 @@ $ pip3 install flask && python3 server.py
 
 ```html
 <head>
-  ...
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  ...type="text/css"
+  <link rel="stylesheet"  href="styles.css">
   ...
 </head>
 ```
