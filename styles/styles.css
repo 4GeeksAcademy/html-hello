@@ -1,39 +1,82 @@
-body{
-    background-color: rgb(221, 221, 221);
-    margin: 0;
+/* * {
+	border: 1px dashed red;
+	min-height: 10px;
+} */
+
+.bg-footer {
+    background-color: black;
 }
-img{
-    max-width:100%;
-    max-height:100%;
+
+.row {
+    font-family: Circular,spotify-circular,Helvetica,Arial,sans-serif;
 }
-.post{
-    background: white;
-    margin-top: 80px;
-}
-.container{
-    width: 500px;
-    margin: auto;
-}
-header{
-    background-color: white;
-    padding: 20px;
-}
-header h1{
-    margin: 0;
-}
-p{
-    padding: 20px;
-    margin: 0;
-}
-h3{
-    margin: 0;
-    width: 85%;
-    padding: 10px;
-}
-.postHeader{
+
+.logo-spotify {
     display: flex;
+    justify-content: column;
+    align-items: flex-start;
 }
-.numbers{
-    padding: 10px;
-    color: rgb(153, 153, 153);
+
+.nav-title {
+    font-size: 14px;
+    color: rgb(146, 146, 146);
+    font-weight: bold;
 }
+
+.nav-link {
+    font-size: 14px;
+    color: white;
+}
+
+.fab {
+    font-size: 30px;
+    background-color: #242424;
+    border-radius: 100%;
+    border-color: none;
+    color: none;
+}
+
+.squareFab {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    background-color: #242424;
+    border-radius: 100%;
+    border-color: none;
+    color: none;
+    padding-top: 15px;
+}
+
+.copy {
+    font-size: 10px;
+    padding: 1em 0;
+    margin: 0 15px 0 auto;
+    color: rgb(146, 146, 146);
+}
+
+.region {
+    font-size: 10px;
+    color: rgb(146, 146, 146);
+    text-decoration: none;
+    margin-right: 28px;
+}
+
+.fas {
+    font-size: 12px;
+}
+
+
+.link-success:hover {
+    color: #1ed760;
+}
+
+.link-info:link { 
+    font-size: 12px;
+    color: rgb(146, 146, 146);
+}
+.link-info:hover {
+    font-size: 12px;
+    color: #1ed760;
+}
+
