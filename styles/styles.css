@@ -1,7 +1,4 @@
-body{
-    background-color: rgb(221, 221, 221);
-    margin: 0;
-}
+
 img{
     max-width:100%;
     max-height:100%;
@@ -36,4 +33,77 @@ h3{
 .numbers{
     padding: 10px;
     color: rgb(153, 153, 153);
+}
+
+.cta {
+    height: 600px;
+    background-color: rgb(41, 65, 171);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-image: url(https://content-tooling.spotifycdn.com/images/b236bf87-bfd5-4bcb-b51a-77881073039c_lie_circles.svg);
+    background-position: right center;
+}
+
+#titleCTA {
+    padding: 0;
+    color: #70dc64;
+    letter-spacing: 1px;
+}
+
+#subtitleCTA {
+    color: #70dc64;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+#textCTA {
+    padding: 0;
+    color: #70dc64;
+    line-height: 1.5;
+}
+
+#btn-download {
+    background-color: #70dc64;
+    color: rgb(41, 65, 171);
+    padding: 0px 20px 0px 20px;
+    letter-spacing: 2px;
+    border: none;
+    font-size: 15px;
+}
+
+.banner {
+    height: 600px;
+    background-color: #f06cbc;
+    background-repeat: no-repeat;
+    background-image: url(https://www-growth.scdn.co/static/home/wrapped-homepage-banner-graphic-desktop.svg);
+    background-position: right -1200px bottom -428px;
+}
+
+#titleBanner {
+    padding: 0;
+    color: #202f72;
+    letter-spacing: 1px;
+}
+
+#subtitleBanner {
+    color: #202f72;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+#textBanner {
+    padding: 0;
+    color: #202f72;
+    line-height: 1.5;
+}
+
+#linkBanner {
+    color: #202f72;
+}
+
+.badgeA {
+    height: 40px;
+}
+.badgeG {
+    height: 60px;
 }
