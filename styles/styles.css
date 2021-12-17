@@ -1,11 +1,3 @@
-.hover-green:hover{
-    color: rgb(35,207,95) !important;
-}
-
-.login{
-    color: rgb(217,218,220) !important;
-}
-
 article{
     background-color: rgb(150,240,182);
     padding-top: 6%;
@@ -33,5 +25,9 @@ h1{
 .first-button:focus{
     color: rgb(150,240,182);
     background-color: rgb(32,47,114);
+}
+
+#first-link:hover{
+    color: rgb(32,47,114);
 }
 
