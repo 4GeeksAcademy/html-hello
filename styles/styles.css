@@ -1,39 +1,37 @@
-body{
-    background-color: rgb(221, 221, 221);
-    margin: 0;
+.hover-green:hover{
+    color: rgb(35,207,95) !important;
 }
-img{
-    max-width:100%;
-    max-height:100%;
+
+.login{
+    color: rgb(217,218,220) !important;
 }
-.post{
-    background: white;
-    margin-top: 80px;
+
+article{
+    background-color: rgb(150,240,182);
+    padding-top: 6%;
+    padding-left: 10% !important;
+    padding-bottom: 4%;
 }
-.container{
-    width: 500px;
-    margin: auto;
+
+h1{
+    font-size:4em;
 }
-header{
-    background-color: white;
-    padding: 20px;
+
+.article-content{
+    color: rgb(32,47,114);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-header h1{
-    margin: 0;
+
+.first-button{
+    background-color: rgb(32,47,114);
+    color: rgb(150,240,182);
 }
-p{
-    padding: 20px;
-    margin: 0;
+.first-button:hover{
+    color: rgb(150,240,182);
+    background-color: rgb(21, 31, 75);
 }
-h3{
-    margin: 0;
-    width: 85%;
-    padding: 10px;
+.first-button:focus{
+    color: rgb(150,240,182);
+    background-color: rgb(32,47,114);
 }
-.postHeader{
-    display: flex;
-}
-.numbers{
-    padding: 10px;
-    color: rgb(153, 153, 153);
-}
+
