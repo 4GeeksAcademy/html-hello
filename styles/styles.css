@@ -78,6 +78,43 @@ h3 {
     font-size: 15px;
 }
 
+.banner {
+    height: 600px;
+    background-color: #f06cbc;
+    background-repeat: no-repeat;
+    background-image: url(https://www-growth.scdn.co/static/home/wrapped-homepage-banner-graphic-desktop.svg);
+    background-position: right -1200px bottom -428px;
+}
+
+#titleBanner {
+    padding: 0;
+    color: #202f72;
+    letter-spacing: 1px;
+}
+
+#subtitleBanner {
+    color: #202f72;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+#textBanner {
+    padding: 0;
+    color: #202f72;
+    line-height: 1.5;
+}
+
+#linkBanner {
+    color: #202f72;
+}
+
+.badgeA {
+    height: 40px;
+}
+
+.badgeG {
+    height: 60px;
+
 .hover-green:hover{
     color: rgb(35,207,95) !important;
 }
