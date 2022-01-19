@@ -1,3 +1,4 @@
+
 img{
     max-width:100%;
     max-height:100%;
@@ -153,3 +154,80 @@ h1{
     color: rgb(150,240,182);
     background-color: rgb(32,47,114);
 }
+
+.bg-footer {
+    background-color: black;
+}
+
+.row {
+    font-family: Circular,spotify-circular,Helvetica,Arial,sans-serif;
+}
+
+.logo-spotify {
+    display: flex;
+    justify-content: column;
+    align-items: flex-start;
+}
+
+.nav-title {
+    font-size: 14px;
+    color: rgb(146, 146, 146);
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: white;
+}
+
+.fab {
+    font-size: 30px;
+    background-color: #242424;
+    border-radius: 100%;
+    border-color: none;
+    color: none;
+}
+
+.squareFab {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    background-color: #242424;
+    border-radius: 100%;
+    border-color: none;
+    color: none;
+    padding-top: 15px;
+}
+
+.copy {
+    font-size: 10px;
+    padding: 1em 0;
+    margin: 0 15px 0 auto;
+    color: rgb(146, 146, 146);
+}
+
+.region {
+    font-size: 10px;
+    color: rgb(146, 146, 146);
+    text-decoration: none;
+    margin-right: 28px;
+}
+
+.fas {
+    font-size: 12px;
+}
+
+
+.link-success:hover {
+    color: #1ed760;
+}
+
+.link-info:link { 
+    font-size: 12px;
+    color: rgb(146, 146, 146);
+}
+.link-info:hover {
+    font-size: 12px;
+    color: #1ed760;
+}  
