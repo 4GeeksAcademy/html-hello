@@ -116,6 +116,8 @@ h3 {
 .badgeG {
     height: 60px;
 
+}
+    
 .hover-green:hover{
     color: rgb(35,207,95) !important;
 }
