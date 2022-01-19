@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/styles.css">
-    <title>Spotify</title>
-</head>
-<body>
-    <!-- Content -->
-    <div id="page-content">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link rel="stylesheet" href="./styles/styles.css">
+      <link  rel="icon" href="assets/img/spotify-favicon.png" type="image/png"/>
+      <title>Escuchar lo es todo - Spotify</title>
+  </head>
+  <body>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand navbar-dark bg-black">
+          <div class="container-fluid col-12">
+              <div class="col-1"></div>
+                 <a class="navbar-brand col-1 py-3" href="#">
+                    <img src="https://logodownload.org/wp-content/uploads/2016/09/spotify-logo-branca-white.png" alt="" class="img-fluid">
+                  </a>
+                <div class="col-3"></div>
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item p-2">
+                            <a class="nav-link text-white hover-green" href="#"><strong>Premium</strong></a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link text-white hover-green" href="#"><strong>Asistencia</strong></a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link text-white hover-green" href="#"><strong>Descargar</strong></a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <span class="nav-link text-white disabled" href="#">|</span>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link hover-green login" href="#"><strong>Registrarse</strong></a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link hover-green login" href="#"><strong>Iniciar sesión</strong></a>
+                        </li>
+                    </ul>
+                </div>
+              <div class="col-1"></div>
+          </div>
+      </nav>
+    
+      <!-- Content -->
+      
+      <div id="page-content">
 
         <article class="container-fluid">
             <div class="container">
@@ -20,14 +58,129 @@
                 <button class="btn btn-primary first-button rounded-pill px-5 pb-2 pt-2 mb-4" type="submit">3 MESES GRATIS</button>
                 <p class="article-content pt-2" style="font-size: small;">Solo para el plan Individual. Después, 9,99 € al mes. <a href="#" class="article-content" id="first-link">Consulta los Términos y condiciones</a>. Oferta válida solo<br>para quienes aún no hayan probado Premium. La oferta termina el 31 de diciembre de 2021.</p>
             </div>
-            
-            
         </article>
+        
+      </div>
+
+      <!-- call to action -->
+      <div class="container-fluid cta p-5">
+          <div class="col-6 p-4">
+              <p id="titleCTA" class="pt-3 pb-3">SPOTIFY FREE</p>
+              <h1 id="subtitleCTA" class="pt-3 pb-3">Escuchar lo es todo</h1>
+              <h4 id="textCTA" class="pt-3 pb-5">Millones de canciones y pódcasts. No hace falta tarjeta de crédito.</h4>
+              <button id="btn-download"class="btn btn-primary rounded-pill pt-3 pb-3 pe-5 ps-5"><strong>DESCARGA SPOTIFY GRATIS</strong></button>
+          </div>
+      </div>
     
+      <!-- banner apps -->
+      <div class="container-fluid banner p-5">
+        <div class="col-6 p-3">
+          <p id="titleBanner" class="pb-3">#SPOTIFY WRAPPED</p>
+          <h1 id="subtitleBanner" class="pt-3 pb-3">Wrapped 2021 ya está aquí.</h1>
+          <h4 id="textBanner" class="pt-3 pb-3">Solo lo encontrarás en la aplicación de Spotify. Descárgala ahora y empieza a disfrutar.</h4>
+          <div class="d-flex flex-row align-items-center">
+            <a href="https://apps.apple.com/us/app/spotify-discover-new-music/id324684580"><img src="https://www-growth.scdn.co/static/badges/svgs/apple/badge-es.svg" alt="" class="badgeA"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.spotify.music"><img src="https://www-growth.scdn.co/static/badges/svgs/google/badge-es.svg" alt="" class="badgeG"></a>
+          </div>
+          <a id="linkBanner" href="">Escucha aquí tu resumen del año.</a>
+        </div>
+      </div>
+
+      <!-- footer navs -->
+    <div class="bg-footer">
+        <div class="row pb-5 pt-5">
+            <div class="col-2 logo-spotify">
+                <img src="./assets/img/logo-spotify.png" alt="spotify" class="w-100 p-3 logo">
+            </div>
+            <div class="col-2 text-white">
+                <p class="nav-title ps-3 pt-3">EMPRESA</p>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link link-success" href="#">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-success" href="#">Empleo</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-success" href="#">For the Record</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-2 text-white">
+                <p class="nav-title ps-3 pt-3">COMUNIDADES</p>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link link-success" href="#">Para artistas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-success" href="#">Desarrolladores</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-success" href="#">Publicidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-success" href="#">Inversores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-success" href="#">Proveedores</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-2 text-white">
+                <p class="nav-title ps-3 pt-3">ENLACES ÚTILES</p>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link link-success" href="#">Asistencia</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-success" href="#">Reproductor web</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-success" href="#">App gratis para móvil</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4 text-white pt-3 pe-5 text-end d-flex justify-content-end">
+                <a href="" class="nav-link link-success"><i class="fab fa-instagram p-3"></i></a>
+                <a href="" class="nav-link link-success"><i class="fab fa-twitter p-3"></i></a>
+                <a href="" class="nav-link link-success"><div class="squareFab"><i class="fab fa-facebook-f "></div></i></a>
+            </div>
+        </div>
+
+        <!-- legal text -->
+        <div class="region d-flex align-items-center justify-content-end pt-5 flex-shrink-0">
+            <i class="fas fa-globe-europe"></i><a href="" class="region link-success ps-1">España</a>
+        </div>
+        <div class="row text-white pb-5 pe-3">
+            <div class="col d-flex flex-row">
+                <div class="ps-2">
+                    <ul class="nav">
+                        <li class="nav-item">
+                        <a class="nav-link link-info" href="#">Legal</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link link-info" href="#">Centro de Privacidad</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link link-info" href="#">Política de Privacidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-info" href="#">Configuración de Cookies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-info" href="#">Información sobre los anuncios</a>
+                        </li>
+                    </ul>
+                </div>
+                <span class="copy d-flex align-items-center flex-shrink-0 pe-4">© 2021 Spotify AB</span> 
+            </div>
+        </div>
+
     </div>
-    <!-- /Content -->
     
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-</body>
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  </body>
 </html>
