@@ -1,0 +1,10 @@
+.post {
+    display: grid;
+    grid-template-columns: 500px;
+    justify-content: center;
+  }
+.post-header{
+    display: flex;
+    gap: 300px;
+    align-items: baseline;
+}
