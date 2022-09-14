@@ -1,0 +1,40 @@
+body {
+    background-color:#eaeaea ;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    background-color: white;
+    margin-top: 0px;
+}
+.post1, .post2, .post3, .post4 {
+    background-color: white;
+    margin-bottom: 40px;
+}
+h1 {
+    margin-top: 0px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.container {
+    width: 600px;
+    margin: auto;
+}
+h1, h2, p, span {
+    padding: 10px;
+}
+span {
+    float: right;
+    margin-top: -60px;
+}
+img {
+    margin-top: -20px;
+    margin-bottom: -20px;
+    width: 100%;
+}
+div {
+    box-sizing: border-box;
+}
+span {
+    color: #b5b2b1;
+}
