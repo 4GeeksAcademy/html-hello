@@ -1,0 +1,38 @@
+
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.flex-container{
+    display: flex;
+}
+.box{
+    height: 100px;
+    min-width: 100px;
+}
+.one{
+    background-color: white ;
+}
+.two{
+    background-color: white ;
+}
+.three{
+    background-color: white ;
+}
+/* menu base styles */
+
+
+
+
+/* flex styles */
