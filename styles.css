@@ -5,10 +5,12 @@
     box-sizing:border-box
     font-family: 'Ubuntu',sans-serif;
 }
-img.dot {
-    transform: scale(0.6);
-    cursor: pointer;
-}
+.test:after {
+    content: '\2807';
+    font-size: 100px;
+    float: right;
+    
+    }
 .body {
     display: flex;
     justify-content: center;
@@ -21,9 +23,7 @@ img.dot {
     position: relative;
     width: 360px;
     min-height: 400px;
-    background: #ccc;
-    box-shadow: 15px 15px 60px rgba(0,0,0,0.15);
-    padding: 20px;
+
 }
 .card .top .userDetails {
     display: flex;
@@ -55,10 +55,7 @@ img.dot {
 .card .top .userDetails h3 span {
     font-size: 0.75em;
 }
-.dot {
-    transform: scale(0.6);
-    cursor: pointer;
-}
+
 .imgBx {
     position: relative;
     width: 100%;
@@ -82,4 +79,8 @@ img.dot {
     margin-top: 5px;
     font-size: 16px;
     color: #4d4d4f;
+}
+.body-left,
+.body-right {
+	padding: 10px;
 }
