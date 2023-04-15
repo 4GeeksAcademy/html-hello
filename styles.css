@@ -1,0 +1,85 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box
+    font-family: 'Ubuntu',sans-serif;
+}
+img.dot {
+    transform: scale(0.6);
+    cursor: pointer;
+}
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fff;
+}
+.card {
+    position: relative;
+    width: 360px;
+    min-height: 400px;
+    background: #ccc;
+    box-shadow: 15px 15px 60px rgba(0,0,0,0.15);
+    padding: 20px;
+}
+.card .top .userDetails {
+    display: flex;
+    align-items: center;
+}
+.card .top .userDetails .profile_img
+{
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card .top .userDetails h3 {
+    font-size: 16px;
+    color: #4d4d4f;
+    font-weight: 500;
+    line-height: 1em;
+}
+.card .top .userDetails h3 span {
+    font-size: 0.75em;
+}
+.dot {
+    transform: scale(0.6);
+    cursor: pointer;
+}
+.imgBx {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    margin: 10px 0 15px;
+}
+.actionBtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.actionBtns img {
+    max-width: 24px;
+    cursor: pointer;
+}
+.actionBtns .left {
+    margin-right: 8px;
+}
+.likes {
+    font-weight: 500;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #4d4d4f;
+}
