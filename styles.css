@@ -3,14 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing:border-box
-    font-family: 'Ubuntu',sans-serif;
+    font-family:'Ubuntu',sans-serif;
 }
 .test:after {
     content: '\2807';
     font-size: 100px;
-    float: right;
-    
-    }
+ }
 .body {
     display: flex;
     justify-content: center;
@@ -40,11 +38,11 @@
 }
 .cover {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    top: 50px;
+    left: 100px;
+    width: 50%;
+    height: 90%;
+
 }
 .card .top .userDetails h3 {
     font-size: 16px;
