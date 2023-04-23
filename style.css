@@ -1,8 +1,29 @@
 * {
-    font-family: helvetica ;
+    font-family: Verdana ;
     margin: 0px;
+    font-display: small;
+    
     
 }
+.box-one-left {
+    float: left;
+}
+.box-one-right {
+    float: right;
+}
+.box-two-left {
+    float: left;
+}
+.box-two-right {
+    float: right;
+}
+.box-three-left {
+    float: left;
+}
+.box-three-right {
+    float: right;
+}
+
 
 .wrapper {
     width: 100%;
@@ -14,44 +35,52 @@
     flex-flow: column;
     background-color: lightgray;
     align-items: center;
-    display:flex;
+    display: flex;
 
 }
 
 
 .box {
     display:inline-block;
-    margin-bottom: 20px ;
+    margin-bottom: 40px;
+    padding-bottom: .5%;
+
 }
 
-
-
-
-    
 
 .one {
+    padding-top: calc(.5%);
     background-color: white;
     flex: 4;
-
+    width: 400px;
+    margin-top: 50px;
 }
 
+
 .two {
+    padding-top: calc(.5%);
     background-color: white;
     flex: 4;
+    width: 400px;
 }
 
 
 .three {
+    padding-top: calc(.5%);
     background-color: white;
     flex: 4;
+    width: 400px;
 }
 .header {
+    float: inline-start;
     background-color: white;
+    padding-left: 35%;
+    margin-bottom: 30px;
     flex: 1;
-margin-bottom: 10px;
-
-
+    
+  
 }
+
 
 .img{
   width: 100%;
