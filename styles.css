@@ -1,0 +1,35 @@
+
+
+
+.flex-container {
+
+  background-color: black;
+  background-repeat: repeat-x;
+  padding-left: 35%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  
+}
+
+.post-details {
+  text-align: center;
+  background-color: white;
+  width: 480px;
+  height: 210px;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 4%;
+}
+
+.post-icons {
+  width: 480px;
+  height: 54px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.post-photo {
+  padding-bottom: 5%;
+  background-color: white;
+  width: 480px;
+}
