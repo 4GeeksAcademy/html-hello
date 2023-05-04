@@ -1,7 +1,6 @@
 {
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 700,
-    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "workbench.editorAssociations": {   
         "*.md": "vscode.markdown.preview.editor"
     }
