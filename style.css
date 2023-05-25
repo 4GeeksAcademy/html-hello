@@ -1,0 +1,53 @@
+body {
+    background-color: black;
+}
+.post {
+    background-color: white;
+    width: 500px;
+    height: auto;
+    margin: auto;
+}
+.body {
+    margin: 3%;
+}
+.description {
+    padding-bottom: 10px;
+}
+.header {
+    padding: 10px;
+    display: flex;
+  
+}
+.header-right {
+    display: inline-block;
+    width: 5%;
+    float: right;
+}
+.header-left {
+    display: flex;
+    width: 95%;
+}
+.profile-pic {
+    width: 34px;
+    margin-right: 0px;
+    display: flex;
+    padding-top: 2px;
+}
+.username p {
+    margin: 0;
+    font-size: 14px;
+}
+p {
+    font-family: Roboto;
+}
+.icons {
+    display: flex;
+}
+.right-icon {
+    display: inline-block;
+    width: 5%;
+}
+.left-icons {
+    display: inline-block;
+    width: 95%;
+}
