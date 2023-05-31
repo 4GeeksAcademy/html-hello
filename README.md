@@ -8,7 +8,7 @@ The most basic boilerplate for any 4Geeks Academy student, start your very first
 
 Create an `index.html` file with the [basic HTML structure](http://4geeks.com/lesson/what-is-html-learn-html#page-structure) and see it live by running a web-server using the following command:
 
-```sh
+```bash
 $ pip3 install flask && python3 server.py
 ```
 
