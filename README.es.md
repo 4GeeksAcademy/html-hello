@@ -2,13 +2,13 @@
 
 El boilerplate más básico para cualquier estudiante de 4Geeks Academy, empieza tu primer sitio web desde cero.
 
-[![How to open html/css preview of my project in gitpod](https://github.com/4GeeksAcademy/Templates-Boilerplates/blob/master/assets/hello-html-intro.png?raw=true)](https://youtu.be/dfbDCMu_p-0)
+> Tienes un video tutorial sobre [cómo usar esta plantilla para crear tu primer sitio web aquí](https://youtu.be/dfbDCMu_p-0).
 
 ## ¿Qué hacer a continuación?
 
 Crea un archivo `index.html` con [la estructura básica de HTML](http://4geeks.com/lesson/what-is-html-learn-html#page-structure) y ve el resultado en vivo corriendo un servidor web utilizando el siguiente comando:
 
-```sh
+```bash
 $ pip3 install flask && python3 server.py
 ```
 
