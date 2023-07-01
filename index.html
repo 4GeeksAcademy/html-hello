@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row align-items-center justify-content-center pt-2 pb-4" style="background-color: rgb(240, 240, 240);">
+        <div class="col-3 d-flex align-items-center ps-3 pe-0">
+            <img src="https://th.bing.com/th/id/OIP.XgT9d552B6R9C60Ul2yqkAHaHa?w=198&h=198&c=7&r=0&o=5&pid=1.7" alt="Instagram Logo" class="img-fluid" style="width: 40px;">
+            <h1 class="text-start" style="font-size: 40px; margin: 0;">Instagram</h1>
+        </div>
+        <div class="col-5 d-flex align-items-center ps-3 pe-0"></div>
+        <div class="col-4 d-flex align-self-end align-items-center justify-content-end pe-3 ps-0">
+            <button type="button" onclick="openCreatePostPrompt()" class="btn btn-success"
+                style="width: 200px; font-size: 20px; margin-right: 10px;">Create a new post</button>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    style="width: 60px; font-size: 17px">
+                    <img src="data:image/jpeg;base64,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" alt="Instagram Logo" class="img-fluid" style="width: 20px;">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Accessibility</a>
+                    <a class="dropdown-item" href="#">Privacy and Data</a>
+                    <a class="dropdown-item align-items-center" href="#" style="font-weight: 500; color: rgb(255, 49, 49); border-top: 1px solid #000; 
+                        height: 50px;
+                        display: flex;">
+
+                        <h6 style="margin: 0%;">Log out</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex-wrap row justify-content-center">
+        <div class="col-12 row justify-content-center" style="display: flex; align-items: center; margin-top: 50px;">
+            <div class="col-12 flex-wrap row" style="background-color: rgb(248, 248, 248); padding: 0; display: flex; width: 500px; height: 50px;">
+                <div class="col-10 align-items-center" style="display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 500; font-size: 20px;">
+                        Cute Puppy with a pitcher
+                    </h>
+                </div>
+                <div class="col-2 align-items-center justify-content-end" style="display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 500; font-size: 15px;">
+                        1/02
+                    </h>
+                </div>
+            </div>
+            <div class="col-12 justify-content-center" style="display: flex;">
+                <div class="crop-image" style="width: auto; height: auto; overflow: hidden;">
+                    <img src="https://th.bing.com/th/id/OIP.D0i1gNX3MSl3d0umH6YUXgHaHa?w=186&h=186&c=7&r=0&o=5&pid=1.7" alt="Instagram Logo"
+                        class="border img-fluid">
+                </div>
+            </div>
+            <div class="col-12 flex-wrap row" style="padding: 0; display: flex; width: 500px; height: 50px;">
+                <div class="col-12 align-items-center border border-bottom-0" style="background-color: rgb(248, 248, 248); display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 700; font-size: 17px; ">
+                        847 Likes
+                    </h>
+                </div>
+                <div class="col-12 align-items-center text-wrap border border-top-0" style="display: flex; background-color: rgb(248, 248, 248);">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 400; font-size: 16px; ">
+                        This is a cute photo you can post on instagram 
+                    </h>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 row justify-content-center" style="display: flex; align-items: center; margin-top: 50px;">
+            <div class="col-12 flex-wrap row" style="background-color: rgb(248, 248, 248); padding: 0; display: flex; width: 500px; height: 50px;">
+                <div class="col-10 align-items-center" style="display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 500; font-size: 20px;">
+                        this is the first post
+                    </h>
+                </div>
+                <div class="col-2 align-items-center justify-content-end" style="display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 500; font-size: 15px;">
+                        1/27
+                    </h>
+                </div>
+            </div>
+            <div class="col-12 justify-content-center" style="display: flex;">
+                <div class="crop-image" style="width: auto; height: auto; overflow: hidden;">
+                    <img src="https://th.bing.com/th/id/OIP.sp9M6rrZwkc0JlmYdLMzoAHaEK?w=254&h=180&c=7&r=0&o=5&pid=1.7"
+                        class="border img-fluid">
+                </div>
+            </div>
+            <div class="col-12 flex-wrap row" style="padding: 0; display: flex; width: 500px; height: 50px;">
+                <div class="col-12 align-items-center border border-bottom-0" style="background-color: rgb(248, 248, 248); display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 700; font-size: 17px; ">
+                      203 likes
+                    </h>
+                </div>
+                <div class="col-12 align-items-center text-wrap border border-top-0" style="display: flex; background-color: rgb(248, 248, 248);">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 400; font-size: 16px; ">
+                        This is my first photo of the feed. This is a multi line comment for testing purposes. I am learning to code with #BreatheCode
+                    </h>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 row justify-content-center" style="display: flex; align-items: center; margin-top: 50px;">
+            <div class="col-12 flex-wrap row" style="background-color: rgb(248, 248, 248); padding: 0; display: flex; width: 500px; height: 50px;">
+                <div class="col-10 align-items-center" style="display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 500; font-size: 20px;">
+                        
+                    </h>
+                </div>
+                <div class="col-2 align-items-center justify-content-end" style="display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 500; font-size: 15px;">
+                        5/12
+                    </h>
+                </div>
+            </div>
+            <div class="col-12 justify-content-center" style="display: flex;">
+                <div class="crop-image" style="width: auto; height: auto; overflow: hidden;">
+                    <img src="https://th.bing.com/th/id/OIP.DapNboW_2r7BjLBcK9mqdgHaEo?w=236&h=180&c=7&r=0&o=5&pid=1.7" alt="Instagram Logo"
+                        class="border img-fluid">
+                </div>
+            </div>
+            <div class="col-12 flex-wrap row" style="padding: 0; display: flex; width: 500px; height: 50px;">
+                <div class="col-12 align-items-center border border-bottom-0" style="background-color: rgb(248, 248, 248); display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 700; font-size: 17px; ">
+                        376 Likes
+                    </h>
+                </div>
+                <div class="col-12 align-items-center text-wrap border border-top-0" style="display: flex; background-color: rgb(248, 248, 248);">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 400; font-size: 16px; ">
+                        This is a cool forest #BreatheCode
+                    </h>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 row justify-content-center" style="display: flex; align-items: center; margin-top: 50px;">
+            <div class="col-12 flex-wrap row" style="background-color: rgb(248, 248, 248); padding: 0; display: flex; width: 500px; height: 50px;">
+                <div class="col-10 align-items-center" style="display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 500; font-size: 20px;">
+                        And of course a dragon
+                    </h>
+                </div>
+                <div class="col-2 align-items-center justify-content-end" style="display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 500; font-size: 15px;">
+                        8/30
+                    </h>
+                </div>
+            </div>
+            <div class="col-12 justify-content-center" style="display: flex;">
+                <div class="crop-image" style="width: auto; height: auto; overflow: hidden;">
+                    <img src="https://th.bing.com/th/id/OIP.QA9AkZviysc8pr-eO0lEIQHaFj?w=244&h=183&c=7&r=0&o=5&pid=1.7" alt="Instagram Logo"
+                        class="border img-fluid">
+                </div>
+            </div>
+            <div class="col-12 flex-wrap row" style="padding: 0; display: flex; width: 500px; height: 50px;">
+                <div class="col-12 align-items-center border border-bottom-0" style="background-color: rgb(248, 248, 248); display: flex;">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 700; font-size: 17px; ">
+                        952 Likes
+                    </h>
+                </div>
+                <div class="col-12 align-items-center text-wrap border border-top-0" style="display: flex; background-color: rgb(248, 248, 248);">
+                    <h class="text-start" style="margin-left: 0%; font-weight: 400; font-size: 16px; ">
+                        Because no photo feed is cool without a dragon. #BreatheCode
+                    </h>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="NewPost" class="card-img-overlay align-items-center justify-content-center"
+        style="display: none; background-color: rgba(75, 75, 75, 0.705);">
+        <div class="container-fluid">
+            <div class="row justify-content-center align-items-center" style="height: 1100px;">
+                <div class="container-fluid row justify-content-center"
+                    style="padding: 0px; height: 700px; width: 1200px; background-color: white;">
+                    <span class="border-bottom container-fluid flex-wrap row" style="height: 15%; padding: 0px;">
+                        <div class="col-10">
+                            <h1 class="text-start"
+                                style=" font-size: 60px; margin-top: 20px; font-weight: 700; height: 0px; margin-left: 70px;">
+                                Create a new post
+                            </h1>
+                        </div>
+                        <div class="col-2 justify-content-center">
+                            <button type="button" onclick="closeCreatePostPrompt()" class="btn btn-success" style="font-size: 60px; font-weight: 500; height: 0px; margin-left: 100px;
+                            background-color: rgba(0,0,0, 0); border-color: rgb(0,0,0,0);
+                            color: #b6b6b6;">
+                                X
+                            </button>
+                        </div>
+                    </span>
+                    <div class="container-fluid row justify-content-center" style="height: 65%;">
+                        <div style="height: 100%; width: 90%; padding: 0%;">
+                            <h1 class="text-start"
+                                style="font-size: 30px; margin-top: 40px; font-weight: 700; height: 0px;">Caption:</h1>
+                            <textarea class="form-control"
+                                style="border-radius: 1%; margin-top: 50px; height: 150px; font-size: 20px; font-weight: 600;"
+                                placeholder="Add the caption of your post here" aria-label="With textarea"></textarea>
+                            <div class="container-fluid row align-items-center"
+                                style="height: 40%; width: 100%; margin: 0px; padding: 10px; padding-bottom: 100px; padding-left: 0px;">
+                                <div class="justify-content-center align-items-center"
+                                    style="display: flex; height: 50px; width: 60px; margin-right: 20px; margin-left: 1px; border-radius: 12%; background-color: rgb(235, 235, 235);">
+                                    <img src="Images/BlackCameraIcon.png" style="max-width: 40px; max-height: 40px;"
+                                        class="img-fluid">
+                                </div>
+                                <div class="justify-content-center align-items-center"
+                                    style="display: flex; height: 50px; width: 60px; margin-right: 20px; margin-left: 1px; border-radius: 12%; background-color: rgb(235, 235, 235);">
+                                    <img src="Images/LocationIcon.png" style="max-width: 40px; max-height: 40px;"
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                        <button type="button" class="btn btn-success"
+                            style="height: 50%; width: 13%; border-radius: 8%; font-size: 240%;">
+                            Publish
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="this.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
