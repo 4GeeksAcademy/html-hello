@@ -1,4 +1,4 @@
-# ![4Geeks Logo](https://github.com/4GeeksAcademy/website-v2/blob/0368e0b38d05118416d50fd8f21e32b2e06da713/static/images/4Geeks-logo.png?raw=true) HTML Hello
+# HTML Hello
 
 The most basic boilerplate for any 4Geeks Academy student, start your very first website from scratch.
 
