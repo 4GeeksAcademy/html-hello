@@ -1,4 +1,4 @@
-# ![4Geeks Logo](http://assets.breatheco.de/apis/img/images.php?blob&random&cat=icon&tags=4geeks,16) HTML Hello
+# ![4Geeks Logo](https://github.com/4GeeksAcademy/website-v2/blob/0368e0b38d05118416d50fd8f21e32b2e06da713/static/images/4Geeks-logo.png?raw=true) HTML Hello
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/html-hello.git)
 
