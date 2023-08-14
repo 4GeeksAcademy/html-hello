@@ -1,0 +1,127 @@
+
+.cuerpo {
+    background: rgb(219, 217, 243);
+    background: linear-gradient(180deg, rgb(225, 223, 247) 0%, rgb(217, 236, 241) 39%, rgba(215,227,230,1) 100%);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(130, 142, 146);
+    
+
+
+}
+
+content{
+    color:grey;
+    font-size: 15px;
+
+}
+
+section {
+    margin: 0px;
+    padding: 20px;
+}
+
+footer {
+    margin-left:auto;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    color: grey;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 9px;
+    background-color: rgb(208, 227, 235);
+}
+.date{
+    font-size: 12px; padding-right: 5px;
+}
+.box .header .date { float: right; margin: 0;
+
+}
+.box {
+    margin: auto;
+    padding-top: 5px;
+    
+    align-content: center;
+    background-color: lightcyan;
+    width: 380px;
+    height: auto;
+    border: 1px solid #EDEEEE;
+    border-radius: 8px;
+}
+
+.image{
+    position: relative;
+    display: inline-block;
+}
+
+img {
+    
+    width: 100%;
+    z-index: -1;
+
+}
+.header {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    
+    
+    padding-left: 8px;
+    padding-bottom: 5px;
+    text-align: left;
+}
+div.header h2{
+    font-size: 14px;
+    margin: 0;
+    color:rgb(103, 107, 109)
+}
+
+.actions {
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    align-content: left;
+    color: rgb(199, 204, 199);
+}
+
+#tag {
+    margin: 0px;
+    float: right;
+    padding-right: 10px;
+   
+}
+div.caption{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  z-index: 1; /* Ensure buttons are in front of the image */
+  opacity: 0; /* Initially hide the buttons */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image:hover .prev-button,
+.image:hover .next-button {
+  opacity: 1; /* Show the buttons when hovering over the image container */
+}
+
+.prev-button {
+    left: 0;
+  }
+  
+.next-button {
+    right: 0;
+  }
