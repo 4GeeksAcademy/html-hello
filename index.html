@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Boostrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container w-60 my-5 border border-bottom-0 rounded-top rounded-bottom">
+
+        
+        
+        <form action="get" class="fw-medium">
+
+
+            <div class="row  rounded-top" style="background-color: rgb(234, 234, 234); border: 1px solid rgb(179, 179, 179);">
+                <h1>Payment form example</h1>
+            </div>
+
+
+            <div class="row m-2">
+                <div class="col">
+                    <div class="alert alert-danger" role="alert">
+                       Some fields are missing
+                      </div>
+
+                </div>
+            </div>
+
+            <div class="row m-2">
+                <div class="col-5">
+                    <label for="card" class="form-label ">Card#</label><br>
+                    <input type="text" name="card" placeholder="xxxx-xxxx-xxxx-xxxx" class="w-100 form-control">
+                </div>
+
+                <div class="col-2 ">
+                    <label for="cvc" class="form-label">CVC#</label><br>
+                    <input type="text" name="cvc" placeholder="0000" class="w-100 form-control">
+                </div>
+
+                <div class="col-5">
+                    <label for="amount" class="form-label mx-2">Amount</label><br>
+                     <div class="d-flex">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <input type="text" name="amount" placeholder="Amount" class="w-100 form-control">
+                     </div>
+                </div>
+
+                
+            </div>
+
+
+            <div class="row m-2">
+                    <div class="col-6 ">
+
+                    <label for="fName" class="form-label">Firt Name</label><br>
+                    <input type="text" name="fName" class="w-100 form-control" >
+
+                    </div>
+                
+
+                <div class="col-6">
+                    <label for="card" class="form-label">Last Name</label><br>
+                    <input type="text" name="card" class="w-100 form-control">
+                </div>
+            </div>
+            
+
+            <div class="row m-2">
+                <div class="col-6">
+                    <label for="city" class="form-label">City</label><br>
+                    <input type="text" name="city" class="w-100 form-control">
+                </div>
+
+                <div class="col-3">
+                    <label for="State" class="form-label">State</label><br>
+                    <select name="states" id="" class="w-100 form-select ">
+                        <option value="" selected>Pick a state</option>
+                        <option value="Florida">Florida</option>
+                        <option value="New York">New York</option>
+                        <option value="Luisiana">Luisiana</option>
+                        <option value="New Jersey">New Jersey</option>
+                    </select>
+                </div>
+
+                <div class="col-3">
+                    <label for="postalCode" class="form-label">Postal Code</label><br>
+                    <input type="text" name="Postal Code" class="w-100 form-control">
+                </div>
+
+                
+            </div>
+
+            <div class="row m-2">
+                <div class="col-6">
+                    <label for="postalCode" class="form-label">We acccept:</label><br>
+                    <div class="bg-secondary w-50 p-1 form-control">
+                    <input type="radio" id="" name="card" value="HTML">
+                     <label for="html"><i class="fa-brands fa-cc-mastercard me-3" style="color: #ffffff;"></i></label>
+
+                     <input type="radio" id="" name="card" value="HTML">
+                     <i class="fa-brands fa-cc-visa form me-3" style="color: #ffffff;"></i>
+
+                     <input type="radio" id="" name="card" value="HTML">
+                     <label for="html"><i class="fa-brands fa-cc-diners-club me-3" style="color: #ffffff;"></i></label>
+
+                     <input type="radio" id="" name="card" value="HTML">
+                     <label for="html"><i class="fa-brands fa-cc-amex" style="color: #ffffff;"></i></label>
+
+                     
+                    
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <label for="postalCode" class="form-label">Message</label><br>
+                    <textarea name="" id="" cols="30" rows="3" class="form-control"></textarea>
+                    <p style="font-size: 12px; color: rgb(127, 127, 127);">Add any notes here.</p>
+                </div>
+
+            </div>
+
+            <div class="row  rounded-bottom" style="background-color: rgb(234, 234, 234); border: 1px solid rgb(179, 179, 179);">
+                <div class="col d-flex justify-content-end " >
+
+                    <div class="m-2">
+                        <button class="btn btn-secondary "> 
+                            Cancel
+                        </button>
+                    </div>
+                    <div class="m-2">
+                        <button class="btn btn-primary"> 
+                            Send
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    
+    
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
