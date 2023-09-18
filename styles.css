@@ -1,0 +1,14 @@
+body{margin: 0;  font-family: Arial, Helvetica, sans-serif;}
+header{text-align: center;}
+section{background: #fafafa; padding-top: 60px;}
+div.header{padding: 15px;}
+div.header h2{margin: 0; font-size: 20px;}
+.box{
+    background: white; width: 600px; margin: auto;
+     margin-bottom: 60px; margin-top: 60px;
+    border: 1px solid  #edeeee;
+    border-radius: 5px;
+
+}
+img{width: 100%;}
+div.description{padding: 15px;}
