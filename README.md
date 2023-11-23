@@ -12,7 +12,7 @@ Create an `index.html` file with the [basic HTML structure](http://4geeks.com/le
 $ pip3 install flask && python3 server.py
 ```
 
-- You can create as many HTML files as you want
+- You can create as many HTML files as you want.
 - You can also create CSS files and import them into your website using a `<link>` tag placed between the `<head></head>` tags, like this:
 
 ```html
