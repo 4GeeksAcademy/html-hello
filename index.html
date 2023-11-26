@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f3481e446e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Instagram</title>
+</head>
+<body>
+    <!-- Comienza el menu -->
+    <nav class="navbar bg-body-tertiary d-flex">
+        <div class="container-fluid p-2 flex-grow-1">
+          <a class="navbar-brand" href="#">
+            <!-- icono de Instagram -->
+            <i class="fa-brands fa-instagram fa-2xl" style="color: #444444;"></i>
+            Instagram
+          </a>
+          <!-- Menu de la derecha -->
+        <div class="p-2">
+            <!-- Boton de crear un nuevo post -->
+
+            <!-- Button del modal -->
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Create a new post
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Create a new post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Caption:</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Add the caption of your post here"></textarea>
+                    </div>
+                    <div class="container-fluid justify-content-start">
+                        <div class="row justify-content-start">
+                            <div class="col-1 m-1">
+                                <!-- <a href="#" class="btn btn-secondary disabled" tabindex="-1" role="button" aria-disabled="true"><i class="fa-solid fa-camera"></i></a> -->
+                                <button type="button" class="btn btn-light"><i class="fa-solid fa-camera"></i></button>
+                            </div>
+                            <div class="col-1 m-1">
+                                <!-- <a href="#" class="btn btn-secondary disabled" tabindex="-1" role="button" aria-disabled="true"><i class="fa-solid fa-location-dot"></i></a> -->
+                                <button type="button" class="btn btn-light"><i class="fa-solid fa-location-dot"></i></button>
+                            </div>
+                        </div> 
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Publish</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- Boton del menu emergente -->
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-gear fa-l" style="color: #f4f2f2;"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Accesibility</a>
+                <a class="dropdown-item" href="#">Privacy and Data</a>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+              </div>
+        </div>
+        </div>
+      </nav>
+    <!-- Termina el menu -->
+    <!-- Comienza el post -->
+    <!-- Menu superior -->
+    <ul class="nav nav-pills justify-content-center mb-3 " id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa-solid fa-table-cells"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fa-solid fa-square"></i></button>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+            <!-- Comienza la cuadricula -->
+            <div class="container-fluid m-auto">
+                <!-- Primera Fila -->
+                <div class="row mb-5">
+                    <div class="col-4 align-content-around">
+                        <img src="https://gcdnb.pbrd.co/images/W0oqeos2jMfY.png?o=1" alt="Imagen de un camino otonal en Jaca">
+                    </div>
+                    <div class="col-4">
+                        <img src="https://gcdnb.pbrd.co/images/P0oWxzP3U7Rs.png?o=1" alt="Imagen de la Canal de Berdun desde Oroel">
+                    </div>
+                    <div class="col-4">
+                        <img src="https://gcdnb.pbrd.co/images/hoWHYsnzUKkN.png?o=1" alt="Catedral de Leon">
+                    </div>                   
+                </div>
+                <!-- Segunda Fila -->
+                <div class="row mb-5">
+                    <div class="col-4">
+                        <img src="https://gcdnb.pbrd.co/images/CsvxhQdfDVGc.png?o=1" alt="El alcazar de Astorga">
+                    </div>
+                    <div class="col-4">
+                        <img src="https://gcdnb.pbrd.co/images/BovmLoYkpWxZ.png?o=1" alt="Paisaje Gallego">
+                    </div>
+                    <div class="col-4">
+                        <img src="https://gcdnb.pbrd.co/images/NvankMsJmemR.png?o=1" alt="Fotografia desde el puenter de Portomarin">
+                    </div>                   
+                </div>
+                <!-- Tercera Fila -->
+                <div class="row">
+                    <div class="col-4">
+                        <img src="https://gcdnb.pbrd.co/images/9Fyc9BRwB4QQ.png?o=1" alt="Catedral de Santiago">
+                    </div>
+                    <div class="col-4">
+                        <img src="https://gcdnb.pbrd.co/images/C6EtZ16wI4pV.png?o=1" alt="Via Lactea sobre la peña Oroel">
+                    </div>
+                    <div class="col-4">
+                        <img src="https://gcdnb.pbrd.co/images/Hqm8dtRd8IXB.png?o=1" alt="Paisaje Pirenaico">
+                    </div>                   
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+        <!-- empieza el codigo del 1 post individual -->
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+            <div class="container">
+                <div class="card m-auto" style="width: 40rem;">
+                    <!-- Titulo del post -->
+                    <div class="container-fluid">
+                        <div class="row mt-2">
+                        <div class="col-10">
+                            <h3>Un Paseo por Jaca</h3>
+                        </div>
+                        <div class="col-2 text-end">
+                            <h6>08/26</h6>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- imagen -->
+                        <img src="https://gcdnb.pbrd.co/images/W0oqeos2jMfY.png?o=1" class="card-img-top p-1" alt="Paseo otoñal en Jaca">
+                    <!-- cuerpo del post -->
+                    <div class="card-body">
+                        <p class="card-text"><span><strong>204 Likes</strong></span></br> quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>  
+    <!-- Termina el post -->
+         <!-- empieza el codigo del 2 post individual -->
+            <p></p>
+                <div class="card m-auto" style="width: 40rem;">
+                    <!-- Titulo del post -->
+                    <div class="container-fluid">
+                        <div class="row mt-2">
+                        <div class="col-10">
+                            <h3>Canal de Berdun</h3>
+                        </div>
+                        <div class="col-2 text-end">
+                            <h6>08/26</h6>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- imagen -->
+                        <img src="https://gcdnb.pbrd.co/images/P0oWxzP3U7Rs.png?o=1" class="card-img-top p-1" alt="Canal de Berdun">
+                    <!-- cuerpo del post -->
+                    <div class="card-body">
+                        <p class="card-text"><span><strong>204 Likes</strong></span></br> quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+        <!-- empieza el codigo del 3 post individual -->
+            <p></p>
+            <div class="card m-auto" style="width: 40rem;">
+                <!-- Titulo del post -->
+                <div class="container-fluid">
+                    <div class="row mt-2">
+                    <div class="col-10">
+                        <h3>Catedral de Leon</h3>
+                    </div>
+                    <div class="col-2 text-end">
+                        <h6>08/26</h6>
+                    </div>
+                </div>
+                </div>
+                <!-- imagen -->
+                    <img src="https://gcdnb.pbrd.co/images/hoWHYsnzUKkN.png?o=1" class="card-img-top p-1" alt="Catedral de Leon">
+                <!-- cuerpo del post -->
+                <div class="card-body">
+                    <p class="card-text"><span><strong>204 Likes</strong></span></br> quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        <!-- empieza el codigo del 4 post individual -->
+            <p></p>
+            <div class="card m-auto" style="width: 40rem;">
+                <!-- Titulo del post -->
+                <div class="container-fluid">
+                    <div class="row mt-2">
+                    <div class="col-10">
+                        <h3>El alcazar de astorga</h3>
+                    </div>
+                    <div class="col-2 text-end">
+                        <h6>08/26</h6>
+                    </div>
+                </div>
+                </div>
+                <!-- imagen -->
+                    <img src="https://gcdnb.pbrd.co/images/CsvxhQdfDVGc.png?o=1" class="card-img-top p-1" alt="El Alcazar de Aastorga">
+                <!-- cuerpo del post -->
+                <div class="card-body">
+                    <p class="card-text"><span><strong>204 Likes</strong></span></br> quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+         <!-- empieza el codigo del 5 post individual -->
+            <p></p>
+            <div class="card m-auto" style="width: 40rem;">
+                <!-- Titulo del post -->
+                <div class="container-fluid">
+                    <div class="row mt-2">
+                    <div class="col-10">
+                        <h3>Paisaje Gallego</h3>
+                    </div>
+                    <div class="col-2 text-end">
+                        <h6>08/26</h6>
+                    </div>
+                </div>
+                </div>
+                <!-- imagen -->
+                    <img src="https://gcdnb.pbrd.co/images/BovmLoYkpWxZ.png?o=1" class="card-img-top p-1" alt="Paisaje Gallego">
+                <!-- cuerpo del post -->
+                <div class="card-body">
+                    <p class="card-text"><span><strong>204 Likes</strong></span></br> quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+          <!-- empieza el codigo del 6 post individual -->
+            <p></p>
+            <div class="card m-auto" style="width: 40rem;">
+                <!-- Titulo del post -->
+                <div class="container-fluid">
+                    <div class="row mt-2">
+                    <div class="col-10">
+                        <h3>El Miño por Portomarin</h3>
+                    </div>
+                    <div class="col-2 text-end">
+                        <h6>08/26</h6>
+                    </div>
+                </div>
+                </div>
+                <!-- imagen -->
+                    <img src="https://gcdnb.pbrd.co/images/NvankMsJmemR.png?o=1" class="card-img-top p-1" alt="El Miño por Portomarin">
+                <!-- cuerpo del post -->
+                <div class="card-body">
+                    <p class="card-text"><span><strong>204 Likes</strong></span></br> quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div> 
+         <!-- empieza el codigo del 7 post individual -->
+            <p></p>
+            <div class="card m-auto" style="width: 40rem;">
+                <!-- Titulo del post -->
+                <div class="container-fluid">
+                    <div class="row mt-2">
+                    <div class="col-10">
+                        <h3>Catedral de Santiago</h3>
+                    </div>
+                    <div class="col-2 text-end">
+                        <h6>08/26</h6>
+                    </div>
+                </div>
+                </div>
+                <!-- imagen -->
+                    <img src="https://gcdnb.pbrd.co/images/9Fyc9BRwB4QQ.png?o=1" class="card-img-top p-1" alt="Catedral de Santiago">
+                <!-- cuerpo del post -->
+                <div class="card-body">
+                    <p class="card-text"><span><strong>204 Likes</strong></span></br> quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div> 
+         <!-- empieza el codigo del 8 post individual -->
+            <p></p>
+            <div class="card m-auto" style="width: 40rem;">
+                <!-- Titulo del post -->
+                <div class="container-fluid">
+                    <div class="row mt-2">
+                    <div class="col-10">
+                        <h3>Via Lactea sobre la Peña Oroel</h3>
+                    </div>
+                    <div class="col-2 text-end">
+                        <h6>08/26</h6>
+                    </div>
+                </div>
+                </div>
+                <!-- imagen -->
+                    <img src="https://gcdnb.pbrd.co/images/C6EtZ16wI4pV.png?o=1" class="card-img-top p-1" alt="Via Lactea sobre la Peña Oroel">
+                <!-- cuerpo del post -->
+                <div class="card-body">
+                    <p class="card-text"><span><strong>204 Likes</strong></span></br> quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div> 
+        <!-- empieza el codigo del 9 post individual -->
+        <p></p>
+        <div class="card m-auto" style="width: 40rem;">
+            <!-- Titulo del post -->
+            <div class="container-fluid">
+                <div class="row mt-2">
+                <div class="col-10">
+                    <h3>Paisaje Pirenaico</h3>
+                </div>
+                <div class="col-2 text-end">
+                    <h6>08/26</h6>
+                </div>
+            </div>
+            </div>
+            <!-- imagen -->
+                <img src="https://gcdnb.pbrd.co/images/Hqm8dtRd8IXB.png?o=1" class="card-img-top p-1" alt="Paisaje Pirenaico">
+            <!-- cuerpo del post -->
+            <div class="card-body">
+                <p class="card-text"><span><strong>204 Likes</strong></span></br> quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div> 
+        <p></p>
+            </div>
+      </div>    
+      <!-- script de javascript bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
