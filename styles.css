@@ -1,0 +1,52 @@
+#instagram{
+    width: 35px;
+    height: 35px;
+}
+#instagramlogo{
+    width: 150px;
+    height: 45px;
+}
+#configuration{
+    width: 30px;
+    height: 30px;
+}
+.colorGreen{
+    background-color: rgba(96,182,96,255);
+    color: white;
+}
+.bitLarge{
+    width: 400px;
+    height: 100px;
+}
+.ajuste1{
+    margin-left: 100px;
+}
+.ajuste2{
+    margin-right: 100px;
+}
+#height{
+    height: 55px;
+}
+.ps{
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 1px;
+}
+#menu{
+    width: 35px;
+    height: 35px;
+}
+body{
+    background-color: whitesmoke;
+}
+.feed1{
+    height: 250px;
+}
+.ajust{
+    height: 100%;
+    width: 100%;
+}
+.ajFeed{
+    height: 100%;
+    width: 100%;
+}
