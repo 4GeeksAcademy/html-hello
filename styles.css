@@ -18,7 +18,7 @@
     position: relative;
     display:flex;
     font-size:50%;
-    left: -2vw;
+    left: -45px;
 }
 
 .firstimage{
@@ -31,10 +31,11 @@
 
 .secondimage{
     position: relative;
-    margin-top:1.5%;
+    margin-top: 1.5%;
+    padding-left: 100px;
     width: 5%;
-    height:5%;
-    left:7vw;
+    height: 5%;
+    right: auto;
 }
 
 .headernames{
@@ -55,7 +56,8 @@
 
 .fa-bookmark{
     position: relative;
-    margin-left: 72%;
+    margin-left: auto;
+    padding-right: 10px;
 }
 .textunderemojis{
     margin-left:1%;
