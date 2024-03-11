@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(199, 197, 197);
+}
+
+div{
+    box-sizing: border-box;
+}
+
+header{
+    background: white;
+    
+}
+
+header h1 {
+    margin: 0;
+}
+.post{
+    background: white;
+    margin-top: 40px;
+}
+
+.post img {
+    width: 100%;
+}
+
+.post h2, .post p{
+    padding: 10px;
+    margin: 0;
+}
+
+.post-header div:first-child{
+    display: inline-block;
+    width: 80%;
+}
+
+.post-header div:last-child {
+    display: inline-block;
+    width: 18%;
+    padding: 10px;
+    text-align: right;
+    color: gray;
+}
+
+.container{
+    width: 600px;
+    margin: auto;
+}
