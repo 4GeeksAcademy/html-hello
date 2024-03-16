@@ -1,0 +1,74 @@
+img{
+    width: 900px;
+    height: auto;
+  }
+
+  body{
+    background-color: rgb(255 237 213);
+  }
+
+  .ladoizq{
+    width: 700px;
+    display: flex;
+  }
+
+  .titulos{
+    width: 650px;
+  }
+
+h2,h3,h4{
+  font-family: sans-serif;
+  border-bottom: 1.5rem;
+}
+
+div.ladoizq{
+
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 40px;
+  margin-top: 90px;
+  width: 630px;
+}
+
+
+.buttons{
+  height: 50px;
+  margin-top: 20px;
+}
+
+.bottom{
+  border-bottom-width: thin;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+}
+
+.button1{
+  color: white;
+  font-family: serif;
+  height: 45px;
+  border-radius: 10px;
+  width: 180px;
+  margin-right: 10px;
+}
+
+.Anthony{
+  margin-top: 15px;
+}
+
+.bottomtitulos{
+  border-bottom-width: thin;
+  border-bottom-color: #FB923C;
+  border-bottom-style: solid;
+  border-width: 10px;
+  border-top-width: thin;
+  border-top-style: solid;
+  border-top-width: 10px;
+  border-top-color: #FB923C;
+}
+
+.fa-solid{
+  font-size: 30px;
+}
