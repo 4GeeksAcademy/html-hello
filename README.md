@@ -22,6 +22,14 @@ $ pip3 install flask && python3 server.py
   ...
 </head>
 ```
+When you are done be sure to save your work by committing.
+Use these commands:
+
+_  git add .
+-  git commit -m "   "  (Insert something in the quotation marks.)
+-  git push
+
+
 
 ### Contributors
 
