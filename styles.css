@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(208, 208, 208);
+    margin: 0;
+}
+header{
+    background-color: white;
+}
+header h1{
+    margin: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+.post{
+    
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0.25rem 0; /*para que el texto no esté pegado al borde superior e inferior*/
+}
+.encabezado{
+    display: flex;
+    margin: 0%;
+    width: 100%;
+}
+.titulo{
+    width: 80%;
+}
+.fecha{
+    text-align: right;
+    width: 20%;
+    padding-right: 1rem;
+    color: grey;
+}
+
+.post img{
+    width: 100%;
+}
+.post p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.post h2{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+p, h2{
+    margin-left: 1rem; /*para que el texto no esté pegado al borde izquierdo*/
+}
+.container{
+    margin:auto;
+    width: 50%;
+}
+
+
+
+
+
