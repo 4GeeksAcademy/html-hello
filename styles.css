@@ -1,0 +1,160 @@
+/* ESTA PARTE ES DE LA FUENTE DE GOOGLE FONTS ROBOTO */
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;       /* Values: 100 - 300 - 400 - 500 - 700 - 900 */
+    font-style: normal;     /* Values: normal - italic */
+
+}
+
+.bolded { 
+    font-weight: bold; 
+}
+
+.italic { 
+    font-style: italic; 
+}
+ 
+h2 {
+    padding-bottom: 0px;
+    border-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.name {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+body {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+/**********************************************/
+.general {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 26, 44);
+    height: 100%;
+    flex-direction: column;
+}
+
+.post {
+    background-color: rgb(255, 255, 255);
+    width: 40%;
+    height: 800px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    border: 1px solid gray;
+}
+
+/******************************************************************/
+.post-header {
+    height: 100px;
+    display: flex;
+    border-bottom: 1px solid gray;
+    background-color: rgb(231, 231, 231);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin: 0;
+}
+
+.mini {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user {
+    width: 600px;
+    height: 100px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+
+.bi-three-dots-vertical{
+    font-size: 40px;
+}
+
+.logo{
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    border: 1px solid rgb(221, 219, 219);
+    border-radius: 50%;
+}
+
+/******************************************************************/
+
+.post-img {
+    height: 450px;
+    display: flex;
+}
+
+.p-img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/******************************************************************/
+
+.post-body {
+    height: 210px;
+    padding: 20px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: aliceblue;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.icons {
+    background-color: aliceblue;
+}
+
+.opti{
+    width: 100px;
+    height: 100px;
+}
+
+.bi-chat, .bi-heart, .bi-send, .bi-bookmark {
+    font-size: 35px;
+}
+
+.bi-bookmark {
+    margin-left: 500px;
+}
+
+.bi-chat, .bi-heart, .bi-send {
+    margin-left: 15px;
+}
+
+.bi-heart-fill {
+    color: red;
+    font-size: 35px;
+    margin-left: 15px;
+}
+
+.bi-bookmark-fill {
+    color: rgb(159, 159, 240);
+    font-size: 35px;
+    margin-left: 15px;
+    margin-left: 500px
+}
+
+/******************************************************************/
