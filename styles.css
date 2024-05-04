@@ -1,0 +1,70 @@
+body {
+    background: black;
+}
+
+.banner {
+    width: 30%;
+    margin: auto;
+    background: white;
+    margin-top: 5%;
+}
+
+.logo {
+    font-size: 50px;
+    margin: 5px;
+}
+
+.head {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-left {
+    display: flex;
+    padding-left: 15px;
+}
+
+.box-right {
+    padding-right: 15px;
+    transform: scale(2 );
+}
+
+.menu {
+    font-size: 50px;
+    transform: scale(2);
+    
+}
+
+h1 {
+    margin-bottom: -15px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.paisaje {
+    width: 100%;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    margin: none;
+
+}
+
+.icons-left {
+    display: flex;
+    padding-left: 5px;
+}
+
+.icons-right {
+    padding-right: 5px;
+}
+
+.left {
+    padding: 10%;
+}
+.description {
+    padding-bottom: 10px;
+}
