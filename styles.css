@@ -12,6 +12,7 @@ body {
 .logo {
     font-size: 50px;
     margin: 5px;
+    text-shadow:3px 6px rgba(204, 204, 204, 0.75)
 }
 
 .head {
@@ -28,6 +29,7 @@ body {
 .box-right {
     padding-right: 15px;
     transform: scale(2 );
+    text-shadow:3px 6px rgba(204, 204, 204, 0.75)
 }
 
 .menu {
@@ -40,26 +42,30 @@ h1 {
     margin-bottom: -15px;
     margin-top: 10px;
     font-size: 20px;
+    text-shadow: 2px 2px 5px #8686867c
 }
 
 .paisaje {
     width: 100%;
+    box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .icons {
     display: flex;
     justify-content: space-between;
     margin: none;
-
+    text-shadow:3px 6px rgba(204, 204, 204, 0.75)
 }
 
 .icons-left {
     display: flex;
     padding-left: 5px;
+    text-shadow:3px 6px rgba(204, 204, 204, 0.75)
 }
 
 .icons-right {
     padding-right: 5px;
+    text-shadow:3px 6px rgba(204, 204, 204, 0.75)
 }
 
 .left {
