@@ -1,0 +1,50 @@
+body{
+    background: #191717;
+    margin: 0;
+}
+
+header{
+    background: rgb(235, 84, 19);
+}
+
+header h1{
+    margin: 0;
+    padding:10px;
+    text-align: center;
+}
+
+div.post{
+    background: white;
+    margin-top: 10px;
+}
+
+div.Container{
+    width:600px;
+    margin: auto;
+}
+
+div.post img{
+    width:100%;
+    height: 680px;
+}
+
+div.post-header{
+    display: flex;
+    background: #191717;
+}
+
+div.post h2, div post p, div.post h3{
+    padding: 2px;
+}
+
+div.post h2{
+    width: 80%;
+    color: aliceblue;
+}
+
+div.post h3{
+    width: 20%;
+    text-align: right;
+    color: wheat;
+}
+
