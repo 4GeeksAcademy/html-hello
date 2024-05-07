@@ -45,13 +45,18 @@ a {
 }
 
 #logo {
-    margin-left: 35px;
+    display: flex;
+    margin-left: 15px;
     padding: 35px 0 0 0;
     font-family: "Amatic SC", Arial, Helvetica, sans-serif;
     background: linear-gradient(to right, orange, red);
     background-size: cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;  
+}
+
+.img-logo{
+    width: 20%;
 }
 
 .nav-divs {
