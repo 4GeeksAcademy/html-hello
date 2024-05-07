@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Jersey+25+Charted&display=swap');
+
+* {
+    border:0;
+    margin:0;
+}
+
+body {
+    background: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    padding-right:15px;
+}
+
+h1 {
+    font-size:40px;
+}
+
+a {
+    text-decoration:none;
+    color:inherit;
+    cursor: pointer;
+}
+
+#wrapper {
+    display:flex;
+    justify-content: space-between;
+}
+
+#sidebar {
+    position:fixed;
+    left:0;
+    background: white;
+    border-right: 2px solid rgba(155,155,155,0.5);
+    height: 100vh;
+    padding:0 0 0 25px;
+    width: 12%;
+    min-width:200px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#logo {
+    margin-left: 35px;
+    padding: 35px 0 0 0;
+    font-family: "Amatic SC", Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, orange, red);
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+}
+
+.nav-divs {
+    padding:15px 0;
+    display:flex;
+    align-items: center;
+}
+
+.nav-divs:hover {
+    background: rgba(155,155,155,0.1);
+    border-radius: 50px;
+}
+
+.nav-icon {
+    height:100%;
+    display:flex;
+    align-items: center;
+}
+
+.nav-tag {
+    height:100%;
+    display:flex;
+    padding-left: 15px;
+    align-items: center;
+}
+
+#burger-menu {
+    min-height:75px;
+    display:flex;
+    align-items: center;
+}
+
+.profile-img {
+    width:25px;
+    height:25px;
+    border-radius: 75px;
+}
+
+#main {
+    width: 100%;
+    display:flex;
+    background: linear-gradient(rgba(240,240,240),rgb(238, 203, 137));
+}
+
+#photo-feed {
+    height:100%;
+    width: 60%;
+    position:relative;
+    left:450px;
+}
+
+.post {
+    width:500px;
+    background: white;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header {
+    height:20%;
+    display: flex;
+}
+
+.user-id {
+    width:92%;
+    display:flex;
+}
+.user-profile-pic {
+    width:50px;
+    height:50px;
+    margin:5px;
+    border-radius: 50px;
+}
+
+.user-profile-name {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:15px;
+}
+
+.three-dots {
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-end;
+    font-weight: bold;
+}
+
+.post-image {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.post-icons {
+    margin-top:5px;
+    height:20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-icons-123 {
+    width:40%;
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-icons-4 {
+    width:20%;
+    height:100%;
+    display: flex;
+    justify-content: end;
+}
+
+.post-icon {
+    height:100%;
+    width:30%;
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.likes {
+    margin:15px 0 0 15px;
+    display: flex;
+}
+
+.likes-pic-1 {
+    width:15px;
+    height:15px;
+    border-radius:10px;
+    border: 2px white solid;
+}
+
+.likes-pic-2, .likes-pic-3 {
+    width:15px;
+    height:15px;
+    border: 2px white solid;
+    border-radius:10px;
+    margin-left: -10px;
+}
+
+.liker {
+    margin-left:10px;
+    font-weight:bold;
+}
+
+.description, .comment {
+    margin:5px 15px;
+}
+
+.hashtag {
+    color:blue;
+    font-weight:bold;
+}
+
+.user-name, .commenter {
+    font-weight:bold;
+} 
+
+.comment-number {
+    color:gray;
+    margin:5px 15px;
+}
+
+.time {
+    font-size: 12px;
+    color:grey;
+    margin:15px 15px;
+
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+    padding-bottom: 15px;
+}
+
+input[type="text"] {
+    padding:10px 210px 10px 0;
+    margin: 5px 50px 0 15px;
+}
+
+input[type="submit"] {
+    padding:10px;
+    background: transparent;
+    color:grey;
+}
+
+input[type="submit"]:hover {
+    color:lightgray;
+    cursor: pointer;
+}
+
+
+#user-info {
+    margin-left:15px;
+}
+
+#user-info h4 {
+    margin-bottom: 5px;;
+}
+
+#user-info h5 {
+    color: grey;
+}
