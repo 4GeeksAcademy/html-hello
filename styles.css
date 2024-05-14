@@ -1,0 +1,80 @@
+body {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    width: 400px;
+    border-radius: 5px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-title {
+    display: flex;
+    align-items: center;
+}
+
+.icon-header1 {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.title {
+    margin: 10px;
+}
+
+.title-text {
+    margin: 2px
+}
+
+.icon-header2 {
+    margin-right: 10px;
+}
+
+.post-img {
+    height: 400px;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-icons {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.icons1 {
+    margin-left: 15px;
+}
+
+.icon2 {
+    margin-right: 15px;
+}
+
+.text-container {
+    padding: 15px;
+}
+
+.text-body {
+    font-size: 14px;
+}
