@@ -9,13 +9,12 @@ header{
 
 header h1{
     margin: 0;
-    padding:10px;
     text-align: center;
 }
 
 div.post{
-    background: white;
-    margin-top: 10px;
+    background: #191717;
+    margin-top:5px;
 }
 
 div.Container{
@@ -23,28 +22,108 @@ div.Container{
     margin: auto;
 }
 
+/* header orden */
+div.header-container{
+    display: flex;
+    background: #191717;
+}
+
+div.header-izquierda{
+    display: flex;
+    background: #191717;
+    flex-direction: row; 
+    
+}
+
+.texto-down {
+    display: flex;
+    flex-direction: column; 
+    
+  }
+
+.boton-menu{
+    position: absolute;
+    right: 12cm;
+    background-color: transparent;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    transition: none;
+    font-size: 30px;
+    color: white;
+}
+
+.boton-menu:active{
+    color:aquamarine;
+}
+
+.profile-pic{
+    font-size: 30px;
+    color: white;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 25px;
+    margin: 0; 
+    color: white;
+    text-align: start;
+    margin-bottom: 1px;
+    margin-top: 6px;
+    
+  }
+  
+  h3 {
+    font-size: 20px; 
+    margin: 0; 
+    color: white;
+    text-align: start; 
+  }
+
+
+ 
+/* parte media */
+
 div.post img{
     width:100%;
     height: 680px;
 }
 
-div.post-header{
+/* parte baja */
+.Botones {
     display: flex;
-    background: #191717;
+    padding: 5px;
+  }
+  
+.boton-ig {
+    background-color: transparent;
+    border: none;
+    padding: 0 1px;
+    cursor: pointer;
+    
+  }
+  
+.boton-ig i {
+    font-family: FontAwesome;
+    font-size: 30px;
+    margin-right: 5px;
+    color: white;
+    border: 2px 
+  }
+
+.boton-ig i:active{
+    color: red;
 }
 
-div.post h2, div post p, div.post h3{
-    padding: 2px;
-}
+.bookmark{
+    position: absolute;
+    right: 12.5cm;
+  }
 
-div.post h2{
-    width: 80%;
-    color: aliceblue;
+p {
+    text-align: left; 
+    margin-left: 0.3cm; 
+    color: white;
+    padding: 5px;
 }
-
-div.post h3{
-    width: 20%;
-    text-align: right;
-    color: wheat;
-}
-
+ 
