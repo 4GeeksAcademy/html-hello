@@ -9,13 +9,13 @@ header h1{
 }
 
 div.Container{
-    width:500px;
+    width:400px;
     margin: auto;
 }
 
 div.post{
     background: #191717;
-    margin-top:5px;
+    margin-top:40px;
     margin-bottom: 50px;
 }
 
@@ -39,7 +39,7 @@ div.header-izquierda{
 
 .boton-menu{
     position: absolute;
-    right: 13.6cm;
+    right: 14.9cm;
     background-color: transparent;
     border: none;
     padding: 20px;
@@ -81,7 +81,7 @@ h2 {
 
 div.post img{
     width:100%;
-    height: 400px;
+    height: 280px;
 }
 
 /* parte baja */
@@ -112,7 +112,7 @@ div.post img{
 
 .bookmark{
     position: absolute;
-    right: 13.8cm;
+    right: 15.2cm;
   }
 
 p {
