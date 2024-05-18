@@ -15,12 +15,12 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <button type="button" class="btn btn-primary me-2 ms-auto" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Nueva publicacion</button>
+        <button type="button" class="btn btn-success me-2 ms-auto" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Nueva publicacion</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva publicacion</h1>
+                <h4 class="modal-title" id="exampleModalLabel">Nueva publicacion</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -30,8 +30,8 @@
                     <textarea class="form-control" id="message-text"></textarea>
                   </div>
                 <div class="botones d-flex">
-                  <button type="button" class="me-2"><i class="fa-solid fa-camera-retro"></i></button>
-                  <button type="button"><i class="fa-solid fa-location-dot"></i></button>
+                  <button type="button" class="btn btn-light border mx-2"><i class="fa-solid fa-camera"></i></button>
+                  <button type="button" class="btn btn-light border"><i class="fa-solid fa-location-dot"></i></button>
                 </div>
                 </div>
                 <div class="modal-footer">
@@ -45,7 +45,7 @@
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-gear"></i>
           </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
+          <ul class="dropdown-menu dropdown-menu-end text-start">
             <li><a class="dropdown-item active" href="#">Perfil</a></li>
             <li><a class="dropdown-item" href="#">Accesibilidad</a></li>
             <li><a class="dropdown-item" href="#">Datos y privacidad</a></li>
@@ -69,45 +69,55 @@
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
             <div class="container d-flex justify-content-center col-6">
-              <img src="https://cdn.pixabay.com/photo/2024/02/26/19/39/monochrome-image-8598798_640.jpg" class="img-thumbnail" alt="...">
-              <img src="https://cdn.pixabay.com/photo/2023/12/06/21/07/photo-8434386_1280.jpg" class="img-thumbnail" alt="...">
-              <img src="https://cdn.pixabay.com/photo/2015/02/09/14/31/blonde-629726_1280.jpg" class="img-thumbnail" alt="..."> 
+              <img src="https://cdn.pixabay.com/photo/2024/02/26/19/39/monochrome-image-8598798_640.jpg" class="img-fluid mx-1 my-1" alt="...">
+              <img src="https://cdn.pixabay.com/photo/2023/12/06/21/07/photo-8434386_1280.jpg" class="img-fluid mx-1 my-1" alt="...">
+              <img src="https://cdn.pixabay.com/photo/2015/02/09/14/31/blonde-629726_1280.jpg" class="img-fluid mx-1 my-1" alt="..."> 
             </div>
             <div class="container d-flex justify-content-center col-6">
-              <img src="https://cdn.pixabay.com/photo/2023/04/06/09/39/camera-7903435_1280.jpg" class="img-thumbnail" alt="...">
-              <img src="https://cdn.pixabay.com/photo/2014/02/02/17/40/photos-256887_1280.jpg" class="img-thumbnail" alt="...">
-              <img src="https://cdn.pixabay.com/photo/2016/05/17/22/16/baby-1399332_1280.jpg" class="img-thumbnail" alt="..."> 
+              <img src="https://cdn.pixabay.com/photo/2023/04/06/09/39/camera-7903435_1280.jpg" class="img-fluid mx-1 my-1" alt="...">
+              <img src="https://cdn.pixabay.com/photo/2014/02/02/17/40/photos-256887_1280.jpg" class="img-fluid mx-1 my-1" alt="...">
+              <img src="https://cdn.pixabay.com/photo/2016/05/17/22/16/baby-1399332_1280.jpg" class="img-fluid mx-1 my-1" alt="..."> 
             </div>
+            <div class="container d-flex justify-content-center col-6">
+              <img src="https://cdn.pixabay.com/photo/2023/04/06/09/39/camera-7903435_1280.jpg" class="img-fluid mx-1 my-1" alt="...">
+              <img src="https://cdn.pixabay.com/photo/2014/02/02/17/40/photos-256887_1280.jpg" class="img-fluid mx-1 my-1" alt="...">
+              <img src="https://cdn.pixabay.com/photo/2016/05/17/22/16/baby-1399332_1280.jpg" class="img-fluid mx-1 my-1" alt="..."> 
+            </div>
+            
           </div>
           <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-            <div class="container my-3 col-6 border">
-              <div class="titulo d-flex justify-content-between">
-                <h1 class="my-auto">El Huskey siveriano</h1>
+            <div class="container my-3 col-6 border p-0">
+              <div class="titulo d-flex justify-content-between m-2">
+                <h3 class="my-auto">El Huskey siveriano</h3>
                 <p>8/26</p>
               </div>
-              <img src="https://cdn.pixabay.com/photo/2024/02/26/19/39/monochrome-image-8598798_640.jpg" class="img-thumbnail" alt="...">
-              <strong class="me-10">204 Me gusta</strong>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maxime, explicabo rerum sequi odit voluptates adipisci ut, totam labore ex iste dolorem tenetur, vitae itaque fugiat laborum? Natus, esse asperiores?</p>
+              <div class="img p-0">
+                <img src="https://cdn.pixabay.com/photo/2024/02/26/19/39/monochrome-image-8598798_640.jpg" class="img-fluid w-100" alt="...">
+              </div>
+              <p class="m-2"><strong>204 Me gusta</strong></p>
+              <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maxime, explicabo rerum sequi odit voluptates adipisci ut, totam labore ex iste dolorem tenetur, vitae itaque fugiat laborum? Natus, esse asperiores?</p>
             </div>
-            <div class="container my-3 col-6 border">
-              <div class="titulo d-flex justify-content-between">
-                <h1 class="my-auto">Cascada</h1>
+            <div class="container my-3 col-6 border p-0">
+              <div class="titulo d-flex justify-content-between m-2">
+                <h3 class="my-auto">Cascada</h3>
                 <p>8/26</p>
               </div>
-              <img src="https://cdn.pixabay.com/photo/2023/12/06/21/07/photo-8434386_1280.jpg" class="img-thumbnail" alt="...">
-              <strong class="me-10">204 Me gusta</strong>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maxime, explicabo rerum sequi odit voluptates adipisci ut, totam labore ex iste dolorem tenetur, vitae itaque fugiat laborum? Natus, esse asperiores?</p>
-
+              <div class="img p-0">
+                <img src="https://cdn.pixabay.com/photo/2023/12/06/21/07/photo-8434386_1280.jpg" class="img-fluid w-100" alt="...">
+              </div>
+              <p class="m-2"><strong>204 Me gusta</strong></p>
+              <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maxime, explicabo rerum sequi odit voluptates adipisci ut, totam labore ex iste dolorem tenetur, vitae itaque fugiat laborum? Natus, esse asperiores?</p>
             </div>
-            <div class="container my-3 col-6 border">
-              <div class="titulo d-flex justify-content-between">
-                <h1 class="my-auto">La fotografia</h1>
+            <div class="container my-3 col-6 border p-0">
+              <div class="titulo d-flex justify-content-between m-2">
+                <h3 class="my-auto">Fotografia</h3>
                 <p>8/26</p>
               </div>
-              <img src="https://cdn.pixabay.com/photo/2015/02/09/14/31/blonde-629726_1280.jpg" class="img-thumbnail" alt="...">
-              <strong class="me-10">204 Me gusta</strong>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maxime, explicabo rerum sequi odit voluptates adipisci ut, totam labore ex iste dolorem tenetur, vitae itaque fugiat laborum? Natus, esse asperiores?</p>
-
+              <div class="img p-0">
+                <img src="https://cdn.pixabay.com/photo/2015/02/09/14/31/blonde-629726_1280.jpg" class="img-fluid w-100" alt="...">
+              </div>
+              <p class="m-2"><strong>204 Me gusta</strong></p>
+              <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maxime, explicabo rerum sequi odit voluptates adipisci ut, totam labore ex iste dolorem tenetur, vitae itaque fugiat laborum? Natus, esse asperiores?</p>
             </div>
             </div>
             
