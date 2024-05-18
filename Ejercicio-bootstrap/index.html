@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bootstrap</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid me-2">
+      <a class="navbar-brand" href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <button type="button" class="btn btn-primary me-2 ms-auto" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Nueva publicacion</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva publicacion</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Mensaje:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                  </div>
+                <div class="botones d-flex">
+                  <button type="button" class="me-2"><i class="fa-solid fa-camera-retro"></i></button>
+                  <button type="button"><i class="fa-solid fa-location-dot"></i></button>
+                </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Publicar</button>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-gear"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item active" href="#">Perfil</a></li>
+            <li><a class="dropdown-item" href="#">Accesibilidad</a></li>
+            <li><a class="dropdown-item" href="#">Datos y privacidad</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#">Salir</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+      <div class="container">
+        <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa-solid fa-window-restore"></i></button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fa-regular fa-window-restore"></i></button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+            <div class="container d-flex justify-content-center col-6">
+              <img src="https://cdn.pixabay.com/photo/2024/02/26/19/39/monochrome-image-8598798_640.jpg" class="img-thumbnail" alt="...">
+              <img src="https://cdn.pixabay.com/photo/2023/12/06/21/07/photo-8434386_1280.jpg" class="img-thumbnail" alt="...">
+              <img src="https://cdn.pixabay.com/photo/2015/02/09/14/31/blonde-629726_1280.jpg" class="img-thumbnail" alt="..."> 
+            </div>
+            <div class="container d-flex justify-content-center col-6">
+              <img src="https://cdn.pixabay.com/photo/2023/04/06/09/39/camera-7903435_1280.jpg" class="img-thumbnail" alt="...">
+              <img src="https://cdn.pixabay.com/photo/2014/02/02/17/40/photos-256887_1280.jpg" class="img-thumbnail" alt="...">
+              <img src="https://cdn.pixabay.com/photo/2016/05/17/22/16/baby-1399332_1280.jpg" class="img-thumbnail" alt="..."> 
+            </div>
+          </div>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+            <div class="container my-3 col-6 border">
+              <div class="titulo d-flex justify-content-between">
+                <h1 class="my-auto">El Huskey siveriano</h1>
+                <p>8/26</p>
+              </div>
+              <img src="https://cdn.pixabay.com/photo/2024/02/26/19/39/monochrome-image-8598798_640.jpg" class="img-thumbnail" alt="...">
+              <strong class="me-10">204 Me gusta</strong>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maxime, explicabo rerum sequi odit voluptates adipisci ut, totam labore ex iste dolorem tenetur, vitae itaque fugiat laborum? Natus, esse asperiores?</p>
+            </div>
+            <div class="container my-3 col-6 border">
+              <div class="titulo d-flex justify-content-between">
+                <h1 class="my-auto">Cascada</h1>
+                <p>8/26</p>
+              </div>
+              <img src="https://cdn.pixabay.com/photo/2023/12/06/21/07/photo-8434386_1280.jpg" class="img-thumbnail" alt="...">
+              <strong class="me-10">204 Me gusta</strong>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maxime, explicabo rerum sequi odit voluptates adipisci ut, totam labore ex iste dolorem tenetur, vitae itaque fugiat laborum? Natus, esse asperiores?</p>
+
+            </div>
+            <div class="container my-3 col-6 border">
+              <div class="titulo d-flex justify-content-between">
+                <h1 class="my-auto">La fotografia</h1>
+                <p>8/26</p>
+              </div>
+              <img src="https://cdn.pixabay.com/photo/2015/02/09/14/31/blonde-629726_1280.jpg" class="img-thumbnail" alt="...">
+              <strong class="me-10">204 Me gusta</strong>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maxime, explicabo rerum sequi odit voluptates adipisci ut, totam labore ex iste dolorem tenetur, vitae itaque fugiat laborum? Natus, esse asperiores?</p>
+
+            </div>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
