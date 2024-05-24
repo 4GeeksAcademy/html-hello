@@ -4,6 +4,8 @@ El boilerplate más básico para cualquier estudiante de 4Geeks Academy, empieza
 
 > Tienes un video tutorial sobre [cómo usar esta plantilla para crear tu primer sitio web aquí](https://youtu.be/dfbDCMu_p-0).
 
+MIRA EL TUTORIAL!
+
 ## ¿Qué hacer a continuación?
 
 Crea un archivo `index.html` con [la estructura básica de HTML](https://4geeks.com/es/lesson/what-is-html-learn-html-es#estructura-de-pgina) y ve el resultado en vivo corriendo un servidor web utilizando el siguiente comando:
