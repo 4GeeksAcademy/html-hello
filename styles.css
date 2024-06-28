@@ -1,0 +1,9 @@
+img {
+
+    object-fit: cover;
+}
+
+.fondo {
+
+    background-image: url(fotos/Cynthia/Archivo_000.jpeg);
+}
