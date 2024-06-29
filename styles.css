@@ -3,7 +3,49 @@ img {
     object-fit: cover;
 }
 
-.fondo {
 
+
+.fondo-completo {
     background-image: url(fotos/Cynthia/Archivo_000.jpeg);
-}
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+  }
+  
+  .merriweather-black {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  
+  .navbar-custom {
+    background: url('fotos/Cynthia/Archivo_013.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f1c40f; 
+    border-bottom: 5px solid #34495e; 
+    position: relative;
+   
+  }
+  
+  .navbar-custom h1 {
+    color: #f1c40f; 
+    margin: 0;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+  
+ 
+ 
+  
+  
