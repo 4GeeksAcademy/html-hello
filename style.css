@@ -1,0 +1,60 @@
+#headings {
+    /* Para centrar el contenido horizontalmente */
+    text-align: center;
+}
+
+#post {
+    max-width: 400px;
+    margin: 0 auto; /* Centra el contenedor horizontalmente en la página */
+}
+
+#row {
+    display: inline-block; /* Hace que el elemento se comporte como texto */
+    text-align: left; /* Alinea los elementos hijos a la izquierda dentro del inline-block */
+}
+
+.titles {
+    display: inline-block;
+    vertical-align: middle; /* Alinea verticalmente al centro */
+    margin-left: 10px;
+}
+
+.icons {
+    font-size: 3.5rem;
+    margin: 0 auto; /* Intenta centrar horizontalmente dentro del contenedor */
+    display: block;
+}
+
+.fa-ellipsis-vertical {
+    font-size: 2.5rem;
+    float: right; /* Para mover el ícono al borde derecho del contenedor */
+}
+
+.fa-html5 {
+    font-size: 2rem;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 0.75rem;
+}
+
+#buttons {
+    /* Usando márgenes automáticos y display block para centrar */
+    display: block;
+    width: fit-content;
+    margin: 0.8rem auto; /* Centra el contenedor horizontalmente */
+    text-align: center;
+}
+
+#text {
+    margin: 0.8rem;
+}
