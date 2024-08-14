@@ -1,33 +1,38 @@
+*{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #headings {
-    /* Para centrar el contenido horizontalmente */
-    text-align: center;
+    text-align: space-between;
+    width: 500px;
 }
 
 #post {
     max-width: 400px;
-    margin: 0 auto; /* Centra el contenedor horizontalmente en la página */
+    margin: 0 auto; 
 }
 
 #row {
-    display: inline-block; /* Hace que el elemento se comporte como texto */
-    text-align: left; /* Alinea los elementos hijos a la izquierda dentro del inline-block */
+    display: inline-block; 
+    text-align: left; 
 }
 
 .titles {
     display: inline-block;
-    vertical-align: middle; /* Alinea verticalmente al centro */
+    vertical-align: middle; 
     margin-left: 10px;
 }
 
 .icons {
     font-size: 3.5rem;
-    margin: 0 auto; /* Intenta centrar horizontalmente dentro del contenedor */
+    margin: 0 auto; 
     display: block;
 }
 
 .fa-ellipsis-vertical {
-    font-size: 2.5rem;
-    float: right; /* Para mover el ícono al borde derecho del contenedor */
+    font-size: 1.3rem;
+    float:inline-end; 
 }
 
 .fa-html5 {
@@ -48,13 +53,21 @@ h2 {
 }
 
 #buttons {
-    /* Usando márgenes automáticos y display block para centrar */
-    display: block;
-    width: fit-content;
-    margin: 0.8rem auto; /* Centra el contenedor horizontalmente */
-    text-align: center;
+    display: block ruby;
+    margin: 0.8rem auto; 
+    width: 500px;
+    padding-bottom: 1rem;
 }
 
 #text {
     margin: 0.8rem;
+}
+
+.fa-heartplanecomment {
+    float: inline-start;
+    padding-right: 100px;
+}
+
+.fa-mark {
+    float: inline-end;
 }
