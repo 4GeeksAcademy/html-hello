@@ -1,47 +1,39 @@
-*{
+* {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 #headings {
-    text-align: space-between;
-    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
 }
 
 #post {
-    max-width: 400px;
+    max-width: 90%;
     margin: 0 auto; 
 }
 
 #row {
-    display: inline-block; 
-    text-align: left; 
+    display: flex;
+    align-items: center; 
 }
 
 .titles {
-    display: inline-block;
-    vertical-align: middle; 
     margin-left: 10px;
 }
 
 .icons {
     font-size: 3.5rem;
-    margin: 0 auto; 
-    display: block;
 }
 
 .fa-ellipsis-vertical {
     font-size: 1.3rem;
-    float:inline-end; 
 }
 
 .fa-html5 {
-    font-size: 2rem;
-}
-
-h1,
-h2 {
-    margin: 0;
+    font-size: 3rem;
 }
 
 h1 {
@@ -53,21 +45,20 @@ h2 {
 }
 
 #buttons {
-    display: block ruby;
+    display: flex;
+    justify-content: space-between;
     margin: 0.8rem auto; 
-    width: 500px;
+    max-width: 100%;
     padding-bottom: 1rem;
 }
 
 #text {
     margin: 0.8rem;
+    max-width: 100%;
 }
 
-.fa-heartplanecomment {
-    float: inline-start;
-    padding-right: 100px;
-}
-
-.fa-mark {
-    float: inline-end;
+.fa-heartplanecomment, .fa-mark {
+    display: flex;
+    align-items: center;
+    align-content: space-between;
 }
