@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    display: grid;
+    place-content: center;
+}
+
 #headings {
     display: flex;
     justify-content: space-between;
