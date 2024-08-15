@@ -44,6 +44,11 @@ h2 {
     font-size: 0.75rem;
 }
 
+img {
+    display: grid;
+    place-content: center;
+}
+
 #buttons {
     display: flex;
     justify-content: space-between;
