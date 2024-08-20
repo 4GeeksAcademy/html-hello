@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
 	margin: 0;
 	background-color: white;
@@ -5,3 +6,80 @@ body {
 .card-header{
   background: #c9ddff;
 }
+=======
+* {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-content: center;
+}
+
+#headings {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+#post {
+    max-width: 90%;
+    margin: 0 auto; 
+}
+
+#row {
+    display: flex;
+    align-items: center; 
+}
+
+.titles {
+    margin-left: 10px;
+}
+
+.icons {
+    font-size: 3.5rem;
+}
+
+.fa-ellipsis-vertical {
+    font-size: 1.3rem;
+    padding-top: 15px;
+}
+
+.fa-html5 {
+    font-size: 3rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 0.75rem;
+}
+
+img {
+    display: grid;
+    place-content: center;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8rem auto; 
+    max-width: 100%;
+    padding-bottom: 1rem;
+}
+
+#text {
+    margin: 0.8rem;
+    max-width: 100%;
+}
+
+.fa-heartplanecomment, .fa-mark {
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+}
+>>>>>>> 51095cf6789bae960f3f2ed4bc3322ad43f67450
