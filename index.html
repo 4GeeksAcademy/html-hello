@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Card</title>
+</head>
+<body>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10 offset-md-1">
+            <!-- form complex example -->
+            <div class="card card-outline-secondary">
+                <div class="card-header">
+                    <h3 class="mb-0">Payment form example</h3>
+                </div>
+                <div class="card-body">
+                    <div id="error-msg" class="alert alert-danger">Some fields are missing</div>
+            <form  method="post" action="#">
+                      <div class="row mt-4">
+                        <div class="col-sm-5 pb-3">
+                            <label for="exampleAccount">Card #</label> 
+                            <input class="form-control" id="exampleAccount" placeholder="XXXXXXXXXXXXXXXX" type="text">
+                        </div>
+                        <div class="col-sm-3 pb-3">
+                            <label for="exampleCtrl">CVC #</label> 
+                            <input class="form-control" id="exampleCtrl" placeholder="0000" type="text">
+                        </div>
+                        <div class="col-sm-4 pb-3">
+                            <label for="exampleAmount">Amount</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <input class="form-control" id="exampleAmount" placeholder="Amount" type="number">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 pb-3">
+                            <label for="exampleFirst">First Name</label> 
+                            <input class="form-control" id="exampleFirst" type="text">
+                        </div>
+                        <div class="col-sm-6 pb-3">
+                            <label for="exampleLast">Last Name</label> 
+                            <input class="form-control" id="exampleLast" type="text">
+                        </div>
+                        <div class="col-sm-6 pb-3">
+                            <label for="exampleCity">City</label> <input class="form-control" id="exampleCity" type="text">
+                        </div>
+                        <div class="col-sm-3 pb-3">
+                            <label for="exampleSt">State</label> <select class="form-control custom-select" id="exampleSt">
+                            <option class="text-white bg-warning">
+                                Pick a state
+                            </option>
+                            <option value="AL">
+                                Alabama
+                            </option>
+                            <option value="AK">
+                                Alaska
+                            </option>
+                            <option value="AZ">
+                                Arizona
+                            </option>
+                            <option value="AR">
+                                Arkansas
+                            </option>
+                            <option value="CA">
+                                California
+                            </option>
+                            <option value="CO">
+                                Colorado
+                            </option>
+                            <option value="CT">
+                                Connecticut
+                            </option>
+                            <option value="DE">
+                                Delaware
+                            </option>
+                            <option value="DC">
+                                District Of Columbia
+                            </option>
+                            <option value="FL">
+                                Florida
+                            </option>
+                            <option value="GA">
+                                Georgia
+                            </option>
+                            <option value="HI">
+                                Hawaii
+                            </option>
+                            <option value="ID">
+                                Idaho
+                            </option>
+                            <option value="IL">
+                                Illinois
+                            </option>
+                            <option value="IN">
+                                Indiana
+                            </option>
+                            <option value="IA">
+                                Iowa
+                            </option>
+                            <option value="KS">
+                                Kansas
+                            </option>
+                            <option value="KY">
+                                Kentucky
+                            </option>
+                            <option value="LA">
+                                Louisiana
+                            </option>
+                            <option value="ME">
+                                Maine
+                            </option>
+                            <option value="MD">
+                                Maryland
+                            </option>
+                            <option value="MA">
+                                Massachusetts
+                            </option>
+                            <option value="MI">
+                                Michigan
+                            </option>
+                            <option value="MN">
+                                Minnesota
+                            </option>
+                            <option value="MS">
+                                Mississippi
+                            </option>
+                            <option value="MO">
+                                Missouri
+                            </option>
+                            <option value="MT">
+                                Montana
+                            </option>
+                            <option value="NE">
+                                Nebraska
+                            </option>
+                            <option value="NV">
+                                Nevada
+                            </option>
+                            <option value="NH">
+                                New Hampshire
+                            </option>
+                            <option value="NJ">
+                                New Jersey
+                            </option>
+                            <option value="NM">
+                                New Mexico
+                            </option>
+                            <option value="NY">
+                                New York
+                            </option>
+                            <option value="NC">
+                                North Carolina
+                            </option>
+                            <option value="ND">
+                                North Dakota
+                            </option>
+                            <option value="OH">
+                                Ohio
+                            </option>
+                            <option value="OK">
+                                Oklahoma
+                            </option>
+                            <option value="OR">
+                                Oregon
+                            </option>
+                            <option value="PA">
+                                Pennsylvania
+                            </option>
+                            <option value="RI">
+                                Rhode Island
+                            </option>
+                            <option value="SC">
+                                South Carolina
+                            </option>
+                            <option value="SD">
+                                South Dakota
+                            </option>
+                            <option value="TN">
+                                Tennessee
+                            </option>
+                            <option value="TX">
+                                Texas
+                            </option>
+                            <option value="UT">
+                                Utah
+                            </option>
+                            <option value="VT">
+                                Vermont
+                            </option>
+                            <option value="VA">
+                                Virginia
+                            </option>
+                            <option value="WA">
+                                Washington
+                            </option>
+                            <option value="WV">
+                                West Virginia
+                            </option>
+                            <option value="WI">
+                                Wisconsin
+                            </option>
+                            <option value="WY">
+                                Wyoming
+                            </option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 pb-3">
+                            <label for="exampleZip">Postal Code</label> 
+                            <input class="form-control" id="exampleZip" type="text">
+                        </div>
+                        <div class="col-md-6 pb-3">
+                            <p for="exampleAccount">We accept:</p>
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" checked id="blue" name="options" type="radio">
+                                    <i class="fab fa-cc-mastercard"></i>
+                                </label> 
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" id="red" name="options" type="radio">
+                                    <i class="fab fa-cc-visa"></i>
+                                </label> 
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" id="green" name="options" type="radio">
+                                    <i class="fab fa-cc-diners-club"></i>
+                                </label> 
+                                <label class="btn btn-secondary">
+                                    <input autocomplete="off" id="yellow" name="options" type="radio">
+                                    <i class="fab fa-cc-amex"></i>
+                                </label> 
+                            </div>
+                        </div>
+                        <div class="col-md-6 pb-3">
+                            <label for="exampleMessage">Message</label> 
+                            <textarea class="form-control" id="complexExampleMessage" rows="3"></textarea> 
+                            <small class="text-muted">Add any notes here.</small>
+                        </div>
+                    </div>
+            </form>
+                </div>
+                <div class="card-footer">
+                    <div class="float-right">
+              <button class="btn btn-secondary" type="reset">Cancel</button> 
+                        <button id="sendForm" class="btn btn-primary" type="button" />Send</button>
+                    </div>
+                </div>
+            </div><!--/card-->
+        </div>
+    </div><!--/row-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
