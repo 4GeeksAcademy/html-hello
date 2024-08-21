@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-10 offset-md-1">
+      <div class="container" display="flex">
+            <div class="card text">
+              <h5 class="card-header">Payment form example</h5>
+              <div class="card-body">
+                <div class="alert alert-danger" role="alert">
+                    Some fields are missing
+                </div>
+              
+                  <form class="row g-4 needs-validation" novalidate>
+                      <div class="row g-3">
+                          <div class="col-sm-5">
+                              <label for="Card">Card #</label>
+                            <input type="card" class="form-control" placeholder="xxxxxxxxxxxxxxxx" />
+                          </div>
+                          <div class="col-sm-3">
+                              <label for="CVC">CVC #</label>
+                            <input type="text" class="form-control" placeholder="CVC" />
+                          </div>
+                          <div class="col-sm-4">
+                              <label for="Amount">Amount</label>
+                            <input type="text" class="form-control" placeholder="Amount" />
+                          </div>
+                      </div>
+                      <div class="col-md-6 position-relative">
+                        <label for="validationTooltip01" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="validationTooltip01"  required>
+                        <div class="valid-tooltip">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-6 position-relative">
+                        <label for="validationTooltip02" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="validationTooltip02" required>
+                        <div class="valid-tooltip">
+                          Looks good!
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6 position-relative">
+                        <label for="validationTooltip03" class="form-label">City</label>
+                        <input type="text" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                          Please provide a valid city.
+                        </div>
+                      </div>
+                      <div class="col-md-3 position-relative">
+                        <label for="validationTooltip04" class="form-label">State</label>
+                        <select class="form-select" id="validationTooltip04" required>
+                          <option selected disabled value="">Pick a state</option>
+                          <option value="Stgo">
+                            Santiago
+                          </option>
+                          <option value="Conce">
+                            Concepción
+                          </option>
+                          <option value="NCTO">
+                            Nacimiento
+                          </option>
+                          <option value="VA">
+                            Valdivia
+                          </option>
+                          <option value="PM">
+                            Puerto Montt
+                          </option>
+                        </select>
+                        <div class="invalid-tooltip">
+                          Please select a valid state.
+                        </div>
+                      </div>
+                      <div class="col-md-3 position-relative">
+                        <label for="validationTooltip05" class="form-label">Postal Code</label>
+                        <input type="text" class="form-control" id="validationTooltip05" required>
+                        <div class="invalid-tooltip">
+                          Please provide a valid zip.
+                        </div>
+                      </div>
+                  
+                      <div class="col-md-6 pb-3">
+                        <p for="exampleAccount">We accept:</p>
+                        <div class="btn-group" data-toggle="buttons">
+                          <label class="btn btn-secondary">
+                            <input autocomplete="off" checked id="blue" name="options" type="radio">
+                            <i class="fab fa-cc-mastercard"></i>
+                          </label> 
+                          <label class="btn btn-secondary">
+                            <input autocomplete="off" id="red" name="options" type="radio">
+                            <i class="fab fa-cc-visa"></i>
+                          </label> 
+                          <label class="btn btn-secondary">
+                            <input autocomplete="off" id="green" name="options" type="radio">
+                            <i class="fab fa-cc-diners-club"></i>
+                          </label> 
+                          <label class="btn btn-secondary">
+                            <input autocomplete="off" id="yellow" name="options" type="radio">
+                            <i class="fab fa-cc-amex"></i>
+                          </label> 
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="exampleMessage">Message</label> 
+                        <textarea class="form-control" id="complexExampleMessage" rows="3"></textarea> 
+                        <small class="text-muted">Add any notes here.</small>
+                      </div>
+                      </div>
+                      <div class="card-footer text-muted">
+                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                              <button class="btn btn-secondary me-md-2" type="button">Cancel</button>
+                              <button class="btn btn-primary" type="button">Send</button>
+                          </div>
+                      </div>
+                    </form>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</html>
