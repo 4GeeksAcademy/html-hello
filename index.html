@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form Example</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/02c061fd32.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-d0kFH4p7pS9/qNfKfJ5+RbgzO0sY0NqkCnFURvB8WqPntxj+dE8jtgC0dF5UgkGGJ0U3hOOfEYF1z4di0lfXAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .payment-icons {
+            background-color: #6c757d;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .payment-icons i {
+            margin: 0 5px;
+            color: #fff;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Payment form example
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger" role="alert">
+                    Some fields are missing
+                </div>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="cardNumber">Card #</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="XXXXXXXXXXXXXXXX">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="cvcNumber">CVC #</label>
+                            <input type="text" class="form-control" id="cvcNumber" placeholder="0000">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="$ amount"> $ Amount</label>
+                            <input type="text" class="form-control" id="$ amount" placeholder="$ Amount">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="state">State</label>
+                            <select id="state" class="form-control">
+                                <option selected>Pick a state</option>
+                                <option>Oregon</option>
+                                <option>Florida</option>
+                                <option>Texas</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="postalCode">Postal Code</label>
+                            <input type="text" class="form-control" id="postalCode">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3 row-">
+                            <p>We accept:</p>
+                            <div class="payment-icons d-flex">
+                                <div class="payment-icon">
+                                    <input type="radio" name="paymentMethod" id="visa" value="visa">
+                                    <label for="visa"><i class="fab fa-cc-visa fa-2x"></i></label>
+                                </div>
+                                <div class="payment-icon">
+                                    <input type="radio" name="paymentMethod" id="mastercard" value="mastercard">
+                                    <label for="mastercard"><i class="fab fa-cc-mastercard fa-2x"></i></label>
+                                </div>
+                                <div class="payment-icon">
+                                    <input type="radio" name="paymentMethod" id="amex" value="amex">
+                                    <label for="amex"><i class="fab fa-cc-amex fa-2x"></i></label>
+                                </div>
+                                <div class="payment-icon">
+                                    <input type="radio" name="paymentMethod" id="discover" value="discover">
+                                    <label for="discover"><i class="fab fa-cc-discover fa-2x"></i></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6" style="margin-left: 255px;">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="3" cols="3"></textarea>
+                            Add any notes here.
+                        </div>
+                       
+                    </div>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>     
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
