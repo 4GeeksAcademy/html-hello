@@ -1,0 +1,98 @@
+body {
+    background-color: lightgrey;
+}
+img {
+    margin: 0px 0px 0px 415px;
+    height: 250px;
+    width:450px
+}
+.instagram {
+    background-color: white;
+    height: 80px;
+    padding-top: 2px;
+    text-align: center;
+}
+.firstphoto {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    height: 75px;
+    margin-left: 415px;
+    margin-right: 415px;
+
+}  
+
+.fecha1 { 
+    margin-left: 370px;
+    margin-right: 370px;
+
+}
+
+.textogato {
+    background-color: white;
+    margin-top: -1%;
+    margin-inline: 415px;
+    padding: 20px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.secondphoto {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    height: 75px;
+    margin-left: 415px;
+    margin-right: 415px;
+}
+.fecha2 { 
+    margin-left: 370px;
+    margin-right: 370px;
+}
+.textobm {
+    background-color: white;
+    margin-top: -1%;
+    margin-inline: 415px;
+    padding: 20px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.thirdphoto {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    height: 75px;
+    margin-left: 415px;
+    margin-right: 415px;
+}
+.fecha3 { 
+    margin-left: 370px;
+    margin-right: 370px;
+}
+.textotabla {
+    background-color: white;
+    margin-top: -1%;
+    margin-inline: 415px;
+    padding: 20px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.fourthphoto {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    height: 75px;
+    margin-left: 415px;
+    margin-right: 415px;  
+}
+.fecha4 { 
+    margin-left: 370px;
+    margin-right: 370px;
+}
+.textoalcala {
+    background-color: white;
+    margin-top: -1%;
+    margin-inline: 415px;
+    padding: 20px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
