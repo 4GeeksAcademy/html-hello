@@ -3,5 +3,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "workbench.editorAssociations": {   
         "*.md": "vscode.markdown.preview.editor"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
     }
 }

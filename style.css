@@ -19,15 +19,17 @@ img {
     height: 75px;
     margin-left: 415px;
     margin-right: 415px;
-
 }  
-
-.fecha1 { 
-    margin-left: 370px;
-    margin-right: 370px;
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px
+}
+span { 
+    margin: 0px;
 
 }
-
 .textogato {
     background-color: white;
     margin-top: -1%;
@@ -43,10 +45,6 @@ img {
     height: 75px;
     margin-left: 415px;
     margin-right: 415px;
-}
-.fecha2 { 
-    margin-left: 370px;
-    margin-right: 370px;
 }
 .textobm {
     background-color: white;
@@ -64,10 +62,6 @@ img {
     margin-left: 415px;
     margin-right: 415px;
 }
-.fecha3 { 
-    margin-left: 370px;
-    margin-right: 370px;
-}
 .textotabla {
     background-color: white;
     margin-top: -1%;
@@ -82,11 +76,7 @@ img {
     font-size: medium;
     height: 75px;
     margin-left: 415px;
-    margin-right: 415px;  
-}
-.fecha4 { 
-    margin-left: 370px;
-    margin-right: 370px;
+    margin-right: 415px; 
 }
 .textoalcala {
     background-color: white;
