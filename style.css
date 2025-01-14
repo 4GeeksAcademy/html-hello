@@ -1,6 +1,26 @@
 body {
     background-color: lightgrey;
 }
+
+.contenedor {
+
+display: flex;
+justify-content: center;
+}
+.encabezado {
+
+    width: 450px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin-left: 415px;
+
+}
+.photo {
+
+   
+}
 img {
     margin: 0px 0px 0px 415px;
     height: 250px;
