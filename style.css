@@ -1,0 +1,39 @@
+body {
+    background-color: lightgrey;
+    margin: 0;
+}
+
+.post {
+width: 500px;
+margin: 0 auto 10px auto;
+height: 430px;
+background-color: white;
+}
+
+.encabezado {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post_img {  
+    height: 250px;
+    width: 500px
+}
+
+.cabecera {
+    background-color: white;
+    height: 80px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.texto_post {
+    background-color: white;
+    padding: 10px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
