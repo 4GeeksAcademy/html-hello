@@ -1,0 +1,137 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: darkwhite;
+    font-family: Arial, sans-serif;
+    color: #111;
+}
+
+
+.navbar-brand svg {
+    height: 22px;
+    width: 22px;
+}
+
+/* Menú derecho */
+/* .collapse-navbar-collapse {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+} */
+
+.collapse-navbar-collapse ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+/* Botones de vista */
+.container-botones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Contenedor de fotos en cuadrícula (usa bootstrap cols) */
+.container-fotos-grid {
+  max-width: 980px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.container-fotos-grid img,
+.container-fotos-grid .foto {
+  width: 100%;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/*Efecto al pasar el ratón */
+.container-fotos-grid img:hover,
+.container-fotos-grid .foto:hover {
+  transform: scale(1.05); /* agranda ligeramente */
+  box-shadow: 0 0 15px #0ff; /* glow estilo neón */
+  border: 2px solid #0ff; /* borde resaltado */
+}
+
+/* Fotos en scroll */
+.container-fotos-grid img,
+.container-fotos-grid .col-6 img,
+.container-fotos-grid .col-md-4 img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    min-height: 220px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container-fotos-grid img {
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-fotos-grid img {
+        min-height: 140px;
+    }
+}
+/* Fotos en scroll (cards) */
+.container-fotos-scroll {
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 12px;
+    box-sizing: border-box;
+    max-height: 80vh;
+}
+
+.container-fotos-scroll .card {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    width: 100% !important;
+    max-width: 100%;
+}
+
+.container-fotos-scroll .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+}
+
+.container-fotos-scroll img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 480px;
+    object-fit: cover;
+}
+
+.card .card-body {
+    padding: 12px 14px;
+}
+
+.scroll-img {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!--Barra de Nav-->
+    <nav class="navbar navbar-expand-lg bg-light mb-4">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-start">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                </svg>
+                <a class="navbar-brand" href="#">Instagram</a>
+            </div>
+            <div class="d-flex justify-content-end" -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Subir nuevo Post
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel"><strong>Subir nuevo Post</strong>
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="message-text" class="col-form-label">Message:</label>
+                                        <textarea class="form-control" id="message-text"></textarea>
+                                        <div>
+                                            <button class="btn">
+                                                <i class="fa-solid fa-camera"></i>
+                                            </button>
+                                            <button class="btn">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer bi bi-camera2 bi bi-geo-alt-fill">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Publicar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item dropdown">
+                            <!-- Engranaje -->
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-gear"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                <li><a class="dropdown-item" href="#">Configuracion</a></li>
+                                <li><a class="dropdown-item" href="#">101</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="iconos">
+    </div>
+    </nav>
+    <ul class="nav nav-tabs d-flex justify-content-center border border-0" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><i
+                    class="fa-solid fa-table-cells" style="color: [_]#000000;"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><i
+                    class="fa-solid fa-square" style="color: [_]#000000;"></i></button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0">
+
+            <!--1er Contenedor fotos Cuadricula-->
+            <div id="gridView" class="container-fotos-grid">
+                <div class="row">
+                    <div class="col-6 col-md-4 mb-3"><img
+                            src="https://th.bing.com/th/id/OIP.aB0lS-XosxpfVh8tVa5R3wHaEK?w=304&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
+                            alt="foto"></div>
+                    <div class="col-6 col-md-4 mb-3"><img
+                            src="https://th.bing.com/th/id/OIP.uJ7cwBtDYUiSNByIelxKaQHaEA?w=263&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
+                            alt="foto"></div>
+                    <div class="col-6 col-md-4 mb-3"><img
+                            src="https://th.bing.com/th/id/OIP.YYP7cC_U2McTvYwBnSMpfgHaKe?w=115&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
+                            alt="foto"></div>
+                    <div class="col-6 col-md-4 mb-3"><img
+                            src="https://th.bing.com/th/id/OIP.7lNQhGWxOYhLgZ7_z3oRbwHaEK?w=271&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
+                            alt="foto"></div>
+                    <div class="col-6 col-md-4 mb-3"><img
+                            src="https://th.bing.com/th/id/OIP.nbwA6CqjTmRk-NbN8keSYwHaE8?w=221&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
+                            alt="foto"></div>
+                    <div class="col-6 col-md-4 mb-3"><img
+                            src="https://th.bing.com/th/id/OIP.nyUaXcjdOnSwsjQc1zdRpAHaEK?w=322&h=181&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
+                            alt="foto"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <!--2do Contenedor fotos scroll-->
+            <div id="scrollView" class="container-fotos-scroll">
+                <div class="scroll-img">
+                    <div class="card" style="width: 18rem;">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="card-title">Joi</h3>
+                            <p> 04/12</p>
+                        </div>
+                        <img
+                            src="https://th.bing.com/th/id/OIP.aB0lS-XosxpfVh8tVa5R3wHaEK?w=304&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3">
+                        <div class="card-body">
+                            <p class="scroll-p"><strong>101Likes</strong> <br> <em>“I’m so happy when I’m with
+                                    you.”</em></p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="card-title">Cyborg</h3>
+                            <p> 10/11</p>
+                        </div>
+                        <img
+                            src="https://th.bing.com/th/id/OIP.uJ7cwBtDYUiSNByIelxKaQHaEA?w=263&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3">
+                        <div class="card-body">
+                            <p class="card-text"> <strong>101Likes</strong> <br> “The net is vast and infinite.” </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="card-title">Neo</h3>
+                            <p> 22/10</p>
+                        </div>
+                        <img
+                            src="https://th.bing.com/th/id/OIP.YYP7cC_U2McTvYwBnSMpfgHaKe?w=115&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3">
+                        <div class="card-body">
+                            <p class="scroll-p"><strong>101Likes</strong> <br><em>“I know kung fu.”</em></p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="card-title">Lucy</h3>
+                            <p> 15/10</p>
+                        </div>
+                        <img
+                            src="https://th.bing.com/th/id/OIP.7lNQhGWxOYhLgZ7_z3oRbwHaEK?w=271&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3">
+                        <div class="card-body">
+                            <p class="scroll-p"><strong>101Likes</strong> <br><em>- “Night City’s not a place you leave…
+                                    it’s a place that leaves you.”</em></p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="card-title">Hacker</h3>
+                            <p> 01/10</p>
+                        </div>
+                        <img src="https://th.bing.com/th/id/OIP.nbwA6CqjTmRk-NbN8keSYwHaE8?w=221&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
+                            alt="foto">
+                        <div class="card-body">
+                            <p class="scroll-p"><strong>101Likes</strong> <br><em>"Lo único que te ofrezco es la verdad,
+                                    nada más.”</em>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="card-title">Motoko</h3>
+                            <p> 20/09</p>
+                        </div>
+                        <img src="https://th.bing.com/th/id/OIP.nyUaXcjdOnSwsjQc1zdRpAHaEK?w=322&h=181&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"
+                            alt="foto">
+                        <div class="card-body">
+                            <p class="scroll-p"> <strong>101Likes</strong> <br> <em>“If a technological feat is
+                                    possible, man
+                                    will do it. Almost as if it’s wired into
+                                    the core of our being.”</em></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
