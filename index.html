@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Hello, world!</title>
+    <style>
+
+      .nav-link {
+        color: lightgray; 
+      }
+      .nav-link .active, .nav-link:focus, .nav-link:hover{
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="d-flex bd-highlight bg">
+                <div class="p-2 flex-grow-1 bd-highlight fs-5"><i class="fa-brands fa-instagram mx-1"></i>Instagram</div>
+                <!--<div class="p-2 bd-highlight"> -->
+                  <button type="button" class="btn btn-success px-2 py-2 my-2" data-bs-toggle="modal" data-bs-target="#modal-new-post" data-whatever="@getbootstrap">Create a new post</button>
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle m-2 py-2 px-3" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa-solid fa-gear"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Profile</a>
+                      <a class="dropdown-item" href="#">Accesibility</a>
+                      <a class="dropdown-item" href="#">Privacy and Data</a>
+                      <hr>
+                      <a class="dropdown-item text-danger " href="#">Log out</a>
+                    </div>
+                  </div>
+
+                  
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+        <!--<div class="row"> 
+          <div class="d-flex bd-highlight justify-content-center">
+          </div>
+        </div> 
+      -->
+        <nav class="nav justify-content-center flex-column flex-md-row">
+          <a class="nav-link" href="#list" data-bs-toggle="tab"> <i class="fa-solid fa-table-cells"></i></a>
+          <a class="nav-link active" href="#detail" data-bs-toggle="tab"> <i class="fa-solid fa-square"></i> </a>
+        </nav>
+        <div class="tab-content py-5"> 
+          <div class="tab-pane active" id="detail">
+            <div class="d-flex justify-content-center py-2" >
+              <div class="card" style="width: 48rem;">
+                <h5 class="card-header d-flex justify-content-between align-items-center bg-white my-2 border-bottom-0">
+                  <span class="fs-4 fw-light">My Crazy dog Spark! </span>
+                  <span class="text-secondary fw-lighter fs-6 mb-3">08/26</span>
+                </h5>
+
+                <!--<h5 class="card-header bg-white my-2">Card title</h5>
+                <h5 class="card-header mx-4">Card title</h5>-->
+                <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                <div class="card-body">
+                  <h6 class="card-subtitle my-2">
+                    <span class="fs-6 fw-bolder">221 Likes</span>
+                  </h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center py-2" >
+              <div class="card" style="width: 48rem;">
+                <h5 class="card-header d-flex justify-content-between align-items-center bg-white my-2 border-bottom-0">
+                  <span class="fs-4 fw-light">My Crazy dog Spark! </span>
+                  <span class="text-secondary fw-lighter fs-6 mb-3">08/26</span>
+                </h5>
+                <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                <div class="card-body">
+                  <h6 class="card-subtitle my-2">
+                    <span class="fs-6 fw-bolder">321 Likes</span>
+                  </h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center py-2" >
+              <div class="card" style="width: 48rem;">
+                <h5 class="card-header d-flex justify-content-between align-items-center bg-white my-2 border-bottom-0">
+                  <span class="fs-4 fw-light">My Crazy dog Spark! </span>
+                  <span class="text-secondary fw-lighter fs-6 mb-3">08/26</span>
+                </h5>
+                <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                <div class="card-body">
+                  <h6 class="card-subtitle my-2">
+                    <span class="fs-6 fw-bolder">421 Likes</span>
+                  </h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="tab-pane" id="list">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="card col-4 p-2 border-0" >
+                  <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid img-fluid max-width: 100%" alt="...">
+                </div>
+                <div class="card col-4 p-2 border-0">
+                  <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                </div>
+                <!-- <div class="card" style="width: 48rem;"> -->
+                <div class="card col-4 p-2 border-0">
+                  <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                </div>
+              </div>
+              <div class="row">
+                <div class="card col-4 p-2 border-0">
+                  <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                </div>
+                <!-- <div class="card" style="width: 48rem;"> -->
+                <div class="card col-4 p-2 border-0">
+                  <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                </div>
+                <div class="card col-4 p-2 border-0">
+                  <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                </div>
+              </div>
+              <div class="row">
+                <div class="card col-4 p-2 border-0">
+                  <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                </div>
+                <!-- <div class="card" style="width: 48rem;"> -->
+                <div class="card col-4 p-2 border-0">
+                  <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                </div>
+                <div class="card col-4 p-2 border-0">
+                  <img src="/bulldog-1047518_640.jpg" class="card-img-top-img-fluid" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+
+          <!--  MODAL NEW POST -->
+
+          <div class="modal fade" id="modal-new-post" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header py-1 px3">
+                  <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+                  <button type="button" class="close rounded border-0 fs-2 bg-white" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label fw-bolder">Caption:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                    <div class="form-group py-2">
+                      <button type="button" class="btn btn-lg btn-outline-secondary"><i class="fa-solid fa-camera"></i></button>
+                      <button type="button" class="btn btn-lg btn-outline-secondary"><i class="fa-solid fa-location-dot"></i></button>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-success">Publish</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--  FIN MODAL NEW POST -->
+
+        </div>
+        
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
