@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito | ARCA Studio</title>
+    <meta
+      name="description"
+      content="Revisa tu carrito de compras en ARCA Studio con detalle de productos, cantidades y totalizacion completa."
+    />
+    <meta
+      name="keywords"
+      content="carrito de compras, checkout, subtotal, impuestos, tienda online moda, ARCA Studio"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="ARCA Studio" />
+    <meta property="og:title" content="Carrito | ARCA Studio" />
+    <meta
+      property="og:description"
+      content="Confirma tus productos, cantidades y total antes de comprar en ARCA Studio."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      :root {
+        --sand: #f7f2eb;
+        --ink: #111111;
+        --brick: #c85a3f;
+        --forest: #2f5a45;
+      }
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        background: radial-gradient(circle at 85% 0%, #f3e3d6 0%, #f7f2eb 42%, #efe7dd 100%);
+        color: var(--ink);
+      }
+
+      h1,
+      h2,
+      h3,
+      .brand-font {
+        font-family: "Syne", sans-serif;
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CheckoutPage",
+        "name": "Carrito ARCA Studio",
+        "description": "Vista completa del carrito con productos, cantidades y totalizacion.",
+        "url": "carrito.html"
+      }
+    </script>
+  </head>
+
+  <body class="min-h-screen antialiased">
+    <a
+      href="#contenido-principal"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white"
+      >Saltar al contenido principal</a
+    >
+
+    <header class="sticky top-0 z-40 border-b border-black/10 bg-[#f7f2eb]/95 backdrop-blur">
+      <div
+        class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:gap-8"
+      >
+        <a href="index.html" class="brand-font text-2xl font-extrabold tracking-tight text-[var(--ink)]"
+          >ARCA<span class="text-[var(--brick)]">Studio</span></a
+        >
+
+        <nav aria-label="Cuenta de usuario y navegacion">
+          <ul class="flex items-center gap-2 sm:gap-3">
+            <li>
+              <a
+                href="index.html"
+                class="rounded-full border border-black/20 px-4 py-2 text-sm font-medium transition hover:border-[var(--brick)] hover:text-[var(--brick)]"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="catalogo.html"
+                class="rounded-full border border-black/20 px-4 py-2 text-sm font-medium transition hover:border-[var(--brick)] hover:text-[var(--brick)]"
+                >Catalogo</a
+              >
+            </li>
+            <li>
+              <a
+                href="carrito.html"
+                class="rounded-full bg-[var(--forest)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+                >Mi carrito</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido-principal" class="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8 lg:pt-10">
+      <section class="mb-8 rounded-3xl border border-black/10 bg-white/60 p-6 sm:p-8" aria-labelledby="carrito-titulo">
+        <p class="text-xs font-semibold uppercase tracking-wide text-[var(--brick)]">Resumen de compra</p>
+        <h1 id="carrito-titulo" class="mt-2 text-3xl font-extrabold sm:text-4xl">Carrito</h1>
+        <p class="mt-3 max-w-3xl text-sm text-black/70 sm:text-base">
+          Revisa tus productos antes de finalizar la compra. Puedes ajustar cantidades y confirmar el total.
+        </p>
+      </section>
+
+      <section class="grid gap-6 lg:grid-cols-[1.45fr_0.55fr] lg:items-start" aria-label="Detalle del carrito y totalizacion">
+        <article class="rounded-3xl border border-black/10 bg-white p-4 sm:p-6">
+          <h2 class="text-xl font-bold sm:text-2xl">Productos agregados</h2>
+
+          <div class="mt-5 space-y-4">
+            <article class="grid grid-cols-[84px_1fr] gap-4 rounded-2xl border border-black/10 p-3 sm:grid-cols-[100px_1fr] sm:p-4">
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80"
+                alt="Runner Nova rojo"
+                class="h-20 w-20 rounded-xl object-cover sm:h-24 sm:w-24"
+                loading="lazy"
+              />
+              <div>
+                <h3 class="text-base font-bold">Runner Nova</h3>
+                <div class="mt-2 grid gap-2 text-sm text-black/80 sm:grid-cols-3">
+                  <p><span class="font-semibold">Precio unitario:</span> $129.00</p>
+                  <p><span class="font-semibold">Cantidad:</span> 1</p>
+                  <p><span class="font-semibold">Total:</span> $129.00</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="grid grid-cols-[84px_1fr] gap-4 rounded-2xl border border-black/10 p-3 sm:grid-cols-[100px_1fr] sm:p-4">
+              <img
+                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=500&q=80"
+                alt="Overshirt Terra"
+                class="h-20 w-20 rounded-xl object-cover sm:h-24 sm:w-24"
+                loading="lazy"
+              />
+              <div>
+                <h3 class="text-base font-bold">Overshirt Terra</h3>
+                <div class="mt-2 grid gap-2 text-sm text-black/80 sm:grid-cols-3">
+                  <p><span class="font-semibold">Precio unitario:</span> $89.90</p>
+                  <p><span class="font-semibold">Cantidad:</span> 2</p>
+                  <p><span class="font-semibold">Total:</span> $179.80</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="grid grid-cols-[84px_1fr] gap-4 rounded-2xl border border-black/10 p-3 sm:grid-cols-[100px_1fr] sm:p-4">
+              <img
+                src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=500&q=80"
+                alt="Crossline Bag negra"
+                class="h-20 w-20 rounded-xl object-cover sm:h-24 sm:w-24"
+                loading="lazy"
+              />
+              <div>
+                <h3 class="text-base font-bold">Crossline Bag</h3>
+                <div class="mt-2 grid gap-2 text-sm text-black/80 sm:grid-cols-3">
+                  <p><span class="font-semibold">Precio unitario:</span> $54.00</p>
+                  <p><span class="font-semibold">Cantidad:</span> 1</p>
+                  <p><span class="font-semibold">Total:</span> $54.00</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </article>
+
+        <aside class="rounded-3xl border border-black/10 bg-white p-5 sm:p-6 lg:sticky lg:top-24" aria-label="Totalizacion">
+          <h2 class="text-xl font-bold">Totalizacion</h2>
+
+          <dl class="mt-4 space-y-3 text-sm">
+            <div class="flex items-center justify-between gap-3">
+              <dt class="text-black/70">Subtotal</dt>
+              <dd class="font-semibold">$362.80</dd>
+            </div>
+            <div class="flex items-center justify-between gap-3">
+              <dt class="text-black/70">Impuestos</dt>
+              <dd class="font-semibold">$76.19</dd>
+            </div>
+            <div class="border-t border-black/10 pt-3">
+              <div class="flex items-center justify-between gap-3">
+                <dt class="text-base font-bold">Total</dt>
+                <dd class="text-xl font-extrabold">$438.99</dd>
+              </div>
+            </div>
+          </dl>
+
+          <button
+            type="button"
+            class="mt-5 w-full rounded-xl bg-[var(--ink)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-black"
+          >
+            Comprar
+          </button>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="border-t border-black/10 bg-[#17120f] text-white">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <section aria-labelledby="footer-brand">
+          <h2 id="footer-brand" class="brand-font text-xl font-extrabold">ARCA Studio</h2>
+          <p class="mt-3 text-sm text-white/75">
+            Moda esencial con foco en silueta, textura y durabilidad para uso diario.
+          </p>
+        </section>
+
+        <nav aria-labelledby="footer-categorias">
+          <h2 id="footer-categorias" class="text-sm font-semibold uppercase tracking-wide text-white/85">Categorias</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li><a href="#" class="hover:text-white">Calzado</a></li>
+            <li><a href="#" class="hover:text-white">Camisas</a></li>
+            <li><a href="#" class="hover:text-white">Pantalones</a></li>
+            <li><a href="#" class="hover:text-white">Accesorios</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal" class="text-sm font-semibold uppercase tracking-wide text-white/85">Legal</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li><a href="#" class="hover:text-white">Terminos y condiciones</a></li>
+            <li><a href="#" class="hover:text-white">Politica de privacidad</a></li>
+            <li><a href="#" class="hover:text-white">Sobre la marca</a></li>
+          </ul>
+        </nav>
+
+        <section aria-labelledby="footer-contacto">
+          <h2 id="footer-contacto" class="text-sm font-semibold uppercase tracking-wide text-white/85">Contacto</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li>soporte@arcastudio.com</li>
+            <li>+34 900 000 123</li>
+            <li>Calle Gran Via 100, Madrid</li>
+            <li>Lun - Vie: 9:00 a 18:00</li>
+          </ul>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | ARCA Studio</title>
+    <meta
+      name="description"
+      content="Completa tu compra en ARCA Studio con un formulario de pago en 3 pasos: datos personales, direccion de entrega y pago con tarjeta."
+    />
+    <meta
+      name="keywords"
+      content="checkout, formulario de pago, datos personales, direccion de entrega, pago con tarjeta"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="ARCA Studio" />
+    <meta property="og:title" content="Checkout | ARCA Studio" />
+    <meta
+      property="og:description"
+      content="Finaliza tu compra en 3 pasos con una experiencia clara y responsive."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      :root {
+        --sand: #f7f2eb;
+        --ink: #111111;
+        --brick: #c85a3f;
+        --forest: #2f5a45;
+      }
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        background: radial-gradient(circle at 85% 0%, #f3e3d6 0%, #f7f2eb 42%, #efe7dd 100%);
+        color: var(--ink);
+      }
+
+      h1,
+      h2,
+      h3,
+      .brand-font {
+        font-family: "Syne", sans-serif;
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CheckoutPage",
+        "name": "Checkout ARCA Studio",
+        "description": "Flujo de pago en 3 pasos: datos personales, direccion y tarjeta.",
+        "url": "checkout.html"
+      }
+    </script>
+  </head>
+
+  <body class="min-h-screen antialiased">
+    <a
+      href="#contenido-principal"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white"
+      >Saltar al contenido principal</a
+    >
+
+    <header class="sticky top-0 z-40 border-b border-black/10 bg-[#f7f2eb]/95 backdrop-blur">
+      <div
+        class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:gap-8"
+      >
+        <a href="index.html" class="brand-font text-2xl font-extrabold tracking-tight text-[var(--ink)]"
+          >ARCA<span class="text-[var(--brick)]">Studio</span></a
+        >
+
+        <form class="order-3 w-full lg:order-none" role="search" aria-label="Buscar productos">
+          <label for="search" class="sr-only">Buscar</label>
+          <div class="relative">
+            <input
+              id="search"
+              name="search"
+              type="search"
+              placeholder="Buscar productos, colecciones o categoria"
+              class="w-full rounded-full border border-black/20 bg-white px-5 py-3 text-sm shadow-sm outline-none ring-[var(--brick)]/30 transition focus:ring-4"
+            />
+            <button
+              type="submit"
+              class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-[var(--ink)] px-4 py-2 text-xs font-semibold text-white"
+            >
+              Buscar
+            </button>
+          </div>
+        </form>
+
+        <nav aria-label="Cuenta de usuario y navegacion">
+          <ul class="flex items-center gap-2 sm:gap-3">
+            <li>
+              <a
+                href="index.html"
+                class="rounded-full border border-black/20 px-4 py-2 text-sm font-medium transition hover:border-[var(--brick)] hover:text-[var(--brick)]"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="catalogo.html"
+                class="rounded-full border border-black/20 px-4 py-2 text-sm font-medium transition hover:border-[var(--brick)] hover:text-[var(--brick)]"
+                >Catalogo</a
+              >
+            </li>
+            <li>
+              <a
+                href="carrito.html"
+                class="rounded-full bg-[var(--forest)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+                >Mi carrito</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido-principal" class="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8 lg:pt-10">
+      <section class="mb-8 rounded-3xl border border-black/10 bg-white/60 p-6 sm:p-8" aria-labelledby="checkout-titulo">
+        <p class="text-xs font-semibold uppercase tracking-wide text-[var(--brick)]">Finalizar compra</p>
+        <h1 id="checkout-titulo" class="mt-2 text-3xl font-extrabold sm:text-4xl">Checkout</h1>
+        <p class="mt-3 max-w-3xl text-sm text-black/70 sm:text-base">
+          Completa el formulario en 3 pasos para confirmar tu pedido de forma segura.
+        </p>
+      </section>
+
+      <section class="mb-6 grid gap-3 rounded-2xl border border-black/10 bg-white p-4 sm:grid-cols-3" aria-label="Pasos de checkout">
+        <div class="rounded-xl border border-black/15 bg-black/[0.03] p-3">
+          <p class="text-xs font-semibold uppercase tracking-wide text-[var(--brick)]">Paso 1</p>
+          <p class="mt-1 text-sm font-bold">Datos personales</p>
+        </div>
+        <div class="rounded-xl border border-black/15 bg-black/[0.03] p-3">
+          <p class="text-xs font-semibold uppercase tracking-wide text-[var(--brick)]">Paso 2</p>
+          <p class="mt-1 text-sm font-bold">Direccion de entrega</p>
+        </div>
+        <div class="rounded-xl border border-black/15 bg-black/[0.03] p-3">
+          <p class="text-xs font-semibold uppercase tracking-wide text-[var(--brick)]">Paso 3</p>
+          <p class="mt-1 text-sm font-bold">Pago con tarjeta</p>
+        </div>
+      </section>
+
+      <form class="space-y-6" action="#" method="post">
+        <fieldset class="rounded-3xl border border-black/10 bg-white p-5 sm:p-6">
+          <legend class="px-2 text-lg font-bold">1. Datos personales</legend>
+          <div class="mt-3 grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="nombre" class="mb-1 block text-sm font-medium">Nombre</label>
+              <input id="nombre" name="nombre" type="text" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+            <div>
+              <label for="apellido" class="mb-1 block text-sm font-medium">Apellido</label>
+              <input id="apellido" name="apellido" type="text" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+            <div>
+              <label for="email" class="mb-1 block text-sm font-medium">Correo electronico</label>
+              <input id="email" name="email" type="email" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+            <div>
+              <label for="telefono" class="mb-1 block text-sm font-medium">Telefono</label>
+              <input id="telefono" name="telefono" type="tel" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="rounded-3xl border border-black/10 bg-white p-5 sm:p-6">
+          <legend class="px-2 text-lg font-bold">2. Direccion de entrega</legend>
+          <div class="mt-3 grid gap-4 sm:grid-cols-2">
+            <div class="sm:col-span-2">
+              <label for="direccion" class="mb-1 block text-sm font-medium">Direccion</label>
+              <input id="direccion" name="direccion" type="text" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+            <div>
+              <label for="ciudad" class="mb-1 block text-sm font-medium">Ciudad</label>
+              <input id="ciudad" name="ciudad" type="text" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+            <div>
+              <label for="codigo-postal" class="mb-1 block text-sm font-medium">Codigo postal</label>
+              <input id="codigo-postal" name="codigo-postal" type="text" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+            <div>
+              <label for="pais" class="mb-1 block text-sm font-medium">Pais</label>
+              <input id="pais" name="pais" type="text" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+            <div>
+              <label for="provincia" class="mb-1 block text-sm font-medium">Provincia / Estado</label>
+              <input id="provincia" name="provincia" type="text" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="rounded-3xl border border-black/10 bg-white p-5 sm:p-6">
+          <legend class="px-2 text-lg font-bold">3. Pago con tarjeta</legend>
+          <div class="mt-3 grid gap-4 sm:grid-cols-2">
+            <div class="sm:col-span-2">
+              <label for="tarjeta" class="mb-1 block text-sm font-medium">Numero de tarjeta</label>
+              <input id="tarjeta" name="tarjeta" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+            <div>
+              <label for="titular" class="mb-1 block text-sm font-medium">Nombre del titular</label>
+              <input id="titular" name="titular" type="text" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+            <div>
+              <label for="cvv" class="mb-1 block text-sm font-medium">CVV</label>
+              <input id="cvv" name="cvv" type="password" inputmode="numeric" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+            <div>
+              <label for="exp" class="mb-1 block text-sm font-medium">Fecha de vencimiento</label>
+              <input id="exp" name="exp" type="text" placeholder="MM/AA" required class="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4" />
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <button
+            type="submit"
+            class="rounded-xl bg-[var(--ink)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-black"
+          >
+            Confirmar compra
+          </button>
+          <a href="carrito.html" class="rounded-xl border border-black/20 bg-white px-6 py-3 text-sm font-semibold transition hover:border-black">
+            Volver al carrito
+          </a>
+        </div>
+      </form>
+    </main>
+
+    <footer class="border-t border-black/10 bg-[#17120f] text-white">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <section aria-labelledby="footer-brand">
+          <h2 id="footer-brand" class="brand-font text-xl font-extrabold">ARCA Studio</h2>
+          <p class="mt-3 text-sm text-white/75">
+            Moda esencial con foco en silueta, textura y durabilidad para uso diario.
+          </p>
+        </section>
+
+        <nav aria-labelledby="footer-categorias">
+          <h2 id="footer-categorias" class="text-sm font-semibold uppercase tracking-wide text-white/85">Categorias</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li><a href="#" class="hover:text-white">Calzado</a></li>
+            <li><a href="#" class="hover:text-white">Camisas</a></li>
+            <li><a href="#" class="hover:text-white">Pantalones</a></li>
+            <li><a href="#" class="hover:text-white">Accesorios</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal" class="text-sm font-semibold uppercase tracking-wide text-white/85">Legal</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li><a href="#" class="hover:text-white">Terminos y condiciones</a></li>
+            <li><a href="#" class="hover:text-white">Politica de privacidad</a></li>
+            <li><a href="#" class="hover:text-white">Sobre la marca</a></li>
+          </ul>
+        </nav>
+
+        <section aria-labelledby="footer-contacto">
+          <h2 id="footer-contacto" class="text-sm font-semibold uppercase tracking-wide text-white/85">Contacto</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li>soporte@arcastudio.com</li>
+            <li>+34 900 000 123</li>
+            <li>Calle Gran Via 100, Madrid</li>
+            <li>Lun - Vie: 9:00 a 18:00</li>
+          </ul>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

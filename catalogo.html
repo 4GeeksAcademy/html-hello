@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogo | ARCA Studio</title>
+    <meta
+      name="description"
+      content="Explora el catalogo de ARCA Studio con calzado, camisas, pantalones y accesorios. Filtra por categoria y talla en una experiencia responsive."
+    />
+    <meta
+      name="keywords"
+      content="catalogo ropa, tienda online moda, filtro por talla, filtro por categoria, ARCA Studio"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="ARCA Studio" />
+    <meta property="og:title" content="Catalogo | ARCA Studio" />
+    <meta
+      property="og:description"
+      content="20 productos de referencia en una grilla moderna con filtros por categoria y talla."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      :root {
+        --sand: #f7f2eb;
+        --ink: #111111;
+        --brick: #c85a3f;
+        --forest: #2f5a45;
+      }
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        background: radial-gradient(circle at 85% 0%, #f3e3d6 0%, #f7f2eb 42%, #efe7dd 100%);
+        color: var(--ink);
+      }
+
+      h1,
+      h2,
+      h3,
+      .brand-font {
+        font-family: "Syne", sans-serif;
+      }
+
+      .card-lift {
+        transition: transform 220ms ease, box-shadow 220ms ease;
+      }
+
+      .card-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px rgba(17, 17, 17, 0.1);
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Catalogo ARCA Studio",
+        "description": "Listado de productos de ARCA Studio con filtros por categoria y talla.",
+        "url": "catalogo.html"
+      }
+    </script>
+  </head>
+
+  <body class="min-h-screen antialiased">
+    <a
+      href="#contenido-principal"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white"
+      >Saltar al contenido principal</a
+    >
+
+    <header class="sticky top-0 z-40 border-b border-black/10 bg-[#f7f2eb]/95 backdrop-blur">
+      <div
+        class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:gap-8"
+      >
+        <a href="index.html" class="brand-font text-2xl font-extrabold tracking-tight text-[var(--ink)]"
+          >ARCA<span class="text-[var(--brick)]">Studio</span></a
+        >
+
+        <form class="order-3 w-full lg:order-none" role="search" aria-label="Buscar productos">
+          <label for="search" class="sr-only">Buscar</label>
+          <div class="relative">
+            <input
+              id="search"
+              name="search"
+              type="search"
+              placeholder="Buscar productos, colecciones o categoria"
+              class="w-full rounded-full border border-black/20 bg-white px-5 py-3 text-sm shadow-sm outline-none ring-[var(--brick)]/30 transition focus:ring-4"
+            />
+            <button
+              type="submit"
+              class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-[var(--ink)] px-4 py-2 text-xs font-semibold text-white"
+            >
+              Buscar
+            </button>
+          </div>
+        </form>
+
+        <nav aria-label="Cuenta de usuario y navegacion">
+          <ul class="flex items-center gap-2 sm:gap-3">
+            <li>
+              <a
+                href="index.html"
+                class="rounded-full border border-black/20 px-4 py-2 text-sm font-medium transition hover:border-[var(--brick)] hover:text-[var(--brick)]"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="catalogo.html"
+                class="rounded-full border border-black/20 bg-black/5 px-4 py-2 text-sm font-semibold"
+                aria-current="page"
+                >Catalogo</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="rounded-full border border-black/20 px-4 py-2 text-sm font-medium transition hover:border-[var(--brick)] hover:text-[var(--brick)]"
+                >Ingresar</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="rounded-full bg-[var(--forest)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+                >Mi cuenta</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido-principal" class="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8 lg:pt-10">
+      <section aria-labelledby="catalogo-titulo" class="mb-8 rounded-3xl border border-black/10 bg-white/60 p-6 sm:p-8">
+        <p class="text-xs font-semibold uppercase tracking-wide text-[var(--brick)]">Coleccion completa</p>
+        <h1 id="catalogo-titulo" class="mt-2 text-3xl font-extrabold sm:text-4xl">Catalogo ARCA Studio</h1>
+        <p class="mt-3 max-w-3xl text-sm text-black/70 sm:text-base">
+          Encuentra prendas y accesorios para uso diario, trabajo y estilo urbano. Usa los filtros para explorar por categoria y talla.
+        </p>
+      </section>
+
+      <section aria-labelledby="filtros-titulo" class="mb-8">
+        <h2 id="filtros-titulo" class="mb-3 text-lg font-bold">Filtros</h2>
+        <form class="grid gap-3 rounded-2xl border border-black/10 bg-white p-4 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_auto] lg:items-end">
+          <div>
+            <label for="categoria" class="mb-1 block text-sm font-medium">Categoria</label>
+            <select
+              id="categoria"
+              name="categoria"
+              class="w-full rounded-xl border border-black/15 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4"
+            >
+              <option value="">Todas las categorias</option>
+              <option value="calzado">Calzado</option>
+              <option value="camisas">Camisas</option>
+              <option value="pantalones">Pantalones</option>
+              <option value="accesorios">Accesorios</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="talla" class="mb-1 block text-sm font-medium">Talla</label>
+            <select
+              id="talla"
+              name="talla"
+              class="w-full rounded-xl border border-black/15 bg-white px-4 py-3 text-sm outline-none ring-[var(--brick)]/30 focus:ring-4"
+            >
+              <option value="">Todas las tallas</option>
+              <option value="xs">XS</option>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+              <option value="42">42</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            class="rounded-xl bg-[var(--ink)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-black"
+          >
+            Aplicar filtros
+          </button>
+        </form>
+      </section>
+
+      <section aria-labelledby="listado-titulo">
+        <div class="mb-4 flex items-center justify-between gap-3">
+          <h2 id="listado-titulo" class="text-xl font-bold sm:text-2xl">Productos</h2>
+          <p class="text-sm text-black/70">20 resultados</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#runner-nova" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Runner Nova rojo" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Runner Nova</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Calzado · Tallas 39-44</p>
+              <p class="mt-1 text-sm font-semibold">$129.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#overshirt-terra" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80" alt="Overshirt Terra" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Overshirt Terra</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Camisas · S a XL</p>
+              <p class="mt-1 text-sm font-semibold">$89.90</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#cargo-atlas" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80" alt="Cargo Atlas oliva" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Cargo Atlas</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Pantalones · 30 a 38</p>
+              <p class="mt-1 text-sm font-semibold">$99.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#cap-stride" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cap Stride beige" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Cap Stride</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Accesorios · Talla unica</p>
+              <p class="mt-1 text-sm font-semibold">$34.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#shell-night" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?auto=format&fit=crop&w=800&q=80" alt="Shell Night negra" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Shell Night</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Camisas · S a XL</p>
+              <p class="mt-1 text-sm font-semibold">$149.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#hood-core" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1548883354-94bcfe321cbb?auto=format&fit=crop&w=800&q=80" alt="Hood Core crema" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Hood Core</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Camisas · S a XL</p>
+              <p class="mt-1 text-sm font-semibold">$79.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#mono-white" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=800&q=80" alt="Mono White blanco" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Mono White</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Calzado · Tallas 39-44</p>
+              <p class="mt-1 text-sm font-semibold">$115.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#straight-graphite" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80" alt="Straight Graphite" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Straight Graphite</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Pantalones · 30 a 38</p>
+              <p class="mt-1 text-sm font-semibold">$84.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#crossline-bag" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800&q=80" alt="Crossline Bag negra" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Crossline Bag</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Accesorios · Talla unica</p>
+              <p class="mt-1 text-sm font-semibold">$54.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#linen-sand" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Linen Sand" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Linen Sand</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Camisas · S a XL</p>
+              <p class="mt-1 text-sm font-semibold">$68.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#trail-dust" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=800&q=80" alt="Trail Dust botas" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Trail Dust</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Calzado · Tallas 39-44</p>
+              <p class="mt-1 text-sm font-semibold">$139.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#urban-chino" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=80" alt="Urban Chino beige" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Urban Chino</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Pantalones · 30 a 38</p>
+              <p class="mt-1 text-sm font-semibold">$76.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#blazer-motion" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1560243563-062bfc001d68?auto=format&fit=crop&w=800&q=80" alt="Blazer Motion azul" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Blazer Motion</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Camisas · S a XL</p>
+              <p class="mt-1 text-sm font-semibold">$159.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#belt-terra" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.pexels.com/photos/45055/pexels-photo-45055.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Belt Terra marron" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Belt Terra</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Accesorios · Talla unica</p>
+              <p class="mt-1 text-sm font-semibold">$42.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#pulse-runner" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=800&q=80" alt="Pulse Runner negras" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Pulse Runner</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Calzado · Tallas 39-44</p>
+              <p class="mt-1 text-sm font-semibold">$119.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#transit-bomber" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80" alt="Transit Bomber grafito" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Transit Bomber</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Camisas · S a XL</p>
+              <p class="mt-1 text-sm font-semibold">$152.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#office-pleat" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" alt="Office Pleat negro" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Office Pleat</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Pantalones · 30 a 38</p>
+              <p class="mt-1 text-sm font-semibold">$82.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#classic-tote" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80" alt="Classic Tote cuero" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Classic Tote</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Accesorios · Talla unica</p>
+              <p class="mt-1 text-sm font-semibold">$88.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#cloud-step" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80" alt="Cloud Step blancas" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Cloud Step</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Calzado · Tallas 39-44</p>
+              <p class="mt-1 text-sm font-semibold">$124.00</p>
+            </a>
+          </article>
+
+          <article class="card-lift rounded-2xl border border-black/10 bg-white p-3">
+            <a href="producto.html#daily-layer" class="block rounded-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--brick)]/30">
+              <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="Daily Layer crudo" class="h-48 w-full rounded-xl object-cover" loading="lazy" />
+              <h3 class="mt-3 text-sm font-bold sm:text-base">Daily Layer</h3>
+              <p class="text-xs text-black/65 sm:text-sm">Camisas · S a XL</p>
+              <p class="mt-1 text-sm font-semibold">$74.00</p>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-black/10 bg-[#17120f] text-white">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <section aria-labelledby="footer-brand">
+          <h2 id="footer-brand" class="brand-font text-xl font-extrabold">ARCA Studio</h2>
+          <p class="mt-3 text-sm text-white/75">
+            Moda esencial con foco en silueta, textura y durabilidad para uso diario.
+          </p>
+        </section>
+
+        <nav aria-labelledby="footer-categorias">
+          <h2 id="footer-categorias" class="text-sm font-semibold uppercase tracking-wide text-white/85">Categorias</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li><a href="#" class="hover:text-white">Calzado</a></li>
+            <li><a href="#" class="hover:text-white">Camisas</a></li>
+            <li><a href="#" class="hover:text-white">Pantalones</a></li>
+            <li><a href="#" class="hover:text-white">Accesorios</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal" class="text-sm font-semibold uppercase tracking-wide text-white/85">Legal</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li><a href="#" class="hover:text-white">Terminos y condiciones</a></li>
+            <li><a href="#" class="hover:text-white">Politica de privacidad</a></li>
+            <li><a href="#" class="hover:text-white">Sobre la marca</a></li>
+          </ul>
+        </nav>
+
+        <section aria-labelledby="footer-contacto">
+          <h2 id="footer-contacto" class="text-sm font-semibold uppercase tracking-wide text-white/85">Contacto</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li>soporte@arcastudio.com</li>
+            <li>+34 900 000 123</li>
+            <li>Calle Gran Via 100, Madrid</li>
+            <li>Lun - Vie: 9:00 a 18:00</li>
+          </ul>
+        </section>
+      </div>
+    </footer>
+
+  </body>
+</html>
