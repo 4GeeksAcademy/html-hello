@@ -1,4 +1,4 @@
-# HTML Hello
+# HTML BASICS FOR GEEKS
 
 The most basic boilerplate for any 4Geeks Academy student, start your very first website from scratch.
 
