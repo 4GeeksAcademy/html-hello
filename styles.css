@@ -1,0 +1,78 @@
+main {
+    background-color: black;
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 0 0;
+    width: 500px;
+}
+
+.post-header-name {
+    flex-grow: 8;
+    margin: 0 10px 0 10px;
+}
+
+.post-header-name h2, p {
+    margin: 0;
+}
+
+.first-icon {
+    margin-left: 10px;
+}
+
+.second-icon {
+    margin-right: 10px;
+}
+
+h2 {
+    font-size:large;
+}
+
+img {
+    width: 500px;
+    height: 400px;
+}
+
+.post-body {
+    background-color: white;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.post-body-icons {
+    display: flex;
+}
+
+.last {
+    
+    flex-grow: 6;
+}
+
+.post-body-icons svg {
+    margin: 5px;
+}
+
+.post-body-title {
+    margin: 10px 10px;
+}
+
+.post-body-description {
+    margin: 0 10px 10px 10px;
+}
