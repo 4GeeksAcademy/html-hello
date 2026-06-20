@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram Feed</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h1 class="feed-title">Instagram Feed</h1>
+
+  <div class="feed">
+
+    <!-- Post 1: Dog -->
+    <div class="post">
+      <div class="post-header">
+        <span class="username">coder_vibes</span>
+      </div>
+      <div class="post-image-container">
+        <span class="post-date">12/14</span>
+        <img class="post-image" src="https://images.pexels.com/photos/4587996/pexels-photo-4587996.jpeg" alt="Dog Post">
+      </div>
+      <div class="caption">
+        This is my first photo of the feed.<br>
+        This is multi line comment for testing purpose.<br>
+        I am learning to code with <strong>#BreatheCode</strong>.
+      </div>
+    </div>
+
+    <!-- Post 2: Car -->
+    <div class="post">
+      <div class="post-header">
+        <span class="username">classic_rider</span>
+      </div>
+      <div class="post-image-container">
+        <span class="post-date">12/14</span>
+        <img class="post-image" src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=80" alt="Muscle Car">
+      </div>
+      <div class="caption">The kind of horsepower that never goes out of style. 🏁🔥</div>
+    </div>
+
+    <!-- Post 3: Husky Puppy -->
+    <div class="post">
+      <div class="post-header">
+        <span class="username">huskyhero</span>
+      </div>
+      <div class="post-image-container">
+        <span class="post-date">12/14</span>
+        <img class="post-image" src="https://images.unsplash.com/photo-1619983081501-74dbf4fa2287?auto=format&fit=crop&w=800&q=80" alt="Husky Puppy">
+      </div>
+      <div class="caption">Those eyes can melt anyone’s heart 💙🐶</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
