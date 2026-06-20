@@ -1,0 +1,47 @@
+body{
+    background-color: black;
+}
+*{
+	border: 1px dashed red;
+	min-height: 10px;
+}
+.post{
+    background: white;
+    width: 500px;
+    height: 800px;
+    margin: auto;
+}
+.post-encabezado{
+    display: flex;
+    border-bottom: 2px solid black;
+    height:75px;
+    align-items: center;
+    text-align: center;
+}
+h1{
+    width: 465px;
+}
+
+.post-imagen img{
+  width: 475px;  
+  height: 400px;
+  object-fit: cover;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  }
+.post-footer p{
+  margin-top: 1px;
+  }
+ul li{
+    list-style-type: none;
+    margin-left: -20px;
+}
+.comentarios{
+    color: gray;
+    margin-left: 20px;
+}
+.boton :active{
+    background-color: red;
+}
