@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card card-outline-secondary ">
+                    <div class="card-header">
+                        <h3>Payment form example</h3>
+                    </div>
+                    <form class="p-4">
+                        <div class="row mt-3">
+                            <div id="error-msg" class="alert alert-danger">Some fields are missing</div>
+                            <div class="col-sm-5 pb-3">
+                                <label for="exampleAccount">Card #</label> 
+                                <input class="form-control" id="exampleAccount" placeholder="XXXXXXXXXXXXXXXX" type="text" required>
+                            </div>
+                            <div class="col-sm-3 pb-3">
+                                <label for="exampleCtrl">CVC #</label> 
+                                <input class="form-control" id="exampleCtrl" placeholder="0000" type="text" required>
+                            </div>
+                            <div class="col-sm-4 pb-3">
+                                <label for="exampleAmount">Amount</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                    <input class="form-control" id="exampleAmount" placeholder="Amount" type="number" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 pb-3">
+                                <label for="exampleFirst">First Name</label> 
+                                <input class="form-control" id="exampleFirst" type="text" required>
+                            </div>
+                            <div class="col-sm-6 pb-3">
+                                <label for="exampleLast">Last Name</label> 
+                                <input class="form-control" id="exampleLast" type="text" required>
+                            </div>
+                            <div class="col-sm-6 pb-3">
+                                <label for="exampleCity">City</label> 
+                                <input class="form-control" id="exampleCity" type="text" required>
+                            </div>
+                            <div class="col-sm-3 pb-3">
+                                <label for="exampleSt">State</label> 
+                                <select class="form-select" id="exampleSt" required>
+                                    <option class="text-white bg-warning">Pick a state</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3 pb-3">
+                                <label for="exampleZip">Postal Code</label> 
+                                <input class="form-control" id="exampleZip" type="text" required>
+                            </div>
+                            <div class="col-md-6 pb-3">
+                                <p>We accept:</p>
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-secondary">
+                                        <input autocomplete="off" checked id="blue" name="options" type="radio">
+                                        <i class="fab fa-cc-mastercard"></i>
+                                    </label> 
+                                    <label class="btn btn-secondary">
+                                        <input autocomplete="off" id="red" name="options" type="radio">
+                                        <i class="fab fa-cc-visa"></i>
+                                    </label> 
+                                    <label class="btn btn-secondary">
+                                        <input autocomplete="off" id="green" name="options" type="radio">
+                                        <i class="fab fa-cc-diners-club"></i>
+                                    </label> 
+                                    <label class="btn btn-secondary">
+                                        <input autocomplete="off" id="yellow" name="options" type="radio">
+                                        <i class="fab fa-cc-amex"></i>
+                                    </label> 
+                                </div>
+                            </div>
+                            <div class="col-md-6 pb-3">
+                                <label for="exampleMessage">Message</label> 
+                                <textarea class="form-control" id="complexExampleMessage" rows="3"></textarea> 
+                                <small class="text-muted">Add any notes here.</small>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="card-footer text-end">
+                        <button class="btn btn-secondary" type="reset">Cancel</button> 
+                        <button id="sendForm" class="btn btn-primary" type="button">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8Fq6Ndt1w0YOG3l4H5DLcL8Cz8A24K5v5JzEdb0WjhaJpo" crossorigin="anonymous"></script>
+</body>
+</html>
