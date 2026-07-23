@@ -1,0 +1,9 @@
+{
+  "config": {
+    "editor": {
+      "agent": "vscode"
+    },
+    "autoPlay": true
+  },
+  "currentExercise": null
+}

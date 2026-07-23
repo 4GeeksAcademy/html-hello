@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONYX | Checkout</title>
+
+    <link rel="stylesheet" href="output.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container-page nav-content">
+
+            <a href="X" class="logo">
+              <img src="ONYX_sin_fondo_en_blanco-removebg-preview.png" alt="ONYX logo" class="h-30 w-30 object-contain">
+              <span class="logo-text"></span>
+            </a>
+
+            <nav aria-label="Main Navigation">
+
+                <ul class="nav-links">
+
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Searcher</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container-page py-16">
+
+        <h1 class="mb-12 text-center">
+            Checkout
+        </h1>
+
+        <div class="grid-2">
+
+            <!-- ================= FORM ================= -->
+
+            <form class="card space-y-10">
+
+                <!-- PERSONAL INFORMATION -->
+
+                <section>
+
+                    <h2 class="section-title">
+                        Personal Information
+                    </h2>
+
+                    <div class="grid gap-6 md:grid-cols-2">
+
+                        <div>
+
+                            <label for="name">
+                                Full Name
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                placeholder="John Smith"
+                                autocomplete="name"
+                                required>
+
+                        </div>
+
+                        <div>
+
+                            <label for="email">
+                                Email
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="john@email.com"
+                                autocomplete="email"
+                                required>
+
+                        </div>
+
+                        <div class="md:col-span-2">
+
+                            <label for="phone">
+                                Phone Number
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                id="phone"
+                                name="phone"
+                                type="tel"
+                                placeholder="+34 600 123 456"
+                                autocomplete="tel"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- DELIVERY ADDRESS -->
+
+                <section>
+
+                    <h2 class="section-title">
+                        Delivery Address
+                    </h2>
+
+                    <div class="space-y-6">
+
+                        <div>
+
+                            <label for="street">
+                                Street Address
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                id="street"
+                                name="street"
+                                type="text"
+                                placeholder="123 Oxford Street"
+                                autocomplete="street-address"
+                                required>
+
+                        </div>
+
+                        <div class="grid gap-6 md:grid-cols-3">
+
+                            <div>
+
+                                <label for="city">
+                                    City
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    id="city"
+                                    name="city"
+                                    type="text"
+                                    placeholder="London"
+                                    autocomplete="address-level2"
+                                    required>
+
+                            </div>
+
+                            <div>
+
+                                <label for="postcode">
+                                    Postal Code
+                                </label>
+
+                                <input
+                                    id="postcode"
+                                    name="postcode"
+                                    type="text"
+                                    placeholder="SW1A 1AA"
+                                    autocomplete="postal-code">
+
+                            </div>
+
+                            <div>
+
+                                <label for="country">
+                                    Country
+                                    <span class="required">*</span>
+                                </label>
+
+                                <select
+                                    id="country"
+                                    name="country"
+                                    autocomplete="country"
+                                    required>
+
+                                    <option value="">
+                                        Select your country
+                                    </option>
+
+                                    <option>Spain</option>
+                                    <option>France</option>
+                                    <option>Italy</option>
+                                    <option>Portugal</option>
+                                    <option>United Kingdom</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- PAYMENT -->
+
+                <section>
+
+                    <h2 class="section-title">
+                        Card Payment
+                    </h2>
+
+                    <div class="space-y-6">
+
+                        <div>
+
+                            <label for="card">
+                                Card Number
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                id="card"
+                                name="card"
+                                type="text"
+                                placeholder="1234 5678 9012 3456"
+                                autocomplete="cc-number"
+                                required>
+
+                        </div>
+
+                        <div class="grid gap-6 md:grid-cols-2">
+
+                            <div>
+
+                                <label for="expiry">
+                                    Expiration Date
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    id="expiry"
+                                    name="expiry"
+                                    type="month"
+                                    autocomplete="cc-exp"
+                                    required>
+
+                            </div>
+
+                            <div>
+
+                                <label for="cvv">
+                                    CVV
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    id="cvv"
+                                    name="cvv"
+                                    type="password"
+                                    placeholder="123"
+                                    maxlength="4"
+                                    autocomplete="cc-csc"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <label for="holder">
+                                Cardholder Name
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                id="holder"
+                                name="holder"
+                                type="text"
+                                placeholder="John Smith"
+                                autocomplete="cc-name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <p class="required-text">
+                    * Required fields
+                </p>
+
+                <button
+                    class="btn-primary"
+                    type="submit">
+
+                    Complete Order
+
+                </button>
+
+            </form>
+
+            <!-- ================= ORDER SUMMARY ================= -->
+
+            <aside class="summary">
+
+                <h2 class="section-title">
+                    Order Summary
+                </h2>
+
+                <div class="space-y-5">
+
+                    <div class="flex justify-between">
+                        <span>Premium Necklace</span>
+                        <span>€149</span>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <span>White and black shoes</span>
+                        <span>€170</span>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <span>Shipping</span>
+                        <span>Free</span>
+                    </div>
+
+                    <hr class="border-gray-700">
+
+                    <div class="flex justify-between text-lg font-semibold">
+
+                        <span>Total</span>
+                        <span>€319</span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container-page footer-content">
+
+            <p>© 2026 ONYX · Luxury Brand Clothes</p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
