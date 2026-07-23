@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onyx | French Luxury Clothing House — Summer Season 2026</title>
+    <meta name="description" content="Discover Onyx, a French luxury clothing house. Shop the Summer Season 2026 collection: tailored menswear, elegant womenswear, and timeless accessories crafted in Paris.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.onyx-paris.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Onyx | French Luxury Clothing House — Summer Season 2026">
+    <meta property="og:description" content="Timeless elegance: French haute couture for the Summer Season. Discover the new Onyx collection.">
+    <meta property="og:image" content="https://www.onyx-paris.com/assets/og-image.svg">
+    <meta property="og:url" content="https://www.onyx-paris.com/">
+    <meta property="og:site_name" content="Onyx">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Onyx | French Luxury Clothing House — Summer Season 2026">
+    <meta name="twitter:description" content="Timeless elegance: French haute couture for the Summer Season.">
+    <meta name="twitter:image" content="https://www.onyx-paris.com/assets/og-image.svg">
+
+    <link
+        rel="preload"
+        as="image"
+        href="assets/optimized/hero-summer-2026-960.webp"
+        imagesrcset="assets/optimized/hero-summer-2026-640.webp 640w, assets/optimized/hero-summer-2026-960.webp 960w, assets/optimized/hero-summer-2026-1280.webp 1280w"
+        imagesizes="100vw"
+        fetchpriority="high"
+    >
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="output.css">
+    <style>
+        /* ===== CAMBIOS HOME ACTUAL (COPILOT) ===== */
+
+        /* Hero a pantalla completa con recorte vertical para dar protagonismo a los modelos */
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            height: 100svh;
+        }
+
+        /* Imagen del hero recortada y reencuadrada */
+        .hero-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 38%;
+        }
+
+        /* Texto superpuesto sobre imagen, desplazado para mejorar contraste */
+        .hero-content {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            gap: 1rem;
+            text-align: left;
+            padding: 2rem 1.25rem 2.5rem 2.25rem;
+        }
+
+        .hero-content h1,
+        .hero-content .hero-tagline {
+            color: #000;
+            margin: 0;
+            max-width: 58rem;
+        }
+
+        /* Espaciado vertical extra entre secciones de contenido */
+        main > section:not(.hero-section) {
+            margin-top: clamp(4rem, 8vw, 7rem);
+        }
+
+        /* Titulos de seccion centrados */
+        main > section h2 {
+            text-align: center;
+            margin-bottom: clamp(1.5rem, 3vw, 2.75rem);
+        }
+
+        /* Links en imagenes y titulos de producto */
+        .home-product-media-link,
+        .home-product-title-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* CTAs de seccion bajo New Arrivals y Top Sellers */
+        .home-section-cta-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: clamp(2rem, 4vw, 3rem);
+        }
+
+        .home-section-cta {
+            display: inline-block;
+            padding: 0.9rem 1.8rem;
+            border: 1px solid #000;
+            background: #fff;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: border-color 0.2s ease;
+        }
+
+        /* Hover sutil: solo cambio de borde */
+        .home-section-cta:hover {
+            border-color: #4a4a4a;
+        }
+
+        /* CTA principal del hero con mismo criterio de hover sutil */
+        .home-btn-cta {
+            display: inline-block;
+            padding: 0.9rem 1.8rem;
+            border: 1px solid #000;
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .home-btn-cta:hover {
+            border-color: #4a4a4a;
+        }
+
+        /* Ajuste navbar: conserva el header simple del CSS base */
+        .nav-content {
+            gap: 1rem;
+        }
+
+        .nav-logo img {
+            width: auto;
+            height: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-section {
+                height: 100vh;
+            }
+
+            .hero-content {
+                padding: 2.5rem 4rem 4.25rem clamp(5rem, 9vw, 9rem);
+                max-width: 70%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-section {
+                height: clamp(32rem, 86svh, 52rem);
+                background-color: #0b0b0c;
+            }
+
+            .hero-image {
+                object-fit: contain;
+                object-position: center center;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-section {
+                height: 70svh;
+            }
+
+            .hero-image {
+                object-fit: contain;
+                object-position: center center;
+            }
+
+            .nav-content {
+                height: auto;
+                padding-block: 0.85rem;
+            }
+
+            .hero-content {
+                align-items: center;
+                text-align: center;
+                padding-left: clamp(2rem, 8vw, 3.25rem);
+                padding-right: 1.25rem;
+            }
+        }
+
+        /* ===== FIN CAMBIOS HOME ACTUAL (COPILOT) ===== */
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-content container-page">
+            <a href="/" class="nav-logo" aria-label="Onyx homepage">
+                <img
+                    src="ONYX_sin_fondo_en_blanco-removebg-preview.png"
+                    alt="Onyx"
+                    width="234"
+                    height="144"
+                    style="display: block; width: auto; height: 6.3rem; max-width: none;"
+                >
+            </a>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="/shop">Shop</a></li>
+                    <li><a href="/collections">Collections</a></li>
+                    <li><a href="/account">Account</a></li>
+                    <li><a href="/search">Searcher</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="hero-section" aria-label="Summer Collection">
+            <picture>
+                <source
+                    type="image/webp"
+                    srcset="assets/optimized/hero-summer-2026-640.webp 640w, assets/optimized/hero-summer-2026-960.webp 960w, assets/optimized/hero-summer-2026-1280.webp 1280w"
+                    sizes="100vw"
+                >
+                <img
+                    src="Hero picture Summer Season 2026 Onyx men and women.png"
+                    alt="Modelo y modelo femenina luciendo la coleccion Summer Season 2026 de Onyx en un patio parisino iluminado, con prendas de lujo de lino y seda de estilo haute couture"
+                    width="1672"
+                    height="941"
+                    fetchpriority="high"
+                    loading="eager"
+                    decoding="async"
+                    class="hero-image"
+                >
+            </picture>
+            <div class="hero-content">
+                <h1>Summer Season 2026</h1>
+                <p class="hero-tagline">Timeless Elegance: French Haute Couture for the Summer Season.</p>
+                <a href="#catalog" class="home-btn-cta">Explore Summer Collection</a>
+            </div>
+        </section>
+
+        <section id="catalog" class="new-arrivals" aria-labelledby="heading-new-arrivals">
+            <h2 id="heading-new-arrivals">New Arrivals</h2>
+
+            <div class="product-grid">
+
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <a href="/product/signature-linen-shirt" class="home-product-media-link" aria-label="View Signature Linen Shirt details">
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="assets/optimized/new-arrival-linen-shirt-240.webp 240w, assets/optimized/new-arrival-linen-shirt-400.webp 400w"
+                                sizes="(max-width: 1024px) 45vw, 194px"
+                            >
+                            <img
+                                src="assets/NS mens premium tshirt.png"
+                                alt="Men's ivory linen shirt with rolled sleeves and a refined tailored fit"
+                                width="400"
+                                height="500"
+                                loading="lazy"
+                                decoding="async"
+                                itemprop="image"
+                            >
+                        </picture>
+                    </a>
+                    <h3><a href="/product/signature-linen-shirt" class="home-product-title-link" itemprop="name">Signature Linen Shirt</a></h3>
+                    <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="EUR">€</span><span itemprop="price" content="245">245</span>
+                        <link itemprop="availability" href="https://schema.org/InStock">
+                    </p>
+                    <a href="/product/signature-linen-shirt" class="btn-product" aria-label="Add Signature Linen Shirt to cart">Add to Cart</a>
+                </article>
+
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <a href="/product/tailored-summer-trousers" class="home-product-media-link" aria-label="View Tailored Summer Trousers details">
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="assets/optimized/new-arrival-trousers-240.webp 240w, assets/optimized/new-arrival-trousers-400.webp 400w"
+                                sizes="(max-width: 1024px) 45vw, 194px"
+                            >
+                            <img
+                                src="assets/NS  mens premium trousers.png"
+                                alt="Men's tailored beige linen trousers with front pleats and a cropped ankle fit"
+                                width="400"
+                                height="500"
+                                loading="lazy"
+                                decoding="async"
+                                itemprop="image"
+                            >
+                        </picture>
+                    </a>
+                    <h3><a href="/product/tailored-summer-trousers" class="home-product-title-link" itemprop="name">Tailored Summer Trousers</a></h3>
+                    <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="EUR">€</span><span itemprop="price" content="320">320</span>
+                        <link itemprop="availability" href="https://schema.org/InStock">
+                    </p>
+                    <a href="/product/tailored-summer-trousers" class="btn-product" aria-label="Add Tailored Summer Trousers to cart">Add to Cart</a>
+                </article>
+
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <a href="/product/sage-satin-dress" class="home-product-media-link" aria-label="View Sage Satin Dress details">
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="assets/optimized/new-arrival-dress-240.webp 240w, assets/optimized/new-arrival-dress-400.webp 400w"
+                                sizes="(max-width: 1024px) 45vw, 194px"
+                            >
+                            <img
+                                src="assets/NS women summer dress.png"
+                                alt="Women's sage green satin summer dress with a flowing midi skirt and wrap waist"
+                                width="400"
+                                height="500"
+                                loading="lazy"
+                                decoding="async"
+                                itemprop="image"
+                            >
+                        </picture>
+                    </a>
+                    <h3><a href="/product/sage-satin-dress" class="home-product-title-link" itemprop="name">Sage Satin Dress</a></h3>
+                    <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="EUR">€</span><span itemprop="price" content="480">480</span>
+                        <link itemprop="availability" href="https://schema.org/InStock">
+                    </p>
+                    <a href="/product/sage-satin-dress" class="btn-product" aria-label="Add Sage Satin Dress to cart">Add to Cart</a>
+                </article>
+
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <a href="/product/riviera-straw-hat" class="home-product-media-link" aria-label="View Riviera Straw Hat details">
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="assets/optimized/new-arrival-hat-240.webp 240w, assets/optimized/new-arrival-hat-400.webp 400w"
+                                sizes="(max-width: 1024px) 45vw, 194px"
+                            >
+                            <img
+                                src="assets/NS womens Sun Hat BG good.png"
+                                alt="Women's woven straw sun hat with a wide brim and black ribbon band"
+                                width="400"
+                                height="500"
+                                loading="lazy"
+                                decoding="async"
+                                itemprop="image"
+                            >
+                        </picture>
+                    </a>
+                    <h3><a href="/product/riviera-straw-hat" class="home-product-title-link" itemprop="name">Riviera Straw Hat</a></h3>
+                    <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="EUR">€</span><span itemprop="price" content="165">165</span>
+                        <link itemprop="availability" href="https://schema.org/InStock">
+                    </p>
+                    <a href="/product/riviera-straw-hat" class="btn-product" aria-label="Add Riviera Straw Hat to cart">Add to Cart</a>
+                </article>
+
+            </div>
+
+            <div class="home-section-cta-wrap">
+                <a href="/catalog" class="home-section-cta" aria-label="View all new arrivals">See all new arrivals</a>
+            </div>
+        </section>
+
+        <section class="top-sellers" aria-labelledby="heading-top-sellers">
+            <h2 id="heading-top-sellers">Top Sellers</h2>
+
+            <div class="product-grid">
+
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <a href="/product/resort-linen-shirt" class="home-product-media-link" aria-label="View Resort Linen Shirt details">
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="assets/optimized/top-seller-men-shirt-240.webp 240w, assets/optimized/top-seller-men-shirt-400.webp 400w"
+                                sizes="(max-width: 1024px) 45vw, 194px"
+                            >
+                            <img
+                                src="assets/Top Sales men shirt lino.jpg"
+                                alt="Men's taupe linen shirt with an open collar and relaxed tailored fit"
+                                width="400"
+                                height="500"
+                                loading="lazy"
+                                decoding="async"
+                                itemprop="image"
+                            >
+                        </picture>
+                    </a>
+                    <h3><a href="/product/resort-linen-shirt" class="home-product-title-link" itemprop="name">Resort Linen Shirt</a></h3>
+                    <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="EUR">€</span><span itemprop="price" content="365">365</span>
+                        <link itemprop="availability" href="https://schema.org/InStock">
+                    </p>
+                    <a href="/product/resort-linen-shirt" class="btn-product" aria-label="Add Resort Linen Shirt to cart">Add to Cart</a>
+                </article>
+
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <a href="/product/scarlet-evening-dress" class="home-product-media-link" aria-label="View Scarlet Evening Dress details">
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="assets/optimized/top-seller-red-dress-240.webp 240w, assets/optimized/top-seller-red-dress-400.webp 400w"
+                                sizes="(max-width: 1024px) 45vw, 194px"
+                            >
+                            <img
+                                src="assets/Top Sales woman red dress.jpg"
+                                alt="Women's fitted red cocktail dress with a square neckline and asymmetrical hem"
+                                width="400"
+                                height="500"
+                                loading="lazy"
+                                decoding="async"
+                                itemprop="image"
+                            >
+                        </picture>
+                    </a>
+                    <h3><a href="/product/scarlet-evening-dress" class="home-product-title-link" itemprop="name">Scarlet Evening Dress</a></h3>
+                    <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="EUR">€</span><span itemprop="price" content="620">620</span>
+                        <link itemprop="availability" href="https://schema.org/InStock">
+                    </p>
+                    <a href="/product/scarlet-evening-dress" class="btn-product" aria-label="Add Scarlet Evening Dress to cart">Add to Cart</a>
+                </article>
+
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <a href="/product/artisan-leather-sandals" class="home-product-media-link" aria-label="View Artisan Leather Sandals details">
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="assets/optimized/top-seller-sandals-240.webp 240w, assets/optimized/top-seller-sandals-400.webp 400w"
+                                sizes="(max-width: 1024px) 45vw, 194px"
+                            >
+                            <img
+                                src="assets/Top Sales leather sandals.jpg"
+                                alt="Brown leather flat sandals with crossover straps and a buckle slingback"
+                                width="400"
+                                height="500"
+                                loading="lazy"
+                                decoding="async"
+                                itemprop="image"
+                            >
+                        </picture>
+                    </a>
+                    <h3><a href="/product/artisan-leather-sandals" class="home-product-title-link" itemprop="name">Artisan Leather Sandals</a></h3>
+                    <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="EUR">€</span><span itemprop="price" content="590">590</span>
+                        <link itemprop="availability" href="https://schema.org/InStock">
+                    </p>
+                    <a href="/product/artisan-leather-sandals" class="btn-product" aria-label="Add Artisan Leather Sandals to cart">Add to Cart</a>
+                </article>
+
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <a href="/product/raffia-top-handle-bag" class="home-product-media-link" aria-label="View Raffia Top-Handle Bag details">
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="assets/optimized/top-seller-rafia-bag-240.webp 240w, assets/optimized/top-seller-rafia-bag-400.webp 400w"
+                                sizes="(max-width: 1024px) 45vw, 194px"
+                            >
+                            <img
+                                src="assets/Top Sales rafia bag.jpg"
+                                alt="Structured raffia handbag with tan leather trim, top handle and gold clasp"
+                                width="400"
+                                height="500"
+                                loading="lazy"
+                                decoding="async"
+                                itemprop="image"
+                            >
+                        </picture>
+                    </a>
+                    <h3><a href="/product/raffia-top-handle-bag" class="home-product-title-link" itemprop="name">Raffia Top-Handle Bag</a></h3>
+                    <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="priceCurrency" content="EUR">€</span><span itemprop="price" content="890">890</span>
+                        <link itemprop="availability" href="https://schema.org/InStock">
+                    </p>
+                    <a href="/product/raffia-top-handle-bag" class="btn-product" aria-label="Add Raffia Top-Handle Bag to cart">Add to Cart</a>
+                </article>
+
+            </div>
+
+            <div class="home-section-cta-wrap">
+                <a href="/catalog" class="home-section-cta" aria-label="View all products">All products</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container-page py-16">
+
+            <div class="grid gap-6 md:grid-cols-3">
+                <nav aria-label="Product categories" class="card">
+                    <h2 class="section-title">Categories</h2>
+                    <ul class="space-y-5">
+                    <li><a href="/category/footwear">Footwear</a></li>
+                    <li><a href="/category/shirts">Shirts</a></li>
+                    <li><a href="/category/trousers">Trousers</a></li>
+                    <li><a href="/category/accessories">Accessories</a></li>
+                    </ul>
+                </nav>
+
+                <nav aria-label="Legal" class="card">
+                    <h2 class="section-title">Legal</h2>
+                    <ul class="space-y-5">
+                    <li><a href="/terms">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/about">About Us / Our Brand</a></li>
+                    </ul>
+                </nav>
+
+                <address class="card space-y-5">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p>12 Rue du Faubourg Saint-Honore, 75008 Paris, France</p>
+                    <p><a href="mailto:contact@onyx-paris.com">contact@onyx-paris.com</a></p>
+                    <p><a href="tel:+33142860000">+33 1 42 86 00 00</a></p>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-content footer-bottom">
+            <p>&copy; 2026 Onyx. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "Onyx",
+                "url": "https://www.onyx-paris.com/",
+                "logo": "https://www.onyx-paris.com/assets/logo-onyx.svg",
+                "description": "Onyx is a French luxury clothing house offering tailored menswear, elegant womenswear, and timeless accessories crafted in Paris.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "12 Rue du Faubourg Saint-Honoré",
+                    "addressLocality": "Paris",
+                    "postalCode": "75008",
+                    "addressCountry": "FR"
+                },
+                "email": "contact@onyx-paris.com",
+                "telephone": "+33142860000",
+                "sameAs": []
+            },
+            {
+                "@type": "ItemList",
+                "name": "Summer Season 2026 New Arrivals",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Ivory Linen Shirt",
+                            "image": "https://www.onyx-paris.com/assets/NS%20mens%20premium%20tshirt.png",
+                            "description": "A breathable ivory linen shirt with a soft texture, rolled cuffs and a polished summer silhouette.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "245",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Tailored Linen Trousers",
+                            "image": "https://www.onyx-paris.com/assets/NS%20%20mens%20premium%20trousers.png",
+                            "description": "Tailored beige linen trousers with sharp front pleats, a clean waistband and a lightweight warm-weather finish.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "320",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Sage Satin Summer Dress",
+                            "image": "https://www.onyx-paris.com/assets/NS%20women%20summer%20dress.png",
+                            "description": "A sage satin midi dress with a fluid skirt, gathered bodice and elegant movement for summer occasions.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "480",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Wide-Brim Straw Hat",
+                            "image": "https://www.onyx-paris.com/assets/NS%20womens%20Sun%20Hat%20BG%20good.png",
+                            "description": "A woven straw sun hat with a structured crown, generous brim and black ribbon trim for elegant sun protection.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "165",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "name": "Top Sellers",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Taupe Linen Shirt",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20men%20shirt%20lino.jpg",
+                            "description": "A lightweight taupe linen shirt with an open collar, natural texture and an easy refined fit.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "365",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Red Cocktail Dress",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20woman%20red%20dress.jpg",
+                            "description": "A fitted red cocktail dress with a clean square neckline, sculpted drape and modern asymmetric hemline.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "620",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Brown Leather Sandals",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20leather%20sandals.jpg",
+                            "description": "Flat brown leather sandals with crossover straps, a secure slingback buckle and artisan-inspired finishing.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "590",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Structured Raffia Handbag",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20rafia%20bag.jpg",
+                            "description": "A structured raffia handbag with smooth tan leather trim, top handle and polished gold-tone clasp.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "890",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+</body>
+</html>
