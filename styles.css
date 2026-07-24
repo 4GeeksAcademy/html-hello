@@ -1,0 +1,378 @@
+@import "tailwindcss";
+
+/* ===========================
+   THEME
+   Tailwind v4 auto-generates utilities from @theme tokens,
+   e.g. --color-gold below gives you bg-gold, text-gold, border-gold, etc.
+   Never wrap these in [--color-x] brackets — that outputs literal
+   "--color-x" instead of var(--color-x) and breaks the CSS.
+=========================== */
+
+@theme {
+
+    --color-onyx: #0B0B0C;
+    --color-surface: #171717;
+    --color-surface-light: #242424;
+    --color-border: #2A2A2A;
+
+    --color-gold: #C9A227;
+    --color-gold-light: #E0C15A;
+
+    --color-text: #F5F5F5;
+    --color-muted: #9C9C9C;
+
+    --color-error: #DC2626;
+
+    --font-sans: "Inter", Arial, sans-serif;
+    --font-serif: "Playfair Display", Georgia, serif;
+
+}
+
+/* ===========================
+   BASE
+=========================== */
+
+@layer base {
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-onyx
+        text-text
+        font-sans
+        antialiased;
+    }
+
+    h1 {
+        @apply font-serif
+        text-4xl
+        lg:text-6xl
+        font-medium
+        tracking-wide;
+    }
+
+    h2 {
+        @apply font-serif
+        text-2xl
+        lg:text-3xl
+        font-medium
+        tracking-wide;
+    }
+
+    h3 {
+        @apply text-base
+        font-medium
+        uppercase
+        tracking-widest;
+    }
+
+    p {
+        @apply text-muted
+        leading-7;
+    }
+
+    a {
+        @apply transition
+        duration-300;
+    }
+
+}
+
+/* ===========================
+   LAYOUT
+=========================== */
+
+@layer components {
+
+.container-page {
+    @apply max-w-7xl
+    mx-auto
+    px-6
+    lg:px-10;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar {
+    @apply sticky
+    top-0
+    z-50
+    bg-onyx/90
+    backdrop-blur-md
+    border-b
+    border-border;
+}
+
+.nav-content {
+    @apply flex
+    justify-between
+    items-center
+    h-20;
+}
+
+.nav-logo {
+    @apply font-serif
+    text-xl
+    tracking-[0.2em]
+    uppercase
+    text-text;
+}
+
+.nav-links {
+    @apply flex
+    gap-8
+    text-xs
+    uppercase
+    tracking-widest;
+}
+
+.nav-links a {
+    @apply text-muted
+    hover:text-gold;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero {
+    @apply flex
+    flex-col
+    items-center
+    justify-center
+    text-center
+    gap-6
+    py-32
+    lg:py-40;
+}
+
+.hero-eyebrow {
+    @apply text-xs
+    uppercase
+    tracking-[0.3em]
+    text-gold;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn-primary {
+    @apply w-full
+    rounded-xl
+    bg-gold
+    py-4
+    font-semibold
+    text-onyx
+    transition
+    duration-300
+    hover:bg-gold-light
+    hover:scale-[1.02];
+}
+
+.btn-outline {
+    @apply w-full
+    rounded-xl
+    border
+    border-border
+    bg-transparent
+    py-4
+    font-semibold
+    text-text
+    transition
+    duration-300
+    hover:border-gold
+    hover:text-gold;
+}
+
+.btn-link {
+    @apply inline-flex
+    items-center
+    gap-2
+    text-sm
+    uppercase
+    tracking-widest
+    text-text
+    border-b
+    border-transparent
+    hover:border-gold
+    hover:text-gold;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card {
+    @apply rounded-3xl
+    border
+    border-border
+    bg-surface
+    p-10;
+}
+
+/* ===========================
+   PRODUCT GRID
+=========================== */
+
+.product-grid {
+    @apply grid
+    grid-cols-2
+    lg:grid-cols-4
+    gap-6
+    lg:gap-10;
+}
+
+.product-card {
+    @apply 
+    flex
+    flex-col
+    gap-3;
+}
+
+.product-image {
+    @apply aspect-square
+    w-full
+    overflow-hidden
+    rounded-2xl
+    bg-surface
+    border
+    border-border;
+}
+
+.product-image img {
+    @apply h-full
+    w-full
+    object-cover
+    transition
+    duration-500    
+    hover:scale-105;
+}
+
+.product-name {
+    @apply text-sm
+    uppercase
+    tracking-widest
+    text-text;
+}
+
+.product-price {
+    @apply text-sm
+    text-gold;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+label {
+    @apply block
+    mb-2
+    text-xs
+    uppercase
+    tracking-widest
+    text-muted;
+}
+
+input,
+select {
+    @apply w-full
+    rounded-xl
+    border
+    border-border
+    bg-surface-light
+    px-5
+    py-4
+    text-text
+    placeholder:text-muted
+    transition;
+}
+
+input:focus,
+select:focus {
+    @apply outline-none
+    ring-2
+    ring-gold
+    border-gold;
+}
+
+/* ===========================
+   REQUIRED
+=========================== */
+
+.required {
+    @apply text-error
+    ml-1;
+}
+
+.required-text {
+    @apply text-sm
+    text-error;
+}
+
+/* ===========================
+   TITLES
+=========================== */
+
+.section-title {
+    @apply mb-8
+    border-b
+    border-border
+    pb-4
+    text-xs
+    uppercase
+    tracking-widest
+    text-muted;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.grid-2 {
+    @apply grid
+    gap-10
+    lg:grid-cols-2;
+}
+
+/* ===========================
+   ORDER SUMMARY
+=========================== */
+
+.summary {
+    @apply rounded-3xl
+    border
+    border-border
+    bg-surface
+    p-8
+    sticky
+    top-28;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer {
+    @apply mt-24
+    border-t
+    border-border
+    bg-onyx;
+}
+
+.footer-content {
+    @apply py-10
+    text-center
+    text-xs
+    uppercase
+    tracking-widest
+    text-muted;
+}
+
+}
+
+

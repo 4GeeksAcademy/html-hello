@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Product page designed with the ONYX visual language for a coherent brand experience.">
+    <title>ONYX | Product</title>
+
+    <link rel="stylesheet" href="output.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="container-page nav-content">
+
+                        <a href="index.html" class="logo">
+                            <img src="ONYX_sin_fondo_en_blanco-removebg-preview.png" alt="ONYX logo" class="h-30 w-30 object-contain">
+                            <span class="logo-text"></span>
+                        </a>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Catalog</a></li>
+                    <li><a href="index-product.html">Products</a></li>
+                    <li><a href="indexformulario.html">Cart</a></li>
+                    <li><a href="product-search.html">Searcher</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <main class="container-page py-16" id="main-content">
+
+        <h1 class="mb-12 text-center">
+            Product Details
+        </h1>
+
+        <div class="grid-2">
+
+            <section class="card space-y-10" aria-labelledby="product-title">
+
+                <figure>
+
+                    <img
+                        src="assets/Top Sales leather sandals.jpg"
+                        alt="Folded and hanging clothing items without any model"
+                        class="w-full rounded-lg">
+
+                    <figcaption class="required-text mt-4">
+                        Corte limpio, tejido premium y estilo ONYX para el dia a dia.
+                    </figcaption>
+
+                </figure>
+
+                <section>
+
+                    <h2 class="section-title" id="product-title">
+                        Polo ONYX Essential
+                    </h2>
+
+                    <p>
+                        Un polo versatil con ajuste moderno, pensado para elevar cualquier look casual con una presencia elegante.
+                    </p>
+
+                    <div class="mt-6 flex items-center gap-4">
+                        <p class="text-2xl font-semibold">$49</p>
+                        <p class="text-sm line-through">$69</p>
+                    </div>
+
+                </section>
+
+                <section>
+
+                    <h2 class="section-title">
+                        Product Highlights
+                    </h2>
+
+                    <div class="grid gap-4 md:grid-cols-3 md:gap-0">
+
+                        <article class="md:pr-6 md:border-r md:border-black/20">
+                            <h3 class="text-base font-semibold">Algodon premium</h3>
+                            <p class="mt-2">Tejido suave y transpirable para comodidad durante todo el dia.</p>
+                        </article>
+
+                        <article class="md:px-6 md:border-r md:border-black/20">
+                            <h3 class="text-base font-semibold">Ajuste moderno</h3>
+                            <p class="mt-2">Silueta estilizada que mantiene libertad de movimiento.</p>
+                        </article>
+
+                        <article class="md:pl-6">
+                            <h3 class="text-base font-semibold">Acabado duradero</h3>
+                            <p class="mt-2">Cuello estructurado y costuras reforzadas para uso frecuente.</p>
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+            <aside class="summary space-y-8">
+
+                <section>
+
+                    <h2 class="section-title">
+                        Purchase Options
+                    </h2>
+
+                    <form class="space-y-6">
+
+                        <div>
+                            <label for="color">
+                                Color
+                            </label>
+                            <select id="color" name="color">
+                                <option>Midnight Black</option>
+                                <option>Off White</option>
+                                <option>Olive Green</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="size">
+                                Size
+                            </label>
+                            <select id="size" name="size">
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="quantity">
+                                Quantity
+                            </label>
+                            <input id="quantity" name="quantity" type="number" min="1" value="1">
+                        </div>
+
+                        <button class="btn-primary" type="button">
+                            Add to Cart
+                        </button>
+
+                    </form>
+
+                </section>
+
+                <section>
+
+                    <h2 class="section-title">
+                        Specifications
+                    </h2>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between">
+                            <span>Material</span>
+                            <span>95% cotton, 5% elastane</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Fit</span>
+                            <span>Regular slim</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Care</span>
+                            <span>Machine wash cold</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Returns</span>
+                            <span>30 days</span>
+                        </div>
+                    </div>
+
+                </section>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    
+    <footer class="footer">
+        <div class="container-page py-16">
+
+            <div class="grid gap-6 md:grid-cols-3">
+                <nav aria-label="Product categories" class="card">
+                    <h2 class="section-title">Categories</h2>
+                    <ul class="space-y-5">
+                    <li><a href="/category/footwear">Footwear</a></li>
+                    <li><a href="/category/shirts">Shirts</a></li>
+                    <li><a href="/category/trousers">Trousers</a></li>
+                    <li><a href="/category/accessories">Accessories</a></li>
+                    </ul>
+                </nav>
+
+                <nav aria-label="Legal" class="card">
+                    <h2 class="section-title">Legal</h2>
+                    <ul class="space-y-5">
+                    <li><a href="/terms">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/about">About Us / Our Brand</a></li>
+                    </ul>
+                </nav>
+
+                <address class="card space-y-5">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p>12 Rue du Faubourg Saint-Honore, 75008 Paris, France</p>
+                    <p><a href="mailto:contact@onyx-paris.com">contact@onyx-paris.com</a></p>
+                    <p><a href="tel:+33142860000">+33 1 42 86 00 00</a></p>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-content footer-bottom">
+            <p>&copy; 2026 Onyx. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "Onyx",
+                "url": "https://www.onyx-paris.com/",
+                "logo": "https://www.onyx-paris.com/assets/logo-onyx.svg",
+                "description": "Onyx is a French luxury clothing house offering tailored menswear, elegant womenswear, and timeless accessories crafted in Paris.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "12 Rue du Faubourg Saint-Honoré",
+                    "addressLocality": "Paris",
+                    "postalCode": "75008",
+                    "addressCountry": "FR"
+                },
+                "email": "contact@onyx-paris.com",
+                "telephone": "+33142860000",
+                "sameAs": []
+            },
+            {
+                "@type": "ItemList",
+                "name": "Summer Season 2026 New Arrivals",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Ivory Linen Shirt",
+                            "image": "https://www.onyx-paris.com/assets/NS%20mens%20premium%20tshirt.png",
+                            "description": "A breathable ivory linen shirt with a soft texture, rolled cuffs and a polished summer silhouette.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "245",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Tailored Linen Trousers",
+                            "image": "https://www.onyx-paris.com/assets/NS%20%20mens%20premium%20trousers.png",
+                            "description": "Tailored beige linen trousers with sharp front pleats, a clean waistband and a lightweight warm-weather finish.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "320",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Sage Satin Summer Dress",
+                            "image": "https://www.onyx-paris.com/assets/NS%20women%20summer%20dress.png",
+                            "description": "A sage satin midi dress with a fluid skirt, gathered bodice and elegant movement for summer occasions.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "480",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Wide-Brim Straw Hat",
+                            "image": "https://www.onyx-paris.com/assets/NS%20womens%20Sun%20Hat%20BG%20good.png",
+                            "description": "A woven straw sun hat with a structured crown, generous brim and black ribbon trim for elegant sun protection.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "165",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "name": "Top Sellers",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Taupe Linen Shirt",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20men%20shirt%20lino.jpg",
+                            "description": "A lightweight taupe linen shirt with an open collar, natural texture and an easy refined fit.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "365",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Red Cocktail Dress",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20woman%20red%20dress.jpg",
+                            "description": "A fitted red cocktail dress with a clean square neckline, sculpted drape and modern asymmetric hemline.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "620",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Brown Leather Sandals",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20leather%20sandals.jpg",
+                            "description": "Flat brown leather sandals with crossover straps, a secure slingback buckle and artisan-inspired finishing.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "590",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Structured Raffia Handbag",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20rafia%20bag.jpg",
+                            "description": "A structured raffia handbag with smooth tan leather trim, top handle and polished gold-tone clasp.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "890",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+</body>
+
+</html>

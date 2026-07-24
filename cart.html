@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONYX | Shopping Cart</title>
+
+    <link rel="stylesheet" href="output.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="container-page nav-content">
+
+            <a href="X" class="logo">
+                <img src="ONYX_sin_fondo_en_blanco-removebg-preview.png" alt="ONYX logo" class="h-30 w-30 object-contain">
+                <span class="logo-text"></span>
+            </a>
+
+            <nav aria-label="Main Navigation">
+
+                <ul class="nav-links">
+
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Searcher</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container-page py-16">
+
+        <h1 class="mb-12 text-center">
+            Shopping Cart
+        </h1>
+
+        <div class="grid gap-8 md:grid-cols-3">
+
+            <section aria-labelledby="your-items-heading" class="card md:col-span-2">
+
+                <h2 id="your-items-heading" class="section-title">
+                    Your Items
+                </h2>
+
+                <div class="space-y-7">
+
+                    <article class="flex flex-col gap-4 border-b border-gray-700 pb-7 sm:flex-row sm:items-start sm:gap-5">
+
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="ONYX Signature Blazer in a tailored neutral-toned look" class="h-44 w-full rounded object-cover sm:h-40 sm:w-32 sm:flex-shrink-0 md:h-44 md:w-36">
+
+                        <div class="min-w-0 flex-1 space-y-2">
+
+                            <h3 class="text-xl font-medium">
+                                ONYX Signature Blazer
+                            </h3>
+
+                            <p>
+                                <span class="font-semibold">Size:</span> M
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Unit price:</span> €320
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Quantity:</span> 1
+                            </p>
+
+                        </div>
+
+                        <p class="sm:w-24 sm:self-start sm:text-right">
+                            <span class="font-semibold">Total:</span> €320
+                        </p>
+
+                    </article>
+
+                    <article class="flex flex-col gap-4 border-b border-gray-700 pb-7 sm:flex-row sm:items-start sm:gap-5">
+
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80" alt="ONYX Silk Evening Shirt styled for a formal evening outfit" class="h-44 w-full rounded object-cover sm:h-40 sm:w-32 sm:flex-shrink-0 md:h-44 md:w-36">
+
+                        <div class="min-w-0 flex-1 space-y-2">
+
+                            <h3 class="text-xl font-medium">
+                                ONYX Silk Evening Shirt
+                            </h3>
+
+                            <p>
+                                <span class="font-semibold">Size:</span> S
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Unit price:</span> €180
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Quantity:</span> 2
+                            </p>
+
+                        </div>
+
+                        <p class="sm:w-24 sm:self-start sm:text-right">
+                            <span class="font-semibold">Total:</span> €360
+                        </p>
+
+                    </article>
+
+                    <article class="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
+
+                        <img src="https://images.pexels.com/photos/1300550/pexels-photo-1300550.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ONYX Tailored Trousers in a refined minimalist fashion style" class="h-44 w-full rounded object-cover sm:h-40 sm:w-32 sm:flex-shrink-0 md:h-44 md:w-36">
+
+                        <div class="min-w-0 flex-1 space-y-2">
+
+                            <h3 class="text-xl font-medium">
+                                ONYX Tailored Trousers
+                            </h3>
+
+                            <p>
+                                <span class="font-semibold">Size:</span> M
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Unit price:</span> €220
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Quantity:</span> 1
+                            </p>
+
+                        </div>
+
+                        <p class="sm:w-24 sm:self-start sm:text-right">
+                            <span class="font-semibold">Total:</span> €220
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <aside aria-labelledby="order-summary-heading" class="card">
+
+                <h2 id="order-summary-heading" class="section-title">
+                    Order Summary
+                </h2>
+
+                <div class="space-y-5">
+
+                    <p class="flex items-center justify-between">
+                        <span>Subtotal</span>
+                        <span>€900</span>
+                    </p>
+
+                    <p class="flex items-center justify-between">
+                        <span>Taxes</span>
+                        <span>€189</span>
+                    </p>
+
+                    <hr class="border-gray-700">
+
+                    <p class="flex items-center justify-between text-xl font-semibold">
+                        <span>Total</span>
+                        <span>€1,089</span>
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+
+                        <a href="indexformulario.html" class="btn-primary block w-full text-center">
+                            Proceed to Checkout
+                        </a>
+
+                        <a href="#" class="block text-center text-sm underline underline-offset-4">
+                            Continue Shopping
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container-page footer-content">
+
+            <p>© 2026 ONYX · Luxury Brand Clothes</p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
