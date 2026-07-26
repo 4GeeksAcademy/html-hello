@@ -2,20 +2,20 @@
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/html-hello.git)
 
-为使用 [gitpod.io](gitpod.io) 代码编辑器 4Geeks Academy 学生提供的最基础的样板。
+The most basic boilerplate for 4Geeks Academy students using the [gitpod.io](gitpod.io) code editor.
 
 [![How to open html/css preview of my project in gitpod](https://github.com/4GeeksAcademy/Templates-Boilerplates/blob/master/assets/hello-html-intro.png?raw=true)](https://youtu.be/dfbDCMu_p-0)
 
-## 接下来怎么做？
+## What to do next?
 
-创建一个具有 [基本 HTML 页面结构](http://content.breatheco.de/lesson/what-is-html-learn-html#page-structure) 的 `index.html` 文件并通过使用以下命令，实时预览 Web 服务器提供的 HTML 页面：
+Create an `index.html` file with the [basic HTML page structure](http://content.breatheco.de/lesson/what-is-html-learn-html#page-structure) and preview it live using a web server with the following command:
 
 ```sh
 $ pip3 install flask && python3 server.py
 ```
 
-- 您可以根据需要创建任意数量的 HTML 文件
-- 您还可以使用放置在 `<head></head>` 标签之间的 `<link>` 标签创建 CSS 文件并将它们导入您的网站，如下所示：
+- You can create as many HTML files as you need.
+- You can also create CSS files and import them into your website using a `<link>` tag placed between the `<head></head>` tags, like this:
 
 ```html
 <head>
@@ -25,7 +25,7 @@ $ pip3 install flask && python3 server.py
 </head>
 ```
 
-- 如果你想使用 Tailwind CSS，也可以选择在同一个 `<head>` 中通过官方的 Tailwind CSS v4 CDN 引入：
+- If you want to use Tailwind CSS, you can optionally include it in the same `<head>` through the official Tailwind CSS v4 CDN:
 
 ```html
 <head>

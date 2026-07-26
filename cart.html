@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONYX | Shopping Cart</title>
+
+    <link rel="stylesheet" href="output.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+     <header class="navbar">
+        <div class="nav-content container-page">
+            <a href="index.html" class="nav-logo" aria-label="Onyx homepage">
+                <img
+                    src="ONYX_sin_fondo_en_blanco-removebg-preview.png"
+                    alt="Onyx"
+                    width="234"
+                    height="144"
+                    style="display: block; width: auto; height: 6.3rem; max-width: none;"
+                >
+            </a>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index-catalogo.html">Catalog</a></li>
+                    <li><a href="index-product.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="product-search.html">Searcher</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container-page py-16">
+
+        <h1 class="mb-12 text-center">
+            Shopping Cart
+        </h1>
+
+        <div class="grid gap-8 md:grid-cols-3">
+
+            <section aria-labelledby="your-items-heading" class="card md:col-span-2">
+
+                <h2 id="your-items-heading" class="section-title">
+                    Your Items
+                </h2>
+
+                <div class="space-y-7">
+
+                    <article class="flex flex-col gap-4 border-b border-gray-700 pb-7 sm:flex-row sm:items-start sm:gap-5">
+
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80" alt="ONYX Signature Blazer in a tailored neutral-toned look" class="h-44 w-full rounded object-cover sm:h-40 sm:w-32 sm:shrink-0 md:h-44 md:w-36">
+
+                        <div class="min-w-0 flex-1 space-y-2">
+
+                            <h3 class="text-xl font-medium">
+                                ONYX Signature Blazer
+                            </h3>
+
+                            <p>
+                                <span class="font-semibold">Size:</span> M
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Unit price:</span> €320
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Quantity:</span> 1
+                            </p>
+
+                        </div>
+
+                        <p class="sm:w-24 sm:self-start sm:text-right">
+                            <span class="font-semibold">Total:</span> €320
+                        </p>
+
+                    </article>
+
+                    <article class="flex flex-col gap-4 border-b border-gray-700 pb-7 sm:flex-row sm:items-start sm:gap-5">
+
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80" alt="ONYX Silk Evening Shirt styled for a formal evening outfit" class="h-44 w-full rounded object-cover sm:h-40 sm:w-32 sm:shrink-0 md:h-44 md:w-36">
+
+                        <div class="min-w-0 flex-1 space-y-2">
+
+                            <h3 class="text-xl font-medium">
+                                ONYX Silk Evening Shirt
+                            </h3>
+
+                            <p>
+                                <span class="font-semibold">Size:</span> S
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Unit price:</span> €180
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Quantity:</span> 2
+                            </p>
+
+                        </div>
+
+                        <p class="sm:w-24 sm:self-start sm:text-right">
+                            <span class="font-semibold">Total:</span> €360
+                        </p>
+
+                    </article>
+
+                    <article class="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
+
+                        <img src="https://images.pexels.com/photos/1300550/pexels-photo-1300550.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ONYX Tailored Trousers in a refined minimalist fashion style" class="h-44 w-full rounded object-cover sm:h-40 sm:w-32 sm:shrink-0 md:h-44 md:w-36">
+
+                        <div class="min-w-0 flex-1 space-y-2">
+
+                            <h3 class="text-xl font-medium">
+                                ONYX Tailored Trousers
+                            </h3>
+
+                            <p>
+                                <span class="font-semibold">Size:</span> M
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Unit price:</span> €220
+                            </p>
+
+                            <p>
+                                <span class="font-semibold">Quantity:</span> 1
+                            </p>
+
+                        </div>
+
+                        <p class="sm:w-24 sm:self-start sm:text-right">
+                            <span class="font-semibold">Total:</span> €220
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <aside aria-labelledby="order-summary-heading" class="card">
+
+                <h2 id="order-summary-heading" class="section-title">
+                    Order Summary
+                </h2>
+
+                <div class="space-y-5">
+
+                    <p class="flex items-center justify-between">
+                        <span>Subtotal</span>
+                        <span>€900</span>
+                    </p>
+
+                    <p class="flex items-center justify-between">
+                        <span>Taxes</span>
+                        <span>€189</span>
+                    </p>
+
+                    <hr class="border-gray-700">
+
+                    <p class="flex items-center justify-between text-xl font-semibold">
+                        <span>Total</span>
+                        <span>€1,089</span>
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+
+                        <a href="indexformulario.html" class="btn-primary block w-full text-center">
+                            Proceed to Checkout
+                        </a>
+
+                        <a href="index.html" class="block text-center text-sm underline underline-offset-4">
+                            Continue Shopping
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+        <div class="container-page py-16">
+
+            <div class="grid gap-6 md:grid-cols-3">
+                <nav aria-label="Product categories" class="card">
+                    <h2 class="section-title">Categories</h2>
+                    <ul class="space-y-5">
+                    <li><a href="/category/footwear">Footwear</a></li>
+                    <li><a href="/category/shirts">Shirts</a></li>
+                    <li><a href="/category/trousers">Trousers</a></li>
+                    <li><a href="/category/accessories">Accessories</a></li>
+                    </ul>
+                </nav>
+
+                <nav aria-label="Legal" class="card">
+                    <h2 class="section-title">Legal</h2>
+                    <ul class="space-y-5">
+                    <li><a href="/terms">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/about">About Us / Our Brand</a></li>
+                    </ul>
+                </nav>
+
+                <address class="card space-y-5">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p>12 Rue du Faubourg Saint-Honore, 75008 Paris, France</p>
+                    <p><a href="mailto:contact@onyx-paris.com">contact@onyx-paris.com</a></p>
+                    <p><a href="tel:+33142860000">+33 1 42 86 00 00</a></p>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-content footer-bottom">
+            <p>&copy; 2026 Onyx. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "Onyx",
+                "url": "https://www.onyx-paris.com/",
+                "logo": "https://www.onyx-paris.com/assets/logo-onyx.svg",
+                "description": "Onyx is a French luxury clothing house offering tailored menswear, elegant womenswear, and timeless accessories crafted in Paris.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "12 Rue du Faubourg Saint-Honoré",
+                    "addressLocality": "Paris",
+                    "postalCode": "75008",
+                    "addressCountry": "FR"
+                },
+                "email": "contact@onyx-paris.com",
+                "telephone": "+33142860000",
+                "sameAs": []
+            },
+            {
+                "@type": "ItemList",
+                "name": "Summer Season 2026 New Arrivals",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Ivory Linen Shirt",
+                            "image": "https://www.onyx-paris.com/assets/NS%20mens%20premium%20tshirt.png",
+                            "description": "A breathable ivory linen shirt with a soft texture, rolled cuffs and a polished summer silhouette.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "245",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Tailored Linen Trousers",
+                            "image": "https://www.onyx-paris.com/assets/NS%20%20mens%20premium%20trousers.png",
+                            "description": "Tailored beige linen trousers with sharp front pleats, a clean waistband and a lightweight warm-weather finish.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "320",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Sage Satin Summer Dress",
+                            "image": "https://www.onyx-paris.com/assets/NS%20women%20summer%20dress.png",
+                            "description": "A sage satin midi dress with a fluid skirt, gathered bodice and elegant movement for summer occasions.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "480",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Wide-Brim Straw Hat",
+                            "image": "https://www.onyx-paris.com/assets/NS%20womens%20Sun%20Hat%20BG%20good.png",
+                            "description": "A woven straw sun hat with a structured crown, generous brim and black ribbon trim for elegant sun protection.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "165",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "name": "Top Sellers",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Taupe Linen Shirt",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20men%20shirt%20lino.jpg",
+                            "description": "A lightweight taupe linen shirt with an open collar, natural texture and an easy refined fit.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "365",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Red Cocktail Dress",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20woman%20red%20dress.jpg",
+                            "description": "A fitted red cocktail dress with a clean square neckline, sculpted drape and modern asymmetric hemline.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "620",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Brown Leather Sandals",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20leather%20sandals.jpg",
+                            "description": "Flat brown leather sandals with crossover straps, a secure slingback buckle and artisan-inspired finishing.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "590",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Structured Raffia Handbag",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20rafia%20bag.jpg",
+                            "description": "A structured raffia handbag with smooth tan leather trim, top handle and polished gold-tone clasp.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "890",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+</body>
+
+</html>

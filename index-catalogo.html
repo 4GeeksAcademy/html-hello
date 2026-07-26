@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+	<!-- Head: metadata, title and external styles -->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ONYX | Summer 2026 Catalog</title>
+		<meta
+			name="description"
+			content="Explore ONYX Summer 2026 pre-collection: curated shoes, shirts, pants, dresses and accessories with size filters and direct product access."
+		>
+		<meta name="robots" content="index, follow">
+		<meta name="theme-color" content="#171717">
+		<link rel="canonical" href="https://4geeksacademy.github.io/html-hello/index-catalogo.html">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="ONYX | Summer 2026 Catalog">
+		<meta
+			property="og:description"
+			content="Discover ONYX Summer 2026 looks and filter products by category and size."
+		>
+		<meta property="og:url" content="https://4geeksacademy.github.io/html-hello/index-catalogo.html">
+		<meta property="og:image" content="ONYX_sin_fondo_en_blanco-removebg-preview.png">
+		<meta property="og:locale" content="en_US">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="ONYX | Summer 2026 Catalog">
+		<meta
+			name="twitter:description"
+			content="Explore ONYX Summer 2026 products by category and size."
+		>
+		<meta name="twitter:image" content="ONYX_sin_fondo_en_blanco-removebg-preview.png">
+		<link rel="stylesheet" href="output.css">
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			rel="preload"
+			as="image"
+			href="ONYX_sin_fondo_en_blanco-removebg-preview.png"
+			imagesizes="(min-width: 1024px) 1152px, 100vw"
+		>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+			media="print"
+			onload="this.media='all'"
+		>
+		<noscript>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap">
+		</noscript>
+		
+	</head>
+	<!-- Body: page shell -->
+	<body class="catalog min-h-screen antialiased">
+	
+		<!-- Header: main navigation -->
+		 <header class="navbar">
+        <div class="nav-content container-page">
+            <a href="index.html" class="nav-logo" aria-label="Onyx homepage">
+                <img
+                    src="ONYX_sin_fondo_en_blanco-removebg-preview.png"
+                    alt="Onyx"
+                    width="234"
+                    height="144"
+                    style="display: block; width: auto; height: 6.3rem; max-width: none;"
+                >
+            </a>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index-catalogo.html">Catalog</a></li>
+                    <li><a href="index-product.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="product-search.html">Searcher</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+		<!-- Main content -->
+		<main class="catalog__main mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+			<!-- Logo section -->
+			<section class="catalog__hero mb-10 text-center lg:mb-12" aria-labelledby="catalog-title">
+				
+				<h1
+                  id="catalog-title"
+                  class="catalog__title mx-auto max-w-4xl font-['Cormorant_Garamond',Georgia,serif] text-4xl font-semibold uppercase leading-tight tracking-[0.04em] text-neutral-50 sm:text-5xl"
+>
+                    PRE-COLLECTION<br />SUMMER
+                </h1>
+				<p class="catalog__subtitle mx-auto mt-4 max-w-3xl font-['Manrope',ui-sans-serif,sans-serif] text-sm leading-relaxed text-neutral-300 sm:text-base">
+					Designed to shine at any hour, the ONYX Summer 2026 Collection reinvents your seasonal
+					essentials. Move effortlessly from daytime elegance to the glamour of warm nights, or to a much
+					more relaxed vacation look.
+				</p>
+			</section>
+
+			<!-- Floating filter panel -->
+			<details class="catalog__filters fixed bottom-6 right-6 z-40 group">
+				<summary
+					class="catalog__floating-filter-btn flex h-16 w-16 cursor-pointer list-none items-center justify-center rounded-sm bg-neutral-900 p-2 text-center font-['Manrope'] text-[11px] font-semibold uppercase tracking-[0.12em] text-white shadow-xl transition hover:bg-neutral-700"
+				>
+					Filter
+				</summary>
+
+				<div class="catalog__floating-filter-panel absolute bottom-20 right-0 w-72 rounded-2xl border border-neutral-200 bg-white p-4 shadow-2xl">
+					<form class="catalog__filters-form space-y-4" action="index-catalogo.html" method="get">
+						<label
+							for="category"
+							class="catalog__filter-label mb-2 block font-['Manrope',ui-sans-serif,sans-serif] text-xs font-semibold uppercase tracking-[0.1em] text-neutral-700"
+						>
+							Category
+						</label>
+						<select
+							id="category"
+							name="category"
+							class="catalog__filter-control w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 font-['Manrope',ui-sans-serif,sans-serif] text-sm text-neutral-800 outline-none transition focus:border-neutral-500 focus:ring-2 focus:ring-neutral-300"
+						>
+							<option value="all">All categories</option>
+							<option value="shoes">Shoes</option>
+							<option value="shirt">Shirt</option>
+							<option value="pants">Pants</option>
+							<option value="dress">Dress</option>
+							<option value="accessories">Accessories</option>
+						</select>
+
+						<div>
+							<label
+								for="size"
+								class="catalog__filter-label mb-2 block font-['Manrope',ui-sans-serif,sans-serif] text-xs font-semibold uppercase tracking-[0.1em] text-neutral-700"
+							>
+								Size
+							</label>
+							<select
+								id="size"
+								name="size"
+								class="catalog__filter-control w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 font-['Manrope',ui-sans-serif,sans-serif] text-sm text-neutral-800 outline-none transition focus:border-neutral-500 focus:ring-2 focus:ring-neutral-300"
+							>
+								<option value="all">All sizes</option>
+								<option value="XS">XS</option>
+								<option value="S">S</option>
+								<option value="M">M</option>
+								<option value="L">L</option>
+								<option value="XL">XL</option>
+								<option value="30">30</option>
+								<option value="32">32</option>
+								<option value="34">34</option>
+								<option value="36">36</option>
+								<option value="37">37</option>
+								<option value="38">38</option>
+								<option value="39">39</option>
+								<option value="40">40</option>
+								<option value="41">41</option>
+								<option value="Compact">Compact</option>
+								<option value="Medium">Medium</option>
+								<option value="Large">Large</option>
+							</select>
+						</div>
+
+						<button type="submit" class="w-full rounded-xl bg-neutral-900 px-4 py-3 text-sm font-semibold text-white hover:bg-neutral-700">
+							Aplicar Filtros
+						</button>
+					</form>
+				</div>
+			</details>
+
+			<!-- Product listing -->
+			<section
+				class="catalog__listing"
+				aria-labelledby="listing-title"
+				style="content-visibility: auto; contain-intrinsic-size: 1100px;"
+			>
+				<div class="catalog__listing-header mb-5 flex items-end justify-between gap-4">
+					<h2
+						id="listing-title"
+						class="catalog__listing-title font-['Cormorant_Garamond',Georgia,serif] text-3xl font-medium tracking-tight text-neutral-900"
+					>
+						Featured Products
+					</h2>
+					<p
+						class="catalog__listing-count font-['Manrope',ui-sans-serif,sans-serif] text-xs font-medium uppercase tracking-[0.1em] text-neutral-500"
+					>
+						8 results
+					</p>
+				</div>
+
+				<div id="catalog-grid" class="catalog__grid grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"></div>
+			</section>
+		</main>
+
+		<!-- ================= FOOTER ================= -->
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+        <div class="container-page py-16">
+
+            <div class="grid gap-6 md:grid-cols-3">
+                <nav aria-label="Product categories" class="card">
+                    <h2 class="section-title">Categories</h2>
+                    <ul class="space-y-5">
+                    <li><a href="/category/footwear">Footwear</a></li>
+                    <li><a href="/category/shirts">Shirts</a></li>
+                    <li><a href="/category/trousers">Trousers</a></li>
+                    <li><a href="/category/accessories">Accessories</a></li>
+                    </ul>
+                </nav>
+
+                <nav aria-label="Legal" class="card">
+                    <h2 class="section-title">Legal</h2>
+                    <ul class="space-y-5">
+                    <li><a href="/terms">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/about">About Us / Our Brand</a></li>
+                    </ul>
+                </nav>
+
+                <address class="card space-y-5">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p>12 Rue du Faubourg Saint-Honore, 75008 Paris, France</p>
+                    <p><a href="mailto:contact@onyx-paris.com">contact@onyx-paris.com</a></p>
+                    <p><a href="tel:+33142860000">+33 1 42 86 00 00</a></p>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-content footer-bottom">
+            <p>&copy; 2026 Onyx. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "Onyx",
+                "url": "https://www.onyx-paris.com/",
+                "logo": "https://www.onyx-paris.com/assets/logo-onyx.svg",
+                "description": "Onyx is a French luxury clothing house offering tailored menswear, elegant womenswear, and timeless accessories crafted in Paris.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "12 Rue du Faubourg Saint-Honoré",
+                    "addressLocality": "Paris",
+                    "postalCode": "75008",
+                    "addressCountry": "FR"
+                },
+                "email": "contact@onyx-paris.com",
+                "telephone": "+33142860000",
+                "sameAs": []
+            },
+            {
+                "@type": "ItemList",
+                "name": "Summer Season 2026 New Arrivals",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Ivory Linen Shirt",
+                            "image": "https://www.onyx-paris.com/assets/NS%20mens%20premium%20tshirt.png",
+                            "description": "A breathable ivory linen shirt with a soft texture, rolled cuffs and a polished summer silhouette.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "245",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Tailored Linen Trousers",
+                            "image": "https://www.onyx-paris.com/assets/NS%20%20mens%20premium%20trousers.png",
+                            "description": "Tailored beige linen trousers with sharp front pleats, a clean waistband and a lightweight warm-weather finish.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "320",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Sage Satin Summer Dress",
+                            "image": "https://www.onyx-paris.com/assets/NS%20women%20summer%20dress.png",
+                            "description": "A sage satin midi dress with a fluid skirt, gathered bodice and elegant movement for summer occasions.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "480",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Wide-Brim Straw Hat",
+                            "image": "https://www.onyx-paris.com/assets/NS%20womens%20Sun%20Hat%20BG%20good.png",
+                            "description": "A woven straw sun hat with a structured crown, generous brim and black ribbon trim for elegant sun protection.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "165",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "ItemList",
+                "name": "Top Sellers",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Men's Taupe Linen Shirt",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20men%20shirt%20lino.jpg",
+                            "description": "A lightweight taupe linen shirt with an open collar, natural texture and an easy refined fit.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "365",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Women's Red Cocktail Dress",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20woman%20red%20dress.jpg",
+                            "description": "A fitted red cocktail dress with a clean square neckline, sculpted drape and modern asymmetric hemline.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "620",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Brown Leather Sandals",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20leather%20sandals.jpg",
+                            "description": "Flat brown leather sandals with crossover straps, a secure slingback buckle and artisan-inspired finishing.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "590",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "Product",
+                            "name": "Structured Raffia Handbag",
+                            "image": "https://www.onyx-paris.com/assets/Top%20Sales%20rafia%20bag.jpg",
+                            "description": "A structured raffia handbag with smooth tan leather trim, top handle and polished gold-tone clasp.",
+                            "offers": {
+                                "@type": "Offer",
+                                "priceCurrency": "EUR",
+                                "price": "890",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+
+		<!-- Catalog behavior: data, filtering and rendering -->
+		<script>
+			// Product dataset
+			const catalogProducts = [
+				{
+					id: "shoes-1",
+					name: "Leather Sandals",
+					category: "shoes",
+					categoryLabel: "Shoes",
+					description: "Leather sandals with crossover straps for elegant summer styling.",
+					price: "EUR 145",
+					sizes: ["36", "37", "38", "39", "40", "41"],
+					productUrl: "product-leather-sandals.html",
+					image: "assets/Top%20Sales%20leather%20sandals.jpg",
+					alt: "Brown leather summer sandals"
+				},
+				{
+					id: "shirt-1",
+					name: "Linen T-Shirt",
+					category: "shirt",
+					categoryLabel: "Shirt",
+					description: "A light, fresh linen T-shirt for sunny days and seaside escapes.",
+					price: "EUR 95",
+					sizes: ["XS", "S", "M", "L", "XL"],
+					productUrl: "product-men-shirt-lino.html",
+					image: "assets/Top%20Sales%20men%20shirt%20lino.jpg",
+					alt: "Men's linen T-shirt in a neutral tone"
+				},
+				{
+					id: "shirt-2",
+					name: "Premium Cotton Tee",
+					category: "shirt",
+					categoryLabel: "Shirt",
+					description: "Soft premium cotton T-shirt with a clean silhouette for elevated basics.",
+					price: "EUR 110",
+					sizes: ["S", "M", "L", "XL"],
+					productUrl: "product-men-t-shirt.html",
+					image: "assets/NS%20mens%20premium%20tshirt.png",
+					alt: "Men premium cotton t-shirt"
+				},
+				{
+					id: "pant-1",
+					name: "Premium Summer Trousers",
+					category: "pants",
+					categoryLabel: "Pants",
+					description: "Breathable tailored trousers styled for warm-weather city looks.",
+					price: "EUR 130",
+					sizes: ["30", "32", "34", "36"],
+					productUrl: "product-men-trousers.html",
+					image: "assets/NS%20%20mens%20premium%20trousers.png",
+					alt: "Men premium summer trousers"
+				},
+				{
+					id: "dress-1",
+					name: "Red Summer Dress",
+					category: "dress",
+					categoryLabel: "Dress",
+					description: "A standout red dress designed for sunset events and summer evenings.",
+					price: "EUR 175",
+					sizes: ["XS", "S", "M", "L"],
+					productUrl: "product-woman-red-dress.html",
+					image: "assets/Top%20Sales%20woman%20red%20dress.jpg",
+					alt: "Women's red summer dress"
+				},
+				{
+					id: "dress-2",
+					name: "Summer Breeze Dress",
+					category: "dress",
+					categoryLabel: "Dress",
+					description: "Flowing cut and lightweight fabric for bright days and sunset dinners.",
+					price: "EUR 165",
+					sizes: ["XS", "S", "M", "L"],
+					productUrl: "product-woman-dress.html",
+					image: "assets/NS%20women%20summer%20dress.png",
+					alt: "Women summer dress"
+				},
+				{
+					id: "accessory-1",
+					name: "Raffia Bag",
+					category: "accessories",
+					categoryLabel: "Accessories",
+					description: "A lightweight raffia bag with an artisanal finish for a refined vacation silhouette.",
+					price: "EUR 120",
+					sizes: ["Compact", "Medium", "Large"],
+					productUrl: "product-rafia-bag.html",
+					image: "assets/Top%20Sales%20rafia%20bag.jpg",
+					alt: "Summer raffia bag"
+				},
+				{
+					id: "accessory-2",
+					name: "Sun Hat",
+					category: "accessories",
+					categoryLabel: "Accessories",
+					description: "Wide-brim sun hat that adds shade and polished style to resort outfits.",
+					price: "EUR 85",
+					sizes: ["S", "M", "L"],
+					productUrl: "product-woman-sunhat.html",
+					image: "assets/NS%20womens%20Sun%20Hat%20BG%20good.png",
+					alt: "Women summer sun hat"
+				}
+			];
+
+			// UI references
+			const categorySelect = document.getElementById("category");
+			const sizeSelect = document.getElementById("size");
+			const floatingFilterElement = document.querySelector(".catalog__filters");
+			const gridElement = document.getElementById("catalog-grid");
+			const countElement = document.querySelector(".catalog__listing-count");
+			const categoryCounts = catalogProducts.reduce((accumulator, product) => {
+				accumulator[product.category] = (accumulator[product.category] || 0) + 1;
+				return accumulator;
+			}, {});
+			const availableCategories = [
+				...new Map(catalogProducts.map((product) => [product.category, product.categoryLabel])).entries()
+			];
+			const availableSizes = [...new Set(catalogProducts.flatMap((product) => product.sizes))];
+
+			// Templates and render helpers
+			const productCardTemplate = (product, index) => {
+				const imageLoading = index < 2 ? "eager" : "lazy";
+				return `
+				<article class="catalog__product-card group flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+					<figure class="catalog__product-media relative overflow-hidden bg-neutral-100">
+						<img
+							src="${product.image}"
+							alt="${product.alt}"
+							loading="${imageLoading}"
+							decoding="async"
+							width="768"
+							height="1024"
+							sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+							class="catalog__product-image h-72 w-full object-cover transition duration-500 group-hover:scale-105"
+						/>
+					</figure>
+					<div class="catalog__product-content flex flex-1 flex-col gap-3 p-4">
+						<p class="catalog__product-category font-['Manrope',ui-sans-serif,sans-serif] text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-500">${product.categoryLabel}</p>
+						<h3 class="catalog__product-name font-['Cormorant_Garamond',Georgia,serif] text-2xl font-semibold leading-tight text-neutral-900">${product.name}</h3>
+						<p class="catalog__product-description font-['Manrope',ui-sans-serif,sans-serif] text-sm leading-relaxed text-neutral-600">${product.description}</p>
+						<p class="catalog__product-sizes font-['Manrope',ui-sans-serif,sans-serif] text-xs font-medium uppercase tracking-[0.08em] text-neutral-500">Available sizes: ${product.sizes.join(" • ")}</p>
+						<div class="catalog__product-meta mt-auto flex items-center justify-between">
+							<p class="catalog__product-price font-['Manrope',ui-sans-serif,sans-serif] text-base font-semibold text-neutral-900">${product.price}</p>
+							<span class="catalog__product-size rounded-full bg-neutral-100 px-3 py-1 font-['Manrope',ui-sans-serif,sans-serif] text-xs font-medium text-neutral-700">Ref ${product.id.toUpperCase()}</span>
+						</div>
+						${
+							product.productUrl
+								? `<a href="${product.productUrl}" class="catalog__product-cta mt-1 inline-flex items-center justify-center rounded-xl bg-neutral-900 px-4 py-2.5 font-['Manrope',ui-sans-serif,sans-serif] text-sm font-semibold text-white transition hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400">View product</a>`
+								: '<button type="button" class="catalog__product-cta mt-1 inline-flex items-center justify-center rounded-xl bg-neutral-900 px-4 py-2.5 font-[\'Manrope\',ui-sans-serif,sans-serif] text-sm font-semibold text-white transition hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400">View product</button>'
+						}
+					</div>
+				</article>
+			`;
+			};
+
+			const updateResultsCount = (amount) => {
+				countElement.textContent = `${amount} result${amount === 1 ? "" : "s"}`;
+			};
+
+			const populateCategoryOptions = () => {
+				categorySelect.innerHTML = ['<option value="all">All categories</option>']
+					.concat(
+						availableCategories.map(
+							([value, label]) =>
+								`<option value="${value}">${label} (${categoryCounts[value]})</option>`
+						)
+					)
+					.join("");
+			};
+
+			const populateSizeOptions = () => {
+				sizeSelect.innerHTML = ['<option value="all">All sizes</option>']
+					.concat(availableSizes.map((size) => `<option value="${size}">${size}</option>`))
+					.join("");
+			};
+
+			const filterProducts = () => {
+				const categoryValue = categorySelect.value;
+				const sizeValue = sizeSelect.value;
+				return catalogProducts.filter((product) => {
+					const matchesCategory = categoryValue === "all" || product.category === categoryValue;
+					const matchesSize = sizeValue === "all" || product.sizes.includes(sizeValue);
+					return matchesCategory && matchesSize;
+				});
+			};
+
+			const renderProducts = () => {
+				const filteredProducts = filterProducts();
+				gridElement.innerHTML = filteredProducts
+					.map((product, index) => productCardTemplate(product, index))
+					.join("");
+				updateResultsCount(filteredProducts.length);
+			};
+
+			// Event bindings
+			categorySelect.addEventListener("change", () => {
+				renderProducts();
+				if (floatingFilterElement) {
+					floatingFilterElement.open = false;
+				}
+			});
+
+			sizeSelect.addEventListener("change", () => {
+				renderProducts();
+				if (floatingFilterElement) {
+					floatingFilterElement.open = false;
+				}
+			});
+
+			document.addEventListener("keydown", (event) => {
+				if (event.key === "Escape" && floatingFilterElement) {
+					floatingFilterElement.open = false;
+				}
+			});
+
+			// Initial render
+			populateCategoryOptions();
+			populateSizeOptions();
+			renderProducts();
+		</script>
+
+	</body>
+</html>
+    
