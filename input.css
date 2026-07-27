@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* El fondo cálido y la tipografía funcional por defecto[cite: 1] */
+    @apply bg-velune-ivoire text-velune-noir font-sans antialiased selection:bg-velune-rouge selection:text-velune-blanc;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    /* Los titulares deben evocar elegancia y movimiento[cite: 1] */
+    @apply font-serif font-light tracking-wide;
+  }
+}
+
+@layer components {
+  /* Botones primarios sin artificio ni exceso[cite: 1] */
+  .btn-primary {
+    @apply inline-block bg-velune-noir text-velune-blanc font-sans text-sm uppercase tracking-widest px-8 py-3 transition-colors duration-300 hover:bg-velune-rouge;
+  }
+
+  /* Botones secundarios discretos[cite: 1] */
+  .btn-secondary {
+    @apply inline-block border border-velune-noir text-velune-noir font-sans text-sm uppercase tracking-widest px-8 py-3 transition-colors duration-300 hover:bg-velune-noir hover:text-velune-blanc;
+  }
+}

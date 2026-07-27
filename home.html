@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nombre Marca | Moda Hombre y Mujer — Tienda Online</title>
+  <meta name="description" content="Descubre las nuevas colecciones de Nombre Marca: camisas, pantalones, camisetas, vestidos y calzado para hombre y mujer. Envíos desde Francia.">
+  <link rel="canonical" href="https://www.nombremarca.com/home.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nombre Marca | Moda Hombre y Mujer">
+  <meta property="og:description" content="Nuevos lanzamientos y los productos más vendidos de la temporada.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og-cover.jpg">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Tipografías: Cormorant Garamond (serif editorial) + Inter (sistema funcional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN) + tokens de la identidad de marca -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            noir: '#171315',   // Noir Velours — principal / estructura
+            rouge: '#8F243C',  // Rouge Désir — acento / sensualidad
+            ivoire: '#F1E9E2', // Ivoire Peau — fondo / calidez
+            gris: '#D7C8BC',   // Gris Soie — neutro / transición
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- SEO: datos estructurados de la organización -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "Nombre Marca",
+    "url": "https://www.nombremarca.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "París",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+</head>
+<body class="bg-ivoire text-noir font-sans antialiased">
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar sticky top-0 z-50 border-b border-gris/60 bg-ivoire/95 backdrop-blur" id="navbar">
+    <div class="mx-auto flex h-20 max-w-7xl flex-wrap items-center justify-between gap-4 px-6 md:px-10">
+
+      <!-- Logo / nombre de marca -->
+      <div class="navbar__brand shrink-0">
+        <a href="home.html" class="navbar__logo font-serif text-2xl uppercase tracking-[0.2em] text-noir">Nombre Marca</a>
+      </div>
+
+      <!-- Barra de búsqueda con texto predictivo (prendas y colores) -->
+      <div class="navbar__search order-last w-full md:order-none md:w-auto md:max-w-xs md:flex-1">
+        <form class="search-form flex items-center border border-gris/70 transition-colors focus-within:border-rouge" role="search" action="catalogo.html" method="get">
+          <label for="search-input" class="visually-hidden sr-only">Buscar productos</label>
+          <input
+            type="text"
+            id="search-input"
+            name="q"
+            list="search-suggestions"
+            placeholder="Buscar prendas, colores..."
+            autocomplete="off"
+            class="w-full bg-transparent px-4 py-2 font-sans text-sm text-noir placeholder:text-noir/40 focus:outline-none"
+          >
+          <datalist id="search-suggestions">
+            <!-- Prendas disponibles -->
+            <option value="Calzado"></option>
+            <option value="Camisas"></option>
+            <option value="Pantalones"></option>
+            <option value="Camisetas"></option>
+            <option value="Vestidos"></option>
+            <!-- Colores disponibles -->
+            <option value="Negro"></option>
+            <option value="Blanco"></option>
+            <option value="Azul"></option>
+            <option value="Rojo"></option>
+            <option value="Verde"></option>
+            <option value="Gris"></option>
+            <option value="Beige"></option>
+          </datalist>
+          <button type="submit" class="search-form__btn px-3 text-noir/60 transition-colors hover:text-rouge" aria-label="Buscar">
+            <span aria-hidden="true">&#128269;</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Menú principal: Catálogo + Carrito -->
+      <nav class="navbar__menu" aria-label="Menú principal">
+        <ul class="flex items-center gap-8 font-sans text-xs uppercase tracking-widest text-noir">
+
+          <!-- Desplegable Catálogo: Hombre / Mujer -->
+          <li class="dropdown group relative" id="catalogo-dropdown">
+            <button
+              type="button"
+              class="dropdown__toggle transition-colors hover:text-rouge"
+              aria-expanded="false"
+              aria-controls="catalogo-menu"
+            >
+              Catálogo
+            </button>
+
+            <div class="dropdown__panel absolute left-0 top-full z-30 mt-4 hidden min-w-[360px] gap-10 border border-gris/60 bg-white p-8 normal-case tracking-normal text-noir shadow-xl group-[.is-open]:flex" id="catalogo-menu">
+              <div class="dropdown__group">
+                <h3 class="dropdown__title mb-3 font-serif text-base text-noir">Hombre</h3>
+                <ul class="space-y-2 text-sm text-noir/70">
+                  <li><a href="catalogo.html#hombre-pantalones" class="transition-colors hover:text-rouge">Pantalones</a></li>
+                  <li><a href="catalogo.html#hombre-camisetas" class="transition-colors hover:text-rouge">Camisetas</a></li>
+                  <li><a href="catalogo.html#hombre-camisas" class="transition-colors hover:text-rouge">Camisas</a></li>
+                  <li><a href="catalogo.html#hombre-calzado" class="transition-colors hover:text-rouge">Calzado</a></li>
+                </ul>
+              </div>
+
+              <div class="dropdown__group">
+                <h3 class="dropdown__title mb-3 font-serif text-base text-noir">Mujer</h3>
+                <ul class="space-y-2 text-sm text-noir/70">
+                  <li><a href="catalogo.html#mujer-pantalones" class="transition-colors hover:text-rouge">Pantalones</a></li>
+                  <li><a href="catalogo.html#mujer-camisetas" class="transition-colors hover:text-rouge">Camisetas</a></li>
+                  <li><a href="catalogo.html#mujer-camisas" class="transition-colors hover:text-rouge">Camisas</a></li>
+                  <li><a href="catalogo.html#mujer-calzado" class="transition-colors hover:text-rouge">Calzado</a></li>
+                  <li><a href="catalogo.html#mujer-vestidos" class="transition-colors hover:text-rouge">Vestidos</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- Desplegable Carrito: resumen de productos -->
+          <li class="dropdown group relative" id="carrito-dropdown">
+            <button
+              type="button"
+              class="dropdown__toggle flex items-center gap-1.5 transition-colors hover:text-rouge"
+              aria-expanded="false"
+              aria-controls="carrito-menu"
+            >
+              Carrito <span id="cart-count" class="cart-count flex h-4 w-4 items-center justify-center rounded-full bg-rouge text-[10px] normal-case text-white">0</span>
+            </button>
+
+            <div class="dropdown__panel absolute right-0 top-full z-30 mt-4 hidden min-w-[300px] flex-col gap-4 border border-gris/60 bg-white p-6 normal-case tracking-normal text-noir shadow-xl group-[.is-open]:flex" id="carrito-menu">
+              <ul id="cart-items" class="cart-items divide-y divide-gris/40 text-sm text-noir/80">
+                <!-- Rellenado dinámicamente por JS. Estructura esperada por ítem:
+                <li class="cart-item flex items-center justify-between py-2">
+                  <span class="cart-item__name">Nombre de la prenda</span>
+                  <span class="cart-item__qty text-noir/50">x2</span>
+                  <span class="cart-item__price">39,98 €</span>
+                </li>
+                -->
+                <li class="cart-items__empty py-2 italic text-noir/40">Tu carrito está vacío</li>
+              </ul>
+              <div class="cart-summary flex items-center justify-between border-t border-gris/40 pt-3 text-sm font-medium">
+                <span class="cart-summary__label">Total</span>
+                <span id="cart-total" class="cart-summary__total">0,00 €</span>
+              </div>
+              <a href="carrito.html" class="btn btn--block block bg-noir py-2.5 text-center text-xs uppercase tracking-widest text-ivoire transition-colors hover:bg-rouge">Ver carrito</a>
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Cuenta de usuario: login / registro -->
+      <div class="navbar__account group relative" id="account-dropdown">
+        <button
+          type="button"
+          class="dropdown__toggle font-sans text-xs uppercase tracking-widest text-noir transition-colors hover:text-rouge"
+          aria-expanded="false"
+          aria-controls="account-menu"
+        >
+          Iniciar sesión
+        </button>
+
+        <div class="dropdown__panel absolute right-0 top-full z-30 mt-4 hidden min-w-[280px] border border-gris/60 bg-white p-6 normal-case tracking-normal text-noir shadow-xl group-[.is-open]:block" id="account-menu">
+
+          <!-- Formulario de login -->
+          <form id="login-form" class="account-form space-y-3" action="#" method="post">
+            <h3 class="account-form__title mb-1 font-serif text-lg text-noir">Iniciar sesión</h3>
+
+            <label for="login-email" class="block font-sans text-xs uppercase tracking-widest text-noir/60">Correo electrónico</label>
+            <input type="email" id="login-email" name="email" required class="w-full border border-gris/70 px-3 py-2 font-sans text-sm text-noir focus:border-rouge focus:outline-none">
+
+            <label for="login-password" class="block font-sans text-xs uppercase tracking-widest text-noir/60">Contraseña</label>
+            <input type="password" id="login-password" name="password" required class="w-full border border-gris/70 px-3 py-2 font-sans text-sm text-noir focus:border-rouge focus:outline-none">
+
+            <button type="submit" class="btn btn--block w-full bg-noir py-2.5 font-sans text-xs uppercase tracking-widest text-ivoire transition-colors hover:bg-rouge">Entrar</button>
+
+            <p class="account-form__switch font-sans text-xs text-noir/60">
+              ¿Aún no tienes cuenta con nosotros?
+              <a href="#" id="show-register-form" class="text-rouge hover:underline">Regístrate</a>
+            </p>
+          </form>
+
+          <!-- Formulario de registro (oculto hasta que se pulse "Regístrate") -->
+          <form id="register-form" class="account-form space-y-3" action="#" method="post" hidden>
+            <h3 class="account-form__title mb-1 font-serif text-lg text-noir">Crear cuenta</h3>
+
+            <label for="register-username" class="block font-sans text-xs uppercase tracking-widest text-noir/60">Usuario</label>
+            <input type="text" id="register-username" name="username" required class="w-full border border-gris/70 px-3 py-2 font-sans text-sm text-noir focus:border-rouge focus:outline-none">
+
+            <label for="register-email" class="block font-sans text-xs uppercase tracking-widest text-noir/60">Correo electrónico</label>
+            <input type="email" id="register-email" name="email" required class="w-full border border-gris/70 px-3 py-2 font-sans text-sm text-noir focus:border-rouge focus:outline-none">
+
+            <label for="register-password" class="block font-sans text-xs uppercase tracking-widest text-noir/60">Contraseña</label>
+            <input type="password" id="register-password" name="password" required class="w-full border border-gris/70 px-3 py-2 font-sans text-sm text-noir focus:border-rouge focus:outline-none">
+
+            <button type="submit" class="btn btn--block w-full bg-noir py-2.5 font-sans text-xs uppercase tracking-widest text-ivoire transition-colors hover:bg-rouge">Registrarse</button>
+
+            <p class="account-form__switch font-sans text-xs text-noir/60">
+              ¿Ya tienes cuenta?
+              <a href="#" id="show-login-form" class="text-rouge hover:underline">Inicia sesión</a>
+            </p>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============ 02. HERO: carrusel de campañas ============ -->
+    <section class="hero relative bg-noir text-ivoire" id="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading" class="visually-hidden sr-only">Nombre Marca — Moda para Hombre y Mujer</h1>
+
+      <div class="carousel relative h-[85vh] min-h-[520px] overflow-hidden" id="hero-carousel">
+
+        <article class="carousel__slide is-active hidden [&.is-active]:block absolute inset-0" id="hero-slide-1">
+          <div class="carousel__media absolute inset-0 bg-noir">
+            <img src="assets/img/hero-1.jpg" alt="Nueva colección Otoño/Invierno para hombre y mujer" class="h-full w-full object-cover opacity-60">
+          </div>
+          <div class="carousel__content relative z-10 flex h-full max-w-xl flex-col justify-end gap-5 px-6 pb-16 md:px-16 md:pb-24">
+            <h2 class="font-serif text-4xl leading-tight md:text-6xl">Nueva colección <em class="text-rouge italic">Otoño/Invierno</em></h2>
+            <p class="max-w-md text-sm text-ivoire/80 md:text-base">Prendas atemporales pensadas para durar. Descubre los materiales de la nueva temporada.</p>
+            <a href="catalogo.html" class="btn btn--primary inline-block w-fit border border-ivoire px-8 py-3 font-sans text-xs uppercase tracking-widest text-noir bg-ivoire transition-colors hover:bg-transparent hover:text-ivoire">Descubrir colección</a>
+          </div>
+        </article>
+
+        <article class="carousel__slide hidden [&.is-active]:block absolute inset-0" id="hero-slide-2">
+          <div class="carousel__media absolute inset-0 bg-noir">
+            <img src="assets/img/hero-2.jpg" alt="Campaña de calzado edición limitada" class="h-full w-full object-cover opacity-60">
+          </div>
+          <div class="carousel__content relative z-10 flex h-full max-w-xl flex-col justify-end gap-5 px-6 pb-16 md:px-16 md:pb-24">
+            <h2 class="font-serif text-4xl leading-tight md:text-6xl">Calzado <em class="text-rouge italic">edición limitada</em></h2>
+            <p class="max-w-md text-sm text-ivoire/80 md:text-base">Unidades numeradas, disponibles solo durante esta campaña.</p>
+            <a href="catalogo.html#hombre-calzado" class="btn btn--primary inline-block w-fit border border-ivoire px-8 py-3 font-sans text-xs uppercase tracking-widest text-noir bg-ivoire transition-colors hover:bg-transparent hover:text-ivoire">Ver calzado</a>
+          </div>
+        </article>
+
+        <article class="carousel__slide hidden [&.is-active]:block absolute inset-0" id="hero-slide-3">
+          <div class="carousel__media absolute inset-0 bg-noir">
+            <img src="assets/img/hero-3.jpg" alt="Vestidos de la nueva colección mujer" class="h-full w-full object-cover opacity-60">
+          </div>
+          <div class="carousel__content relative z-10 flex h-full max-w-xl flex-col justify-end gap-5 px-6 pb-16 md:px-16 md:pb-24">
+            <h2 class="font-serif text-4xl leading-tight md:text-6xl">Vestidos que <em class="text-rouge italic">marcan tendencia</em></h2>
+            <p class="max-w-md text-sm text-ivoire/80 md:text-base">Siluetas nuevas para la mujer que no pasa desapercibida.</p>
+            <a href="catalogo.html#mujer-vestidos" class="btn btn--primary inline-block w-fit border border-ivoire px-8 py-3 font-sans text-xs uppercase tracking-widest text-noir bg-ivoire transition-colors hover:bg-transparent hover:text-ivoire">Ver vestidos</a>
+          </div>
+        </article>
+
+        <button type="button" class="carousel__control carousel__control--prev absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-ivoire/40 text-ivoire transition-colors hover:border-rouge hover:text-rouge" aria-label="Diapositiva anterior">&#10094;</button>
+        <button type="button" class="carousel__control carousel__control--next absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-ivoire/40 text-ivoire transition-colors hover:border-rouge hover:text-rouge" aria-label="Siguiente diapositiva">&#10095;</button>
+
+        <div class="carousel__dots absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-3" role="tablist" aria-label="Seleccionar diapositiva">
+          <button type="button" class="carousel__dot is-active h-2 w-2 rounded-full bg-ivoire/40 transition-all [&.is-active]:w-6 [&.is-active]:bg-rouge" data-slide="1" aria-label="Ir a la diapositiva 1" aria-selected="true"></button>
+          <button type="button" class="carousel__dot h-2 w-2 rounded-full bg-ivoire/40 transition-all [&.is-active]:w-6 [&.is-active]:bg-rouge" data-slide="2" aria-label="Ir a la diapositiva 2" aria-selected="false"></button>
+          <button type="button" class="carousel__dot h-2 w-2 rounded-full bg-ivoire/40 transition-all [&.is-active]:w-6 [&.is-active]:bg-rouge" data-slide="3" aria-label="Ir a la diapositiva 3" aria-selected="false"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03a. Nuevos lanzamientos ============ -->
+    <section class="product-section bg-ivoire px-6 py-16 md:px-16 md:py-24" id="nuevos-lanzamientos" aria-labelledby="nuevos-lanzamientos-heading">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-10 flex items-baseline gap-4 md:mb-14">
+          <span class="font-sans text-xs uppercase tracking-widest text-rouge">01</span>
+          <h2 class="font-serif text-3xl text-noir md:text-4xl" id="nuevos-lanzamientos-heading">Nuevos lanzamientos</h2>
+        </div>
+
+        <div class="product-list grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4 md:gap-x-8">
+
+          <article class="product-card group">
+            <a href="producto.html#producto-101" class="block">
+              <div class="aspect-[3/4] overflow-hidden bg-gris/30">
+                <img src="assets/img/producto-101.jpg" alt="Camisa lino blanca" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="product-card__name mt-4 font-serif text-lg text-noir">Camisa lino blanca</h3>
+              <p class="product-card__price mt-1 font-sans text-sm tracking-wide text-noir/60">59,00 €</p>
+            </a>
+          </article>
+
+          <article class="product-card group">
+            <a href="producto.html#producto-102" class="block">
+              <div class="aspect-[3/4] overflow-hidden bg-gris/30">
+                <img src="assets/img/producto-102.jpg" alt="Pantalón chino beige" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="product-card__name mt-4 font-serif text-lg text-noir">Pantalón chino beige</h3>
+              <p class="product-card__price mt-1 font-sans text-sm tracking-wide text-noir/60">69,00 €</p>
+            </a>
+          </article>
+
+          <article class="product-card group">
+            <a href="producto.html#producto-103" class="block">
+              <div class="aspect-[3/4] overflow-hidden bg-gris/30">
+                <img src="assets/img/producto-103.jpg" alt="Vestido midi verde" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="product-card__name mt-4 font-serif text-lg text-noir">Vestido midi verde</h3>
+              <p class="product-card__price mt-1 font-sans text-sm tracking-wide text-noir/60">79,00 €</p>
+            </a>
+          </article>
+
+          <article class="product-card group">
+            <a href="producto.html#producto-104" class="block">
+              <div class="aspect-[3/4] overflow-hidden bg-gris/30">
+                <img src="assets/img/producto-104.jpg" alt="Zapatillas urbanas negras" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="product-card__name mt-4 font-serif text-lg text-noir">Zapatillas urbanas negras</h3>
+              <p class="product-card__price mt-1 font-sans text-sm tracking-wide text-noir/60">89,00 €</p>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03b. Más vendidos ============ -->
+    <section class="product-section border-t border-gris/50 bg-white px-6 py-16 md:px-16 md:py-24" id="mas-vendidos" aria-labelledby="mas-vendidos-heading">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-10 flex items-baseline gap-4 md:mb-14">
+          <span class="font-sans text-xs uppercase tracking-widest text-rouge">02</span>
+          <h2 class="font-serif text-3xl text-noir md:text-4xl" id="mas-vendidos-heading">Más vendidos</h2>
+        </div>
+
+        <div class="product-list grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4 md:gap-x-8">
+
+          <article class="product-card group">
+            <a href="producto.html#producto-201" class="block">
+              <div class="aspect-[3/4] overflow-hidden bg-gris/30">
+                <img src="assets/img/producto-201.jpg" alt="Camiseta básica gris" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="product-card__name mt-4 font-serif text-lg text-noir">Camiseta básica gris</h3>
+              <p class="product-card__price mt-1 font-sans text-sm tracking-wide text-noir/60">25,00 €</p>
+            </a>
+          </article>
+
+          <article class="product-card group">
+            <a href="producto.html#producto-202" class="block">
+              <div class="aspect-[3/4] overflow-hidden bg-gris/30">
+                <img src="assets/img/producto-202.jpg" alt="Camisa a rayas azul" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="product-card__name mt-4 font-serif text-lg text-noir">Camisa a rayas azul</h3>
+              <p class="product-card__price mt-1 font-sans text-sm tracking-wide text-noir/60">55,00 €</p>
+            </a>
+          </article>
+
+          <article class="product-card group">
+            <a href="producto.html#producto-203" class="block">
+              <div class="aspect-[3/4] overflow-hidden bg-gris/30">
+                <img src="assets/img/producto-203.jpg" alt="Pantalón vaquero negro" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="product-card__name mt-4 font-serif text-lg text-noir">Pantalón vaquero negro</h3>
+              <p class="product-card__price mt-1 font-sans text-sm tracking-wide text-noir/60">65,00 €</p>
+            </a>
+          </article>
+
+          <article class="product-card group">
+            <a href="producto.html#producto-204" class="block">
+              <div class="aspect-[3/4] overflow-hidden bg-gris/30">
+                <img src="assets/img/producto-204.jpg" alt="Botines de cuero marrón" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <h3 class="product-card__name mt-4 font-serif text-lg text-noir">Botines de cuero marrón</h3>
+              <p class="product-card__price mt-1 font-sans text-sm tracking-wide text-noir/60">99,00 €</p>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ 04. FOOTER ============ -->
+  <footer class="site-footer bg-noir text-ivoire" id="site-footer">
+
+    <div class="footer__grid mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-3 md:px-10">
+
+      <div class="footer__column">
+        <h2 class="footer__heading mb-4 font-serif text-lg text-ivoire">Categorías</h2>
+        <ul class="space-y-2 font-sans text-sm text-ivoire/70">
+          <li><a href="catalogo.html#calzado" class="transition-colors hover:text-rouge">Calzado</a></li>
+          <li><a href="catalogo.html#camisas" class="transition-colors hover:text-rouge">Camisas</a></li>
+          <li><a href="catalogo.html#pantalones" class="transition-colors hover:text-rouge">Pantalones</a></li>
+          <li><a href="catalogo.html#camisetas" class="transition-colors hover:text-rouge">Camisetas</a></li>
+          <li><a href="catalogo.html#vestidos" class="transition-colors hover:text-rouge">Vestidos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h2 class="footer__heading mb-4 font-serif text-lg text-ivoire">Legal</h2>
+        <ul class="space-y-2 font-sans text-sm text-ivoire/70">
+          <li><a href="legal.html#terminos-condiciones" class="transition-colors hover:text-rouge">Términos y condiciones</a></li>
+          <li><a href="legal.html#politica-privacidad" class="transition-colors hover:text-rouge">Política de privacidad</a></li>
+          <li><a href="legal.html#sobre-la-marca" class="transition-colors hover:text-rouge">Sobre la marca</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column" id="contacto">
+        <h2 class="footer__heading mb-4 font-serif text-lg text-ivoire">Contacto</h2>
+        <address class="footer__address space-y-2 font-sans text-sm not-italic text-ivoire/70">
+          <p><a href="mailto:contacto@nombremarca.com" class="transition-colors hover:text-rouge">contacto@nombremarca.com</a></p>
+          <p><a href="tel:+33100000000" class="transition-colors hover:text-rouge">+33 1 00 00 00 00</a></p>
+          <p>París, Francia</p>
+        </address>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom border-t border-ivoire/10 py-6">
+      <p class="text-center font-sans text-xs tracking-wide text-ivoire/40">&copy; <span id="current-year">2026</span> Nombre Marca. Todos los derechos reservados.</p>
+    </div>
+
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

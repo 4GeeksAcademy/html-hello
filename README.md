@@ -1,41 +1,83 @@
-# HTML Hello
+# Nombre Marca - Fashion Website
 
-The most basic boilerplate for any 4Geeks Academy student, start your very first website from scratch.
+Website project for a fashion brand based in France, focused on menswear and womenswear e-commerce experience.
 
-> There is a video tutorial on [how to use this template to create your very first website here](https://youtu.be/dfbDCMu_p-0).
+This repository is organized for collaborative web development, with a basic branching strategy that allows multiple contributors to work in parallel on pages and features.
 
-## What to do next?
+## Project purpose
 
-Create an `index.html` file with the [basic HTML structure](http://4geeks.com/lesson/what-is-html-learn-html#page-structure) and see it live by running a web-server using the following command:
+- Build a modern fashion storefront (home, catalog, product, cart and checkout views).
+- Keep a clean and maintainable front-end codebase.
+- Support team collaboration through branch-based workflows and pull requests.
+
+## Current stack
+
+- HTML5
+- Tailwind CSS
+- CSS (source + compiled output)
+- JavaScript (UI behavior)
+- Python (local development server)
+
+## Suggested base structure
+
+```text
+.
+|- home.html
+|- catalogo.html
+|- producto.html
+|- carrito.html
+|- checkout.html
+|- input.css
+|- output.css
+|- tailwind.config.js
+|- server.py
+|- assets/
+|  |- css/
+|  |  |- style.css
+|  |- js/
+|  |  |- main.js
+|  |- img/
+|  |  |- hero/
+|  |  |- products/
+|  |  |- banners/
+|  |- icons/
+|  |  |- ui/
+|  |  |- social/
+|- README.md
+|- README.es.md
+```
+
+Note: the repository currently includes the core files and can be expanded with this structure to separate styles, scripts, images and icons in a scalable way.
+
+## Collaborative branching model
+
+Basic branching strategy:
+
+- `main`: stable branch, release-ready.
+- `develop`: integration branch for approved work.
+- `feature/*`: new features (for example `feature/home-hero`, `feature/catalog-grid`, `feature/cart-summary`).
+- `fix/*`: standard bug fixes.
+- `hotfix/*`: urgent production fixes.
+
+Recommended workflow:
+
+1. Create a branch from `develop`.
+2. Implement focused changes with clear commits.
+3. Open a Pull Request to `develop`.
+4. Review, approve and merge.
+5. Promote to `main` after sprint validation.
+
+## Run locally
 
 ```bash
-$ pip3 install flask && python3 server.py
+pip3 install flask && python3 server.py
 ```
 
-- You can create as many HTML files as you want.
-- You can also create CSS files and import them into your website using a `<link>` tag placed between the `<head></head>` tags, like this:
+If your team compiles Tailwind from `input.css` to `output.css`, run the CLI or npm script defined by your setup.
 
-```html
-<head>
-  ...
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
+## Team conventions
 
-- If you want to use Tailwind CSS, add it optionally via the official Tailwind CSS v4 CDN inside the same `<head>`:
-
-```html
-<head>
-  ...
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  ...
-</head>
-```
-
-### Contributors
-
-This template was built as part of the [Full Stack Developer course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer) at [4Geeks Academy Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and [many other contributors](https://github.com/4GeeksAcademy/html-hello/graphs/contributors).
-
-You can find other templates and resources like this at the [school's GitHub page](https://github.com/4geeksacademy/).
+- Use descriptive branch and commit names.
+- Keep one feature per branch.
+- Preserve visual consistency across typography, color and spacing.
+- Update this README when folder structure or workflow changes.
