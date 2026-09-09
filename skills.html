@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skills | AgentHub</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 text-slate-900 dark:bg-neutral-900 dark:text-slate-100"
+  >
+    <header
+      class="border-b bg-white px-4 py-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-black/40"
+    >
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4">
+        <a href="index.html" class="text-xl font-bold">AgentHub</a>
+        <aside class="flex items-center gap-2 sm:gap-4">
+          <button
+            type="button"
+            aria-label="Notifications"
+            class="rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-neutral-800"
+          >
+            &#128276;
+          </button>
+          <span class="hidden text-sm font-medium sm:inline">Admin profile</span>
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            class="rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-neutral-800"
+          >
+            &#9788;
+          </button>
+        </aside>
+      </div>
+      <nav class="mx-auto mt-4 max-w-7xl border-t pt-4 dark:border-neutral-700">
+        <ul class="flex flex-wrap gap-6 text-sm">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="users.html">User management</a></li>
+          <li><a class="nav-link" href="agents.html">Agent management</a></li>
+          <li><a class="nav-link" href="skills.html">Skills</a></li>
+          <li><a class="nav-link" href="contracts.html">Agent contracts</a></li>
+          <li><a class="nav-link" href="errors.html">Error log</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="mx-auto max-w-7xl px-4 py-8">
+      <p class="text-sm font-semibold uppercase tracking-wide text-sky-600">
+        Capability catalog
+      </p>
+      <h1 class="mt-2 text-3xl font-bold">Skills</h1>
+      <ul class="mt-6 grid gap-4 md:grid-cols-2">
+        <li>
+          <article
+            class="flex justify-between rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-neutral-800"
+          >
+            <div>
+              <h2 class="font-semibold">Web browsing</h2>
+              <p class="mt-2 text-sm">
+                Searches the web and gathers relevant information.
+              </p>
+            </div>
+            <div class="relative">
+              <button
+                class="overflow-toggle text-lg"
+                type="button"
+                aria-expanded="false"
+              >
+                &#8942;
+              </button>
+              <div
+                class="overflow-menu absolute right-0 z-10 hidden w-36 rounded border bg-white p-1 shadow dark:bg-neutral-800"
+              >
+                <button
+                  class="menu-action block w-full px-3 py-2 text-left"
+                  data-modal-title="Web browsing"
+                  data-modal-content="Search public web pages|1,204 runs this month"
+                  type="button"
+                >
+                  View detail</button
+                ><button type="button" class="block px-3 py-2 text-rose-600">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article
+            class="flex justify-between rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-neutral-800"
+          >
+            <div>
+              <h2 class="font-semibold">Document reading</h2>
+              <p class="mt-2 text-sm">
+                Extracts and summarizes uploaded documents.
+              </p>
+            </div>
+            <div class="relative">
+              <button
+                class="overflow-toggle text-lg"
+                type="button"
+                aria-expanded="false"
+              >
+                &#8942;
+              </button>
+              <div
+                class="overflow-menu absolute right-0 z-10 hidden w-36 rounded border bg-white p-1 shadow dark:bg-neutral-800"
+              >
+                <button
+                  class="menu-action block w-full px-3 py-2 text-left"
+                  data-modal-title="Document reading"
+                  data-modal-content="Extracts business documents|846 runs this month"
+                  type="button"
+                >
+                  View detail</button
+                ><button type="button" class="block px-3 py-2 text-rose-600">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article
+            class="flex justify-between rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-neutral-800"
+          >
+            <div>
+              <h2 class="font-semibold">Calendar management</h2>
+              <p class="mt-2 text-sm">
+                Organizes events across connected calendars.
+              </p>
+            </div>
+            <div class="relative">
+              <button
+                class="overflow-toggle text-lg"
+                type="button"
+                aria-expanded="false"
+              >
+                &#8942;
+              </button>
+              <div
+                class="overflow-menu absolute right-0 z-10 hidden w-36 rounded border bg-white p-1 shadow dark:bg-neutral-800"
+              >
+                <button
+                  class="menu-action block w-full px-3 py-2 text-left"
+                  data-modal-title="Calendar management"
+                  data-modal-content="Creates and updates calendar events|389 runs this month"
+                  type="button"
+                >
+                  View detail</button
+                ><button type="button" class="block px-3 py-2 text-rose-600">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article
+            class="flex justify-between rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-neutral-800"
+          >
+            <div>
+              <h2 class="font-semibold">Email management</h2>
+              <p class="mt-2 text-sm">
+                Categorizes email and drafts responses.
+              </p>
+            </div>
+            <div class="relative">
+              <button
+                class="overflow-toggle text-lg"
+                type="button"
+                aria-expanded="false"
+              >
+                &#8942;
+              </button>
+              <div
+                class="overflow-menu absolute right-0 z-10 hidden w-36 rounded border bg-white p-1 shadow dark:bg-neutral-800"
+              >
+                <button
+                  class="menu-action block w-full px-3 py-2 text-left"
+                  data-modal-title="Email management"
+                  data-modal-content="Manages business email|512 runs this month"
+                  type="button"
+                >
+                  View detail</button
+                ><button type="button" class="block px-3 py-2 text-rose-600">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </main>
+    <div
+      id="modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4"
+    >
+      <section
+        class="w-full max-w-lg rounded-xl bg-white p-6 dark:bg-neutral-800"
+      >
+        <div class="flex justify-between">
+          <h2 id="modal-title" class="text-xl font-bold">Details</h2>
+          <button id="modal-close" type="button">&times;</button>
+        </div>
+        <div id="modal-content" class="mt-4"></div>
+        <div id="modal-form" class="hidden"></div>
+        <button id="modal-secondary" class="hidden" type="button">Cancel</button
+        ><button id="modal-primary" type="button">Close</button>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
