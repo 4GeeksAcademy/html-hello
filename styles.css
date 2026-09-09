@@ -1,0 +1,70 @@
+header > div:first-child {
+  min-height: 2.25rem;
+}
+
+header > div:first-child > a {
+  display: inline-block;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+body > header {
+  border-bottom-width: 0;
+}
+
+header nav {
+  width: 100%;
+  border-top-width: 0;
+}
+
+header nav ul {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-link {
+  display: inline-block;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  transition: background-color 200ms, color 200ms;
+}
+
+.nav-link:focus-visible,
+.overflow-toggle:focus-visible,
+button:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 2px;
+}
+
+main > header h1,
+main > h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+main > header > p,
+main > p:first-child {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  header aside {
+    gap: 1rem;
+  }
+}
+
+.dark .nav-link:not([aria-current="page"]):hover {
+  background-color: #262626;
+  color: #38bdf8;
+}

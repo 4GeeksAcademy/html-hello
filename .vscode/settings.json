@@ -1,6 +1,9 @@
 {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "css.lint.unknownAtRules": "ignore",
+    "html.format.wrapAttributes": "force-aligned",
+    "html.format.wrapLineLength": 100,
     "workbench.editorAssociations": {   
         "*.md": "vscode.markdown.preview.editor"
     }

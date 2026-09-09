@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Users | AgentHub</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-neutral-900 dark:text-slate-100"
+  >
+    <header
+      class="bg-white/95 px-4 py-4 shadow-sm sm:px-6 lg:px-8 dark:bg-neutral-900/95 dark:shadow-black/40"
+    >
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4">
+        <a
+          href="index.html"
+          class="text-xl font-bold tracking-tight text-slate-950 dark:text-white"
+          >AgentHub</a
+        >
+        <aside class="flex items-center gap-2">
+          <button
+            type="button"
+            aria-label="Notifications"
+            class="rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-neutral-800"
+          >
+            &#128276;</button
+          ><span class="hidden text-sm font-medium sm:inline"
+            >Admin profile</span
+          ><button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            class="rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-neutral-800"
+          >
+            &#9788;
+          </button>
+        </aside>
+      </div>
+      <nav class="mx-auto mt-4 max-w-7xl pt-4">
+        <ul class="flex flex-wrap gap-6 text-sm">
+          <li>
+            <a
+              class="nav-link"
+              href="index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link"
+              href="users.html"
+              >User management</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link"
+              href="agents.html"
+              >Agent management</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link"
+              href="skills.html"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link"
+              href="contracts.html"
+              >Agent contracts</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link"
+              href="errors.html"
+              >Error log</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="mx-auto max-w-7xl space-y-5 px-4 py-8 sm:px-6 lg:px-8">
+      <header>
+        <p
+          class="text-sm font-semibold uppercase tracking-wide text-sky-600 dark:text-sky-600"
+        >
+          Workspace access
+        </p>
+        <h1
+          class="mt-2 text-3xl font-bold tracking-tight text-slate-950 dark:text-white"
+        >
+          User Management
+        </h1>
+      </header>
+      <div
+        class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800"
+      >
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-left text-sm">
+            <thead
+              class="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-neutral-900 dark:text-slate-400"
+            >
+              <tr>
+                <th class="px-5 py-4">Name</th>
+                <th class="px-5 py-4">Email</th>
+                <th class="px-5 py-4">Plan</th>
+                <th class="px-5 py-4">Status</th>
+                <th class="px-5 py-4 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-neutral-700">
+              <tr>
+                <th class="px-5 py-4 text-left" scope="row">Maya Chen</th>
+                <td class="px-5 py-4">maya.chen@northstarhealth.com</td>
+                <td class="px-5 py-4">Business</td>
+                <td class="px-5 py-4 text-emerald-600">Active</td>
+                <td class="relative px-5 py-4 text-right">
+                  <button
+                    class="overflow-toggle p-2 text-lg"
+                    type="button"
+                    aria-label="Actions for Maya Chen"
+                    aria-expanded="false"
+                  >
+                    &#8942;
+                  </button>
+                  <div
+                    class="overflow-menu absolute right-5 top-14 z-10 hidden w-40 rounded-lg border bg-white p-1 shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+                  >
+                    <button
+                      class="menu-action block w-full px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-neutral-700"
+                      data-modal-title="Maya Chen"
+                      data-modal-content="maya.chen@northstarhealth.com|Business plan|Active|Owner: Northstar Health"
+                      type="button"
+                    >
+                      View detail</button
+                    ><button
+                      class="block w-full px-3 py-2 text-left text-sm text-rose-600"
+                      type="button"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="px-5 py-4 text-left" scope="row">Liam Carter</th>
+                <td class="px-5 py-4">liam.carter@brightlinelabs.com</td>
+                <td class="px-5 py-4">Starter</td>
+                <td class="px-5 py-4 text-emerald-600">Active</td>
+                <td class="relative px-5 py-4 text-right">
+                  <button
+                    class="overflow-toggle p-2 text-lg"
+                    type="button"
+                    aria-label="Actions for Liam Carter"
+                    aria-expanded="false"
+                  >
+                    &#8942;
+                  </button>
+                  <div
+                    class="overflow-menu absolute right-5 top-14 z-10 hidden w-40 rounded-lg border bg-white p-1 shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+                  >
+                    <button
+                      class="menu-action block w-full px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-neutral-700"
+                      data-modal-title="Liam Carter"
+                      data-modal-content="liam.carter@brightlinelabs.com|Starter plan|Active|Owner: Brightline Labs"
+                      type="button"
+                    >
+                      View detail</button
+                    ><button
+                      class="block w-full px-3 py-2 text-left text-sm text-rose-600"
+                      type="button"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="px-5 py-4 text-left" scope="row">Sofia Reyes</th>
+                <td class="px-5 py-4">sofia.reyes@cedarworks.co</td>
+                <td class="px-5 py-4">Enterprise</td>
+                <td class="px-5 py-4 text-emerald-600">Active</td>
+                <td class="relative px-5 py-4 text-right">
+                  <button
+                    class="overflow-toggle p-2 text-lg"
+                    type="button"
+                    aria-label="Actions for Sofia Reyes"
+                    aria-expanded="false"
+                  >
+                    &#8942;
+                  </button>
+                  <div
+                    class="overflow-menu absolute right-5 top-14 z-10 hidden w-40 rounded-lg border bg-white p-1 shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+                  >
+                    <button
+                      class="menu-action block w-full px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-neutral-700"
+                      data-modal-title="Sofia Reyes"
+                      data-modal-content="sofia.reyes@cedarworks.co|Enterprise plan|Active|Owner: CedarWorks"
+                      type="button"
+                    >
+                      View detail</button
+                    ><button
+                      class="block w-full px-3 py-2 text-left text-sm text-rose-600"
+                      type="button"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="px-5 py-4 text-left" scope="row">Noah Williams</th>
+                <td class="px-5 py-4">noah.williams@vertexlogistics.com</td>
+                <td class="px-5 py-4">Business</td>
+                <td class="px-5 py-4 text-amber-600">Pending</td>
+                <td class="relative px-5 py-4 text-right">
+                  <button
+                    class="overflow-toggle p-2 text-lg"
+                    type="button"
+                    aria-label="Actions for Noah Williams"
+                    aria-expanded="false"
+                  >
+                    &#8942;
+                  </button>
+                  <div
+                    class="overflow-menu absolute right-5 top-14 z-10 hidden w-40 rounded-lg border bg-white p-1 shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+                  >
+                    <button
+                      class="menu-action block w-full px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-neutral-700"
+                      data-modal-title="Noah Williams"
+                      data-modal-content="noah.williams@vertexlogistics.com|Business plan|Pending invitation|Owner: Vertex Logistics"
+                      type="button"
+                    >
+                      View detail</button
+                    ><button
+                      class="block w-full px-3 py-2 text-left text-sm text-rose-600"
+                      type="button"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="px-5 py-4 text-left" scope="row">Amara Okafor</th>
+                <td class="px-5 py-4">amara.okafor@meridianfinance.com</td>
+                <td class="px-5 py-4">Starter</td>
+                <td class="px-5 py-4 text-rose-600">Suspended</td>
+                <td class="relative px-5 py-4 text-right">
+                  <button
+                    class="overflow-toggle p-2 text-lg"
+                    type="button"
+                    aria-label="Actions for Amara Okafor"
+                    aria-expanded="false"
+                  >
+                    &#8942;
+                  </button>
+                  <div
+                    class="overflow-menu absolute right-5 top-14 z-10 hidden w-40 rounded-lg border bg-white p-1 shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+                  >
+                    <button
+                      class="menu-action block w-full px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-neutral-700"
+                      data-modal-title="Amara Okafor"
+                      data-modal-content="amara.okafor@meridianfinance.com|Starter plan|Suspended|Owner: Meridian Finance"
+                      type="button"
+                    >
+                      View detail</button
+                    ><button
+                      class="block w-full px-3 py-2 text-left text-sm text-rose-600"
+                      type="button"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <div
+      id="modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/60 p-4"
+    >
+      <section
+        class="w-full max-w-lg rounded-xl bg-white p-6 dark:bg-neutral-800"
+      >
+        <div class="flex justify-between">
+          <h2 id="modal-title" class="text-xl font-bold">Details</h2>
+          <button id="modal-close" type="button">&times;</button>
+        </div>
+        <div id="modal-content" class="mt-5 space-y-3 text-sm"></div>
+        <div id="modal-form" class="hidden">
+          <textarea
+            id="system-prompt"
+            class="mt-4 min-h-40 w-full rounded-lg border p-3"
+          >
+You are a reliable AgentHub assistant.</textarea>
+        </div>
+        <div class="mt-5 flex justify-end gap-3">
+          <button id="modal-secondary" class="hidden" type="button">
+            Cancel</button
+          ><button id="modal-primary" type="button">Close</button>
+        </div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
