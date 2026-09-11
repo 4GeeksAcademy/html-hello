@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agents | AgentHub</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 text-slate-900 dark:bg-neutral-900 dark:text-slate-100"
+  >
+    <header
+      class="border-b border-slate-200 bg-white px-4 py-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-black/40"
+    >
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4">
+        <a href="index.html" class="text-xl font-bold">AgentHub</a>
+        <aside class="flex items-center gap-2 sm:gap-4">
+          <button
+            type="button"
+            aria-label="Notifications"
+            class="rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-neutral-800"
+          >
+            &#128276;
+          </button>
+          <span class="hidden text-sm font-medium sm:inline">Admin profile</span>
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            class="rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-neutral-800"
+          >
+            &#9788;
+          </button>
+        </aside>
+      </div>
+      <nav class="mx-auto mt-4 max-w-7xl border-t pt-4 dark:border-neutral-700">
+        <ul class="flex flex-wrap gap-6 text-sm">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="users.html">User management</a></li>
+          <li><a class="nav-link" href="agents.html">Agent management</a></li>
+          <li><a class="nav-link" href="skills.html">Skills</a></li>
+          <li><a class="nav-link" href="contracts.html">Agent contracts</a></li>
+          <li><a class="nav-link" href="errors.html">Error log</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="mx-auto max-w-7xl px-4 py-8">
+      <p class="text-sm font-semibold uppercase tracking-wide text-sky-600">
+        Deployed assistants
+      </p>
+      <h1 class="mt-2 text-3xl font-bold">Agent Management</h1>
+      <section
+        class="mt-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-neutral-700 dark:bg-neutral-800"
+      >
+        <h2 class="text-xl font-bold">Agents</h2>
+        <ul class="mt-5 grid gap-4 lg:grid-cols-2">
+          <li>
+            <article
+              class="relative rounded-lg border border-slate-200 p-5 dark:border-neutral-700"
+            >
+              <div class="flex justify-between">
+                <div>
+                  <h3 class="font-semibold">Atlas Customer Support AI</h3>
+                  <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                    Answers customer questions and routes complex requests.
+                  </p>
+                </div>
+                <div class="relative">
+                  <button
+                    class="overflow-toggle text-lg"
+                    type="button"
+                    aria-label="Actions for Atlas"
+                    aria-expanded="false"
+                  >
+                    &#8942;
+                  </button>
+                  <div
+                    class="overflow-menu absolute right-0 z-10 hidden w-36 rounded-lg border bg-white p-1 shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+                  >
+                    <button
+                      class="menu-action block w-full px-3 py-2 text-left"
+                      data-configure-agent="Atlas Customer Support AI"
+                      type="button"
+                    >
+                      Configure</button
+                    ><button
+                      class="block w-full px-3 py-2 text-left text-rose-600"
+                      type="button"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <dl class="mt-5 grid grid-cols-2 text-sm">
+                <div>
+                  <dt>Owner</dt>
+                  <dd>Maya Chen</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd class="text-emerald-600">Active</dd>
+                </div>
+              </dl>
+              <details class="mt-4 border-t border-slate-200 pt-3 dark:border-neutral-700">
+                <summary class="cursor-pointer font-semibold text-sky-600">
+                  Skills
+                </summary>
+                <p class="mt-2 text-sm">Web browsing, Document reading</p>
+              </details>
+            </article>
+          </li>
+          <li>
+            <article
+              class="relative rounded-lg border border-slate-200 p-5 dark:border-neutral-700"
+            >
+              <div class="flex justify-between">
+                <div>
+                  <h3 class="font-semibold">Beacon Research Analyst AI</h3>
+                  <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                    Researches market signals and prepares business briefs.
+                  </p>
+                </div>
+                <div class="relative">
+                  <button
+                    class="overflow-toggle text-lg"
+                    type="button"
+                    aria-label="Actions for Beacon"
+                    aria-expanded="false"
+                  >
+                    &#8942;
+                  </button>
+                  <div
+                    class="overflow-menu absolute right-0 z-10 hidden w-36 rounded-lg border bg-white p-1 shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+                  >
+                    <button
+                      class="menu-action block w-full px-3 py-2 text-left"
+                      data-configure-agent="Beacon Research Analyst AI"
+                      type="button"
+                    >
+                      Configure</button
+                    ><button
+                      class="block w-full px-3 py-2 text-left text-rose-600"
+                      type="button"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <dl class="mt-5 grid grid-cols-2 text-sm">
+                <div>
+                  <dt>Owner</dt>
+                  <dd>Liam Carter</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd class="text-emerald-600">Active</dd>
+                </div>
+              </dl>
+              <details class="mt-4 border-t border-slate-200 pt-3 dark:border-neutral-700">
+                <summary class="cursor-pointer font-semibold text-sky-600">
+                  Skills
+                </summary>
+                <p class="mt-2 text-sm">Web browsing, Data analysis</p>
+              </details>
+            </article>
+          </li>
+          <li>
+            <article
+              class="relative rounded-lg border border-slate-200 p-5 dark:border-neutral-700"
+            >
+              <div class="flex justify-between">
+                <div>
+                  <h3 class="font-semibold">Cedar Scheduling Assistant AI</h3>
+                  <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                    Coordinates meetings and manages calendar changes.
+                  </p>
+                </div>
+                <div class="relative">
+                  <button
+                    class="overflow-toggle text-lg"
+                    type="button"
+                    aria-label="Actions for Cedar"
+                    aria-expanded="false"
+                  >
+                    &#8942;
+                  </button>
+                  <div
+                    class="overflow-menu absolute right-0 z-10 hidden w-36 rounded-lg border bg-white p-1 shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+                  >
+                    <button
+                      class="menu-action block w-full px-3 py-2 text-left"
+                      data-configure-agent="Cedar Scheduling Assistant AI"
+                      type="button"
+                    >
+                      Configure</button
+                    ><button
+                      class="block w-full px-3 py-2 text-left text-rose-600"
+                      type="button"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <dl class="mt-5 grid grid-cols-2 text-sm">
+                <div>
+                  <dt>Owner</dt>
+                  <dd>Sofia Reyes</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd class="text-amber-600">Paused</dd>
+                </div>
+              </dl>
+              <details class="mt-4 border-t border-slate-200 pt-3 dark:border-neutral-700">
+                <summary class="cursor-pointer font-semibold text-sky-600">
+                  Skills
+                </summary>
+                <p class="mt-2 text-sm">
+                  Calendar management, Email management
+                </p>
+              </details>
+            </article>
+          </li>
+          <li>
+            <article
+              class="relative rounded-lg border border-slate-200 p-5 dark:border-neutral-700"
+            >
+              <div class="flex justify-between">
+                <div>
+                  <h3 class="font-semibold">Delta Financial Review AI</h3>
+                  <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                    Reviews financial documents and flags anomalies.
+                  </p>
+                </div>
+                <div class="relative">
+                  <button
+                    class="overflow-toggle text-lg"
+                    type="button"
+                    aria-label="Actions for Delta"
+                    aria-expanded="false"
+                  >
+                    &#8942;
+                  </button>
+                  <div
+                    class="overflow-menu absolute right-0 z-10 hidden w-36 rounded-lg border bg-white p-1 shadow-lg dark:border-neutral-600 dark:bg-neutral-800"
+                  >
+                    <button
+                      class="menu-action block w-full px-3 py-2 text-left"
+                      data-configure-agent="Delta Financial Review AI"
+                      type="button"
+                    >
+                      Configure</button
+                    ><button
+                      class="block w-full px-3 py-2 text-left text-rose-600"
+                      type="button"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <dl class="mt-5 grid grid-cols-2 text-sm">
+                <div>
+                  <dt>Owner</dt>
+                  <dd>Amara Okafor</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd class="text-rose-600">Failing</dd>
+                </div>
+              </dl>
+              <details class="mt-4 border-t border-slate-200 pt-3 dark:border-neutral-700">
+                <summary class="cursor-pointer font-semibold text-sky-600">
+                  Skills
+                </summary>
+                <p class="mt-2 text-sm">Document reading, Data analysis</p>
+              </details>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <div
+      id="modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4"
+    >
+      <section
+        class="w-full max-w-lg rounded-xl bg-white p-6 dark:bg-neutral-800"
+      >
+        <h2 id="modal-title" class="text-xl font-bold">Configure agent</h2>
+        <div id="modal-content"></div>
+        <div id="modal-form">
+          <textarea class="mt-4 min-h-40 w-full rounded border p-3">
+You are a reliable AgentHub assistant.</textarea>
+        </div>
+        <button id="modal-close" type="button">Close</button
+        ><button id="modal-secondary" class="hidden" type="button">
+          Cancel</button
+        ><button id="modal-primary" type="button">Save changes</button>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

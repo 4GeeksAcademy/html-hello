@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contracts | AgentHub</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 text-slate-900 dark:bg-neutral-900 dark:text-slate-100"
+  >
+    <header
+      class="border-b bg-white px-4 py-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-black/40"
+    >
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4">
+        <a href="index.html" class="text-xl font-bold">AgentHub</a>
+        <aside class="flex items-center gap-2 sm:gap-4">
+          <button
+            type="button"
+            aria-label="Notifications"
+            class="rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-neutral-800"
+          >
+            &#128276;
+          </button>
+          <span class="hidden text-sm font-medium sm:inline">Admin profile</span>
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            class="rounded-lg p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-neutral-800"
+          >
+            &#9788;
+          </button>
+        </aside>
+      </div>
+      <nav class="mx-auto mt-4 max-w-7xl border-t pt-4 dark:border-neutral-700">
+        <ul class="flex flex-wrap gap-6 text-sm">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="users.html">User management</a></li>
+          <li><a class="nav-link" href="agents.html">Agent management</a></li>
+          <li><a class="nav-link" href="skills.html">Skills</a></li>
+          <li><a class="nav-link" href="contracts.html">Agent contracts</a></li>
+          <li><a class="nav-link" href="errors.html">Error log</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="mx-auto max-w-7xl px-4 py-8">
+      <p class="text-sm font-semibold uppercase tracking-wide text-sky-600">
+        Commercial agreements
+      </p>
+      <h1 class="mt-2 text-3xl font-bold">Contracts</h1>
+      <div
+        class="mt-6 overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800"
+      >
+        <table class="min-w-[850px] w-full text-left text-sm">
+          <thead class="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-neutral-900 dark:text-slate-400">
+            <tr>
+              <th class="p-4">Client</th>
+              <th class="p-4">Agent</th>
+              <th class="p-4">Skills</th>
+              <th class="p-4">Dates</th>
+              <th class="p-4">Amount paid</th>
+              <th class="p-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-neutral-700">
+            <tr>
+              <th class="p-4 text-left">Northstar Health</th>
+              <td class="p-4">Atlas Customer Support AI</td>
+              <td class="p-4">Web browsing, documents</td>
+              <td class="p-4">Jan 15 - Dec 31, 2026</td>
+              <td class="p-4 font-semibold">$24,000</td>
+              <td class="relative p-4">
+                <button
+                  class="overflow-toggle text-lg"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  &#8942;
+                </button>
+                <div
+                  class="overflow-menu absolute right-4 z-10 hidden w-40 rounded border bg-white p-1 shadow dark:bg-neutral-800"
+                >
+                  <button
+                    class="menu-action block px-3 py-2"
+                    data-modal-title="Northstar Health contract"
+                    data-modal-content="Atlas Customer Support AI|Web browsing: $6,000|Document reading: $8,000|Calendar management: $10,000|Total: $24,000"
+                    type="button"
+                  >
+                    View details
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="p-4 text-left">Brightline Labs</th>
+              <td class="p-4">Beacon Research Analyst AI</td>
+              <td class="p-4">Web browsing, analysis</td>
+              <td class="p-4">Mar 1 - Sep 30, 2026</td>
+              <td class="p-4 font-semibold">$18,500</td>
+              <td class="relative p-4">
+                <button
+                  class="overflow-toggle text-lg"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  &#8942;
+                </button>
+                <div
+                  class="overflow-menu absolute right-4 z-10 hidden w-40 rounded border bg-white p-1 shadow dark:bg-neutral-800"
+                >
+                  <button
+                    class="menu-action block px-3 py-2"
+                    data-modal-title="Brightline Labs contract"
+                    data-modal-content="Beacon Research Analyst AI|Web browsing: $7,500|Data analysis: $11,000|Total: $18,500"
+                    type="button"
+                  >
+                    View details
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <div
+      id="modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4"
+    >
+      <section
+        class="w-full max-w-lg rounded-xl bg-white p-6 dark:bg-neutral-800"
+      >
+        <div class="flex justify-between">
+          <h2 id="modal-title">Details</h2>
+          <button id="modal-close" type="button">&times;</button>
+        </div>
+        <div id="modal-content" class="mt-4"></div>
+        <div id="modal-form" class="hidden"></div>
+        <button id="modal-secondary" class="hidden" type="button">Cancel</button
+        ><button id="modal-primary" type="button">Close</button>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
