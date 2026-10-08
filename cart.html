@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | Chic Parisien</title>
+  <meta name="description" content="Review your Chic Parisien clothing selection, confirm sizes and prices, and continue to secure checkout.">
+  <meta name="robots" content="noindex,follow">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#0A0A0A] text-[#F5F5F0] font-sans min-h-screen flex flex-col">
+  <header class="bg-[#0A0A0A] border-b border-[#D4AF37]">
+    <div class="bg-[#C8102E] text-[#F5F5F0] text-center text-xs uppercase tracking-widest py-2">
+      Complimentary shipping on orders over &euro;150
+    </div>
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <a href="index.html" class="font-serif text-2xl md:text-3xl tracking-widest uppercase text-[#D4AF37]">
+        Chic Parisien
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
+        <li><a href="index.html" class="text-[#F5F5F0] hover:text-[#D4AF37] transition">Home</a></li>
+        <li><a href="catalog.html" class="text-[#F5F5F0] hover:text-[#D4AF37] transition">Catalog</a></li>
+        <li><a href="product.html" class="text-[#F5F5F0] hover:text-[#D4AF37] transition">Product</a></li>
+        <li><a href="profile.html" class="text-[#F5F5F0] hover:text-[#D4AF37] transition">Profile</a></li>
+        <li><a href="checkout.html" class="text-[#F5F5F0] hover:text-[#D4AF37] transition">Checkout</a></li>
+        <li>
+          <a href="cart.html" aria-current="page" class="relative inline-flex items-center border border-[#D4AF37] text-[#D4AF37] px-4 py-2 hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition">
+            Cart
+            <span class="absolute -top-2 -right-2 bg-[#C8102E] text-[#F5F5F0] text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          </a>
+        </li>
+      </ul>
+      <details class="md:hidden relative">
+        <summary class="list-none cursor-pointer text-[#D4AF37] uppercase tracking-wider text-sm border border-[#D4AF37] px-3 py-2">Menu</summary>
+        <ul class="absolute right-0 mt-2 w-48 bg-[#1A1A1A] border border-[#D4AF37] z-50 text-sm uppercase tracking-wider">
+          <li><a href="index.html" class="block px-4 py-3 text-[#F5F5F0] hover:bg-[#0A0A0A] hover:text-[#D4AF37]">Home</a></li>
+          <li><a href="catalog.html" class="block px-4 py-3 text-[#F5F5F0] hover:bg-[#0A0A0A] hover:text-[#D4AF37]">Catalog</a></li>
+          <li><a href="product.html" class="block px-4 py-3 text-[#F5F5F0] hover:bg-[#0A0A0A] hover:text-[#D4AF37]">Product</a></li>
+          <li><a href="profile.html" class="block px-4 py-3 text-[#F5F5F0] hover:bg-[#0A0A0A] hover:text-[#D4AF37]">Profile</a></li>
+          <li><a href="checkout.html" class="block px-4 py-3 text-[#F5F5F0] hover:bg-[#0A0A0A] hover:text-[#D4AF37]">Checkout</a></li>
+          <li><a href="cart.html" aria-current="page" class="block px-4 py-3 text-[#D4AF37] hover:bg-[#0A0A0A]">Cart <span class="ml-1 bg-[#C8102E] text-[#F5F5F0] text-xs font-bold rounded-full px-2">0</span></a></li>
+        </ul>
+      </details>
+    </nav>
+  </header>
+
+  <main class="group/cart flex-1">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16" aria-labelledby="cart-title">
+      <div class="mb-10 border-b border-[#2A2A2A] pb-8">
+        <p class="mb-3 text-xs uppercase tracking-widest text-[#A3A3A3]">Your selection</p>
+        <h1 id="cart-title" class="font-serif text-4xl md:text-5xl text-[#D4AF37]">Shopping Cart</h1>
+        <p class="mt-4 text-sm text-[#A3A3A3]" role="status" aria-live="polite" aria-atomic="true">
+          <span class="group-has-[#remove-coat:checked]/cart:hidden group-has-[#remove-shirt:checked]/cart:hidden">2 items</span>
+          <span class="hidden group-has-[#remove-coat:checked]/cart:group-has-[#remove-shirt:not(:checked)]/cart:inline group-has-[#remove-shirt:checked]/cart:group-has-[#remove-coat:not(:checked)]/cart:inline">1 item</span>
+          <span class="hidden group-has-[#remove-coat:checked]/cart:group-has-[#remove-shirt:checked]/cart:inline">0 items</span>
+          in your bag
+        </p>
+      </div>
+
+      <input id="remove-coat" type="checkbox" class="sr-only" aria-label="Remove Cotton Utility Jacket">
+      <input id="remove-shirt" type="checkbox" class="sr-only" aria-label="Remove Pastel Cotton Shirt">
+
+      <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-14">
+        <section class="min-w-0" aria-label="Cart items">
+          <div class="hidden sm:grid sm:grid-cols-[1fr_80px_100px] gap-4 border-b border-[#2A2A2A] pb-4 text-xs uppercase tracking-widest text-[#A3A3A3]">
+            <span>Product</span><span class="text-center">Quantity</span><span class="text-right">Total</span>
+          </div>
+
+          <article id="coat-item" class="grid grid-cols-[96px_minmax(0,1fr)] gap-4 border-b border-[#2A2A2A] py-6 sm:grid-cols-[120px_minmax(0,1fr)_80px_100px] sm:gap-5 group-has-[#remove-coat:checked]/cart:hidden">
+            <a href="product.html" class="row-span-2 sm:row-span-1">
+              <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&amp;fit=crop&amp;w=360&amp;q=85" alt="Olive cotton utility jacket worn over a light knit" width="360" height="480" class="aspect-[3/4] w-full object-cover">
+            </a>
+            <div class="min-w-0">
+              <p class="text-[10px] uppercase tracking-widest text-[#A3A3A3]">The everyday edit</p>
+              <h2 class="mt-2 font-serif text-xl"><a href="product.html" class="hover:text-[#D4AF37] transition">Cotton Utility Jacket</a></h2>
+              <p class="mt-2 text-sm text-[#A3A3A3]">Olive <span aria-hidden="true">/</span> Size M</p>
+              <p class="mt-2 text-sm font-semibold text-[#D4AF37]">&euro;185.00</p>
+              <label for="remove-coat" class="mt-3 inline-flex min-h-11 cursor-pointer items-center text-sm text-[#A3A3A3] underline underline-offset-4 hover:text-[#F5F5F0] group-has-[#remove-coat:focus-visible]/cart:outline-2 group-has-[#remove-coat:focus-visible]/cart:outline-[#D4AF37]">Remove<span class="sr-only"> Cotton Utility Jacket</span></label>
+            </div>
+            <p class="self-start text-sm sm:pt-7 sm:text-center"><span class="text-[#A3A3A3] sm:hidden">Qty: </span>1</p>
+            <p class="col-start-2 font-semibold text-[#D4AF37] sm:col-start-auto sm:pt-7 sm:text-right">&euro;185.00</p>
+          </article>
+
+          <div class="hidden items-center justify-between gap-4 border-b border-[#2A2A2A] py-5 text-sm group-has-[#remove-coat:checked]/cart:flex">
+            <p class="text-[#A3A3A3]">Cotton Utility Jacket removed.</p>
+            <label for="remove-coat" class="inline-flex min-h-11 cursor-pointer items-center text-[#D4AF37] underline underline-offset-4 group-has-[#remove-coat:focus-visible]/cart:outline-2 group-has-[#remove-coat:focus-visible]/cart:outline-[#D4AF37]">Undo<span class="sr-only"> jacket removal</span></label>
+          </div>
+
+          <article id="shirt-item" class="grid grid-cols-[96px_minmax(0,1fr)] gap-4 border-b border-[#2A2A2A] py-6 sm:grid-cols-[120px_minmax(0,1fr)_80px_100px] sm:gap-5 group-has-[#remove-shirt:checked]/cart:hidden">
+            <a href="product.html" class="row-span-2 sm:row-span-1">
+              <img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&amp;fit=crop&amp;w=360&amp;q=85" alt="Pastel cotton shirts on hangers, including a mint green shirt" width="360" height="480" class="aspect-[3/4] w-full object-cover">
+            </a>
+            <div class="min-w-0">
+              <p class="text-[10px] uppercase tracking-widest text-[#A3A3A3]">The essentials</p>
+              <h2 class="mt-2 font-serif text-xl"><a href="product.html" class="hover:text-[#D4AF37] transition">Pastel Cotton Shirt</a></h2>
+              <p class="mt-2 text-sm text-[#A3A3A3]">Mint <span aria-hidden="true">/</span> Size S</p>
+              <p class="mt-2 text-sm font-semibold text-[#D4AF37]">&euro;65.00</p>
+              <label for="remove-shirt" class="mt-3 inline-flex min-h-11 cursor-pointer items-center text-sm text-[#A3A3A3] underline underline-offset-4 hover:text-[#F5F5F0] group-has-[#remove-shirt:focus-visible]/cart:outline-2 group-has-[#remove-shirt:focus-visible]/cart:outline-[#D4AF37]">Remove<span class="sr-only"> Pastel Cotton Shirt</span></label>
+            </div>
+            <p class="self-start text-sm sm:pt-7 sm:text-center"><span class="text-[#A3A3A3] sm:hidden">Qty: </span>1</p>
+            <p class="col-start-2 font-semibold text-[#D4AF37] sm:col-start-auto sm:pt-7 sm:text-right">&euro;65.00</p>
+          </article>
+
+          <div class="hidden items-center justify-between gap-4 border-b border-[#2A2A2A] py-5 text-sm group-has-[#remove-shirt:checked]/cart:flex">
+            <p class="text-[#A3A3A3]">Pastel Cotton Shirt removed.</p>
+            <label for="remove-shirt" class="inline-flex min-h-11 cursor-pointer items-center text-[#D4AF37] underline underline-offset-4 group-has-[#remove-shirt:focus-visible]/cart:outline-2 group-has-[#remove-shirt:focus-visible]/cart:outline-[#D4AF37]">Undo<span class="sr-only"> shirt removal</span></label>
+          </div>
+
+          <div id="empty-cart" class="hidden border-b border-[#2A2A2A] py-12 text-center group-has-[#remove-coat:checked]/cart:group-has-[#remove-shirt:checked]/cart:block">
+            <h2 class="font-serif text-2xl text-[#D4AF37]">Your bag is empty</h2>
+            <p class="mt-3 text-sm text-[#A3A3A3]">Find your next everyday favorite.</p>
+          </div>
+
+          <a href="catalog.html" class="mt-6 inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-[#D4AF37] hover:text-[#B8962E] transition"><span aria-hidden="true">&larr;</span> Continue Shopping</a>
+        </section>
+
+        <aside class="border-t-2 border-[#D4AF37] bg-[#1A1A1A] p-6 sm:p-8 lg:sticky lg:top-8" aria-labelledby="summary-title">
+          <h2 id="summary-title" class="font-serif text-2xl text-[#D4AF37]">Order Summary</h2>
+
+          <dl id="summary-both" class="mt-7 space-y-4 text-sm group-has-[#remove-coat:checked]/cart:hidden group-has-[#remove-shirt:checked]/cart:hidden">
+            <div class="flex justify-between gap-4"><dt class="text-[#A3A3A3]">Subtotal</dt><dd>&euro;250.00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[#A3A3A3]">Shipping</dt><dd class="text-[#D4AF37]">Complimentary</dd></div>
+            <div class="flex justify-between gap-4 border-t border-[#2A2A2A] pt-5 text-lg"><dt>Total</dt><dd class="font-semibold text-[#D4AF37]">&euro;250.00</dd></div>
+          </dl>
+          <dl id="summary-shirt" class="mt-7 hidden space-y-4 text-sm group-has-[#remove-coat:checked]/cart:group-has-[#remove-shirt:not(:checked)]/cart:block">
+            <div class="flex justify-between gap-4"><dt class="text-[#A3A3A3]">Subtotal</dt><dd>&euro;65.00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[#A3A3A3]">Shipping</dt><dd>&euro;8.00</dd></div>
+            <div class="flex justify-between gap-4 border-t border-[#2A2A2A] pt-5 text-lg"><dt>Total</dt><dd class="font-semibold text-[#D4AF37]">&euro;73.00</dd></div>
+          </dl>
+          <dl id="summary-coat" class="mt-7 hidden space-y-4 text-sm group-has-[#remove-shirt:checked]/cart:group-has-[#remove-coat:not(:checked)]/cart:block">
+            <div class="flex justify-between gap-4"><dt class="text-[#A3A3A3]">Subtotal</dt><dd>&euro;185.00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[#A3A3A3]">Shipping</dt><dd class="text-[#D4AF37]">Complimentary</dd></div>
+            <div class="flex justify-between gap-4 border-t border-[#2A2A2A] pt-5 text-lg"><dt>Total</dt><dd class="font-semibold text-[#D4AF37]">&euro;185.00</dd></div>
+          </dl>
+          <dl id="summary-empty" class="mt-7 hidden space-y-4 text-sm group-has-[#remove-coat:checked]/cart:group-has-[#remove-shirt:checked]/cart:block">
+            <div class="flex justify-between gap-4"><dt class="text-[#A3A3A3]">Subtotal</dt><dd>&euro;0.00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[#A3A3A3]">Shipping</dt><dd>&euro;0.00</dd></div>
+            <div class="flex justify-between gap-4 border-t border-[#2A2A2A] pt-5 text-lg"><dt>Total</dt><dd class="font-semibold text-[#D4AF37]">&euro;0.00</dd></div>
+          </dl>
+
+          <p class="mt-3 text-xs text-[#A3A3A3]">All prices include VAT.</p>
+          <a id="checkout-link" href="checkout.html" class="mt-7 block bg-[#D4AF37] px-4 py-4 text-center text-sm font-semibold uppercase tracking-wider text-[#0A0A0A] transition hover:bg-[#B8962E] group-has-[#remove-coat:checked]/cart:group-has-[#remove-shirt:checked]/cart:hidden">Proceed to Checkout <span aria-hidden="true">&rarr;</span></a>
+          <a href="catalog.html" class="mt-7 hidden border border-[#D4AF37] px-4 py-4 text-center text-sm font-semibold uppercase tracking-wider text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition group-has-[#remove-coat:checked]/cart:group-has-[#remove-shirt:checked]/cart:block">Explore the Collection</a>
+          <p class="mt-5 text-center text-xs text-[#A3A3A3]">Complimentary shipping on orders over &euro;150.</p>
+          <details class="mt-6 border-t border-[#2A2A2A] pt-4 text-sm">
+            <summary class="cursor-pointer text-[#F5F5F0]">Shipping &amp; returns</summary>
+            <p class="mt-3 leading-relaxed text-[#A3A3A3]">Standard shipping is &euro;8, complimentary on orders over &euro;150. Delivery options are confirmed at checkout.</p>
+          </details>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#0A0A0A] border-t border-[#D4AF37] mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <a href="index.html" class="font-serif text-2xl tracking-widest uppercase text-[#D4AF37]">Chic Parisien</a>
+        <p class="mt-3 text-sm text-[#A3A3A3]">Timeless Parisian elegance, delivered.</p>
+      </div>
+      <div>
+        <h4 class="font-serif text-[#D4AF37] uppercase tracking-wider mb-3">Shop</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="catalog.html" class="text-[#A3A3A3] hover:text-[#D4AF37]">Catalog</a></li>
+          <li><a href="product.html" class="text-[#A3A3A3] hover:text-[#D4AF37]">Featured Product</a></li>
+          <li><a href="cart.html" class="text-[#A3A3A3] hover:text-[#D4AF37]">Cart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-serif text-[#D4AF37] uppercase tracking-wider mb-3">Account</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="profile.html" class="text-[#A3A3A3] hover:text-[#D4AF37]">My Profile</a></li>
+          <li><a href="checkout.html" class="text-[#A3A3A3] hover:text-[#D4AF37]">Checkout</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-serif text-[#D4AF37] uppercase tracking-wider mb-3">Newsletter</h4>
+        <form class="flex">
+          <input type="email" placeholder="Your email" class="flex-1 min-w-0 bg-[#1A1A1A] border border-[#2A2A2A] text-[#F5F5F0] px-3 py-2 text-sm focus:outline-none focus:border-[#D4AF37]">
+          <button type="submit" class="bg-[#D4AF37] text-[#0A0A0A] px-4 text-sm font-semibold uppercase hover:bg-[#B8962E]">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-[#2A2A2A]">
+      <p class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-xs text-[#A3A3A3] text-center">
+        &copy; 2026 Chic Parisien. All rights reserved. <span class="text-[#C8102E]">&hearts;</span> Paris
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

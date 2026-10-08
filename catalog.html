@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog | Chic Parisien</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#0A0A0A] text-[#F5F5F0] font-sans min-h-screen flex flex-col">
+
+  <!-- ===== HEADER + NAV (shared; do not edit per page) ===== -->
+  <header class="bg-[#0A0A0A] border-b border-[#D4AF37]">
+    <!-- Announcement bar (red splash) -->
+    <div class="bg-[#C8102E] text-[#F5F5F0] text-center text-xs uppercase tracking-widest py-2">
+      Complimentary shipping on orders over €150
+    </div>
+
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="index.html" class="font-serif text-2xl md:text-3xl tracking-widest uppercase text-[#D4AF37]">
+        Chic Parisien
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
+        <li><a href="index.html" class="text-[#F5F5F0] hover:text-[#D4AF37] transition">Home</a></li>
+        <li><a href="catalog.html" aria-current="page" class="text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 transition">Catalog</a></li>
+        <li><a href="product.html" class="text-[#F5F5F0] hover:text-[#D4AF37] transition">Product</a></li>
+        <li><a href="profile.html" class="text-[#F5F5F0] hover:text-[#D4AF37] transition">Profile</a></li>
+        <li><a href="checkout.html" class="text-[#F5F5F0] hover:text-[#D4AF37] transition">Checkout</a></li>
+        <li>
+          <a href="cart.html" class="relative inline-flex items-center border border-[#D4AF37] text-[#D4AF37] px-4 py-2 hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition">
+            Cart
+            <span class="absolute -top-2 -right-2 bg-[#C8102E] text-[#F5F5F0] text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile menu (no JS: uses details/summary) -->
+      <details class="md:hidden relative">
+        <summary class="list-none cursor-pointer text-[#D4AF37] uppercase tracking-wider text-sm border border-[#D4AF37] px-3 py-2">
+          Menu
+        </summary>
+        <ul class="absolute right-0 mt-2 w-48 bg-[#1A1A1A] border border-[#D4AF37] z-50 text-sm uppercase tracking-wider">
+          <li><a href="index.html" class="block px-4 py-3 text-[#F5F5F0] hover:bg-[#0A0A0A] hover:text-[#D4AF37]">Home</a></li>
+          <li><a href="catalog.html" aria-current="page" class="block px-4 py-3 text-[#D4AF37] hover:bg-[#0A0A0A] hover:text-[#D4AF37]">Catalog</a></li>
+          <li><a href="product.html" class="block px-4 py-3 text-[#F5F5F0] hover:bg-[#0A0A0A] hover:text-[#D4AF37]">Product</a></li>
+          <li><a href="profile.html" class="block px-4 py-3 text-[#F5F5F0] hover:bg-[#0A0A0A] hover:text-[#D4AF37]">Profile</a></li>
+          <li><a href="checkout.html" class="block px-4 py-3 text-[#F5F5F0] hover:bg-[#0A0A0A] hover:text-[#D4AF37]">Checkout</a></li>
+          <li><a href="cart.html" class="block px-4 py-3 text-[#D4AF37] hover:bg-[#0A0A0A]">Cart <span class="ml-1 bg-[#C8102E] text-[#F5F5F0] text-xs font-bold rounded-full px-2">0</span></a></li>
+        </ul>
+      </details>
+    </nav>
+  </header>
+  <!-- ===== END HEADER + NAV ===== -->
+
+  <!-- ===== PAGE CONTENT (edit this part only) ===== -->
+  <main class="flex-1">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16" aria-labelledby="catalog-title">
+      <div class="border-b border-[#2A2A2A] pb-8 mb-8">
+        <h1 id="catalog-title" class="font-serif text-4xl md:text-5xl text-[#D4AF37]">Catalog</h1>
+        <p class="mt-4 max-w-2xl text-[#A3A3A3]">Thoughtful essentials. Parisian character. Discover clothing and accessories for every day and every occasion.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[11rem_minmax(0,1fr)] gap-8">
+        <aside aria-labelledby="filter-heading">
+          <details open class="border border-[#2A2A2A] bg-[#1A1A1A] p-4">
+            <summary id="filter-heading" class="cursor-pointer font-serif text-xl text-[#D4AF37]">Filters</summary>
+            <form aria-label="Demonstration catalog filters" aria-describedby="demo-note" class="mt-4 space-y-4">
+              <fieldset class="border-b border-[#2A2A2A] pb-4">
+                <legend class="mb-2 font-serif text-base text-[#D4AF37]">Category</legend>
+                <div class="space-y-1">
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="checkbox" name="category" value="clothing" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>Clothing</span>
+                </label>
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="checkbox" name="category" value="bags" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>Bags</span>
+                </label>
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="checkbox" name="category" value="shoes" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>Shoes</span>
+                </label>
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="checkbox" name="category" value="accessories" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>Accessories</span>
+                </label>
+                </div>
+              </fieldset>
+              <fieldset class="border-b border-[#2A2A2A] pb-4">
+                <legend class="mb-2 font-serif text-base text-[#D4AF37]">Clothing size</legend>
+                <div class="grid grid-cols-3 gap-2">
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="checkbox" name="size" value="xs" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>XS</span>
+                </label>
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="checkbox" name="size" value="s" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>S</span>
+                </label>
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="checkbox" name="size" value="m" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>M</span>
+                </label>
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="checkbox" name="size" value="l" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>L</span>
+                </label>
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="checkbox" name="size" value="xl" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>XL</span>
+                </label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend class="mb-2 font-serif text-base text-[#D4AF37]">Price</legend>
+                <div class="space-y-1">
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="radio" name="price" value="all" checked class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>All prices</span>
+                </label>
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="radio" name="price" value="under-100" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>Under €100</span>
+                </label>
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="radio" name="price" value="100-150" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>€100–€150</span>
+                </label>
+                <label class="flex min-h-7 items-center gap-2 cursor-pointer text-sm">
+                  <input type="radio" name="price" value="over-150" class="h-4 w-4 shrink-0 accent-[#D4AF37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]">
+                  <span>Over €150</span>
+                </label>
+                </div>
+              </fieldset>
+              <button type="reset" class="w-full border border-[#D4AF37] text-[#D4AF37] font-semibold uppercase tracking-wider px-3 py-2 text-xs hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">Reset selections</button>
+            </form>
+          </details>
+        </aside>
+
+        <div class="min-w-0">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <h2 id="products-heading" class="font-serif text-2xl text-[#D4AF37]">The collection <span class="font-sans text-sm text-[#A3A3A3]">(8 products)</span></h2>
+            <div class="flex items-center gap-3">
+              <label for="sort" class="shrink-0 text-sm text-[#A3A3A3]">Sort by</label>
+              <select id="sort" name="sort" aria-describedby="demo-note" class="min-w-0 w-full sm:w-auto bg-[#1A1A1A] border border-[#2A2A2A] text-[#F5F5F0] px-3 py-2 text-sm focus:outline-none focus:border-[#D4AF37]">
+                <option value="featured">Featured</option>
+                <option value="price-ascending">Price: Low to High</option>
+                <option value="price-descending">Price: High to Low</option>
+                <option value="newest">Newest</option>
+              </select>
+            </div>
+          </div>
+          <p id="demo-note" class="mb-6 text-sm text-[#A3A3A3]">Sample collection · Filter and sort selections are for demonstration and do not change the products.</p>
+          <div id="products" aria-labelledby="products-heading" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <article class="bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#D4AF37] transition">
+              <a href="product.html" class="block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">
+                <div class="relative">
+                  <img src="images/tailored-jacket.jpg" alt="Brown zip-front bomber jacket on a hanger" width="600" height="800" loading="eager" class="w-full aspect-[3/4] object-cover">
+                  <span class="absolute left-3 top-3 bg-[#D4AF37] text-[#0A0A0A] text-xs font-bold uppercase px-2 py-1">New</span>
+                </div>
+                <div class="p-4">
+                  <p class="text-xs uppercase tracking-wider text-[#A3A3A3]">Outerwear</p>
+                  <h3 class="mt-2 font-serif text-lg text-[#F5F5F0]">Everyday Bomber Jacket</h3>
+                  <p class="mt-2 font-semibold text-[#D4AF37]">€189.00</p>
+                </div>
+              </a>
+            </article>
+            <article class="bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#D4AF37] transition">
+              <a href="product.html" class="block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">
+                <div class="relative">
+                  <img src="images/rouge-dress.jpg" alt="Red evening dress with a fitted waist and flowing skirt" width="600" height="800" loading="eager" class="w-full aspect-[3/4] object-cover">
+                  
+                </div>
+                <div class="p-4">
+                  <p class="text-xs uppercase tracking-wider text-[#A3A3A3]">Dresses</p>
+                  <h3 class="mt-2 font-serif text-lg text-[#F5F5F0]">Rouge Evening Dress</h3>
+                  <p class="mt-2 font-semibold text-[#D4AF37]">€149.00</p>
+                </div>
+              </a>
+            </article>
+            <article class="bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#D4AF37] transition">
+              <a href="product.html" class="block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">
+                <div class="relative">
+                  <img src="images/cotton-shirt.jpg" alt="Blue patterned button-up shirt on a hanger" width="600" height="800" loading="eager" class="w-full aspect-[3/4] object-cover">
+                  
+                </div>
+                <div class="p-4">
+                  <p class="text-xs uppercase tracking-wider text-[#A3A3A3]">Tops</p>
+                  <h3 class="mt-2 font-serif text-lg text-[#F5F5F0]">Patterned Cotton Shirt</h3>
+                  <p class="mt-2 font-semibold text-[#D4AF37]">€79.00</p>
+                </div>
+              </a>
+            </article>
+            <article class="bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#D4AF37] transition">
+              <a href="product.html" class="block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">
+                <div class="relative">
+                  <img src="images/knit-sweater.jpg" alt="Ivory open-knit poncho with a fringed hem on a hanger" width="600" height="800" loading="eager" class="w-full aspect-[3/4] object-cover">
+                  
+                </div>
+                <div class="p-4">
+                  <p class="text-xs uppercase tracking-wider text-[#A3A3A3]">Knitwear</p>
+                  <h3 class="mt-2 font-serif text-lg text-[#F5F5F0]">Soft Knit Poncho</h3>
+                  <p class="mt-2 font-semibold text-[#D4AF37]">€99.00</p>
+                </div>
+              </a>
+            </article>
+            <article class="bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#D4AF37] transition">
+              <a href="product.html" class="block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">
+                <div class="relative">
+                  <img src="images/tailored-trousers.jpg" alt="Beige utility trousers with a gathered ankle and pocket details" width="600" height="800" loading="lazy" class="w-full aspect-[3/4] object-cover">
+                  
+                </div>
+                <div class="p-4">
+                  <p class="text-xs uppercase tracking-wider text-[#A3A3A3]">Trousers</p>
+                  <h3 class="mt-2 font-serif text-lg text-[#F5F5F0]">Utility Trousers</h3>
+                  <p class="mt-2 font-semibold text-[#D4AF37]">€119.00</p>
+                </div>
+              </a>
+            </article>
+            <article class="bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#D4AF37] transition">
+              <a href="product.html" class="block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">
+                <div class="relative">
+                  <img src="images/shoulder-bag.jpg" alt="Structured red satchel with a top handle and metal clasp" width="600" height="800" loading="lazy" class="w-full aspect-[3/4] object-cover">
+                  
+                </div>
+                <div class="p-4">
+                  <p class="text-xs uppercase tracking-wider text-[#A3A3A3]">Bags</p>
+                  <h3 class="mt-2 font-serif text-lg text-[#F5F5F0]">City Satchel</h3>
+                  <p class="mt-2 font-semibold text-[#D4AF37]">€129.00</p>
+                </div>
+              </a>
+            </article>
+            <article class="bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#D4AF37] transition">
+              <a href="product.html" class="block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">
+                <div class="relative">
+                  <img src="images/parisian-heels.jpg" alt="Blue floral pointed-toe heels against a pale blue background" width="600" height="800" loading="lazy" class="w-full aspect-[3/4] object-cover">
+                  
+                </div>
+                <div class="p-4">
+                  <p class="text-xs uppercase tracking-wider text-[#A3A3A3]">Shoes</p>
+                  <h3 class="mt-2 font-serif text-lg text-[#F5F5F0]">Floral Statement Heels</h3>
+                  <p class="mt-2 font-semibold text-[#D4AF37]">€139.00</p>
+                </div>
+              </a>
+            </article>
+            <article class="bg-[#1A1A1A] border border-[#2A2A2A] hover:border-[#D4AF37] transition">
+              <a href="product.html" class="block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">
+                <div class="relative">
+                  <img src="images/patterned-scarf.jpg" alt="Floral scarf draped around a woman’s head and neck" width="600" height="800" loading="lazy" class="w-full aspect-[3/4] object-cover">
+                  
+                </div>
+                <div class="p-4">
+                  <p class="text-xs uppercase tracking-wider text-[#A3A3A3]">Accessories</p>
+                  <h3 class="mt-2 font-serif text-lg text-[#F5F5F0]">Patterned Scarf</h3>
+                  <p class="mt-2 font-semibold text-[#D4AF37]">€49.00</p>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <nav aria-label="Catalog pagination" class="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm">
+            <span aria-disabled="true" class="border border-[#2A2A2A] text-[#A3A3A3] px-4 py-3 opacity-50">Previous</span>
+            <a href="catalog.html#products" aria-current="page" aria-label="Page 1, current page" class="bg-[#D4AF37] text-[#0A0A0A] font-semibold px-4 py-3 hover:bg-[#B8962E] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">1</a>
+            <span aria-disabled="true" class="border border-[#2A2A2A] text-[#A3A3A3] px-4 py-3 opacity-50">Next</span>
+          </nav>
+          <p class="mt-3 text-center text-xs text-[#A3A3A3]">Showing all 8 sample products · Page 1 of 1</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- ===== END PAGE CONTENT ===== -->
+
+  <!-- ===== FOOTER (shared; do not edit per page) ===== -->
+  <footer class="bg-[#0A0A0A] border-t border-[#D4AF37] mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <a href="index.html" class="font-serif text-2xl tracking-widest uppercase text-[#D4AF37]">Chic Parisien</a>
+        <p class="mt-3 text-sm text-[#A3A3A3]">Timeless Parisian elegance, delivered.</p>
+      </div>
+
+      <div>
+        <h4 class="font-serif text-[#D4AF37] uppercase tracking-wider mb-3">Shop</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="catalog.html" class="text-[#A3A3A3] hover:text-[#D4AF37]">Catalog</a></li>
+          <li><a href="product.html" class="text-[#A3A3A3] hover:text-[#D4AF37]">Featured Product</a></li>
+          <li><a href="cart.html" class="text-[#A3A3A3] hover:text-[#D4AF37]">Cart</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-serif text-[#D4AF37] uppercase tracking-wider mb-3">Account</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="profile.html" class="text-[#A3A3A3] hover:text-[#D4AF37]">My Profile</a></li>
+          <li><a href="checkout.html" class="text-[#A3A3A3] hover:text-[#D4AF37]">Checkout</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-serif text-[#D4AF37] uppercase tracking-wider mb-3">Newsletter</h4>
+        <form class="flex">
+          <input type="email" placeholder="Your email" class="flex-1 min-w-0 bg-[#1A1A1A] border border-[#2A2A2A] text-[#F5F5F0] px-3 py-2 text-sm focus:outline-none focus:border-[#D4AF37]">
+          <button type="submit" class="bg-[#D4AF37] text-[#0A0A0A] px-4 text-sm font-semibold uppercase hover:bg-[#B8962E]">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-t border-[#2A2A2A]">
+      <p class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-xs text-[#A3A3A3] text-center">
+        &copy; 2026 Chic Parisien. All rights reserved. <span class="text-[#C8102E]">&hearts;</span> Paris
+      </p>
+    </div>
+  </footer>
+  <!-- ===== END FOOTER ===== -->
+
+</body>
+</html>
