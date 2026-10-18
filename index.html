@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f4">
+    <title>AgentHub | Operations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Manrope', 'sans-serif'], mono: ['DM Mono', 'monospace'] } } } };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="h-full bg-[#f5f7f4] font-sans text-[#17211d] antialiased transition-colors duration-200 dark:bg-[#101714] dark:text-[#ecf2ed]">
+    <div class="min-h-full">
+      <aside class="fixed inset-y-0 left-0 z-30 flex w-[76px] flex-col border-r border-[#e2e8e2] bg-white text-[#17211d] transition-colors dark:border-white/10 dark:bg-[#17211d] dark:text-white md:w-[232px]">
+        <a href="#dashboard" data-nav="dashboard" class="flex h-[76px] items-center gap-3 border-b border-[#e3e9e3] px-5 dark:border-white/10" aria-label="AgentHub dashboard">
+          <span class="grid size-9 shrink-0 place-items-center rounded-xl bg-[#c6f36a] text-[#17211d]"><i data-lucide="orbit" class="size-5"></i></span>
+          <span class="hidden text-[17px] font-extrabold tracking-tight md:block">agent<span class="text-[#17211d] dark:text-white">hub</span></span>
+        </a>
+        <div class="hidden px-5 pb-2 pt-7 text-[10px] font-bold uppercase tracking-[0.16em] text-[#84928a] md:block">Workspace</div>
+        <nav id="sidebarNav" class="flex flex-1 flex-col gap-1 px-3 pt-5 md:pt-0" aria-label="Main navigation"></nav>
+        <div class="mx-3 mb-4 hidden rounded-xl border border-[#e2e8e2] bg-[#f7f9f6] p-3 dark:border-white/10 dark:bg-white/[0.04] md:block">
+          <div class="flex items-center gap-2 text-xs font-semibold"><span class="size-2 rounded-full bg-[#c6f36a]"></span>All systems operational</div>
+          <p class="mt-1 pl-4 text-[10px] text-[#84928a]">Updated just now</p>
+        </div>
+        <div class="flex h-[68px] items-center justify-center border-t border-[#e3e9e3] dark:border-white/10 md:justify-start md:px-5">
+          <div class="grid size-8 shrink-0 place-items-center rounded-full bg-[#dce8e1] text-xs font-extrabold text-[#17211d]">AC</div>
+          <div class="ml-3 hidden min-w-0 md:block"><div class="truncate text-xs font-bold">Alex Carter</div><div class="text-[10px] text-[#84928a]">Workspace admin</div></div>
+        </div>
+      </aside>
+
+      <div class="ml-[76px] min-h-screen md:ml-[232px]">
+        <header class="sticky top-0 z-20 flex h-[76px] items-center justify-between border-b border-[#e3e9e4] bg-[#f5f7f4]/90 px-5 backdrop-blur-md dark:border-white/10 dark:bg-[#101714]/90 sm:px-8">
+          <div class="min-w-0">
+            <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#718078]"><span>AgentHub</span><i data-lucide="chevron-right" class="size-3"></i><span id="crumbTitle" class="text-[#33433a] dark:text-[#c7d3ca]">Dashboard</span></div>
+            <h1 id="pageTitle" class="mt-1 truncate text-lg font-extrabold tracking-tight sm:text-xl">Dashboard</h1>
+          </div>
+          <div class="flex items-center gap-3 sm:gap-5">
+            <span id="todayLabel" class="hidden text-xs text-[#718078] lg:block"></span>
+            <button id="themeToggle" type="button" class="grid size-10 place-items-center rounded-xl border border-[#dce4dd] bg-white text-[#33433a] transition hover:bg-[#ebf0eb] focus:outline-none focus:ring-2 focus:ring-[#9bc958] dark:border-white/10 dark:bg-[#1a2420] dark:text-[#dce8df] dark:hover:bg-[#26332c]" aria-label="Switch to dark mode" title="Toggle theme"><i id="themeIcon" data-lucide="moon" class="size-[18px]"></i></button>
+            <button type="button" class="relative grid size-10 place-items-center rounded-xl text-[#58675e] transition hover:bg-[#e9eee9] focus:outline-none focus:ring-2 focus:ring-[#9bc958] dark:text-[#b7c5bb] dark:hover:bg-white/5" aria-label="Notifications"><i data-lucide="bell" class="size-[18px]"></i><span class="absolute right-[9px] top-[8px] size-2 rounded-full border-2 border-[#f5f7f4] bg-[#f07b5e] dark:border-[#101714]"></span></button>
+          </div>
+        </header>
+        <main id="mainContent" class="mx-auto max-w-[1440px] px-5 py-7 sm:px-8 sm:py-9" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <div id="modalRoot" class="fixed inset-0 z-50 hidden items-center justify-center overflow-y-auto bg-[#101714]/55 p-4 backdrop-blur-[3px]" aria-hidden="true"></div>
+
+    <script>
+      const sections = [
+        { id: 'dashboard', label: 'Dashboard', icon: 'layout-dashboard', description: 'A clear view of platform performance and agent health.' },
+        { id: 'users', label: 'Users', icon: 'users-round', description: 'Manage customer accounts and workspace access.' },
+        { id: 'agents', label: 'Agents', icon: 'bot', description: 'Review deployed agents, owners, and capabilities.' },
+        { id: 'skills', label: 'Skills', icon: 'blocks', description: 'Explore the reusable capabilities in your catalog.' },
+        { id: 'contracts', label: 'Agent Contracts', icon: 'file-text', description: 'Track current and completed agent rentals.' },
+        { id: 'errors', label: 'Error Log', icon: 'triangle-alert', description: 'Investigate execution issues and resolve incidents.' }
+      ];
+
+      const users = [
+        { id: 'u1', name: 'Maya Chen', initials: 'MC', email: 'maya@northstar.ai', company: 'Northstar Labs', plan: 'Scale', status: 'Active', joined: 'Jan 12, 2025', agents: 1 },
+        { id: 'u2', name: 'Jordan Lee', initials: 'JL', email: 'jordan@meridian.co', company: 'Meridian Health', plan: 'Growth', status: 'Active', joined: 'Feb 03, 2025', agents: 1 },
+        { id: 'u3', name: 'Priya Nair', initials: 'PN', email: 'priya@formandfield.com', company: 'Form & Field', plan: 'Scale', status: 'Active', joined: 'Mar 18, 2025', agents: 1 },
+        { id: 'u4', name: 'Elliot Brooks', initials: 'EB', email: 'elliot@brightpath.io', company: 'Brightpath', plan: 'Starter', status: 'Pending', joined: 'Apr 07, 2025', agents: 1 },
+        { id: 'u5', name: 'Sofia Alvarez', initials: 'SA', email: 'sofia@atlaslegal.com', company: 'Atlas Legal', plan: 'Growth', status: 'Active', joined: 'May 22, 2025', agents: 1 },
+        { id: 'u6', name: 'Noah Williams', initials: 'NW', email: 'noah@cinderfinance.com', company: 'Cinder Finance', plan: 'Scale', status: 'Active', joined: 'Jun 11, 2025', agents: 1 }
+      ];
+
+      const agents = [
+        { id: 'a1', name: 'Research Analyst', initials: 'RA', owner: 'Maya Chen', company: 'Northstar Labs', status: 'Active', skills: ['Web research', 'Document reader', 'Data analysis'], prompt: 'You are a research analyst for Northstar Labs. Find reliable sources, compare evidence, and return a concise brief with citations. Never invent sources.' },
+        { id: 'a2', name: 'Care Coordinator', initials: 'CC', owner: 'Jordan Lee', company: 'Meridian Health', status: 'Active', skills: ['Calendar manager', 'Email assistant'], prompt: 'You are a care coordination assistant. Help the Meridian Health team organize follow-ups and appointments. Protect sensitive patient information and ask before sending messages.' },
+        { id: 'a3', name: 'Content Planner', initials: 'CP', owner: 'Priya Nair', company: 'Form & Field', status: 'Inactive', skills: ['Web research', 'Calendar manager', 'Email assistant'], prompt: 'You are a thoughtful content planner for Form & Field. Suggest clear, useful campaign outlines that match the brand voice and schedule.' },
+        { id: 'a4', name: 'Pathfinder', initials: 'PF', owner: 'Elliot Brooks', company: 'Brightpath', status: 'Failing', skills: ['Document reader', 'Data analysis'], prompt: 'You are a student support assistant for Brightpath. Answer questions using the supplied program documents and cite the relevant section.' },
+        { id: 'a5', name: 'Contract Reviewer', initials: 'CR', owner: 'Sofia Alvarez', company: 'Atlas Legal', status: 'Active', skills: ['Document reader', 'Web research'], prompt: 'You are a contract review assistant for Atlas Legal. Identify clauses for human review and summarize them accurately. Do not provide legal advice.' },
+        { id: 'a6', name: 'Market Monitor', initials: 'MM', owner: 'Noah Williams', company: 'Cinder Finance', status: 'Active', skills: ['Web research', 'Data analysis'], prompt: 'You are a market monitoring assistant for Cinder Finance. Summarize public market updates and clearly label dates, source links, and uncertainty.' }
+      ];
+
+      const skills = [
+        { id: 's1', name: 'Web research', icon: 'globe-2', description: 'Search the public web, compare trusted sources, and return evidence-backed findings.' },
+        { id: 's2', name: 'Document reader', icon: 'file-search-2', description: 'Extract key details and answer questions from uploaded documents.' },
+        { id: 's3', name: 'Calendar manager', icon: 'calendar-days', description: 'Find open times and organize calendar events with approval.' },
+        { id: 's4', name: 'Email assistant', icon: 'mail', description: 'Draft and organize email responses while keeping a human in control.' },
+        { id: 's5', name: 'Data analysis', icon: 'chart-no-axes-combined', description: 'Explore structured data and turn patterns into clear summaries.' }
+      ];
+
+      const contracts = [
+        { id: 'c1', client: 'Northstar Labs', agent: 'Research Analyst', user: 'Maya Chen', status: 'Active', start: 'Aug 01, 2025', end: 'Nov 01, 2025', items: [{ name: 'Web research', price: 240 }, { name: 'Document reader', price: 160 }, { name: 'Data analysis', price: 120 }] },
+        { id: 'c2', client: 'Meridian Health', agent: 'Care Coordinator', user: 'Jordan Lee', status: 'Active', start: 'Sep 15, 2025', end: 'Dec 15, 2025', items: [{ name: 'Calendar manager', price: 180 }, { name: 'Email assistant', price: 140 }] },
+        { id: 'c3', client: 'Form & Field', agent: 'Content Planner', user: 'Priya Nair', status: 'Ended', start: 'May 01, 2025', end: 'Aug 01, 2025', items: [{ name: 'Web research', price: 200 }, { name: 'Calendar manager', price: 160 }, { name: 'Email assistant', price: 120 }] },
+        { id: 'c4', client: 'Brightpath', agent: 'Pathfinder', user: 'Elliot Brooks', status: 'Active', start: 'Oct 01, 2025', end: 'Jan 01, 2026', items: [{ name: 'Document reader', price: 190 }, { name: 'Data analysis', price: 110 }] },
+        { id: 'c5', client: 'Atlas Legal', agent: 'Contract Reviewer', user: 'Sofia Alvarez', status: 'Active', start: 'Oct 10, 2025', end: 'Jan 10, 2026', items: [{ name: 'Document reader', price: 220 }, { name: 'Web research', price: 180 }] }
+      ];
+
+      const errors = [
+        { id: 'e1', time: 'Oct 18, 2026 · 09:42:18', agent: 'Pathfinder', type: 'Timeout', severity: 'Critical', description: 'Document extraction exceeded the 30 second limit.', trace: 'AgentExecutionTimeout: document_reader.extract exceeded 30000ms\n  at DocumentReader.extract (/runtime/skills/document-reader.js:184:12)\n  at Pathfinder.run (/runtime/agents/pathfinder.js:62:24)\n  request_id: req_84d2f9\n  document_id: doc_2187', resolved: false },
+        { id: 'e2', time: 'Oct 18, 2026 · 09:17:03', agent: 'Research Analyst', type: 'Rate limit', severity: 'Warning', description: 'Search provider returned a temporary 429 response.', trace: 'ProviderRateLimitError: upstream returned HTTP 429\n  provider: web-search-primary\n  retry_after: 8s\n  request_id: req_9a1c31', resolved: false },
+        { id: 'e3', time: 'Oct 18, 2026 · 08:55:41', agent: 'Care Coordinator', type: 'Permission', severity: 'Warning', description: 'Calendar access token needs to be refreshed.', trace: 'CalendarPermissionError: access token expired\n  connector: google-calendar\n  workspace: Meridian Health\n  request_id: req_a824bd', resolved: true },
+        { id: 'e4', time: 'Oct 17, 2026 · 16:30:09', agent: 'Contract Reviewer', type: 'Validation', severity: 'Info', description: 'A scanned page could not be parsed as text.', trace: 'DocumentValidationError: OCR confidence below threshold\n  page: 14\n  confidence: 0.31\n  request_id: req_7c3f55', resolved: true },
+        { id: 'e5', time: 'Oct 17, 2026 · 14:11:26', agent: 'Market Monitor', type: 'Timeout', severity: 'Critical', description: 'Analysis job stopped before the summary was generated.', trace: 'AgentExecutionTimeout: analysis exceeded 45000ms\n  tool: data-analysis\n  request_id: req_f8d520', resolved: false },
+        { id: 'e6', time: 'Oct 17, 2026 · 11:06:52', agent: 'Content Planner', type: 'Configuration', severity: 'Info', description: 'A scheduled task references an unavailable calendar.', trace: 'ConfigurationError: calendar_id not found\n  agent: Content Planner\n  workspace: Form & Field\n  request_id: req_10dc73', resolved: true },
+        { id: 'e7', time: 'Oct 16, 2026 · 17:22:15', agent: 'Research Analyst', type: 'Provider error', severity: 'Info', description: 'A source returned an invalid response format.', trace: 'ProviderResponseError: expected application/json\n  provider: web-search-secondary\n  status: 502\n  request_id: req_7ec423', resolved: true }
+      ];
+
+      let activeSection = 'dashboard';
+      const mainContent = document.getElementById('mainContent');
+      const modalRoot = document.getElementById('modalRoot');
+      const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+      const icon = (name, classes = 'size-4') => `<i data-lucide="${name}" class="${classes}"></i>`;
+      const money = (value) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+      const findRecord = (collection, id) => collection.find((item) => item.id === id);
+
+      function renderNavigation() {
+        document.getElementById('sidebarNav').innerHTML = sections.map((section) => {
+          const active = section.id === activeSection;
+          return `<a href="#${section.id}" data-nav="${section.id}" aria-label="${section.label}" class="group flex h-11 items-center gap-3 rounded-xl px-3 text-sm font-semibold transition ${active ? 'bg-[#c6f36a] text-[#17211d]' : 'text-[#637269] hover:bg-[#eff3ef] hover:text-[#17211d] dark:text-[#aab7ae] dark:hover:bg-white/[0.07] dark:hover:text-white'}" ${active ? 'aria-current="page"' : ''} title="${section.label}">${icon(section.icon, 'size-[18px] shrink-0')}<span class="sr-only md:not-sr-only md:block">${section.label}</span>${section.id === 'errors' ? '<span class="ml-auto hidden rounded-md bg-[#f07b5e] px-1.5 py-0.5 text-[10px] font-bold text-white md:block">3</span>' : ''}</a>`;
+        }).join('');
+        document.querySelectorAll('[data-nav]').forEach((link) => link.addEventListener('click', (event) => {
+          event.preventDefault();
+          activeSection = link.dataset.nav;
+          render();
+        }));
+      }
+
+      function badge(label, variant = 'neutral') {
+        const variants = {
+          active: 'bg-[#e5f5d4] text-[#416c22] dark:bg-[#263b22] dark:text-[#b8e78b]',
+          pending: 'bg-[#fff0d1] text-[#986018] dark:bg-[#42351e] dark:text-[#f2c778]',
+          inactive: 'bg-[#edf0ed] text-[#66736b] dark:bg-[#29332d] dark:text-[#b0bdb4]',
+          failing: 'bg-[#ffe4df] text-[#b44731] dark:bg-[#482822] dark:text-[#ffad99]',
+          ended: 'bg-[#edf0ed] text-[#66736b] dark:bg-[#29332d] dark:text-[#b0bdb4]',
+          critical: 'bg-[#ffe4df] text-[#b44731] dark:bg-[#482822] dark:text-[#ffad99]',
+          warning: 'bg-[#fff0d1] text-[#986018] dark:bg-[#42351e] dark:text-[#f2c778]',
+          info: 'bg-[#e4efff] text-[#35619b] dark:bg-[#1f334a] dark:text-[#a9ccff]',
+          resolved: 'bg-[#e5f5d4] text-[#416c22] dark:bg-[#263b22] dark:text-[#b8e78b]',
+          neutral: 'bg-[#edf0ed] text-[#66736b] dark:bg-[#29332d] dark:text-[#b0bdb4]'
+        };
+        return `<span class="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[10px] font-bold ${variants[variant] || variants.neutral}"><span class="size-1.5 rounded-full bg-current"></span>${escapeHTML(label)}</span>`;
+      }
+
+      function status(value) {
+        const key = value.toLowerCase();
+        return badge(value, key === 'active' ? 'active' : key === 'pending' ? 'pending' : key === 'failing' ? 'failing' : key === 'ended' ? 'ended' : 'inactive');
+      }
+
+      function actionMenu(type, id, actions) {
+        return `<div class="action-menu relative flex justify-end"><button type="button" data-menu-toggle="menu-${type}-${id}" class="grid size-9 place-items-center rounded-lg text-[#6f7d74] transition hover:bg-[#edf1ed] hover:text-[#17211d] focus:outline-none focus:ring-2 focus:ring-[#9bc958] dark:text-[#b5c2b9] dark:hover:bg-white/10 dark:hover:text-white" aria-label="Open actions" aria-expanded="false">${icon('ellipsis', 'size-[18px]')}</button><div id="menu-${type}-${id}" class="absolute right-0 top-10 z-20 hidden w-44 rounded-xl border border-[#e1e7e1] bg-white p-1.5 shadow-xl shadow-[#17211d]/10 dark:border-white/10 dark:bg-[#202b25]">${actions.map((action) => `<button type="button" data-action="${action.action}" data-type="${type}" data-id="${id}" class="flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-left text-xs font-semibold ${action.danger ? 'text-[#b44731] hover:bg-[#fff0ed] dark:text-[#ffad99] dark:hover:bg-[#482822]' : 'text-[#3f4d44] hover:bg-[#f1f4f1] dark:text-[#dae3dc] dark:hover:bg-white/5'}">${icon(action.icon, 'size-4')}<span>${action.label}</span></button>`).join('')}</div></div>`;
+      }
+
+      const userActions = [{ label: 'View detail', action: 'user-detail', icon: 'contact-round' }, { label: 'Delete', action: 'delete', icon: 'trash-2', danger: true }];
+      const skillActions = [{ label: 'View detail', action: 'skill-detail', icon: 'scan-eye' }, { label: 'Delete', action: 'delete', icon: 'trash-2', danger: true }];
+      const contractActions = [{ label: 'View detail', action: 'contract-detail', icon: 'file-search' }];
+      const errorActions = [{ label: 'View detail', action: 'error-detail', icon: 'scan-eye' }, { label: 'Mark as resolved', action: 'resolve-error', icon: 'check-check' }];
+      const agentActions = [{ label: 'Configure', action: 'configure-agent', icon: 'settings-2' }, { label: 'Delete', action: 'delete', icon: 'trash-2', danger: true }];
+
+      function tableShell(headers, rows, minWidth = 'min-w-[760px]') {
+        return `<div class="overflow-hidden rounded-2xl border border-[#e2e8e2] bg-white shadow-sm shadow-[#17211d]/[0.025] dark:border-white/10 dark:bg-[#17211d]"><div class="overflow-x-auto"><table class="w-full ${minWidth} border-collapse text-left"><thead><tr class="border-b border-[#e9ede9] bg-[#fafbfa] dark:border-white/10 dark:bg-white/[0.025]">${headers.map((header) => `<th scope="col" class="px-5 py-3.5 text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#859188]">${header}</th>`).join('')}</tr></thead><tbody class="divide-y divide-[#edf0ed] dark:divide-white/[0.07]">${rows}</tbody></table></div></div>`;
+      }
+
+      function pageIntro(eyebrow, title, description, side = '') {
+        return `<div class="mb-7 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><div class="mb-2 text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#829087]">${eyebrow}</div><h2 class="text-2xl font-extrabold tracking-tight sm:text-[28px]">${title}</h2><p class="mt-1.5 max-w-2xl text-sm leading-6 text-[#718078] dark:text-[#a5b2a9]">${description}</p></div>${side}</div>`;
+      }
+
+      function renderDashboard() {
+        const failing = agents.filter((agent) => agent.status === 'Failing').length;
+        const metrics = [
+          { label: 'Revenue this month', value: '$48,290', delta: '+12.8%', icon: 'wallet', color: 'bg-[#e8f5d7] text-[#527d2c] dark:bg-[#293d25] dark:text-[#b8e78b]', note: 'vs. last month' },
+          { label: 'Discount & coupon loss', value: '$2,840', delta: '−4.2%', icon: 'ticket-percent', color: 'bg-[#fff0d1] text-[#a06b1c] dark:bg-[#42351e] dark:text-[#f2c778]', note: 'vs. last month' },
+          { label: 'Active agents', value: String(agents.filter((agent) => agent.status === 'Active').length).padStart(2, '0'), delta: 'Across 6 clients', icon: 'bot', color: 'bg-[#e4efff] text-[#4c72a2] dark:bg-[#20344a] dark:text-[#a9ccff]', note: '5 currently running' },
+          { label: 'Failing agents', value: String(failing).padStart(2, '0'), delta: 'Needs attention', icon: 'triangle-alert', color: 'bg-[#ffe4df] text-[#b84f39] dark:bg-[#482822] dark:text-[#ffad99]', note: '1 agent affected' }
+        ];
+        const bars = [
+          { day: 'Mon', h: 'h-20' }, { day: 'Tue', h: 'h-28' }, { day: 'Wed', h: 'h-24' }, { day: 'Thu', h: 'h-36' }, { day: 'Fri', h: 'h-32' }, { day: 'Sat', h: 'h-16' }, { day: 'Sun', h: 'h-24' }
+        ];
+        const recent = errors.slice(0, 3).map((error) => `<div class="flex items-start gap-3 py-3.5"><span class="mt-1 grid size-8 shrink-0 place-items-center rounded-lg ${error.severity === 'Critical' ? 'bg-[#ffe4df] text-[#b84f39] dark:bg-[#482822] dark:text-[#ffad99]' : 'bg-[#fff0d1] text-[#a06b1c] dark:bg-[#42351e] dark:text-[#f2c778]'}">${icon(error.severity === 'Critical' ? 'triangle-alert' : 'clock-3', 'size-4')}</span><div class="min-w-0 flex-1"><div class="flex flex-wrap items-center gap-2"><span class="text-xs font-bold">${escapeHTML(error.agent)}</span>${badge(error.severity, error.severity.toLowerCase())}</div><p class="mt-1 text-xs leading-5 text-[#718078] dark:text-[#a5b2a9]">${escapeHTML(error.description)}</p></div><span class="shrink-0 font-mono text-[9px] text-[#89968d]">${error.time.split(' · ')[1]}</span></div>`).join('');
+        mainContent.innerHTML = `${pageIntro('Sunday, October 18, 2026', 'Good morning, Alex', 'Here is what is happening across your AI workforce today.', '<div class="flex items-center gap-2 rounded-lg border border-[#dfe7df] bg-white px-3 py-2 text-xs font-semibold text-[#536259] dark:border-white/10 dark:bg-[#17211d] dark:text-[#c2cec5]"><span class="size-2 rounded-full bg-[#79b94b]"></span>Live platform status</div>')}<div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">${metrics.map((metric) => `<article class="rounded-2xl border border-[#e2e8e2] bg-white p-5 shadow-sm shadow-[#17211d]/[0.025] dark:border-white/10 dark:bg-[#17211d]"><div class="flex items-center justify-between"><span class="grid size-10 place-items-center rounded-xl ${metric.color}">${icon(metric.icon, 'size-[19px]')}</span><span class="font-mono text-[10px] font-medium text-[#728078]">${metric.delta}</span></div><p class="mt-5 text-xs font-semibold text-[#7b8980]">${metric.label}</p><div class="mt-1 flex items-baseline justify-between gap-2"><strong class="text-[28px] font-extrabold tracking-tight">${metric.value}</strong><span class="hidden text-[10px] text-[#8c9990] sm:inline">${metric.note}</span></div></article>`).join('')}</div><div class="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-[1.65fr_1fr]"><section class="rounded-2xl border border-[#e2e8e2] bg-white p-5 shadow-sm shadow-[#17211d]/[0.025] dark:border-white/10 dark:bg-[#17211d] sm:p-6"><div class="flex items-start justify-between"><div><h3 class="text-sm font-extrabold">Weekly activity</h3><p class="mt-1 text-xs text-[#829087]">Agent runs across all workspaces</p></div><button type="button" class="flex items-center gap-1.5 rounded-lg border border-[#e3e9e3] px-2.5 py-2 text-[10px] font-bold text-[#5d6b62] dark:border-white/10 dark:text-[#c1cdc4]">This week ${icon('chevron-down', 'size-3')}</button></div><div class="mt-7 grid h-[194px] grid-cols-7 items-end gap-3 border-b border-[#e9ede9] pb-2 dark:border-white/10">${bars.map((bar, index) => `<div class="flex h-full flex-col items-center justify-end gap-2"><div class="flex h-full w-full items-end justify-center gap-1"><span class="w-[28%] rounded-t bg-[#dce8d4] dark:bg-[#3a4c37] ${index === 3 ? 'h-20' : index === 1 ? 'h-14' : 'h-9'}"></span><span class="w-[28%] rounded-t ${index === 3 ? 'bg-[#8dbb5e]' : 'bg-[#c6f36a]'} ${bar.h}"></span></div><span class="font-mono text-[9px] text-[#849188]">${bar.day}</span></div>`).join('')}</div><div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] text-[#758279]"><span class="inline-flex items-center gap-1.5"><i class="size-2 rounded-sm bg-[#c6f36a]"></i>Successful runs</span><span class="inline-flex items-center gap-1.5"><i class="size-2 rounded-sm bg-[#dce8d4] dark:bg-[#3a4c37]"></i>Failed runs</span><span class="ml-auto font-mono">1,284 total</span></div></section><section class="rounded-2xl border border-[#e2e8e2] bg-white p-5 shadow-sm shadow-[#17211d]/[0.025] dark:border-white/10 dark:bg-[#17211d] sm:p-6"><div class="flex items-center justify-between"><div><h3 class="text-sm font-extrabold">Needs attention</h3><p class="mt-1 text-xs text-[#829087]">Latest execution errors</p></div><button type="button" data-nav="errors" class="rounded-lg px-2 py-1.5 text-[10px] font-bold text-[#527d2c] hover:bg-[#f0f6e9] dark:text-[#b8e78b] dark:hover:bg-white/5">View log ${icon('arrow-up-right', 'ml-1 inline size-3')}</button></div><div class="mt-3 divide-y divide-[#edf0ed] dark:divide-white/[0.07]">${recent}</div><div class="mt-3 flex items-center justify-between border-t border-[#edf0ed] pt-4 dark:border-white/[0.07]"><span class="text-[10px] text-[#829087]">3 unresolved incidents</span><span class="font-mono text-[10px] text-[#829087]">Last 24h</span></div></section></div><div class="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#dfe7df] bg-[#edf3e9] px-4 py-3 dark:border-white/10 dark:bg-[#1a2820]"><div class="flex items-center gap-3"><span class="grid size-8 place-items-center rounded-lg bg-white text-[#668d3e] dark:bg-[#26372b] dark:text-[#b8e78b]">${icon('sparkles', 'size-4')}</span><div><p class="text-xs font-bold">Your agents completed 1,284 tasks this week</p><p class="mt-0.5 text-[10px] text-[#718078] dark:text-[#a5b2a9]">Up 8.6% from last week across all active workspaces.</p></div></div><span class="font-mono text-[10px] text-[#829087]">98.2% success rate</span></div>`;
+      }
+
+      function renderUsers() {
+        const rows = users.map((user) => `<tr class="transition hover:bg-[#fafcf9] dark:hover:bg-white/[0.025]"><td class="px-5 py-4"><div class="flex items-center gap-3"><span class="grid size-9 shrink-0 place-items-center rounded-full bg-[#e8f0e5] text-[10px] font-extrabold text-[#526849] dark:bg-[#293a2b] dark:text-[#c8dbbf]">${user.initials}</span><div><div class="text-xs font-bold">${escapeHTML(user.name)}</div><div class="mt-0.5 text-[10px] text-[#89968d]">${escapeHTML(user.company)}</div></div></div></td><td class="px-5 py-4 text-xs text-[#647269] dark:text-[#bdc9c0]">${escapeHTML(user.email)}</td><td class="px-5 py-4"><span class="rounded-md bg-[#f1f4f0] px-2 py-1 text-[10px] font-bold text-[#546359] dark:bg-white/[0.07] dark:text-[#d1dad3]">${user.plan}</span></td><td class="px-5 py-4">${status(user.status)}</td><td class="px-5 py-4 text-right">${actionMenu('user', user.id, userActions)}</td></tr>`).join('');
+        mainContent.innerHTML = `${pageIntro('Workspace / Directory', 'User management', 'A directory of the people and teams building with AgentHub.', `<button type="button" class="inline-flex h-10 items-center gap-2 rounded-lg bg-[#c6f36a] px-4 text-xs font-extrabold text-[#17211d] transition hover:bg-[#b8e75a]">${icon('plus', 'size-4')} Invite user</button>`)}<div class="mb-4 flex flex-wrap items-center justify-between gap-3"><div class="flex items-center gap-2 text-xs text-[#758279]"><span class="font-bold text-[#17211d] dark:text-[#ecf2ed]">${users.length} users</span><span>·</span><span>Across ${new Set(users.map((user) => user.plan)).size} plans</span></div><label class="flex h-10 w-full max-w-[260px] items-center gap-2 rounded-lg border border-[#dfe6df] bg-white px-3 text-[#839087] focus-within:ring-2 focus-within:ring-[#c6f36a] dark:border-white/10 dark:bg-[#17211d]">${icon('search', 'size-4')}<input type="search" placeholder="Search users" aria-label="Search users" class="w-full border-0 bg-transparent text-xs text-[#17211d] outline-none placeholder:text-[#9aa69e] dark:text-white"></label></div>${tableShell(['User', 'Email', 'Plan', 'Status', ''], rows)}<p class="mt-3 text-[10px] text-[#89968d]">Showing ${users.length} registered users</p>`;
+      }
+
+      function renderAgents() {
+        const rows = agents.map((agent) => `<tr class="transition hover:bg-[#fafcf9] dark:hover:bg-white/[0.025]"><td class="px-5 py-4"><div class="flex min-w-[220px] items-center gap-3"><span class="grid size-9 shrink-0 place-items-center rounded-xl bg-[#eef2e9] text-[10px] font-extrabold text-[#617a4e] dark:bg-[#293a2b] dark:text-[#c8dbbf]">${agent.initials}</span><div><div class="text-xs font-bold">${escapeHTML(agent.name)}</div><div class="mt-0.5 text-[10px] text-[#89968d]">${escapeHTML(agent.company)}</div></div></div></td><td class="px-5 py-4 text-xs text-[#647269] dark:text-[#bdc9c0]">${escapeHTML(agent.owner)}</td><td class="px-5 py-4">${status(agent.status)}</td><td class="px-5 py-4"><button type="button" data-expand="${agent.id}" aria-expanded="false" aria-controls="skills-${agent.id}" class="inline-flex items-center gap-1.5 rounded-md px-2 py-1.5 text-[10px] font-bold text-[#527d2c] transition hover:bg-[#f0f6e9] dark:text-[#b8e78b] dark:hover:bg-white/5">${agent.skills.length} skills ${icon('chevron-down', 'size-3 transition-transform')}</button><div id="skills-${agent.id}" class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out"><div class="overflow-hidden"><div class="flex flex-wrap gap-1.5 pt-2">${agent.skills.map((skill) => `<span class="rounded-md border border-[#e4eae3] bg-[#f8faf7] px-2 py-1 text-[10px] text-[#5c6c61] dark:border-white/10 dark:bg-white/[0.04] dark:text-[#c1cdc4]">${escapeHTML(skill)}</span>`).join('')}</div></div></div></td><td class="px-5 py-4 text-right">${actionMenu('agent', agent.id, agentActions)}</td></tr>`).join('');
+        mainContent.innerHTML = `${pageIntro('Workspace / Runtime', 'Agent management', 'Monitor deployed assistants and the capabilities they can use.', '<div class="flex items-center gap-2 rounded-lg border border-[#dfe7df] bg-white px-3 py-2 text-xs font-semibold dark:border-white/10 dark:bg-[#17211d]"><span class="size-2 rounded-full bg-[#79b94b]"></span>5 active</div>')}<div class="mb-4 flex flex-wrap items-center justify-between gap-3"><span class="text-xs text-[#758279]"><strong class="text-[#17211d] dark:text-[#ecf2ed]">${agents.length} agents</strong> registered across ${new Set(agents.map((agent) => agent.company)).size} workspaces</span><button type="button" class="inline-flex h-9 items-center gap-2 rounded-lg border border-[#dfe6df] bg-white px-3 text-xs font-bold text-[#47564c] hover:bg-[#f7f9f6] dark:border-white/10 dark:bg-[#17211d] dark:text-[#d1dad3]">${icon('list-filter', 'size-4')} Filter</button></div>${tableShell(['Agent', 'Owner', 'Status', 'Skills', ''], rows, 'min-w-[850px]')}`;
+      }
+
+      function renderSkills() {
+        const rows = skills.map((skill, index) => {
+          const count = agents.filter((agent) => agent.skills.includes(skill.name)).length;
+          const palette = ['bg-[#e8f5d7] text-[#527d2c] dark:bg-[#293d25] dark:text-[#b8e78b]', 'bg-[#e4efff] text-[#4c72a2] dark:bg-[#20344a] dark:text-[#a9ccff]', 'bg-[#fff0d1] text-[#a06b1c] dark:bg-[#42351e] dark:text-[#f2c778]', 'bg-[#ffe8df] text-[#ad6043] dark:bg-[#432d24] dark:text-[#f2b293]', 'bg-[#e8e6f6] text-[#696294] dark:bg-[#302d47] dark:text-[#c5bff2]'][index % 5];
+          return `<tr class="transition hover:bg-[#fafcf9] dark:hover:bg-white/[0.025]"><td class="px-5 py-4"><div class="flex items-center gap-3"><span class="grid size-10 place-items-center rounded-xl ${palette}">${icon(skill.icon, 'size-[18px]')}</span><span class="text-xs font-bold">${escapeHTML(skill.name)}</span></div></td><td class="max-w-[460px] px-5 py-4 text-xs leading-5 text-[#647269] dark:text-[#bdc9c0]">${escapeHTML(skill.description)}</td><td class="px-5 py-4"><span class="font-mono text-sm font-bold">${count}</span><span class="ml-1 text-[10px] text-[#89968d]">agents</span></td><td class="px-5 py-4 text-right">${actionMenu('skill', skill.id, skillActions)}</td></tr>`;
+        }).join('');
+        mainContent.innerHTML = `${pageIntro('Workspace / Capabilities', 'Skills catalog', 'A reusable toolkit for agents, with clear controls over what each one can do.')}<div class="mb-5 flex items-start gap-3 rounded-xl border border-[#dce8d4] bg-[#edf5e8] p-4 dark:border-[#32422f] dark:bg-[#1d2a20]"><span class="grid size-8 shrink-0 place-items-center rounded-lg bg-white text-[#668d3e] dark:bg-[#293a2b] dark:text-[#b8e78b]">${icon('lightbulb', 'size-4')}</span><p class="text-xs leading-5 text-[#52634f] dark:text-[#c4d2c1]"><strong class="font-extrabold text-[#34452e] dark:text-[#e3efdc]">What is a skill?</strong> A skill is a reusable capability attached to an agent, such as browsing the web, reading documents, or organizing a calendar. It defines which tools an agent can use to complete its work.</p></div><div class="mb-4 flex items-center justify-between"><span class="text-xs text-[#758279]"><strong class="text-[#17211d] dark:text-[#ecf2ed]">${skills.length} available skills</strong></span><span class="text-[10px] text-[#89968d]">Usage updates with agent assignments</span></div>${tableShell(['Skill', 'Description', 'Enabled on', ''], rows, 'min-w-[760px]')}`;
+      }
+
+      function renderContracts() {
+        const rows = contracts.map((contract) => {
+          const total = contract.items.reduce((sum, item) => sum + item.price, 0);
+          return `<tr class="transition hover:bg-[#fafcf9] dark:hover:bg-white/[0.025]"><td class="px-5 py-4"><div class="text-xs font-bold">${escapeHTML(contract.client)}</div><div class="mt-0.5 text-[10px] text-[#89968d]">${escapeHTML(contract.user)}</div></td><td class="px-5 py-4"><span class="text-xs font-semibold">${escapeHTML(contract.agent)}</span></td><td class="px-5 py-4"><div class="flex max-w-[220px] flex-wrap gap-1">${contract.items.map((item) => `<span class="rounded-md bg-[#f0f3ef] px-1.5 py-1 text-[9px] font-semibold text-[#65736a] dark:bg-white/[0.07] dark:text-[#c1cdc4]">${escapeHTML(item.name)}</span>`).join('')}</div></td><td class="px-5 py-4"><div class="whitespace-nowrap text-[10px] text-[#647269] dark:text-[#bdc9c0]">${contract.start}<br><span class="text-[#99a49c]">to ${contract.end}</span></div></td><td class="px-5 py-4"><div class="text-xs font-extrabold">${money(total)}</div><div class="mt-0.5 text-[9px] text-[#89968d]">${contract.status === 'Active' ? 'per contract' : 'total paid'}</div></td><td class="px-5 py-4">${status(contract.status)}</td><td class="px-5 py-4 text-right">${actionMenu('contract', contract.id, contractActions)}</td></tr>`;
+        }).join('');
+        mainContent.innerHTML = `${pageIntro('Workspace / Billing', 'Agent contracts', 'A complete view of active rentals and past agreements.')}<div class="mb-4 flex flex-wrap items-center justify-between gap-3"><span class="text-xs text-[#758279]"><strong class="text-[#17211d] dark:text-[#ecf2ed]">${contracts.length} contracts</strong> · ${contracts.filter((contract) => contract.status === 'Active').length} active</span><span class="text-[10px] text-[#89968d]">All prices shown in USD</span></div>${tableShell(['Client', 'Agent', 'Contracted skills', 'Term', 'Amount paid', 'Status', ''], rows, 'min-w-[990px]')}`;
+      }
+
+      function renderErrors() {
+        const rows = errors.map((error) => `<tr class="transition hover:bg-[#fafcf9] dark:hover:bg-white/[0.025]"><td class="whitespace-nowrap px-5 py-4 font-mono text-[10px] text-[#647269] dark:text-[#bdc9c0]">${escapeHTML(error.time)}</td><td class="px-5 py-4 text-xs font-bold">${escapeHTML(error.agent)}</td><td class="px-5 py-4">${badge(error.resolved ? 'Resolved' : error.severity, error.resolved ? 'resolved' : error.severity.toLowerCase())}</td><td class="max-w-[410px] px-5 py-4 text-xs leading-5 text-[#647269] dark:text-[#bdc9c0]">${escapeHTML(error.description)}</td><td class="px-5 py-4 text-right">${actionMenu('error', error.id, errorActions)}</td></tr>`).join('');
+        const openCount = errors.filter((error) => !error.resolved).length;
+        mainContent.innerHTML = `${pageIntro('Workspace / Reliability', 'Error log', 'Execution issues across your agents, with trace details and resolution status.', `<span class="inline-flex items-center gap-2 rounded-lg border border-[#f3d8d0] bg-[#fff2ee] px-3 py-2 text-xs font-bold text-[#b44731] dark:border-[#482822] dark:bg-[#2e201d] dark:text-[#ffad99]">${icon('circle-alert', 'size-4')}${openCount} unresolved</span>`)}<div class="mb-4 flex flex-wrap items-center gap-2">${badge('Critical', 'critical')}<span class="text-[10px] text-[#829087]">2</span>${badge('Warning', 'warning')}<span class="text-[10px] text-[#829087]">2</span>${badge('Info', 'info')}<span class="text-[10px] text-[#829087]">3</span><span class="ml-auto text-[10px] text-[#89968d]">Most recent first</span></div>${tableShell(['Timestamp', 'Agent', 'Severity', 'Description', ''], rows, 'min-w-[900px]')}`;
+      }
+
+      function render() {
+        const section = sections.find((item) => item.id === activeSection) || sections[0];
+        document.getElementById('pageTitle').textContent = section.label;
+        document.getElementById('crumbTitle').textContent = section.label;
+        document.title = `AgentHub | ${section.label}`;
+        renderNavigation();
+        if (activeSection === 'dashboard') renderDashboard();
+        if (activeSection === 'users') renderUsers();
+        if (activeSection === 'agents') renderAgents();
+        if (activeSection === 'skills') renderSkills();
+        if (activeSection === 'contracts') renderContracts();
+        if (activeSection === 'errors') renderErrors();
+        if (window.lucide) lucide.createIcons();
+      }
+
+      function closeMenus() {
+        document.querySelectorAll('[id^="menu-"]').forEach((menu) => menu.classList.add('hidden'));
+        document.querySelectorAll('[data-menu-toggle]').forEach((button) => button.setAttribute('aria-expanded', 'false'));
+      }
+
+      function openModal(title, content, size = 'max-w-lg') {
+        modalRoot.innerHTML = `<div id="modalBackdrop" class="flex min-h-full items-center justify-center p-4"><section role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="w-full ${size} overflow-hidden rounded-2xl border border-[#e3e9e3] bg-white shadow-2xl shadow-[#101714]/20 dark:border-white/10 dark:bg-[#19231e]"><div class="flex items-center justify-between border-b border-[#e9ede9] px-5 py-4 dark:border-white/10"><div><h2 id="modalTitle" class="text-sm font-extrabold">${title}</h2></div><button type="button" data-close-modal class="grid size-8 place-items-center rounded-lg text-[#718078] transition hover:bg-[#f0f3f0] hover:text-[#17211d] focus:outline-none focus:ring-2 focus:ring-[#9bc958] dark:hover:bg-white/10 dark:hover:text-white" aria-label="Close dialog">${icon('x', 'size-4')}</button></div><div class="max-h-[min(72vh,680px)] overflow-y-auto p-5">${content}</div></section></div>`;
+        modalRoot.classList.remove('hidden');
+        modalRoot.classList.add('flex');
+        modalRoot.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('overflow-hidden');
+        if (window.lucide) lucide.createIcons();
+        modalRoot.querySelector('[data-close-modal]').focus();
+      }
+
+      function closeModal() {
+        modalRoot.classList.add('hidden');
+        modalRoot.classList.remove('flex');
+        modalRoot.setAttribute('aria-hidden', 'true');
+        modalRoot.innerHTML = '';
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      function detailGrid(items) {
+        return `<dl class="grid grid-cols-1 gap-3 sm:grid-cols-2">${items.map(([label, value]) => `<div class="rounded-xl border border-[#e9ede9] bg-[#fafbfa] p-3 dark:border-white/[0.07] dark:bg-white/[0.025]"><dt class="text-[9px] font-extrabold uppercase tracking-[0.12em] text-[#89968d]">${label}</dt><dd class="mt-1.5 break-words text-xs font-semibold leading-5 text-[#33433a] dark:text-[#dce5de]">${value}</dd></div>`).join('')}</dl>`;
+      }
+
+      function showUser(user) {
+        openModal('User details', `<div class="mb-5 flex items-center gap-3"><span class="grid size-12 place-items-center rounded-full bg-[#e8f0e5] text-sm font-extrabold text-[#526849] dark:bg-[#293a2b] dark:text-[#c8dbbf]">${user.initials}</span><div><h3 class="text-base font-extrabold">${escapeHTML(user.name)}</h3><p class="mt-0.5 text-xs text-[#829087]">${escapeHTML(user.company)}</p></div></div>${detailGrid([['Email', escapeHTML(user.email)], ['Plan', escapeHTML(user.plan)], ['Account status', status(user.status)], ['Joined', escapeHTML(user.joined)], ['Agents', String(user.agents)], ['Workspace', escapeHTML(user.company)]])}`);
+      }
+
+      function showAgent(agent) {
+        openModal(`Configure ${escapeHTML(agent.name)}`, `<form class="space-y-4"><div class="flex flex-wrap items-center justify-between gap-2">${status(agent.status)}<span class="text-[10px] text-[#829087]">Owned by ${escapeHTML(agent.owner)}</span></div><label for="systemPrompt" class="block text-xs font-bold">System prompt</label><textarea id="systemPrompt" rows="8" class="w-full resize-y rounded-xl border border-[#dfe6df] bg-[#fafbfa] p-3 font-mono text-xs leading-5 text-[#33433a] outline-none transition focus:border-[#9bc958] focus:ring-2 focus:ring-[#c6f36a]/40 dark:border-white/10 dark:bg-[#111a15] dark:text-[#dce5de]">${escapeHTML(agent.prompt)}</textarea><div class="flex justify-end gap-2"><button type="button" data-close-modal class="rounded-lg border border-[#dfe6df] px-3 py-2 text-xs font-bold text-[#58675e] hover:bg-[#f4f6f3] dark:border-white/10 dark:text-[#c2cec5] dark:hover:bg-white/5">Cancel</button><button type="button" data-action="save-prompt" data-id="${agent.id}" class="inline-flex items-center gap-2 rounded-lg bg-[#c6f36a] px-4 py-2 text-xs font-extrabold text-[#17211d] hover:bg-[#b8e75a]">${icon('save', 'size-3.5')} Save changes</button></div></form>`);
+      }
+
+      function showSkill(skill) {
+        const attached = agents.filter((agent) => agent.skills.includes(skill.name));
+        openModal('Skill details', `<div class="mb-4 flex items-center gap-3"><span class="grid size-10 place-items-center rounded-xl bg-[#e8f5d7] text-[#527d2c] dark:bg-[#293d25] dark:text-[#b8e78b]">${icon(skill.icon, 'size-[18px]')}</span><div><h3 class="text-base font-extrabold">${escapeHTML(skill.name)}</h3><p class="mt-0.5 text-[10px] text-[#829087]">Enabled on ${attached.length} agents</p></div></div><p class="text-xs leading-6 text-[#647269] dark:text-[#bdc9c0]">${escapeHTML(skill.description)}</p><div class="mt-5 border-t border-[#e9ede9] pt-4 dark:border-white/10"><h4 class="mb-2 text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#89968d]">Agents using this skill</h4><div class="flex flex-wrap gap-2">${attached.length ? attached.map((agent) => `<span class="rounded-lg bg-[#f1f4f0] px-2.5 py-1.5 text-[10px] font-semibold dark:bg-white/[0.06]">${escapeHTML(agent.name)}</span>`).join('') : '<span class="text-xs text-[#89968d]">Not currently assigned</span>'}</div></div>`);
+      }
+
+      function showContract(contract) {
+        const total = contract.items.reduce((sum, item) => sum + item.price, 0);
+        openModal('Contract breakdown', `<div class="mb-4 flex items-start justify-between gap-3"><div><h3 class="text-base font-extrabold">${escapeHTML(contract.client)}</h3><p class="mt-1 text-xs text-[#829087]">${escapeHTML(contract.agent)} · ${escapeHTML(contract.user)}</p></div>${status(contract.status)}</div>${detailGrid([['Contract period', `${escapeHTML(contract.start)} to ${escapeHTML(contract.end)}`], ['Contract ID', escapeHTML(contract.id.toUpperCase())]])}<div class="mt-5"><h4 class="mb-2 text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#89968d]">Itemized skills</h4><div class="divide-y divide-[#e9ede9] rounded-xl border border-[#e9ede9] px-3 dark:divide-white/[0.07] dark:border-white/[0.07]">${contract.items.map((item) => `<div class="flex items-center justify-between gap-4 py-3 text-xs"><span class="font-semibold">${escapeHTML(item.name)}</span><span class="font-mono text-[#647269] dark:text-[#bdc9c0]">${money(item.price)}</span></div>`).join('')}<div class="flex items-center justify-between border-t border-[#e9ede9] py-3 text-xs font-extrabold dark:border-white/[0.07]"><span>Total paid</span><span>${money(total)}</span></div></div></div>`);
+      }
+
+      function showError(error) {
+        openModal('Execution error detail', `<div class="mb-4 flex flex-wrap items-center gap-2">${badge(error.resolved ? 'Resolved' : error.severity, error.resolved ? 'resolved' : error.severity.toLowerCase())}<span class="font-mono text-[10px] text-[#829087]">${escapeHTML(error.time)}</span></div><h3 class="text-sm font-extrabold">${escapeHTML(error.agent)}</h3><p class="mt-1 text-xs leading-5 text-[#647269] dark:text-[#bdc9c0]">${escapeHTML(error.description)}</p><div class="mt-5"><h4 class="mb-2 text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#89968d]">Execution trace</h4><pre class="overflow-x-auto rounded-xl bg-[#17211d] p-4 font-mono text-[10px] leading-5 text-[#c8d7cc]">${escapeHTML(error.trace)}</pre></div>`);
+      }
+
+      function requestDelete(type, id) {
+        const labels = { user: 'user', agent: 'agent', skill: 'skill' };
+        const collection = { user: users, agent: agents, skill: skills }[type];
+        const record = findRecord(collection, id);
+        if (!record) return;
+        const name = record.name || record.title;
+        openModal(`Delete ${labels[type]}?`, `<div class="mb-5 flex gap-3"><span class="grid size-10 shrink-0 place-items-center rounded-xl bg-[#ffe8df] text-[#b84f39] dark:bg-[#482822] dark:text-[#ffad99]">${icon('trash-2', 'size-[18px]')}</span><div><p class="text-xs leading-5 text-[#56645b] dark:text-[#bdc9c0]">This will remove <strong class="text-[#17211d] dark:text-white">${escapeHTML(name)}</strong> from the current prototype data. Historical contracts and logs remain unchanged.</p><p class="mt-2 text-[10px] text-[#89968d]">This action cannot be undone.</p></div></div><div class="flex justify-end gap-2"><button type="button" data-close-modal class="rounded-lg border border-[#dfe6df] px-3 py-2 text-xs font-bold text-[#58675e] hover:bg-[#f4f6f3] dark:border-white/10 dark:text-[#c2cec5] dark:hover:bg-white/5">Cancel</button><button type="button" data-action="confirm-delete" data-type="${type}" data-id="${id}" class="rounded-lg bg-[#d9563d] px-3 py-2 text-xs font-extrabold text-white hover:bg-[#bd4933]">Delete ${labels[type]}</button></div>`);
+      }
+
+      function deleteRecord(type, id) {
+        if (type === 'user') {
+          const removed = findRecord(users, id);
+          users.splice(users.findIndex((user) => user.id === id), 1);
+          agents.forEach((agent) => { if (removed && agent.owner === removed.name) agent.owner = 'Unassigned'; });
+        }
+        if (type === 'agent') agents.splice(agents.findIndex((agent) => agent.id === id), 1);
+        if (type === 'skill') {
+          const removed = findRecord(skills, id);
+          skills.splice(skills.findIndex((skill) => skill.id === id), 1);
+          if (removed) {
+            agents.forEach((agent) => { agent.skills = agent.skills.filter((name) => name !== removed.name); });
+            contracts.forEach((contract) => { contract.items = contract.items.filter((item) => item.name !== removed.name); });
+          }
+        }
+        closeModal();
+        render();
+      }
+
+      document.addEventListener('click', (event) => {
+        const navLink = event.target.closest('[data-nav]');
+        if (navLink && !navLink.closest('#sidebarNav')) {
+          event.preventDefault();
+          activeSection = navLink.dataset.nav;
+          render();
+          return;
+        }
+
+        const expandButton = event.target.closest('[data-expand]');
+        if (expandButton) {
+          const panel = document.getElementById(`skills-${expandButton.dataset.expand}`);
+          const expanded = expandButton.getAttribute('aria-expanded') === 'true';
+          expandButton.setAttribute('aria-expanded', String(!expanded));
+          panel.classList.toggle('grid-rows-[1fr]', !expanded);
+          panel.classList.toggle('grid-rows-[0fr]', expanded);
+          panel.classList.toggle('opacity-100', !expanded);
+          panel.classList.toggle('opacity-0', expanded);
+          expandButton.querySelector('[data-lucide="chevron-down"]')?.classList.toggle('rotate-180', !expanded);
+          return;
+        }
+
+        const menuToggle = event.target.closest('[data-menu-toggle]');
+        if (menuToggle) {
+          const menu = document.getElementById(menuToggle.dataset.menuToggle);
+          const willOpen = menu.classList.contains('hidden');
+          closeMenus();
+          menu.classList.toggle('hidden', !willOpen);
+          menuToggle.setAttribute('aria-expanded', String(willOpen));
+          return;
+        }
+
+        const action = event.target.closest('[data-action]');
+        if (action) {
+          const { action: actionName, id, type } = action.dataset;
+          closeMenus();
+          if (actionName === 'user-detail') showUser(findRecord(users, id));
+          if (actionName === 'configure-agent') showAgent(findRecord(agents, id));
+          if (actionName === 'skill-detail') showSkill(findRecord(skills, id));
+          if (actionName === 'contract-detail') showContract(findRecord(contracts, id));
+          if (actionName === 'error-detail') showError(findRecord(errors, id));
+          if (actionName === 'delete') requestDelete(type, id);
+          if (actionName === 'resolve-error') {
+            const error = findRecord(errors, id);
+            if (error) error.resolved = true;
+            render();
+          }
+          if (actionName === 'confirm-delete') deleteRecord(type, id);
+          if (actionName === 'save-prompt') {
+            const agent = findRecord(agents, id);
+            if (agent) agent.prompt = document.getElementById('systemPrompt').value;
+            closeModal();
+            render();
+          }
+          return;
+        }
+
+        if (event.target.closest('[data-close-modal]')) {
+          closeModal();
+          return;
+        }
+        if (event.target.id === 'modalBackdrop') {
+          closeModal();
+          return;
+        }
+        if (!event.target.closest('.action-menu')) closeMenus();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMenus();
+          if (!modalRoot.classList.contains('hidden')) closeModal();
+        }
+      });
+
+      document.getElementById('themeToggle').addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('agenthub-theme', isDark ? 'dark' : 'light');
+        updateThemeControl();
+      });
+
+      function updateThemeControl() {
+        const isDark = document.documentElement.classList.contains('dark');
+        const button = document.getElementById('themeToggle');
+        button.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+        document.getElementById('themeIcon').setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+        if (window.lucide) lucide.createIcons();
+      }
+
+      const savedTheme = localStorage.getItem('agenthub-theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+      document.getElementById('todayLabel').textContent = new Intl.DateTimeFormat('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }).format(new Date());
+      updateThemeControl();
+      render();
+    </script>
+  </body>
+</html>
