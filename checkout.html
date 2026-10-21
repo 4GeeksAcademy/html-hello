@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Finalizar compra | MAISON.</title>
+	<meta name="description" content="Consulta los datos de entrega y el resumen de tu selección MAISON en este checkout académico de demostración, sin pagos reales.">
+	<meta name="robots" content="noindex, follow">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						brandBg: '#F8F7F3',
+						brandDark: '#20232A',
+						brandAccent: '#3159A5'
+					}
+				}
+			}
+		};
+	</script>
+</head>
+<body class="flex min-h-screen flex-col bg-brandBg font-sans text-brandDark antialiased selection:bg-brandAccent selection:text-white">
+	<a href="#contenido" class="sr-only z-50 bg-brandDark px-6 py-3 text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-brandAccent">Saltar al contenido</a>
+<header class="border-b border-gray-200 bg-brandBg">
+	<div class="mx-auto flex max-w-7xl items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
+		<a href="index.html"
+			 class="shrink-0 text-xl font-semibold tracking-widest text-brandDark">
+			MAISON.
+		</a>
+
+		<form action="#" role="search" class="mx-auto hidden w-full max-w-md sm:block">
+			<label for="site-search" class="sr-only">Buscar productos</label>
+			<input
+				id="site-search"
+				type="search"
+				placeholder="Buscar productos..."
+				class="w-full border border-gray-200 bg-white px-4 py-2.5 text-sm
+							 text-brandDark placeholder:text-gray-400
+							 focus:border-brandAccent focus:outline-none"
+			>
+		</form>
+
+		<nav aria-label="Cuenta de usuario"
+				 class="ml-auto flex shrink-0 items-center gap-4 text-sm">
+			<a href="cuenta.html" class="text-brandDark hover:text-brandAccent">
+				Mi cuenta
+			</a>
+			<a href="carrito.html" class="text-brandDark hover:text-brandAccent">
+				Carrito
+			</a>
+		</nav>
+	</div>
+
+	<nav aria-label="Categorías"
+			 class="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-6 gap-y-3
+							px-4 pb-4 text-xs font-medium tracking-wider text-brandDark
+							sm:px-6 lg:px-8">
+		<a href="novedades.html" class="hover:text-brandAccent">NOVEDADES</a>
+		<a href="calzado.html" class="hover:text-brandAccent">CALZADO</a>
+		<a href="camisas.html" class="hover:text-brandAccent">CAMISAS</a>
+		<a href="pantalones.html" class="hover:text-brandAccent">PANTALONES</a>
+		<a href="accesorios.html" class="hover:text-brandAccent">ACCESORIOS</a>
+	</nav>
+</header>
+	<main id="contenido" class="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 sm:py-14 lg:px-8" tabindex="-1">
+		<nav aria-label="Ruta de navegación" class="text-sm text-gray-600">
+			<ol class="flex flex-wrap items-center gap-3">
+				<li><a href="carrito.html" class="underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandAccent">Tu carrito</a></li>
+				<li aria-hidden="true">/</li>
+				<li aria-current="page">Finalizar compra</li>
+			</ol>
+		</nav>
+		<div class="mb-8 mt-8 border-b border-gray-200 pb-8 sm:mb-10">
+			<p class="mb-3 text-xs font-medium uppercase tracking-widest text-brandAccent">El último detalle</p>
+			<h1 class="font-serif text-4xl sm:text-5xl">Finalizar compra</h1>
+			<p id="aviso-demo" class="mt-4 max-w-2xl text-sm leading-6 text-gray-600"><strong class="font-semibold text-brandDark">Prototipo académico.</strong> Utiliza únicamente datos ficticios. No se enviarán datos ni se creará un pedido. El pago está deshabilitado.</p>
+		</div>
+		<div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14">
+			<form method="dialog" autocomplete="off" aria-label="Datos del pedido de demostración" aria-describedby="aviso-demo campos-obligatorios" class="min-w-0">
+				<p id="campos-obligatorios" class="mb-6 text-xs text-gray-600">Los campos con asterisco (*) serían obligatorios en una compra real.</p>
+				<fieldset class="min-w-0 border-b border-gray-200 pb-8">
+					<legend class="mb-6 flex items-center gap-3 font-serif text-2xl"><span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandAccent font-sans text-sm font-semibold text-white">1</span> Datos personales</legend>
+					<div class="grid gap-5 sm:grid-cols-2">
+						<div>
+							<label for="nombre" class="mb-2 block text-sm font-medium">Nombre <span aria-hidden="true">*</span></label>
+							<input id="nombre" type="text" autocomplete="off" required placeholder="Nombre de ejemplo" class="block min-h-12 w-full min-w-0 border border-gray-300 bg-white px-3 py-3 text-base placeholder:text-gray-500 focus:border-brandAccent focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-brandAccent">
+						</div>
+						<div>
+							<label for="apellidos" class="mb-2 block text-sm font-medium">Apellidos <span aria-hidden="true">*</span></label>
+							<input id="apellidos" type="text" autocomplete="off" required placeholder="Apellidos de ejemplo" class="block min-h-12 w-full min-w-0 border border-gray-300 bg-white px-3 py-3 text-base placeholder:text-gray-500 focus:border-brandAccent focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-brandAccent">
+						</div>
+						<div>
+							<label for="email" class="mb-2 block text-sm font-medium">Correo electrónico <span aria-hidden="true">*</span></label>
+							<input id="email" type="email" autocomplete="off" required placeholder="ejemplo@example.com" class="block min-h-12 w-full min-w-0 border border-gray-300 bg-white px-3 py-3 text-base placeholder:text-gray-500 focus:border-brandAccent focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-brandAccent">
+						</div>
+						<div>
+							<label for="telefono" class="mb-2 block text-sm font-medium">Teléfono <span aria-hidden="true">*</span></label>
+							<input id="telefono" type="tel" autocomplete="off" required placeholder="Teléfono ficticio" class="block min-h-12 w-full min-w-0 border border-gray-300 bg-white px-3 py-3 text-base placeholder:text-gray-500 focus:border-brandAccent focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-brandAccent">
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="mt-8 min-w-0 border-b border-gray-200 pb-8">
+					<legend class="mb-6 flex items-center gap-3 font-serif text-2xl"><span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandAccent font-sans text-sm font-semibold text-white">2</span> Dirección de entrega</legend>
+					<div class="grid gap-5 sm:grid-cols-2">
+						<div>
+							<label for="direccion" class="mb-2 block text-sm font-medium">Dirección <span aria-hidden="true">*</span></label>
+							<input id="direccion" type="text" autocomplete="off" required placeholder="Calle de ejemplo" class="block min-h-12 w-full min-w-0 border border-gray-300 bg-white px-3 py-3 text-base placeholder:text-gray-500 focus:border-brandAccent focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-brandAccent">
+						</div>
+						<div>
+							<label for="numero" class="mb-2 block text-sm font-medium">Número <span aria-hidden="true">*</span></label>
+							<input id="numero" type="text" autocomplete="off" required placeholder="12, 2.º B / s. n." class="block min-h-12 w-full min-w-0 border border-gray-300 bg-white px-3 py-3 text-base placeholder:text-gray-500 focus:border-brandAccent focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-brandAccent">
+						</div>
+						<div>
+							<label for="codigo-postal" class="mb-2 block text-sm font-medium">Código postal <span aria-hidden="true">*</span></label>
+							<input id="codigo-postal" type="text" inputmode="numeric" autocomplete="off" required pattern="[0-9]{5}" maxlength="5" placeholder="28001" aria-describedby="formato-postal" class="block min-h-12 w-full min-w-0 border border-gray-300 bg-white px-3 py-3 text-base placeholder:text-gray-500 focus:border-brandAccent focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-brandAccent">
+							<p id="formato-postal" class="mt-2 text-xs text-gray-600">Formato español: 5 cifras.</p>
+						</div>
+						<div>
+							<label for="ciudad" class="mb-2 block text-sm font-medium">Ciudad <span aria-hidden="true">*</span></label>
+							<input id="ciudad" type="text" autocomplete="off" required placeholder="Madrid" class="block min-h-12 w-full min-w-0 border border-gray-300 bg-white px-3 py-3 text-base placeholder:text-gray-500 focus:border-brandAccent focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-brandAccent">
+						</div>
+						<div>
+							<label for="provincia" class="mb-2 block text-sm font-medium">Provincia <span aria-hidden="true">*</span></label>
+							<input id="provincia" type="text" autocomplete="off" required placeholder="Madrid" class="block min-h-12 w-full min-w-0 border border-gray-300 bg-white px-3 py-3 text-base placeholder:text-gray-500 focus:border-brandAccent focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-brandAccent">
+						</div>
+						<div>
+							<label for="pais" class="mb-2 block text-sm font-medium">País <span aria-hidden="true">*</span></label>
+							<select id="pais" required aria-describedby="destino-demo" class="block min-h-12 w-full min-w-0 border border-gray-300 bg-white px-3 py-3 text-base focus:border-brandAccent focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-brandAccent">
+								<option value="ES">España</option>
+							</select>
+							<p id="destino-demo" class="mt-2 text-xs text-gray-600">Destino disponible en esta demostración.</p>
+						</div>
+					</div>
+				</fieldset>
+				<section aria-labelledby="pago-titulo" aria-describedby="pago-demo" class="mt-8">
+					<h2 id="pago-titulo" class="flex items-center gap-3 font-serif text-2xl"><span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brandAccent font-sans text-sm font-semibold text-white">3</span> Pago</h2>
+					<p id="pago-demo" class="mb-6 mt-4 border-l-2 border-brandAccent pl-4 text-sm leading-6 text-gray-600"><strong class="font-semibold text-brandDark">Demostración sin pasarela de pago.</strong> Los campos de tarjeta están deshabilitados. No introduzcas datos bancarios reales: no se recogen, almacenan, transmiten ni procesan pagos.</p>
+					<fieldset disabled aria-describedby="pago-demo" class="min-w-0">
+						<legend class="mb-5 text-sm font-semibold">Tarjeta de crédito o débito · Demo</legend>
+						<div class="grid gap-5 sm:grid-cols-2">
+							<div class="sm:col-span-2">
+								<label for="titular" class="mb-2 block text-sm font-medium">Titular de la tarjeta</label>
+								<input id="titular" type="text" autocomplete="off" placeholder="NOMBRE DE EJEMPLO" class="block min-h-12 w-full min-w-0 cursor-not-allowed border border-gray-300 bg-gray-100 px-3 py-3 text-base placeholder:text-gray-600">
+							</div>
+							<div class="sm:col-span-2">
+								<label for="tarjeta" class="mb-2 block text-sm font-medium">Número de tarjeta</label>
+								<input id="tarjeta" type="text" autocomplete="off" placeholder="XXXX XXXX XXXX XXXX" class="block min-h-12 w-full min-w-0 cursor-not-allowed border border-gray-300 bg-gray-100 px-3 py-3 text-base placeholder:text-gray-600">
+							</div>
+							<div>
+								<label for="caducidad" class="mb-2 block text-sm font-medium">Fecha de caducidad</label>
+								<input id="caducidad" type="text" autocomplete="off" placeholder="MM / AA" class="block min-h-12 w-full min-w-0 cursor-not-allowed border border-gray-300 bg-gray-100 px-3 py-3 text-base placeholder:text-gray-600">
+							</div>
+							<div>
+								<label for="cvv" class="mb-2 block text-sm font-medium">CVV</label>
+								<input id="cvv" type="text" autocomplete="off" placeholder="XXX" class="block min-h-12 w-full min-w-0 cursor-not-allowed border border-gray-300 bg-gray-100 px-3 py-3 text-base placeholder:text-gray-600">
+							</div>
+						</div>
+						<button type="button" disabled aria-describedby="confirmacion-demo" class="mt-7 min-h-12 w-full cursor-not-allowed bg-brandAccent px-4 py-4 text-sm font-semibold tracking-wider text-white">CONFIRMAR PEDIDO</button>
+					</fieldset>
+					<p id="confirmacion-demo" class="mt-3 text-center text-xs leading-5 text-gray-600">Botón de demostración deshabilitado. No se generará un pedido ni se realizará ningún cobro.</p>
+				</section>
+			</form>
+			<aside aria-labelledby="resumen-titulo" class="border-t-2 border-brandDark bg-white p-6 sm:p-8 lg:sticky lg:top-8">
+				<div class="flex flex-wrap items-center justify-between gap-3">
+					<h2 id="resumen-titulo" class="font-serif text-2xl">Tu pedido</h2>
+					<a href="carrito.html" class="text-sm text-brandAccent underline underline-offset-4 hover:text-brandDark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brandAccent">Ver carrito</a>
+				</div>
+				<p class="mt-2 text-sm text-gray-600">3 artículos · IVA incluido</p>
+				<ul class="mt-6 divide-y divide-gray-200" aria-label="Artículos del pedido" itemscope itemtype="https://schema.org/ItemList">
+					<li class="grid grid-cols-[4rem_minmax(0,1fr)] gap-4 pb-5" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
+						<img itemprop="image" src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&amp;fit=crop&amp;w=480&amp;q=80" alt="Camisa de algodón de manga larga en tono claro, con cuello clásico y botones frontales" width="480" height="600" class="aspect-[4/5] w-full bg-gray-100 object-cover">
+						<div class="min-w-0">
+							<h3 itemprop="name" class="text-sm font-medium">Camisa Atelier</h3>
+							<p class="mt-1 text-xs text-gray-600">Ref. <span itemprop="sku">MS-CAM-001</span></p>
+							<p class="mt-1 text-xs text-gray-600">Talla M · Cantidad 1</p>
+							<p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="mt-2 text-sm font-semibold"><data itemprop="price" value="89.00" content="89.00">89,00</data> <span itemprop="priceCurrency" content="EUR">€</span></p>
+						</div>
+					</li>
+					<li class="grid grid-cols-[4rem_minmax(0,1fr)] gap-4 py-5" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
+						<img itemprop="image" src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&amp;fit=crop&amp;w=480&amp;q=80" alt="Pantalón de vestir de corte recto y tejido liso, combinado con calzado de piel" width="480" height="600" loading="lazy" class="aspect-[4/5] w-full bg-gray-100 object-cover">
+						<div class="min-w-0">
+							<h3 itemprop="name" class="text-sm font-medium">Pantalón Rive Gauche</h3>
+							<p class="mt-1 text-xs text-gray-600">Ref. <span itemprop="sku">MS-PAN-002</span></p>
+							<p class="mt-1 text-xs text-gray-600">Talla 40 · Cantidad 1</p>
+							<p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="mt-2 text-sm font-semibold"><data itemprop="price" value="129.00" content="129.00">129,00</data> <span itemprop="priceCurrency" content="EUR">€</span></p>
+						</div>
+					</li>
+					<li class="grid grid-cols-[4rem_minmax(0,1fr)] gap-4 py-5" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
+						<img itemprop="image" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=480&amp;q=80" alt="Mochila de tejido con asas y bolsillo frontal, fotografiada sobre un fondo claro" width="480" height="600" loading="lazy" class="aspect-[4/5] w-full bg-gray-100 object-cover">
+						<div class="min-w-0">
+							<h3 itemprop="name" class="text-sm font-medium">Mochila Escapade</h3>
+							<p class="mt-1 text-xs text-gray-600">Ref. <span itemprop="sku">MS-ACC-003</span></p>
+							<p class="mt-1 text-xs text-gray-600">Talla Única · Cantidad 1</p>
+							<p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="mt-2 text-sm font-semibold"><data itemprop="price" value="69.00" content="69.00">69,00</data> <span itemprop="priceCurrency" content="EUR">€</span></p>
+						</div>
+					</li>
+				</ul>
+				<dl class="mt-3 space-y-4 border-t border-gray-200 pt-6 text-sm">
+					<div class="flex justify-between gap-4"><dt>Subtotal sin IVA</dt><dd class="shrink-0">237,19 €</dd></div>
+					<div class="flex justify-between gap-4"><dt>IVA (21 %)</dt><dd class="shrink-0">49,81 €</dd></div>
+					<div class="flex justify-between gap-4"><dt>Envío estándar</dt><dd class="text-brandAccent">Gratis</dd></div>
+					<div class="flex justify-between gap-4 border-t border-gray-200 pt-5 text-lg font-semibold"><dt>Total</dt><dd class="shrink-0">287,00 €</dd></div>
+				</dl>
+				<p class="mt-2 text-xs leading-5 text-gray-600">IVA incluido. Sin gastos adicionales en este ejemplo.</p>
+			</aside>
+		</div>
+	</main>
+<footer class="bg-brandDark text-brandBg">
+	<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+		<div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+
+			<div>
+				<a href="index.html"
+					 class="text-xl font-semibold tracking-widest">
+					MAISON.
+				</a>
+				<p class="mt-3 text-sm text-gray-300">
+					L'élégance en mouvement.
+				</p>
+			</div>
+
+			<div>
+				<h2 class="text-sm font-semibold tracking-wider">CATEGORÍAS</h2>
+				<ul class="mt-4 space-y-3 text-sm text-gray-300">
+					<li><a href="calzado.html" class="hover:text-white">Calzado</a></li>
+					<li><a href="camisas.html" class="hover:text-white">Camisas</a></li>
+					<li><a href="pantalones.html" class="hover:text-white">Pantalones</a></li>
+					<li><a href="accesorios.html" class="hover:text-white">Accesorios</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h2 class="text-sm font-semibold tracking-wider">LEGAL</h2>
+				<ul class="mt-4 space-y-3 text-sm text-gray-300">
+					<li><a href="terminos.html" class="hover:text-white">Términos y condiciones</a></li>
+					<li><a href="privacidad.html" class="hover:text-white">Política de privacidad</a></li>
+					<li><a href="sobre-nosotros.html" class="hover:text-white">Sobre la marca</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h2 class="text-sm font-semibold tracking-wider">CONTACTO</h2>
+				<p class="mt-4 text-sm text-gray-300">
+					Escríbenos para cualquier consulta.
+				</p>
+				<a href="contacto.html"
+					 class="mt-3 inline-block text-sm underline underline-offset-4 hover:text-white">
+					Contactar
+				</a>
+			</div>
+
+		</div>
+
+		<div class="mt-10 border-t border-gray-600 pt-6 text-xs text-gray-400">
+			© 2026 MAISON. Todos los derechos reservados.
+		</div>
+	</div>
+</footer>
+</body>
+</html>
