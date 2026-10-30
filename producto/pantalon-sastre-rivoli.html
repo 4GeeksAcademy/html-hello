@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pantalón sastre Rivoli | Maison Vérane</title>
+    <meta name="description" content="Pantalón sastre de lana virgen con corte recto y pinzas." />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Pantalón sastre Rivoli",
+        "sku": "MV-2028",
+        "description": "Pantalón sastre de lana virgen con corte recto y pinzas.",
+        "image": "https://maisonverane.example/assets/img/products/pantalon-sastre-rivoli.jpg",
+        "category": "Pantalones",
+        "offers": {
+            "@type": "Offer",
+            "price": "129,00",
+            "priceCurrency": "EUR",
+            "url": "https://maisonverane.example/producto/pantalon-sastre-rivoli.html",
+            "availability": "https://schema.org/InStock"
+        }
+    }</script>
+  </head>
+  <body class="bg-stone-50 font-sans text-stone-900 antialiased">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2">
+      Saltar al contenido
+    </a>
+
+<!-- Navbar canónico. Copiar tal cual dentro de <body>, antes de <main>. Cambios: PR a feature/base. -->
+<header class="sticky top-0 z-50 border-b border-stone-200 bg-stone-50/95 backdrop-blur">
+  <nav aria-label="Principal" class="mx-auto flex max-w-7xl flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3 sm:px-6 lg:px-8">
+    <a href="index.html" class="font-serif text-xl font-semibold tracking-wide text-stone-900 sm:text-2xl">
+      Maison Vérane
+    </a>
+
+    <form role="search" action="catalogo.html" method="get" class="order-last flex w-full md:order-none md:mx-6 md:w-auto md:flex-1">
+      <label for="buscar" class="sr-only">Buscar productos</label>
+      <input
+        id="buscar"
+        name="q"
+        type="search"
+        placeholder="Buscar camisas, calzado…"
+        class="min-w-0 flex-1 rounded-l-full border border-stone-300 bg-white px-4 py-2 text-sm placeholder:text-stone-500 focus:border-orange-800 focus:outline-none focus:ring-1 focus:ring-orange-800"
+      />
+      <button type="submit" class="rounded-r-full bg-stone-900 px-4 py-2 text-sm font-medium text-white hover:bg-orange-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-800">
+        Buscar
+      </button>
+    </form>
+
+    <ul class="ml-auto flex items-center gap-3 sm:gap-5 md:ml-0">
+      <li class="hidden sm:block">
+        <a href="catalogo.html" class="text-sm font-medium text-stone-700 hover:text-orange-800">Catálogo</a>
+      </li>
+      <li class="relative">
+        <details class="group">
+          <summary class="flex cursor-pointer list-none items-center gap-1 text-sm font-medium text-stone-700 hover:text-orange-800 [&::-webkit-details-marker]:hidden">
+            <span aria-hidden="true">👤</span>
+            <span>Mi cuenta</span>
+          </summary>
+          <ul class="absolute right-0 mt-2 w-44 rounded-md border border-stone-200 bg-white py-1 text-sm shadow-lg">
+            <li><a href="#" class="block px-4 py-2 hover:bg-stone-100">Iniciar sesión</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-stone-100">Crear cuenta</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-stone-100">Mis pedidos</a></li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <a href="carrito.html" class="flex items-center gap-1 text-sm font-medium text-stone-700 hover:text-orange-800">
+          <span aria-hidden="true">🛍️</span>
+          <span>Carrito</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+    <main id="contenido">
+      <nav aria-label="Migas de pan" class="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
+        <ol class="flex items-center gap-2 text-sm text-stone-500">
+          <li><a href="../index.html" class="hover:underline">Inicio</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="../catalogo.html" class="hover:underline">Catálogo</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="../catalogo.html?categoria=pantalones" class="hover:underline">Pantalones</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="text-stone-900 font-medium">Pantalón sastre Rivoli</li>
+        </ol>
+      </nav>
+
+      <!-- Dos columnas: foto + información -->
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 lg:items-start">
+          <!-- Columna izquierda — foto del producto -->
+          <section aria-label="Imagen del producto" class="lg:sticky lg:top-20 lg:self-start">
+            <figure class="overflow-hidden rounded-2xl bg-stone-100">
+              <img
+                src="../assets/img/products/pantalon-sastre-rivoli.jpg"
+                alt="Pantalón sastre Rivoli en gris marengo, sobre fondo neutro"
+                width="1024"
+                height="1365"
+                class="w-full h-auto object-cover"
+              />
+            </figure>
+          </section>
+
+          <!-- Columna derecha — información del producto -->
+          <section aria-labelledby="info-titulo" class="mt-6 lg:mt-0">
+            <h1 id="info-titulo" class="font-serif text-3xl font-semibold sm:text-4xl">Pantalón sastre Rivoli</h1>
+
+            <dl class="mt-4 space-y-3">
+              <div class="flex items-baseline justify-between gap-4">
+                <dt class="text-sm text-stone-500">Referencia</dt>
+                <dd class="text-sm font-mono text-stone-700">MV-2028</dd>
+              </div>
+              <div class="flex items-baseline justify-between gap-4">
+                <dt class="text-sm text-stone-500">Talla</dt>
+                <dd>
+                  <fieldset aria-label="Seleccionar talla">
+                    <legend class="sr-only">Talla</legend>
+                    <ul class="flex flex-wrap gap-2" role="list">
+                      <li>
+                        <label class="flex cursor-pointer items-center gap-1.5 rounded-full border border-stone-300 px-4 py-1.5 text-sm has-[:checked]:border-orange-800 has-[:checked]:bg-orange-100 has-[:checked]:font-medium">
+                          <input type="radio" name="talla" value="xs" class="appearance-none" />
+                          XS
+                        </label>
+                      </li>
+                      <li>
+                        <label class="flex cursor-pointer items-center gap-1.5 rounded-full border border-stone-300 px-4 py-1.5 text-sm has-[:checked]:border-orange-800 has-[:checked]:bg-orange-100 has-[:checked]:font-medium">
+                          <input type="radio" name="talla" value="s" class="appearance-none" checked />
+                          S
+                        </label>
+                      </li>
+                      <li>
+                        <label class="flex cursor-pointer items-center gap-1.5 rounded-full border border-stone-300 px-4 py-1.5 text-sm has-[:checked]:border-orange-800 has-[:checked]:bg-orange-100 has-[:checked]:font-medium">
+                          <input type="radio" name="talla" value="m" class="appearance-none" />
+                          M
+                        </label>
+                      </li>
+                      <li>
+                        <label class="flex cursor-pointer items-center gap-1.5 rounded-full border border-stone-300 px-4 py-1.5 text-sm has-[:checked]:border-orange-800 has-[:checked]:bg-orange-100 has-[:checked]:font-medium">
+                          <input type="radio" name="talla" value="l" class="appearance-none" />
+                          L
+                        </label>
+                      </li>
+                      <li>
+                        <label class="flex cursor-pointer items-center gap-1.5 rounded-full border border-stone-300 px-4 py-1.5 text-sm has-[:checked]:border-orange-800 has-[:checked]:bg-orange-100 has-[:checked]:font-medium">
+                          <input type="radio" name="talla" value="xl" class="appearance-none" />
+                          XL
+                        </label>
+                      </li>
+                    </ul>
+                  </fieldset>
+                </dd>
+              </div>
+            </dl>
+
+            <p class="mt-8 text-3xl font-semibold tracking-tight text-stone-900">
+              129,00&nbsp;<span class="text-lg font-normal text-stone-500">€</span>
+            </p>
+
+            <form action="#" method="post" class="mt-6">
+              <div class="flex items-center gap-3">
+                <label for="cantidad" class="text-sm font-medium text-stone-700">Cantidad</label>
+                <div class="flex">
+                  <button type="button" aria-label="Reducir cantidad" class="rounded-l border border-stone-300 bg-stone-100 px-3 py-2 text-sm leading-none hover:bg-stone-200">−</button>
+                  <input
+                    id="cantidad"
+                    type="number"
+                    value="1"
+                    min="1"
+                    max="99"
+                    class="w-14 border-x border-stone-300 bg-white py-2 text-center text-sm"
+                  />
+                  <button type="button" aria-label="Aumentar cantidad" class="rounded-r border border-stone-300 bg-stone-100 px-3 py-2 text-sm leading-none hover:bg-stone-200">+</button>
+                </div>
+              </div>
+
+              <button type="submit" class="mt-6 w-full rounded-full bg-stone-900 px-8 py-3 text-base font-medium text-white hover:bg-orange-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-800">
+                Agregar al carrito
+              </button>
+            </form>
+
+            <hr class="mt-10 border-stone-200" />
+
+            <!-- Descripción detallada -->
+            <section aria-labelledby="descripcion-titulo" class="mt-8 space-y-6">
+              <h2 id="descripcion-titulo" class="font-serif text-2xl font-semibold sm:text-3xl">Descripción</h2>
+
+              <div class="space-y-4 text-sm leading-relaxed text-stone-600">
+                <p>El pantalón sastre Rivoli es la pieza clave de cualquier armario profesional. Confeccionado en lana virgen de primera calidad, su corte recto con pinzas favorece la silueta y ofrece una comodidad duradera durante toda la jornada.</p>
+                <p>Disponible en gris marengo, con acabado a medida y dobladillo interno reforzado.</p>
+              </div>
+
+              <table class="w-full text-sm">
+                <caption class="sr-only">Ficha técnica de Pantalón sastre Rivoli</caption>
+                <tbody>
+                  <tr class="border-b border-stone-200">
+                    <th scope="row" class="py-3 pl-0 pr-4 text-left font-medium text-stone-700">Materiales</th>
+                    <td class="py-3 text-stone-600">Lana virgen 100% · Forro de viscosa · Cremallera metálica</td>
+                  </tr>
+                  <tr class="border-b border-stone-200">
+                    <th scope="row" class="py-3 pl-0 pr-4 text-left font-medium text-stone-700">Cuidado</th>
+                    <td class="py-3 text-stone-600">Lavar en seco · Planchar a temperatura media · No usar secadora</td>
+                  </tr>
+                  <tr class="border-b border-stone-200">
+                    <th scope="row" class="py-3 pl-0 pr-4 text-left font-medium text-stone-700">Uso recomendado</th>
+                    <td class="py-3 text-stone-600">Oficina · Reuniones formales · Cenas de empresa</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="py-3 pl-0 pr-4 text-left font-medium text-stone-700">Escenarios</th>
+                    <td class="py-3 text-stone-600">Perfecto para la oficina con la camisa Oxford Seine, o para una cena con el bolso tote Marais como acompañante.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </section>
+        </div>
+      </div>
+    </main>
+
+<!-- Footer canónico. Copiar tal cual dentro de <body>, después de </main>. Cambios: PR a feature/base. -->
+<footer class="mt-16 border-t border-stone-200 bg-stone-900 text-stone-300">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+    <section aria-labelledby="footer-marca" class="sm:col-span-2 lg:col-span-1">
+      <h2 id="footer-marca" class="font-serif text-xl font-semibold text-white">Maison Vérane</h2>
+      <p class="mt-3 text-sm leading-relaxed">Moda atemporal diseñada en París. Prendas esenciales, hechas para durar.</p>
+    </section>
+
+    <nav aria-labelledby="footer-categorias">
+      <h2 id="footer-categorias" class="text-sm font-semibold uppercase tracking-wider text-white">Categorías</h2>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a href="catalogo.html?categoria=calzado" class="hover:text-white">Calzado</a></li>
+        <li><a href="catalogo.html?categoria=camisas" class="hover:text-white">Camisas</a></li>
+        <li><a href="catalogo.html?categoria=pantalones" class="hover:text-white">Pantalones</a></li>
+        <li><a href="catalogo.html?categoria=accesorios" class="hover:text-white">Accesorios</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-labelledby="footer-legal">
+      <h2 id="footer-legal" class="text-sm font-semibold uppercase tracking-wider text-white">Legal</h2>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a href="#" class="hover:text-white">Términos y condiciones</a></li>
+        <li><a href="#" class="hover:text-white">Política de privacidad</a></li>
+        <li><a href="#" class="hover:text-white">Sobre la marca</a></li>
+      </ul>
+    </nav>
+
+    <section aria-labelledby="footer-contacto">
+      <h2 id="footer-contacto" class="text-sm font-semibold uppercase tracking-wider text-white">Contacto</h2>
+      <address class="mt-4 space-y-2 text-sm not-italic">
+        <p>12 Rue de la Paix<br />75002 París, Francia</p>
+        <p><a href="mailto:contacto@maisonverane.example" class="hover:text-white">contacto@maisonverane.example</a></p>
+        <p><a href="tel:+33142000000" class="hover:text-white">+33 1 42 00 00 00</a></p>
+      </address>
+    </section>
+  </div>
+  <p class="border-t border-stone-800 px-4 py-6 text-center text-xs text-stone-400">
+    © 2026 Maison Vérane. Prototipo con fines de demostración.
+  </p>
+</footer>
+
+
+  </body>
+</html>
