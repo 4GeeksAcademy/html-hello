@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rue de la Mode — French Fashion</title>
+  <meta name="description" content="Rue de la Mode — Discover our latest collections of French fashion. New arrivals and best sellers available online.">
+  
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Schema.org / Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "Rue de la Mode",
+    "description": "French fashion online store offering elegant clothing, footwear, and accessories from Paris.",
+    "url": "https://ruedelamode.fr",
+    "telephone": "+33-1-23-45-67-89",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "45 Rue de la Mode",
+      "addressLocality": "Paris",
+      "postalCode": "75001",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+
+  <style>
+    /* Custom transition for product card hover */
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- ============================================ -->
+  <!-- NAVBAR (reusable across all pages)           -->
+  <!-- ============================================ -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-3 gap-4">
+
+        <!-- Logo -->
+        <a href="/" class="text-2xl font-serif tracking-wide font-bold text-gray-900 whitespace-nowrap">
+          Rue de la<span class="text-indigo-600"> Mode</span>
+        </a>
+
+        <!-- Search bar (hidden on mobile, shown on md+) -->
+        <div class="hidden md:flex md:flex-1 md:max-w-md mx-auto">
+          <div class="relative w-full">
+            <label for="search-nav" class="sr-only">Search products</label>
+            <input id="search-nav" type="search" placeholder="Search products…"
+                   class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-indigo-400 text-sm">
+            <img src="assets/images/icon-search.svg" class="absolute left-3 top-2.5 w-4 h-4 text-gray-400" alt="">
+          </div>
+        </div>
+
+        <!-- Right-side icons -->
+        <div class="flex items-center gap-4 text-sm">
+          <!-- Account -->
+          <a href="#" class="flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition" aria-label="Account">
+            <img src="assets/images/icon-account.svg" class="w-5 h-5" alt="">
+            <span class="hidden md:inline">Account</span>
+          </a>
+          <!-- Cart -->
+          <a href="cart.html" class="flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition" aria-label="Cart">
+            <img src="assets/images/icon-cart.svg" class="w-5 h-5" alt="">
+            <span class="hidden md:inline">Cart</span>
+          </a>
+          <!-- Mobile menu toggle -->
+          <button id="menu-toggle" class="md:hidden p-2 text-gray-600 hover:text-indigo-600" aria-label="Toggle menu">
+            <img src="assets/images/icon-hamburger.svg" class="w-6 h-6" alt="">
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile search (shown only when menu toggled) -->
+      <div id="mobile-search" class="hidden md:hidden pb-2">
+        <div class="relative">
+          <label for="search-mobile" class="sr-only">Search products</label>
+          <input id="search-mobile" type="search" placeholder="Search products…"
+                 class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm">
+        </div>
+      </div>
+
+      <!-- Nav links (desktop) -->
+      <nav class="hidden md:flex md:py-2 md:gap-6 md:text-sm md:font-medium text-gray-600">
+        <a href="catalog.html" class="hover:text-indigo-600 transition">Catalog</a>
+        <a href="catalog.html?category=footwear" class="hover:text-indigo-600 transition">Footwear</a>
+        <a href="catalog.html?category=shirts" class="hover:text-indigo-600 transition">Shirts</a>
+        <a href="catalog.html?category=pants" class="hover:text-indigo-600 transition">Pants</a>
+        <a href="catalog.html?category=accessories" class="hover:text-indigo-600 transition">Accessories</a>
+        <a href="#" class="hover:text-indigo-600 transition">Sale</a>
+      </nav>
+
+      <!-- Mobile nav links -->
+      <nav id="mobile-nav" class="hidden pb-3 flex flex-col gap-2 text-sm text-gray-600">
+        <a href="catalog.html" class="hover:text-indigo-600 transition">Catalog</a>
+        <a href="catalog.html?category=footwear" class="hover:text-indigo-600 transition">Footwear</a>
+        <a href="catalog.html?category=shirts" class="hover:text-indigo-600 transition">Shirts</a>
+        <a href="catalog.html?category=pants" class="hover:text-indigo-600 transition">Pants</a>
+        <a href="catalog.html?category=accessories" class="hover:text-indigo-600 transition">Accessories</a>
+        <a href="#" class="hover:text-indigo-600 transition">Sale</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================ -->
+  <!-- HERO SECTION                                -->
+  <!-- ============================================ -->
+  <section class="relative bg-gradient-to-br from-indigo-50 via-white to-indigo-50" aria-label="Hero banner">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+
+        <!-- Hero text -->
+        <div class="md:w-1/2 text-center md:text-left">
+          <p class="text-sm uppercase tracking-widest text-indigo-500 font-semibold mb-2">Spring–Summer 2026</p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 leading-tight">
+            L'Élégance<br>
+            <span class="text-indigo-600">à la Parisienne</span>
+          </h1>
+          <p class="mt-4 text-lg text-gray-600 max-w-lg">
+            Discover our latest collection where timeless French craftsmanship meets contemporary design.
+          </p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-4">
+            <a href="catalog.html"
+               class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold text-sm hover:bg-indigo-700 transition shadow-md">
+              Shop New Arrivals
+            </a>
+            <a href="catalog.html?category=accessories"
+               class="inline-block border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full font-semibold text-sm hover:border-indigo-600 hover:text-indigo-600 transition">
+              Accessories
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero image -->
+        <div class="md:w-1/2 flex justify-center">
+          <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-indigo-100">
+            <img src="assets/images/hero-collection.jpg"
+                 alt="Spring-Summer 2026 fashion collection" class="w-full h-full object-cover" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative wave divider -->
+    <div class="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-r from-indigo-100 via-transparent to-indigo-100 opacity-40"></div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- NEW ARRIVALS – Horizontal product list       -->
+  <!-- ============================================ -->
+  <section class="py-12 md:py-16" aria-labelledby="new-arrivals-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h2 id="new-arrivals-heading" class="text-2xl md:text-3xl font-serif font-bold text-gray-900">New Arrivals</h2>
+        <a href="catalog.html" class="text-indigo-600 font-medium text-sm hover:underline">View all →</a>
+      </div>
+
+      <!-- Scrollable horizontal list -->
+      <div class="flex overflow-x-auto gap-6 pb-4 snap-x">
+        <!-- Product card 1 -->
+        <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
+          <a href="product.html?id=1" class="block">
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/chemise-bianca.jpg" alt="Chemise Bianca" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide">Shirt</p>
+              <h3 class="text-base font-semibold text-gray-900 mt-1">Chemise Bianca</h3>
+              <p class="text-indigo-600 font-bold mt-2">€89,00</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Product card 2 -->
+        <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
+          <a href="product.html?id=2" class="block">
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/pantalon-slim-noir.jpg" alt="Pantalon Slim Noir" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide">Pants</p>
+              <h3 class="text-base font-semibold text-gray-900 mt-1">Pantalon Slim Noir</h3>
+              <p class="text-indigo-600 font-bold mt-2">€120,00</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Product card 3 -->
+        <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
+          <a href="product.html?id=3" class="block">
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/echarpe-en-soie.jpg" alt="Écharpe en Soie" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide">Accessory</p>
+              <h3 class="text-base font-semibold text-gray-900 mt-1">Écharpe en Soie</h3>
+              <p class="text-indigo-600 font-bold mt-2">€55,00</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Product card 4 -->
+        <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
+          <a href="product.html?id=4" class="block">
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/mocassins-cognac.jpg" alt="Mocassins Cognac" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide">Footwear</p>
+              <h3 class="text-base font-semibold text-gray-900 mt-1">Mocassins Cognac</h3>
+              <p class="text-indigo-600 font-bold mt-2">€145,00</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Product card 5 -->
+        <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
+          <a href="product.html?id=5" class="block">
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/blouse-fleurie.jpg" alt="Blouse Fleurie" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide">Shirt</p>
+              <h3 class="text-base font-semibold text-gray-900 mt-1">Blouse Fleurie</h3>
+              <p class="text-indigo-600 font-bold mt-2">€79,00</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- BEST SELLERS – Horizontal product list       -->
+  <!-- ============================================ -->
+  <section class="py-12 md:py-16 bg-gray-50" aria-labelledby="best-sellers-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <h2 id="best-sellers-heading" class="text-2xl md:text-3xl font-serif font-bold text-gray-900">Best Sellers</h2>
+        <a href="catalog.html" class="text-indigo-600 font-medium text-sm hover:underline">View all →</a>
+      </div>
+
+      <div class="flex overflow-x-auto gap-6 pb-4 snap-x">
+        <!-- Best seller card 1 -->
+        <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
+          <a href="product.html?id=6" class="block">
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/baskets-blanche.jpg" alt="Baskets Blanche" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide">Footwear</p>
+              <h3 class="text-base font-semibold text-gray-900 mt-1">Baskets Blanche</h3>
+              <p class="text-indigo-600 font-bold mt-2">€95,00</p>
+              <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full mt-1">Best seller</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- Best seller card 2 -->
+        <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
+          <a href="product.html?id=7" class="block">
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/jean-tailleur-bleu.jpg" alt="Jean Tailleur Bleu" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide">Pants</p>
+              <h3 class="text-base font-semibold text-gray-900 mt-1">Jean Tailleur Bleu</h3>
+              <p class="text-indigo-600 font-bold mt-2">€110,00</p>
+              <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full mt-1">Best seller</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- Best seller card 3 -->
+        <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
+          <a href="product.html?id=8" class="block">
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/ceinture-cuir-marron.jpg" alt="Ceinture Cuir Marron" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide">Accessory</p>
+              <h3 class="text-base font-semibold text-gray-900 mt-1">Ceinture Cuir Marron</h3>
+              <p class="text-indigo-600 font-bold mt-2">€65,00</p>
+              <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full mt-1">Best seller</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- Best seller card 4 -->
+        <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
+          <a href="product.html?id=9" class="block">
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/chemise-lin-blanc.jpg" alt="Chemise Lin Blanc" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide">Shirt</p>
+              <h3 class="text-base font-semibold text-gray-900 mt-1">Chemise Lin Blanc</h3>
+              <p class="text-indigo-600 font-bold mt-2">€85,00</p>
+              <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full mt-1">Best seller</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- Best seller card 5 -->
+        <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
+          <a href="product.html?id=10" class="block">
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/sac-bandouliere-noir.jpg" alt="Sac Bandoulière Noir" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide">Accessory</p>
+              <h3 class="text-base font-semibold text-gray-900 mt-1">Sac Bandoulière Noir</h3>
+              <p class="text-indigo-600 font-bold mt-2">€180,00</p>
+              <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full mt-1">Best seller</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER (reusable across all pages)           -->
+  <!-- ============================================ -->
+  <footer class="bg-gray-900 text-gray-300 mt-12" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Categories -->
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-gray-100 font-semibold mb-4">Categories</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="catalog.html?category=footwear" class="hover:text-white transition">Footwear</a></li>
+            <li><a href="catalog.html?category=shirts" class="hover:text-white transition">Shirts</a></li>
+            <li><a href="catalog.html?category=pants" class="hover:text-white transition">Pants</a></li>
+            <li><a href="catalog.html?category=accessories" class="hover:text-white transition">Accessories</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-gray-100 font-semibold mb-4">Legal</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition">About the Brand</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-gray-100 font-semibold mb-4">Contact</h3>
+          <address class="text-sm not-italic space-y-2">
+            <p>45 Rue de la Mode<br>75001 Paris, France</p>
+            <p>Email: <a href="mailto:hello@ruedelamode.fr" class="hover:text-white transition">hello@ruedelamode.fr</a></p>
+            <p>Phone: <a href="tel:+33123456789" class="hover:text-white transition">+33 1 23 45 67 89</a></p>
+          </address>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+        <p>&copy; 2026 Rue de la Mode. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================ -->
+  <!-- Simple script to toggle mobile nav           -->
+  <!-- ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('menu-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      const mobileSearch = document.getElementById('mobile-search');
+      if (toggle && mobileNav && mobileSearch) {
+        toggle.addEventListener('click', function () {
+          const show = mobileNav.classList.toggle('hidden');
+          mobileSearch.classList.toggle('hidden');
+          // update aria-expanded if needed
+        });
+      }
+    });
+  </script>
+</body>
+</html>
