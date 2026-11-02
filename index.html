@@ -56,38 +56,25 @@
             <label for="search-nav" class="sr-only">Search products</label>
             <input id="search-nav" type="search" placeholder="Search products…"
                    class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-indigo-400 text-sm">
-            <svg class="absolute left-3 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="8" stroke="currentColor" fill="none" stroke-width="2"/>
-              <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
-            </svg>
+            <img src="assets/images/icon-search.svg" class="absolute left-3 top-2.5 w-4 h-4 text-gray-400" alt="">
           </div>
         </div>
 
         <!-- Right-side icons -->
         <div class="flex items-center gap-4 text-sm">
           <!-- Account -->
-          <a href="#" class="flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="8" r="6" stroke="currentColor" stroke-width="1.5" fill="none"/>
-              <circle cx="12" cy="18" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
-            </svg>
+          <a href="#" class="flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition" aria-label="Account">
+            <img src="assets/images/icon-account.svg" class="w-5 h-5" alt="">
             <span class="hidden md:inline">Account</span>
           </a>
           <!-- Cart -->
-          <a href="cart.html" class="flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <rect x="4" y="2" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
-              <line x1="8" y1="16" x2="16" y2="16" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
+          <a href="cart.html" class="flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition" aria-label="Cart">
+            <img src="assets/images/icon-cart.svg" class="w-5 h-5" alt="">
             <span class="hidden md:inline">Cart</span>
           </a>
           <!-- Mobile menu toggle -->
           <button id="menu-toggle" class="md:hidden p-2 text-gray-600 hover:text-indigo-600" aria-label="Toggle menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <line x1="4" y1="6" x2="20" y2="6" stroke="currentColor" stroke-width="2"/>
-              <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="2"/>
-              <line x1="4" y1="18" x2="20" y2="18" stroke="currentColor" stroke-width="2"/>
-            </svg>
+            <img src="assets/images/icon-hamburger.svg" class="w-6 h-6" alt="">
           </button>
         </div>
       </div>
@@ -152,12 +139,11 @@
           </div>
         </div>
 
-        <!-- Hero image placeholder (CSS-only abstract shape) -->
+        <!-- Hero image -->
         <div class="md:w-1/2 flex justify-center">
-          <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-indigo-100 via-purple-100 to-pink-100 opacity-80 flex items-center justify-center shadow-2xl">
-            <div class="absolute inset-4 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center">
-              <span class="text-5xl md:text-7xl font-serif text-indigo-300">R</span>
-            </div>
+          <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-indigo-100">
+            <img src="assets/images/hero-collection.jpg"
+                 alt="Spring-Summer 2026 fashion collection" class="w-full h-full object-cover" loading="lazy">
           </div>
         </div>
       </div>
@@ -182,8 +168,8 @@
         <!-- Product card 1 -->
         <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
           <a href="product.html?id=1" class="block">
-            <div class="aspect-w-3 aspect-h-4 bg-gradient-to-br from-gray-100 to-gray-200 h-80">
-              <div class="flex items-center justify-center text-gray-400 text-lg">📸</div>
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/chemise-bianca.jpg" alt="Chemise Bianca" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="p-4">
               <p class="text-xs text-gray-400 uppercase tracking-wide">Shirt</p>
@@ -196,8 +182,8 @@
         <!-- Product card 2 -->
         <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
           <a href="product.html?id=2" class="block">
-            <div class="aspect-w-3 aspect-h-4 bg-gradient-to-br from-gray-100 to-gray-200 h-80">
-              <div class="flex items-center justify-center text-gray-400 text-lg">📸</div>
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/pantalon-slim-noir.jpg" alt="Pantalon Slim Noir" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="p-4">
               <p class="text-xs text-gray-400 uppercase tracking-wide">Pants</p>
@@ -210,8 +196,8 @@
         <!-- Product card 3 -->
         <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
           <a href="product.html?id=3" class="block">
-            <div class="aspect-w-3 aspect-h-4 bg-gradient-to-br from-gray-100 to-gray-200 h-80">
-              <div class="flex items-center justify-center text-gray-400 text-lg">📸</div>
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/echarpe-en-soie.jpg" alt="Écharpe en Soie" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="p-4">
               <p class="text-xs text-gray-400 uppercase tracking-wide">Accessory</p>
@@ -224,8 +210,8 @@
         <!-- Product card 4 -->
         <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
           <a href="product.html?id=4" class="block">
-            <div class="aspect-w-3 aspect-h-4 bg-gradient-to-br from-gray-100 to-gray-200 h-80">
-              <div class="flex items-center justify-center text-gray-400 text-lg">📸</div>
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/mocassins-cognac.jpg" alt="Mocassins Cognac" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="p-4">
               <p class="text-xs text-gray-400 uppercase tracking-wide">Footwear</p>
@@ -238,8 +224,8 @@
         <!-- Product card 5 -->
         <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
           <a href="product.html?id=5" class="block">
-            <div class="aspect-w-3 aspect-h-4 bg-gradient-to-br from-gray-100 to-gray-200 h-80">
-              <div class="flex items-center justify-center text-gray-400 text-lg">📸</div>
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/blouse-fleurie.jpg" alt="Blouse Fleurie" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="p-4">
               <p class="text-xs text-gray-400 uppercase tracking-wide">Shirt</p>
@@ -266,8 +252,8 @@
         <!-- Best seller card 1 -->
         <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
           <a href="product.html?id=6" class="block">
-            <div class="aspect-w-3 aspect-h-4 bg-gradient-to-br from-gray-100 to-gray-200 h-80">
-              <div class="flex items-center justify-center text-gray-400 text-lg">📸</div>
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/baskets-blanche.jpg" alt="Baskets Blanche" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="p-4">
               <p class="text-xs text-gray-400 uppercase tracking-wide">Footwear</p>
@@ -281,8 +267,8 @@
         <!-- Best seller card 2 -->
         <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
           <a href="product.html?id=7" class="block">
-            <div class="aspect-w-3 aspect-h-4 bg-gradient-to-br from-gray-100 to-gray-200 h-80">
-              <div class="flex items-center justify-center text-gray-400 text-lg">📸</div>
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/jean-tailleur-bleu.jpg" alt="Jean Tailleur Bleu" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="p-4">
               <p class="text-xs text-gray-400 uppercase tracking-wide">Pants</p>
@@ -296,8 +282,8 @@
         <!-- Best seller card 3 -->
         <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
           <a href="product.html?id=8" class="block">
-            <div class="aspect-w-3 aspect-h-4 bg-gradient-to-br from-gray-100 to-gray-200 h-80">
-              <div class="flex items-center justify-center text-gray-400 text-lg">📸</div>
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/ceinture-cuir-marron.jpg" alt="Ceinture Cuir Marron" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="p-4">
               <p class="text-xs text-gray-400 uppercase tracking-wide">Accessory</p>
@@ -311,8 +297,8 @@
         <!-- Best seller card 4 -->
         <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
           <a href="product.html?id=9" class="block">
-            <div class="aspect-w-3 aspect-h-4 bg-gradient-to-br from-gray-100 to-gray-200 h-80">
-              <div class="flex items-center justify-center text-gray-400 text-lg">📸</div>
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/chemise-lin-blanc.jpg" alt="Chemise Lin Blanc" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="p-4">
               <p class="text-xs text-gray-400 uppercase tracking-wide">Shirt</p>
@@ -326,8 +312,8 @@
         <!-- Best seller card 5 -->
         <article class="card-hover flex-shrink-0 w-64 bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200">
           <a href="product.html?id=10" class="block">
-            <div class="aspect-w-3 aspect-h-4 bg-gradient-to-br from-gray-100 to-gray-200 h-80">
-              <div class="flex items-center justify-center text-gray-400 text-lg">📸</div>
+            <div class="aspect-w-3 aspect-h-4 bg-gray-100 h-80">
+              <img src="assets/images/sac-bandouliere-noir.jpg" alt="Sac Bandoulière Noir" class="w-full h-full object-cover" loading="lazy">
             </div>
             <div class="p-4">
               <p class="text-xs text-gray-400 uppercase tracking-wide">Accessory</p>
