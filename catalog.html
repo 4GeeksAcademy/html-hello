@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog — Rue de la Mode</title>
+  <meta name="description" content="Browse our full collection of French fashion — footwear, shirts, pants, and accessories.">
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Schema.org / Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "Rue de la Mode",
+    "description": "French fashion online store offering elegant clothing, footwear, and accessories from Paris.",
+    "url": "https://ruedelamode.fr",
+    "telephone": "+33-1-23-45-67-89",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "45 Rue de la Mode",
+      "addressLocality": "Paris",
+      "postalCode": "75001",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+
+  <style>
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- ============================================ -->
+  <!-- NAVBAR                                       -->
+  <!-- ============================================ -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-3 gap-4">
+
+        <!-- Logo -->
+        <a href="/" class="text-2xl font-serif tracking-wide font-bold text-gray-900 whitespace-nowrap">
+          Rue de la<span class="text-indigo-600"> Mode</span>
+        </a>
+
+        <!-- Search bar (hidden on mobile, shown on md+) -->
+        <div class="hidden md:flex md:flex-1 md:max-w-md mx-auto">
+          <div class="relative w-full">
+            <label for="search-nav" class="sr-only">Search products</label>
+            <input id="search-nav" type="search" placeholder="Search products…"
+                   class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-indigo-400 text-sm">
+            <img src="assets/images/icon-search.svg" class="absolute left-3 top-2.5 w-4 h-4 text-gray-400" alt="">
+          </div>
+        </div>
+
+        <!-- Right-side icons -->
+        <div class="flex items-center gap-4 text-sm">
+          <!-- Account -->
+          <a href="#" class="flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition" aria-label="Account">
+            <img src="assets/images/icon-account.svg" class="w-5 h-5" alt="">
+            <span class="hidden md:inline">Account</span>
+          </a>
+          <!-- Cart -->
+          <a href="cart.html" class="flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition" aria-label="Cart">
+            <img src="assets/images/icon-cart.svg" class="w-5 h-5" alt="">
+            <span class="hidden md:inline">Cart</span>
+          </a>
+          <!-- Mobile menu toggle -->
+          <button id="menu-toggle" class="md:hidden p-2 text-gray-600 hover:text-indigo-600" aria-label="Toggle menu">
+            <img src="assets/images/icon-hamburger.svg" class="w-6 h-6" alt="">
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile search (shown only when menu toggled) -->
+      <div id="mobile-search" class="hidden md:hidden pb-2">
+        <div class="relative">
+          <label for="search-mobile" class="sr-only">Search products</label>
+          <input id="search-mobile" type="search" placeholder="Search products…"
+                 class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm">
+        </div>
+      </div>
+
+      <!-- Nav links (desktop) -->
+      <nav class="hidden md:flex md:py-2 md:gap-6 md:text-sm md:font-medium text-gray-600">
+        <a href="catalog.html" class="hover:text-indigo-600 transition">Catalog</a>
+        <a href="catalog.html?category=footwear" class="hover:text-indigo-600 transition">Footwear</a>
+        <a href="catalog.html?category=shirts" class="hover:text-indigo-600 transition">Shirts</a>
+        <a href="catalog.html?category=pants" class="hover:text-indigo-600 transition">Pants</a>
+        <a href="catalog.html?category=accessories" class="hover:text-indigo-600 transition">Accessories</a>
+        <a href="#" class="hover:text-indigo-600 transition">Sale</a>
+      </nav>
+
+      <!-- Mobile nav links -->
+      <nav id="mobile-nav" class="hidden pb-3 flex flex-col gap-2 text-sm text-gray-600">
+        <a href="catalog.html" class="hover:text-indigo-600 transition">Catalog</a>
+        <a href="catalog.html?category=footwear" class="hover:text-indigo-600 transition">Footwear</a>
+        <a href="catalog.html?category=shirts" class="hover:text-indigo-600 transition">Shirts</a>
+        <a href="catalog.html?category=pants" class="hover:text-indigo-600 transition">Pants</a>
+        <a href="catalog.html?category=accessories" class="hover:text-indigo-600 transition">Accessories</a>
+        <a href="#" class="hover:text-indigo-600 transition">Sale</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================ -->
+  <!-- PAGE HEADING + FILTER BAR                   -->
+  <!-- ============================================ -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-8 md:py-12" aria-labelledby="catalog-heading">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+        <h1 id="catalog-heading" class="text-2xl md:text-3xl font-serif font-bold text-gray-900">Our Collection</h1>
+
+        <!-- Filter bar -->
+        <div class="flex flex-wrap gap-3 items-center">
+          <!-- Category filter -->
+          <div class="relative">
+            <label for="filter-category" class="sr-only">Filter by category</label>
+            <select id="filter-category"
+                    class="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 text-sm text-gray-700">
+              <option value="">All Categories</option>
+              <option value="footwear">Footwear</option>
+              <option value="shirts">Shirts</option>
+              <option value="pants">Pants</option>
+              <option value="accessories">Accessories</option>
+            </select>
+          </div>
+
+          <!-- Size filter -->
+          <div class="relative">
+            <label for="filter-size" class="sr-only">Filter by size</label>
+            <select id="filter-size"
+                    class="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 text-sm text-gray-700">
+              <option value="">All Sizes</option>
+              <option value="xs">XS</option>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+            </select>
+          </div>
+
+          <!-- Sort -->
+          <div class="relative">
+            <label for="filter-sort" class="sr-only">Sort by</label>
+            <select id="filter-sort"
+                    class="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 text-sm text-gray-700">
+              <option value="">Sort by</option>
+              <option value="price-asc">Price: Low → High</option>
+              <option value="price-desc">Price: High → Low</option>
+              <option value="name">Name</option>
+            </select>
+          </div>
+
+          <!-- Results count -->
+          <span id="filter-count" class="text-sm text-gray-500 whitespace-nowrap"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PRODUCT GRID — dynamically generated        -->
+    <!-- ============================================ -->
+    <section aria-labelledby="catalog-heading">
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Products are generated by JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================ -->
+  <!-- FOOTER                                       -->
+  <!-- ============================================ -->
+  <footer class="bg-gray-900 text-gray-300 mt-12" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Categories -->
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-gray-100 font-semibold mb-4">Categories</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="catalog.html?category=footwear" class="hover:text-white transition">Footwear</a></li>
+            <li><a href="catalog.html?category=shirts" class="hover:text-white transition">Shirts</a></li>
+            <li><a href="catalog.html?category=pants" class="hover:text-white transition">Pants</a></li>
+            <li><a href="catalog.html?category=accessories" class="hover:text-white transition">Accessories</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-gray-100 font-semibold mb-4">Legal</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition">About the Brand</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-gray-100 font-semibold mb-4">Contact</h3>
+          <address class="text-sm not-italic space-y-2">
+            <p>45 Rue de la Mode<br>75001 Paris, France</p>
+            <p>Email: <a href="mailto:hello@ruedelamode.fr" class="hover:text-white transition">hello@ruedelamode.fr</a></p>
+            <p>Phone: <a href="tel:+33123456789" class="hover:text-white transition">+33 1 23 45 67 89</a></p>
+          </address>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+        <p>&copy; 2026 Rue de la Mode. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================ -->
+  <!-- Mobile menu toggle script                   -->
+  <!-- ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('menu-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      const mobileSearch = document.getElementById('mobile-search');
+      if (toggle && mobileNav && mobileSearch) {
+        toggle.addEventListener('click', function () {
+          const show = mobileNav.classList.toggle('hidden');
+          mobileSearch.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
+  <!-- ============================================ -->
+  <!-- Product database + filters                   -->
+  <!-- ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      /* ════════════════════════════════════════════════
+         PRODUCT DATABASE — internal product catalog
+      ════════════════════════════════════════════════ */
+      var products = [
+        { id: 1,  name: 'Mocassins Cognac', description: 'Smooth leather penny loafers with a rubber sole.',    category: 'footwear',    price: 14500, image: 'mocassins-cognac.jpg',    sizes: ['s','m','l'] },
+        { id: 2,  name: 'Chemise Bianca', description: 'Crisp white cotton shirt for everyday wear.',      category: 'shirts',      price: 8900,  image: 'chemise-bianca.jpg',      sizes: ['xs','s','m','l','xl'] },
+        { id: 3,  name: 'Pantalon Slim Noir', description: 'Slim-fit black trousers with a tailored finish.',  category: 'pants',       price: 9900,  image: 'pantalon-slim-noir.jpg',  sizes: ['s','m','l','xl'] },
+        { id: 4,  name: 'Écharpe en Soie', description: 'Lightweight pure silk scarf with a soft drape.',     category: 'accessories', price: 5500,  image: 'echarpe-en-soie.jpg',     sizes: ['s','m'] },
+        { id: 5,  name: 'Blouse Fleurie', description: 'Lightweight blouse with a floral print.',      category: 'shirts',      price: 7900,  image: 'blouse-fleurie.jpg',      sizes: ['xs','s','m','l','xl'] },
+        { id: 6,  name: 'Baskets Blanche', description: 'Clean white leather sneakers for casual days.',     category: 'footwear',    price: 9500,  image: 'baskets-blanche.jpg',     sizes: ['s','m','l'] },
+        { id: 7,  name: 'Jean Tailleur Bleu', description: 'Blue tailored jeans with a sharp, straight cut.',  category: 'pants',       price: 11000, image: 'jean-tailleur-bleu.jpg',  sizes: ['s','m','l','xl'] },
+        { id: 8,  name: 'Ceinture Cuir Marron', description: 'Brown full-grain leather belt with a classic buckle.', category: 'accessories', price: 6500, image: 'ceinture-cuir-marron.jpg', sizes: ['s','m','l'] },
+        { id: 9,  name: 'Chemise Lin Blanc', description: 'Breathable white linen shirt for warm weather.',   category: 'shirts',      price: 8500,  image: 'chemise-lin-blanc.jpg',   sizes: ['xs','s','m','l','xl'] },
+        { id: 10, name: 'Sac Bandoulière Noir', description: 'Black shoulder bag with an adjustable strap.', category: 'accessories', price: 18000, image: 'sac-bandouliere-noir.jpg', sizes: ['xs','s','m','l','xl'] },
+        { id: 11, name: 'Bottines Cuir Noir', description: 'Black leather ankle boots with a buckle detail.', category: 'footwear', price: 15900, image: 'bottines-cuir-noir.jpg', sizes: ['s','m','l'] },
+        { id: 12, name: 'Derbies Marron', description: 'Brown leather derby shoes with a lace-up front.', category: 'footwear', price: 13500, image: 'derbies-marron.jpg', sizes: ['s','m','l'] },
+        { id: 13, name: 'Chemise Oxford Bleue', description: 'Light blue button-down Oxford shirt in cotton.', category: 'shirts', price: 8900, image: 'chemise-oxford-bleue.jpg', sizes: ['xs','s','m','l','xl'] },
+        { id: 14, name: 'Pull Col V Gris', description: 'Grey oversize V-neck sweater in soft knit.', category: 'shirts', price: 7900, image: 'pull-col-v-gris.jpg', sizes: ['xs','s','m','l','xl'] },
+        { id: 15, name: 'Chino Beige', description: 'Beige regular-fit cotton chino trousers.', category: 'pants', price: 8900, image: 'chino-beige.jpg', sizes: ['s','m','l','xl'] },
+        { id: 16, name: 'Pantalon Lin Gris', description: 'Grey relaxed-fit linen trousers with an elastic waist.', category: 'pants', price: 9500, image: 'pantalon-lin-gris.jpg', sizes: ['s','m','l','xl'] },
+        { id: 17, name: 'Lunettes de Soleil', description: 'Black polarised sunglasses with a classic frame.', category: 'accessories', price: 1200, image: 'lunettes-de-soleil.jpg', sizes: ['s','m'] },
+        { id: 18, name: 'Chapeau Panama', description: 'Natural woven Panama hat with a black band.', category: 'accessories', price: 4500, image: 'chapeau-panama.jpg', sizes: ['s','m'] },
+        { id: 19, name: 'Bonnet en Laine', description: 'Soft wool and cashmere beanie in a ribbed knit.', category: 'accessories', price: 2500, image: 'bonnet-en-laine.jpg', sizes: ['s','m','l'] },
+        { id: 20, name: 'Porte-Cartes Cuir', description: 'Compact beige leather card holder with four slots.', category: 'accessories', price: 2800, image: 'porte-cartes-cuir.jpg', sizes: ['s'] }
+      ];
+
+      /* Category label map */
+      var categoryLabels = {
+        footwear: 'Footwear',
+        shirts: 'Shirt',
+        pants: 'Pants',
+        accessories: 'Accessory'
+      };
+
+      /* ============================================
+         Render grid from product array
+      ============================================ */
+      var grid = document.getElementById('product-grid');
+      var countSpan = document.getElementById('filter-count');
+
+      function renderProducts(productList) {
+        // Clear existing cards
+        grid.innerHTML = '';
+
+        productList.forEach(function (p) {
+          var label = categoryLabels[p.category] || p.category;
+          var priceStr = '€' + (p.price / 100).toFixed(2).replace('.', ',');
+
+          var article = document.createElement('article');
+          article.className = 'card-hover flex flex-col bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-200';
+          article.setAttribute('data-category', p.category);
+          article.setAttribute('data-price', String(p.price));
+
+          article.innerHTML =
+            '<a href="product.html?id=' + p.id + '" class="flex flex-col flex-1">' +
+              '<div class="aspect-[3/4] bg-gray-100 overflow-hidden">' +
+                '<img src="assets/images/' + p.image + '" alt="' + p.name + '" class="w-full h-full object-cover" loading="lazy">' +
+              '</div>' +
+              '<div class="flex flex-col flex-1 p-4">' +
+                '<p class="text-xs text-gray-400 uppercase tracking-wide">' + label + '</p>' +
+                '<h3 class="text-base font-semibold text-gray-900 mt-1">' + p.name + '</h3>' +
+                '<p class="text-sm text-gray-500 mt-1 line-clamp-2 min-h-[2.5rem]">' + p.description + '</p>' +
+                '<p class="text-indigo-600 font-bold mt-auto pt-2">' + priceStr + '</p>' +
+              '</div>' +
+            '</a>';
+
+          grid.appendChild(article);
+        });
+
+        countSpan.textContent = productList.length + ' product' + (productList.length !== 1 ? 's' : '');
+      }
+
+      // Initial render — all products
+      renderProducts(products);
+
+      /* ============================================
+         Filter & sort
+      ============================================ */
+      var categorySelect = document.getElementById('filter-category');
+      var sizeSelect = document.getElementById('filter-size');
+      var sortSelect = document.getElementById('filter-sort');
+
+      function filterAndSort() {
+        var category = categorySelect.value;
+        var size = sizeSelect.value;
+        var sort = sortSelect.value;
+
+        // Filter (operate on the source array)
+        var visible = products.slice();
+
+        if (category) {
+          visible = visible.filter(function (p) { return p.category === category; });
+        }
+
+        if (size) {
+          visible = visible.filter(function (p) { return p.sizes.indexOf(size) !== -1; });
+        }
+
+        // Sort
+        if (sort === 'price-asc') {
+          visible.sort(function (a, b) { return a.price - b.price; });
+        } else if (sort === 'price-desc') {
+          visible.sort(function (a, b) { return b.price - a.price; });
+        } else if (sort === 'name') {
+          visible.sort(function (a, b) {
+            return a.name.localeCompare(b.name, 'fr');
+          });
+        }
+
+        // Re-render the grid with filtered/sorted products
+        renderProducts(visible);
+      }
+
+      categorySelect.addEventListener('change', filterAndSort);
+      sizeSelect.addEventListener('change', filterAndSort);
+      sortSelect.addEventListener('change', filterAndSort);
+    });
+  </script>
+</body>
+</html>
