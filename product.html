@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — Rue de la Mode</title>
+  <meta name="description" content="Discover this piece from the Rue de la Mode collection: materials, recommended use, and sizing.">
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Schema.org / Organization (static) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "Rue de la Mode",
+    "url": "https://ruedelamode.fr",
+    "telephone": "+33-1-23-45-67-89",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "45 Rue de la Mode",
+      "addressLocality": "Paris",
+      "postalCode": "75001",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <!-- ============================================ -->
+  <!-- NAVBAR                                       -->
+  <!-- ============================================ -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-3 gap-4">
+
+        <!-- Logo -->
+        <a href="index.html" class="text-2xl font-serif tracking-wide font-bold text-gray-900 whitespace-nowrap">
+          Rue de la<span class="text-indigo-600"> Mode</span>
+        </a>
+
+        <!-- Search bar (hidden on mobile, shown on md+) -->
+        <div class="hidden md:flex md:flex-1 md:max-w-md mx-auto">
+          <div class="relative w-full">
+            <label for="search-nav" class="sr-only">Search products</label>
+            <input id="search-nav" type="search" placeholder="Search products…"
+                   class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-indigo-400 text-sm">
+            <img src="assets/images/icon-search.svg" class="absolute left-3 top-2.5 w-4 h-4 text-gray-400" alt="">
+          </div>
+        </div>
+
+        <!-- Right-side icons -->
+        <div class="flex items-center gap-4 text-sm">
+          <!-- Account -->
+          <a href="#" class="flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition" aria-label="Account">
+            <img src="assets/images/icon-account.svg" class="w-5 h-5" alt="">
+            <span class="hidden md:inline">Account</span>
+          </a>
+          <!-- Cart -->
+          <a href="cart.html" class="flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition" aria-label="Cart">
+            <img src="assets/images/icon-cart.svg" class="w-5 h-5" alt="">
+            <span class="hidden md:inline">Cart</span>
+          </a>
+          <!-- Mobile menu toggle -->
+          <button id="menu-toggle" class="md:hidden p-2 text-gray-600 hover:text-indigo-600" aria-label="Toggle menu">
+            <img src="assets/images/icon-hamburger.svg" class="w-6 h-6" alt="">
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile search (shown only when menu toggled) -->
+      <div id="mobile-search" class="hidden md:hidden pb-2">
+        <div class="relative">
+          <label for="search-mobile" class="sr-only">Search products</label>
+          <input id="search-mobile" type="search" placeholder="Search products…"
+                 class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm">
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="py-4 text-sm text-gray-500">
+      <ol class="flex flex-wrap gap-2">
+        <li><a href="index.html" class="hover:text-indigo-600 transition">Home</a> /</li>
+        <li><a href="catalog.html" class="hover:text-indigo-600 transition">Catalog</a> /</li>
+        <li><span id="breadcrumb-name" aria-current="page" class="text-gray-900">Product</span></li>
+      </ol>
+    </nav>
+
+    <!-- Product not found message (shown only if id is invalid) -->
+    <section id="not-found" class="hidden py-16 text-center">
+      <h1 class="text-2xl font-serif font-bold text-gray-900">Product not found</h1>
+      <p class="mt-2 text-gray-500">This item may have been removed.</p>
+      <a href="catalog.html" class="inline-block mt-6 px-6 py-3 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">Back to catalog</a>
+    </section>
+
+    <!-- Product content -->
+    <div id="product-content" class="hidden">
+
+      <!-- Two-column layout -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pb-12" aria-label="Product details">
+
+        <!-- Left column: image -->
+        <div class="bg-gray-100 rounded-lg overflow-hidden aspect-[3/4]">
+          <img id="product-image" src="" alt="" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Right column: information -->
+        <div class="flex flex-col">
+          <p id="product-category" class="text-xs text-gray-400 uppercase tracking-wide"></p>
+          <h1 id="product-name" class="text-2xl md:text-3xl font-serif font-bold text-gray-900 mt-2"></h1>
+          <p class="text-sm text-gray-500 mt-1">Code: <span id="product-code"></span></p>
+          <p id="product-price" class="text-2xl font-bold text-indigo-600 mt-6"></p>
+          <p id="product-summary" class="text-gray-600 mt-4"></p>
+
+          <form id="add-to-cart-form" class="mt-8 space-y-6" aria-label="Add to cart">
+
+            <!-- Size selector -->
+            <div>
+              <label for="product-size" class="block text-sm font-semibold text-gray-900 mb-2">Size</label>
+              <select id="product-size" required
+                      class="bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 text-sm text-gray-700">
+              </select>
+            </div>
+
+            <!-- Quantity selector -->
+            <div>
+              <label for="product-quantity" class="block text-sm font-semibold text-gray-900 mb-2">Quantity</label>
+              <input id="product-quantity" type="number" min="1" max="10" value="1"
+                     class="w-24 bg-white border border-gray-300 rounded-lg px-4 py-2 text-sm text-gray-700">
+            </div>
+
+            <button type="submit"
+                    class="w-full md:w-auto px-8 py-3 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
+              Add to cart
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Description section -->
+      <section class="border-t border-gray-200 py-12" aria-labelledby="description-heading">
+        <h2 id="description-heading" class="text-xl md:text-2xl font-serif font-bold text-gray-900 mb-6">Description</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-sm uppercase tracking-widest text-gray-900 font-semibold mb-2">Materials</h3>
+            <p id="product-materials" class="text-gray-600"></p>
+          </div>
+          <div>
+            <h3 class="text-sm uppercase tracking-widest text-gray-900 font-semibold mb-2">Recommended use</h3>
+            <p id="product-usage" class="text-gray-600"></p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ============================================ -->
+  <!-- FOOTER                                       -->
+  <!-- ============================================ -->
+  <footer class="bg-gray-900 text-gray-300 mt-12" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Categories -->
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-gray-100 font-semibold mb-4">Categories</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="catalog.html?category=footwear" class="hover:text-white transition">Footwear</a></li>
+            <li><a href="catalog.html?category=shirts" class="hover:text-white transition">Shirts</a></li>
+            <li><a href="catalog.html?category=pants" class="hover:text-white transition">Pants</a></li>
+            <li><a href="catalog.html?category=accessories" class="hover:text-white transition">Accessories</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-gray-100 font-semibold mb-4">Legal</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition">About the Brand</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-gray-100 font-semibold mb-4">Contact</h3>
+          <address class="text-sm not-italic space-y-2">
+            <p>45 Rue de la Mode<br>75001 Paris, France</p>
+            <p>Email: <a href="mailto:hello@ruedelamode.fr" class="hover:text-white transition">hello@ruedelamode.fr</a></p>
+            <p>Phone: <a href="tel:+33123456789" class="hover:text-white transition">+33 1 23 45 67 89</a></p>
+          </address>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+        <p>&copy; 2026 Rue de la Mode. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================ -->
+  <!-- Mobile menu toggle script                   -->
+  <!-- ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('menu-toggle');
+      const mobileSearch = document.getElementById('mobile-search');
+      if (toggle && mobileSearch) {
+        toggle.addEventListener('click', function () {
+          mobileSearch.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
+  <!-- ============================================ -->
+  <!-- Product view: data + rendering               -->
+  <!-- ============================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      /* Same product list as catalog.html */
+      var products = [
+        { id: 1,  name: 'Mocassins Cognac', description: 'Smooth leather penny loafers with a rubber sole.', category: 'footwear', price: 14500, image: 'mocassins-cognac.jpg', sizes: ['s','m','l'] },
+        { id: 2,  name: 'Chemise Bianca', description: 'Crisp white cotton shirt for everyday wear.', category: 'shirts', price: 8900, image: 'chemise-bianca.jpg', sizes: ['xs','s','m','l','xl'] },
+        { id: 3,  name: 'Pantalon Slim Noir', description: 'Slim-fit black trousers with a tailored finish.', category: 'pants', price: 9900, image: 'pantalon-slim-noir.jpg', sizes: ['s','m','l','xl'] },
+        { id: 4,  name: 'Écharpe en Soie', description: 'Lightweight pure silk scarf with a soft drape.', category: 'accessories', price: 5500, image: 'echarpe-en-soie.jpg', sizes: ['s','m'] },
+        { id: 5,  name: 'Blouse Fleurie', description: 'Lightweight blouse with a floral print.', category: 'shirts', price: 7900, image: 'blouse-fleurie.jpg', sizes: ['xs','s','m','l','xl'] },
+        { id: 6,  name: 'Baskets Blanche', description: 'Clean white leather sneakers for casual days.', category: 'footwear', price: 9500, image: 'baskets-blanche.jpg', sizes: ['s','m','l'] },
+        { id: 7,  name: 'Jean Tailleur Bleu', description: 'Blue tailored jeans with a sharp, straight cut.', category: 'pants', price: 11000, image: 'jean-tailleur-bleu.jpg', sizes: ['s','m','l','xl'] },
+        { id: 8,  name: 'Ceinture Cuir Marron', description: 'Brown full-grain leather belt with a classic buckle.', category: 'accessories', price: 6500, image: 'ceinture-cuir-marron.jpg', sizes: ['s','m','l'] },
+        { id: 9,  name: 'Chemise Lin Blanc', description: 'Breathable white linen shirt for warm weather.', category: 'shirts', price: 8500, image: 'chemise-lin-blanc.jpg', sizes: ['xs','s','m','l','xl'] },
+        { id: 10, name: 'Sac Bandoulière Noir', description: 'Black shoulder bag with an adjustable strap.', category: 'accessories', price: 18000, image: 'sac-bandouliere-noir.jpg', sizes: ['xs','s','m','l','xl'] },
+        { id: 11, name: 'Bottines Cuir Noir', description: 'Black leather ankle boots with a buckle detail.', category: 'footwear', price: 15900, image: 'bottines-cuir-noir.jpg', sizes: ['s','m','l'] },
+        { id: 12, name: 'Derbies Marron', description: 'Brown leather derby shoes with a lace-up front.', category: 'footwear', price: 13500, image: 'derbies-marron.jpg', sizes: ['s','m','l'] },
+        { id: 13, name: 'Chemise Oxford Bleue', description: 'Light blue button-down Oxford shirt in cotton.', category: 'shirts', price: 8900, image: 'chemise-oxford-bleue.jpg', sizes: ['xs','s','m','l','xl'] },
+        { id: 14, name: 'Pull Col V Gris', description: 'Grey oversize V-neck sweater in soft knit.', category: 'shirts', price: 7900, image: 'pull-col-v-gris.jpg', sizes: ['xs','s','m','l','xl'] },
+        { id: 15, name: 'Chino Beige', description: 'Beige regular-fit cotton chino trousers.', category: 'pants', price: 8900, image: 'chino-beige.jpg', sizes: ['s','m','l','xl'] },
+        { id: 16, name: 'Pantalon Lin Gris', description: 'Grey relaxed-fit linen trousers with an elastic waist.', category: 'pants', price: 9500, image: 'pantalon-lin-gris.jpg', sizes: ['s','m','l','xl'] },
+        { id: 17, name: 'Lunettes de Soleil', description: 'Black polarised sunglasses with a classic frame.', category: 'accessories', price: 1200, image: 'lunettes-de-soleil.jpg', sizes: ['s','m'] },
+        { id: 18, name: 'Chapeau Panama', description: 'Natural woven Panama hat with a black band.', category: 'accessories', price: 4500, image: 'chapeau-panama.jpg', sizes: ['s','m'] },
+        { id: 19, name: 'Bonnet en Laine', description: 'Soft wool and cashmere beanie in a ribbed knit.', category: 'accessories', price: 2500, image: 'bonnet-en-laine.jpg', sizes: ['s','m','l'] },
+        { id: 20, name: 'Porte-Cartes Cuir', description: 'Compact beige leather card holder with four slots.', category: 'accessories', price: 2800, image: 'porte-cartes-cuir.jpg', sizes: ['s'] }
+      ];
+
+      /* Materials and usage are shared per category (prototype placeholder text) */
+      var categoryDetails = {
+        footwear: {
+          label: 'Footwear',
+          materials: 'Full-grain leather upper, leather lining, and a rubber or leather sole.',
+          usage: 'Suitable for office, city walks, and smart-casual outfits.'
+        },
+        shirts: {
+          label: 'Shirt',
+          materials: '100% cotton or linen blend, pre-washed for a soft feel.',
+          usage: 'Wear with tailored trousers for work, or with jeans for weekends.'
+        },
+        pants: {
+          label: 'Pants',
+          materials: 'Cotton or linen blend with a small amount of elastane for comfort.',
+          usage: 'Ideal for daily wear, office days, and dressier evening outfits.'
+        },
+        accessories: {
+          label: 'Accessory',
+          materials: 'Leather, silk, wool, or natural fibres, depending on the item.',
+          usage: 'Adds a finishing touch to any outfit, for everyday or special occasions.'
+        }
+      };
+
+      var params = new URLSearchParams(window.location.search);
+      var id = parseInt(params.get('id'), 10);
+      var product = products.find(function (p) { return p.id === id; });
+
+      if (!product) {
+        document.getElementById('not-found').classList.remove('hidden');
+        return;
+      }
+
+      var details = categoryDetails[product.category];
+      var priceStr = '€' + (product.price / 100).toFixed(2).replace('.', ',');
+      var code = 'RDM-' + String(product.id).padStart(3, '0');
+
+      document.title = product.name + ' — Rue de la Mode';
+      document.querySelector('meta[name="description"]').setAttribute('content', product.description);
+      document.getElementById('breadcrumb-name').textContent = product.name;
+      document.getElementById('product-category').textContent = details.label;
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-code').textContent = code;
+      document.getElementById('product-price').textContent = priceStr;
+      document.getElementById('product-summary').textContent = product.description;
+      document.getElementById('product-materials').textContent = details.materials;
+      document.getElementById('product-usage').textContent = details.usage;
+
+      var image = document.getElementById('product-image');
+      image.src = 'assets/images/' + product.image;
+      image.alt = product.name;
+
+      var sizeSelect = document.getElementById('product-size');
+      product.sizes.forEach(function (size) {
+        var option = document.createElement('option');
+        option.value = size;
+        option.textContent = size.toUpperCase();
+        sizeSelect.appendChild(option);
+      });
+
+      /* Structured data for this product */
+      var jsonLd = document.createElement('script');
+      jsonLd.type = 'application/ld+json';
+      jsonLd.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        'name': product.name,
+        'description': product.description,
+        'sku': code,
+        'category': details.label,
+        'image': 'assets/images/' + product.image,
+        'offers': {
+          '@type': 'Offer',
+          'price': (product.price / 100).toFixed(2),
+          'priceCurrency': 'EUR',
+          'availability': 'https://schema.org/InStock'
+        }
+      });
+      document.head.appendChild(jsonLd);
+
+      document.getElementById('product-content').classList.remove('hidden');
+
+      /* Cart logic comes in a later branch; prevent page reload for now */
+      document.getElementById('add-to-cart-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+      });
+    });
+  </script>
+</body>
+</html>
