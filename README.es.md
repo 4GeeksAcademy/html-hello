@@ -6,11 +6,15 @@ El boilerplate más básico para cualquier estudiante de 4Geeks Academy, empieza
 
 ## ¿Qué hacer a continuación?
 
-Crea un archivo `index.html` con [la estructura básica de HTML](https://4geeks.com/es/lesson/what-is-html-learn-html-es#estructura-de-pgina) y ve el resultado en vivo corriendo un servidor web utilizando el siguiente comando:
+Crea un archivo `index.html` con [la estructura básica de HTML](https://4geeks.com/es/lesson/what-is-html-learn-html-es#estructura-de-pgina). Para abrir esta página **en tu ordenador**, descarga `index.html` y `styles.css` en la misma carpeta y haz doble clic en `index.html`. Al terminar, cierra la pestaña del navegador. Para esta opción no necesitas Python ni Flask.
+
+Si trabajas en un **GitHub Codespace remoto**, abre una terminal allí, sitúate en la carpeta que contiene `index.html` y ejecuta:
 
 ```bash
-$ pip3 install flask && python3 server.py
+python3 -m http.server 8000 --bind 0.0.0.0
 ```
+
+En VS Code, abre la pestaña **Puertos** y pulsa **Abrir en el navegador** para el puerto 8000. Si no aparece, reenvía el puerto 8000 desde esa pestaña. El `localhost:8000` de tu ordenador **no** es el Codespace; usa la dirección reenviada. Para terminar, cierra la pestaña del navegador **y pulsa Ctrl+C en la terminal del Codespace** para detener el servidor. Si el puerto 8000 está ocupado, usa el 8001 tanto en el comando como en la pestaña Puertos.
 
 - Puedes crear tantos archivos HTML cómo desees.
 - También puedes crear archivos CSS e importarlos en tu página web utilizando una etiqueta `<link>` ubicándola entre las etiquetas `<head></head>`, de la siguiente manera:
