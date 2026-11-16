@@ -153,17 +153,17 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="sm:col-span-2">
             <label for="card-number" class="block text-sm font-medium text-gray-700 mb-1">Card number</label>
-            <input id="card-number" name="cardNumber" type="text" inputmode="numeric" required autocomplete="cc-number"
+            <input id="card-number" name="cardNumber" type="text" inputmode="numeric" pattern="[0-9 ]{13,23}" required autocomplete="cc-number"
                    class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-400">
           </div>
           <div>
             <label for="card-expiry" class="block text-sm font-medium text-gray-700 mb-1">Expiry date (MM/YY)</label>
-            <input id="card-expiry" name="cardExpiry" type="text" inputmode="numeric" placeholder="MM/YY" required autocomplete="cc-exp"
+            <input id="card-expiry" name="cardExpiry" type="text" inputmode="numeric" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])/[0-9]{2}" required autocomplete="cc-exp"
                    class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-400">
           </div>
           <div>
             <label for="card-cvv" class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
-            <input id="card-cvv" name="cardCvv" type="text" inputmode="numeric" maxlength="4" required autocomplete="cc-csc"
+            <input id="card-cvv" name="cardCvv" type="text" inputmode="numeric" pattern="[0-9]{3,4}" maxlength="4" required autocomplete="cc-csc"
                    class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-400">
           </div>
         </div>

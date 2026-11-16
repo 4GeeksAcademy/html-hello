@@ -333,9 +333,19 @@
 
       document.getElementById('product-content').classList.remove('hidden');
 
-      /* Cart logic comes in a later branch; prevent page reload for now */
       document.getElementById('add-to-cart-form').addEventListener('submit', function (e) {
         e.preventDefault();
+        var size = sizeSelect.value;
+        var qty = Math.min(10, Math.max(1, parseInt(document.getElementById('product-quantity').value, 10) || 1));
+        var cart = JSON.parse(localStorage.getItem('rdm-cart') || '[]');
+        var existing = cart.find(function (i) { return i.id === product.id && i.size === size; });
+        if (existing) {
+          existing.qty = Math.min(10, existing.qty + qty);
+        } else {
+          cart.push({ id: product.id, name: product.name, image: product.image, price: product.price, size: size, qty: qty });
+        }
+        localStorage.setItem('rdm-cart', JSON.stringify(cart));
+        window.location.href = 'cart.html';
       });
     });
   </script>

@@ -88,25 +88,6 @@
         </div>
       </div>
 
-      <!-- Nav links (desktop) -->
-      <nav class="hidden md:flex md:py-2 md:gap-6 md:text-sm md:font-medium text-gray-600">
-        <a href="catalog.html" class="hover:text-indigo-600 transition">Catalog</a>
-        <a href="catalog.html?category=footwear" class="hover:text-indigo-600 transition">Footwear</a>
-        <a href="catalog.html?category=shirts" class="hover:text-indigo-600 transition">Shirts</a>
-        <a href="catalog.html?category=pants" class="hover:text-indigo-600 transition">Pants</a>
-        <a href="catalog.html?category=accessories" class="hover:text-indigo-600 transition">Accessories</a>
-        <a href="#" class="hover:text-indigo-600 transition">Sale</a>
-      </nav>
-
-      <!-- Mobile nav links -->
-      <nav id="mobile-nav" class="hidden pb-3 flex flex-col gap-2 text-sm text-gray-600">
-        <a href="catalog.html" class="hover:text-indigo-600 transition">Catalog</a>
-        <a href="catalog.html?category=footwear" class="hover:text-indigo-600 transition">Footwear</a>
-        <a href="catalog.html?category=shirts" class="hover:text-indigo-600 transition">Shirts</a>
-        <a href="catalog.html?category=pants" class="hover:text-indigo-600 transition">Pants</a>
-        <a href="catalog.html?category=accessories" class="hover:text-indigo-600 transition">Accessories</a>
-        <a href="#" class="hover:text-indigo-600 transition">Sale</a>
-      </nav>
     </div>
   </header>
 
@@ -378,13 +359,10 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.getElementById('menu-toggle');
-      const mobileNav = document.getElementById('mobile-nav');
       const mobileSearch = document.getElementById('mobile-search');
-      if (toggle && mobileNav && mobileSearch) {
+      if (toggle && mobileSearch) {
         toggle.addEventListener('click', function () {
-          const show = mobileNav.classList.toggle('hidden');
           mobileSearch.classList.toggle('hidden');
-          // update aria-expanded if needed
         });
       }
     });

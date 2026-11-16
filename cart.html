@@ -89,81 +89,8 @@
 
       <!-- Product list -->
       <section class="lg:col-span-2" aria-label="Cart items">
-        <ul class="divide-y divide-gray-200 border-y border-gray-200">
-
-          <!-- Item 1 -->
-          <li class="flex gap-4 py-6" data-cart-item data-unit-price="14500">
-            <a href="product.html?id=1" class="shrink-0 w-24 sm:w-32 aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden">
-              <img src="assets/images/mocassins-cognac.jpg" alt="Mocassins Cognac" class="w-full h-full object-cover">
-            </a>
-            <div class="flex flex-1 flex-col sm:flex-row sm:justify-between gap-4">
-              <div>
-                <h2 class="font-semibold text-gray-900">
-                  <a href="product.html?id=1" class="hover:text-indigo-600 transition">Mocassins Cognac</a>
-                </h2>
-                <p class="text-sm text-gray-500 mt-1">Size: M</p>
-                <p class="text-sm text-gray-500 mt-1">Unit price: €145,00</p>
-              </div>
-              <div class="flex sm:flex-col sm:items-end gap-4 sm:gap-2">
-                <div>
-                  <label for="qty-1" class="sr-only">Quantity for Mocassins Cognac</label>
-                  <input id="qty-1" type="number" min="1" max="10" value="1"
-                         class="w-20 bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700">
-                </div>
-                <p class="font-bold text-gray-900">Line total: <span data-line-total>€145,00</span></p>
-              </div>
-            </div>
-          </li>
-
-          <!-- Item 2 -->
-          <li class="flex gap-4 py-6" data-cart-item data-unit-price="8900">
-            <a href="product.html?id=2" class="shrink-0 w-24 sm:w-32 aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden">
-              <img src="assets/images/chemise-bianca.jpg" alt="Chemise Bianca" class="w-full h-full object-cover">
-            </a>
-            <div class="flex flex-1 flex-col sm:flex-row sm:justify-between gap-4">
-              <div>
-                <h2 class="font-semibold text-gray-900">
-                  <a href="product.html?id=2" class="hover:text-indigo-600 transition">Chemise Bianca</a>
-                </h2>
-                <p class="text-sm text-gray-500 mt-1">Size: M</p>
-                <p class="text-sm text-gray-500 mt-1">Unit price: €89,00</p>
-              </div>
-              <div class="flex sm:flex-col sm:items-end gap-4 sm:gap-2">
-                <div>
-                  <label for="qty-2" class="sr-only">Quantity for Chemise Bianca</label>
-                  <input id="qty-2" type="number" min="1" max="10" value="2"
-                         class="w-20 bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700">
-                </div>
-                <p class="font-bold text-gray-900">Line total: <span data-line-total>€178,00</span></p>
-              </div>
-            </div>
-          </li>
-
-          <!-- Item 3 -->
-          <li class="flex gap-4 py-6" data-cart-item data-unit-price="9900">
-            <a href="product.html?id=3" class="shrink-0 w-24 sm:w-32 aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden">
-              <img src="assets/images/pantalon-slim-noir.jpg" alt="Pantalon Slim Noir" class="w-full h-full object-cover">
-            </a>
-            <div class="flex flex-1 flex-col sm:flex-row sm:justify-between gap-4">
-              <div>
-                <h2 class="font-semibold text-gray-900">
-                  <a href="product.html?id=3" class="hover:text-indigo-600 transition">Pantalon Slim Noir</a>
-                </h2>
-                <p class="text-sm text-gray-500 mt-1">Size: L</p>
-                <p class="text-sm text-gray-500 mt-1">Unit price: €99,00</p>
-              </div>
-              <div class="flex sm:flex-col sm:items-end gap-4 sm:gap-2">
-                <div>
-                  <label for="qty-3" class="sr-only">Quantity for Pantalon Slim Noir</label>
-                  <input id="qty-3" type="number" min="1" max="10" value="1"
-                         class="w-20 bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700">
-                </div>
-                <p class="font-bold text-gray-900">Line total: <span data-line-total>€99,00</span></p>
-              </div>
-            </div>
-          </li>
-
-        </ul>
+        <ul id="cart-list" class="divide-y divide-gray-200 border-y border-gray-200"></ul>
+        <p id="cart-empty" class="hidden py-12 text-center text-gray-600">Your cart is empty. <a href="catalog.html" class="text-indigo-600 hover:underline">Continue shopping</a></p>
       </section>
 
       <!-- Summary -->
@@ -248,15 +175,50 @@
 
       /* Totals are stored in cents; tax rate is 20% */
       const TAX_RATE = 0.2;
-      const rows = document.querySelectorAll('[data-cart-item]');
+      const list = document.getElementById('cart-list');
+      const cart = JSON.parse(localStorage.getItem('rdm-cart') || '[]');
 
       function formatEuros(cents) {
         return '€' + (cents / 100).toFixed(2).replace('.', ',');
       }
 
+      function renderCart() {
+        list.innerHTML = '';
+        cart.forEach(function (item, index) {
+          const n = index + 1;
+          const li = document.createElement('li');
+          li.className = 'flex gap-4 py-6';
+          li.setAttribute('data-cart-item', '');
+          li.dataset.unitPrice = item.price;
+          li.innerHTML =
+            '<a href="product.html?id=' + item.id + '" class="shrink-0 w-24 sm:w-32 aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden">' +
+              '<img src="assets/images/' + item.image + '" alt="' + item.name + '" class="w-full h-full object-cover">' +
+            '</a>' +
+            '<div class="flex flex-1 flex-col sm:flex-row sm:justify-between gap-4">' +
+              '<div>' +
+                '<h2 class="font-semibold text-gray-900">' +
+                  '<a href="product.html?id=' + item.id + '" class="hover:text-indigo-600 transition">' + item.name + '</a>' +
+                '</h2>' +
+                '<p class="text-sm text-gray-500 mt-1">Size: ' + item.size.toUpperCase() + '</p>' +
+                '<p class="text-sm text-gray-500 mt-1">Unit price: ' + formatEuros(item.price) + '</p>' +
+              '</div>' +
+              '<div class="flex sm:flex-col sm:items-end gap-4 sm:gap-2">' +
+                '<div>' +
+                  '<label for="qty-' + n + '" class="sr-only">Quantity for ' + item.name + '</label>' +
+                  '<input id="qty-' + n + '" type="number" min="1" max="10" value="' + item.qty + '"' +
+                         ' class="w-20 bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700">' +
+                '</div>' +
+                '<p class="font-bold text-gray-900">Line total: <span data-line-total></span></p>' +
+              '</div>' +
+            '</div>';
+          list.appendChild(li);
+        });
+        document.getElementById('cart-empty').classList.toggle('hidden', cart.length > 0);
+      }
+
       function updateTotals() {
         let subtotal = 0;
-        rows.forEach(function (row) {
+        document.querySelectorAll('[data-cart-item]').forEach(function (row) {
           const unit = parseInt(row.dataset.unitPrice, 10);
           const qty = parseInt(row.querySelector('input[type="number"]').value, 10) || 1;
           const line = unit * qty;
@@ -269,8 +231,13 @@
         document.getElementById('cart-total').textContent = formatEuros(subtotal + tax);
       }
 
-      rows.forEach(function (row) {
-        row.querySelector('input[type="number"]').addEventListener('input', updateTotals);
+      renderCart();
+      document.querySelectorAll('[data-cart-item]').forEach(function (row, index) {
+        row.querySelector('input[type="number"]').addEventListener('input', function (e) {
+          cart[index].qty = Math.min(10, Math.max(1, parseInt(e.target.value, 10) || 1));
+          localStorage.setItem('rdm-cart', JSON.stringify(cart));
+          updateTotals();
+        });
       });
       updateTotals();
     });
