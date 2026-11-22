@@ -1,0 +1,797 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"inverse-on-surface":"#283044","outline":"#86948a","secondary":"#c0c1ff","on-tertiary-container":"#523200","inverse-surface":"#dae2fd","on-secondary":"#1000a9","surface-container-high":"#222a3d","on-surface":"#dae2fd","surface-dim":"#0b1326","secondary-fixed-dim":"#c0c1ff","primary-container":"#10b981","on-primary-fixed":"#002113","on-tertiary-fixed":"#2a1700","primary-fixed":"#6ffbbe","on-secondary-fixed":"#07006c","on-primary-fixed-variant":"#005236","on-primary":"#003824","on-surface-variant":"#bbcabf","surface":"#0b1326","secondary-container":"#3131c0","on-primary-container":"#00422b","on-tertiary-fixed-variant":"#653e00","tertiary-fixed-dim":"#ffb95f","error-container":"#93000a","surface-variant":"#2d3449","error":"#ffb4ab","background":"#0b1326","secondary-fixed":"#e1e0ff","tertiary":"#ffb95f","on-secondary-container":"#b0b2ff","primary":"#4edea3","surface-tint":"#4edea3","primary-fixed-dim":"#4edea3","surface-container-highest":"#2d3449","inverse-primary":"#006c49","outline-variant":"#3c4a42","on-error":"#690005","on-tertiary":"#472a00","surface-container-low":"#131b2e","on-background":"#dae2fd","on-error-container":"#ffdad6","surface-bright":"#31394d","tertiary-fixed":"#ffddb8","tertiary-container":"#e29100","on-secondary-fixed-variant":"#2f2ebe","surface-container":"#171f33","surface-container-lowest":"#060e20"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"0.75rem","gutter-desktop":"1.25rem","space-xl":"1.5rem","margin-desktop":"2rem","space-xs":"0.25rem","space-sm":"0.5rem","space-lg":"1rem","gutter":"1rem","margin":"1rem"},"fontFamily":{"body-md":["Inter"],"label-md":["JetBrains Mono"],"body-lg":["Inter"],"headline-md":["Hanken Grotesk"],"display-lg-mobile":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"body-sm":["Inter"],"label-sm":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"headline-lg":["Hanken Grotesk"],"display-lg":["Hanken Grotesk"]},"fontSize":{"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"600"}],"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-xl flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[18px]">hub</span></div><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">AgentHub</span></div><div class="px-space-xl"><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Consola Centralizada</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="usuarios" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span>Usuarios</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="agentes" href="#"><span class="material-symbols-outlined text-[18px]">smart_toy</span><span>Agentes</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="skills" href="#"><span class="material-symbols-outlined text-[18px]">extension</span><span>Skills</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md bg-primary-container text-on-primary-container font-semibold transition-colors" data-path="contrataciones" href="#"><span class="material-symbols-outlined text-[18px]">description</span><span>Contrataciones</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="errores" href="#"><span class="material-symbols-outlined text-[18px]">warning</span><span>Errores</span></a></nav></div><div class="px-space-md flex flex-col gap-space-xs"><div class="bg-surface-container-low p-space-md rounded flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant">Fleet Active</span></div><span class="font-label-sm text-label-sm text-primary font-medium">99.98%</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-wider"><span class="text-outline">CONSOLA CENTRALIZADA</span><span class="text-outline-variant font-mono">/</span><span class="text-primary font-semibold">CONTRATACIONES</span></nav><div class="relative w-80 flex items-center ml-space-md"><span class="material-symbols-outlined absolute left-space-md text-outline text-[18px]">search</span><input class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-12 py-space-xs rounded font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Buscar acuerdos, agentes, contratos..." type="text"><kbd class="absolute right-space-sm px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-outline">⌘K</kbd></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded border border-outline-variant/30"><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Operational</span></div><button aria-label="Toggle theme" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><button aria-label="Notifications" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full px-margin-desktop py-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full gap-space-lg">
+<!-- CABECERA OPERATIVA DE PÁGINA -->
+<header class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-xs">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Acuerdos Comerciales &amp; Facturación</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm">v3.1-BILLING</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-low text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          LEDGER SYNCED
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Contrataciones de Agentes</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Supervisión de acuerdos comerciales, cálculo de cuotas por pods, skills licenciadas e importes de facturación en tiempo real.
+      </p>
+</div>
+<!-- ACCIONES DE NIVEL SUPERIOR -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">download</span>
+<span>Exportar Reporte</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded bg-primary-container text-on-primary-container hover:brightness-110 font-label-md text-label-md font-semibold transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>＋ Nueva Contratación</span>
+</button>
+</div>
+</header>
+<!-- TARJETAS DE MÉTRICAS (KPIS) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-low p-space-md rounded shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Facturación Total Activa</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">€184,650</span>
+<span class="font-label-sm text-label-sm text-outline">EUR</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded bg-primary-container/15 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[18px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs mt-space-sm pt-space-xs">
+<span class="inline-flex items-center text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+          +14.2%
+        </span>
+<span class="font-body-sm text-body-sm text-outline">vs periodo anterior</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-low p-space-md rounded shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Contratos en Vigor</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">28</span>
+<span class="font-label-sm text-label-sm text-outline">/ 31 fleet capacity</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded bg-secondary-container/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-space-xs mt-space-sm pt-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">90.3% Retención</span>
+</div>
+<!-- Micro sparkline bar visual -->
+<div class="w-20 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 90.3%"></div>
+</div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-low p-space-md rounded shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Skills Promedio / Contrato</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">3.4</span>
+<span class="font-label-sm text-label-sm text-outline">skills / agente</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]">extension</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs mt-space-sm pt-space-xs">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container text-tertiary font-label-sm text-label-sm">
+          ALTA MODULARIDAD
+        </span>
+<span class="font-body-sm text-body-sm text-outline">+0.6 vs Q3</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-low p-space-md rounded shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Pendientes de Renovación</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-lg text-headline-lg text-tertiary font-bold tracking-tight">3</span>
+<span class="font-label-sm text-label-sm text-outline">contratos (&lt;15 días)</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded bg-tertiary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[18px]">timelapse</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs mt-space-sm pt-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-body-sm text-body-sm text-tertiary">Requiere contacto comercial</span>
+</div>
+</div>
+</section>
+<!-- BARRA DE FILTROS Y CONTROLES -->
+<section class="bg-surface-container-low p-space-sm rounded flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm flex-1">
+<!-- Input de búsqueda -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[16px]">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface pl-8 pr-12 py-1.5 rounded font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="contract-search-input" placeholder="Buscar por contrato, cliente o agente... ⌘K" type="text">
+<kbd class="absolute right-space-sm top-1/2 -translate-y-1/2 px-1 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-outline">⌘K</kbd>
+</div>
+<!-- Filtro: Estado -->
+<div class="relative shrink-0">
+<select class="w-full sm:w-auto appearance-none bg-surface-container text-on-surface px-space-md py-1.5 pr-8 rounded font-label-md text-label-md cursor-pointer focus:outline-none focus:bg-surface-container-high transition-colors">
+<option>Todos los estados</option>
+<option>Activo</option>
+<option>Próxima Renovación</option>
+<option>Completado</option>
+<option>Suspendido</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[16px]">expand_more</span>
+</div>
+<!-- Filtro: Periodicidad -->
+<div class="relative shrink-0">
+<select class="w-full sm:w-auto appearance-none bg-surface-container text-on-surface px-space-md py-1.5 pr-8 rounded font-label-md text-label-md cursor-pointer focus:outline-none focus:bg-surface-container-high transition-colors">
+<option>Periodicidad: Todas</option>
+<option>Anual</option>
+<option>Semestral</option>
+<option>Mensual</option>
+<option>Pago por Uso</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[16px]">expand_more</span>
+</div>
+</div>
+<!-- Indicador de cantidad -->
+<div class="flex items-center gap-space-xs text-outline shrink-0 px-space-xs">
+<span class="material-symbols-outlined text-[16px]">dataset</span>
+<span class="font-label-sm text-label-sm">Mostrando 5 de 28 contratos</span>
+</div>
+</section>
+<!-- TABLA DE CONTRATOS (SPECS.MD DEFINITION) -->
+<div class="bg-surface-container-lowest rounded shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low font-label-sm text-label-sm text-outline uppercase tracking-wider select-none">
+<th class="py-space-sm px-space-md font-semibold">Cliente</th>
+<th class="py-space-sm px-space-md font-semibold">Agente</th>
+<th class="py-space-sm px-space-md font-semibold">Skills Contratadas</th>
+<th class="py-space-sm px-space-md font-semibold">Inicio</th>
+<th class="py-space-sm px-space-md font-semibold">Fin</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Importe Pagado</th>
+<th class="py-space-sm px-space-md font-semibold text-center w-12">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-sm text-body-sm">
+<!-- FILA 1 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-space-sm px-space-md align-middle">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-primary font-bold">
+                  ND
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface tracking-tight group-hover:text-primary transition-colors">Nexus Dynamics Ltd.</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>USR-9041</span>
+<span>•</span>
+<span class="text-on-surface-variant">Elena Rostova</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 font-headline-sm text-body-md font-semibold text-on-surface">
+<span>LiquidityManager #09</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>AG-8812</span>
+<span>[Pod DeFi]</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle">
+<div class="flex flex-wrap items-center gap-1 max-w-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Solana RPC Sync</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Liquidity Routing</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Risk Assessment v2</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm cursor-help" title="Web Scraping Pro">+1</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap font-label-sm text-label-sm text-on-surface-variant">
+              01 Ene 2024
+            </td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">31 Dic 2024</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Activo (315d)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle text-right whitespace-nowrap">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-body-md font-bold text-on-surface">€48,200 EUR</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-label-sm font-medium">
+                  Anual Pagado
+                </span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle text-center relative">
+<button class="contract-menu-btn w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" data-contract-id="CTR-2024-9912A" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<!-- DROPDOWN MENU -->
+<div class="contract-menu-panel hidden absolute right-space-md top-10 w-44 bg-surface-container-high rounded shadow-xl py-1 z-30 flex-col text-left">
+<button class="open-detail-btn px-space-md py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-space-xs w-full text-left" data-contract="CTR-2024-9912A" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+                  Ver detalle
+                </button>
+<button class="px-space-md py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-space-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">receipt_long</span>
+                  Descargar Factura
+                </button>
+<div class="h-px bg-outline-variant/20 my-1"></div>
+<button class="px-space-md py-1.5 font-label-sm text-label-sm text-error hover:bg-surface-container flex items-center gap-space-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+                  Suspender
+                </button>
+</div>
+</td>
+</tr>
+<!-- FILA 2 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-space-sm px-space-md align-middle">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-secondary font-bold">
+                  QB
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface tracking-tight group-hover:text-primary transition-colors">QuantumBit Capital</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>USR-8812</span>
+<span>•</span>
+<span class="text-on-surface-variant">Marcus Vance</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 font-headline-sm text-body-md font-semibold text-on-surface">
+<span>Arbitrage-Engine #03</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>AG-2309</span>
+<span>[Pod High Frequency]</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle">
+<div class="flex flex-wrap items-center gap-1 max-w-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Solana RPC Sync</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Liquidity Routing</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap font-label-sm text-label-sm text-on-surface-variant">
+              15 Feb 2024
+            </td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">15 Ago 2024</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Activo (98d)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle text-right whitespace-nowrap">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-body-md font-bold text-on-surface">€29,500 EUR</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-label-sm font-medium">
+                  Semestral Pagado
+                </span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle text-center relative">
+<button class="contract-menu-btn w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" data-contract-id="CTR-2024-8831B" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="contract-menu-panel hidden absolute right-space-md top-10 w-44 bg-surface-container-high rounded shadow-xl py-1 z-30 flex-col text-left">
+<button class="open-detail-btn px-space-md py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-space-xs w-full text-left" data-contract="CTR-2024-9912A" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+                  Ver detalle
+                </button>
+<button class="px-space-md py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-space-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">receipt_long</span>
+                  Descargar Factura
+                </button>
+<div class="h-px bg-outline-variant/20 my-1"></div>
+<button class="px-space-md py-1.5 font-label-sm text-label-sm text-error hover:bg-surface-container flex items-center gap-space-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+                  Suspender
+                </button>
+</div>
+</td>
+</tr>
+<!-- FILA 3 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-space-sm px-space-md align-middle">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-tertiary font-bold">
+                  SL
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface tracking-tight group-hover:text-primary transition-colors">SyntheticLabs AI</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>USR-4390</span>
+<span>•</span>
+<span class="text-on-surface-variant">Dr. Aris Thorne</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 font-headline-sm text-body-md font-semibold text-on-surface">
+<span>ComplianceAudit #27</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>AG-4419</span>
+<span>[Pod Auditoría]</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle">
+<div class="flex flex-wrap items-center gap-1 max-w-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Risk Assessment v2</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Smart Contract Sentinel</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap font-label-sm text-label-sm text-on-surface-variant">
+              10 Nov 2023
+            </td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">10 Nov 2024</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Renovación en 12d</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle text-right whitespace-nowrap">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-body-md font-bold text-on-surface">€34,800 EUR</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm font-medium">
+                  Renovación en 12d
+                </span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle text-center relative">
+<button class="contract-menu-btn w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" data-contract-id="CTR-2023-4102C" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="contract-menu-panel hidden absolute right-space-md top-10 w-44 bg-surface-container-high rounded shadow-xl py-1 z-30 flex-col text-left">
+<button class="open-detail-btn px-space-md py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-space-xs w-full text-left" data-contract="CTR-2024-9912A" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+                  Ver detalle
+                </button>
+<button class="px-space-md py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-space-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">receipt_long</span>
+                  Descargar Factura
+                </button>
+<div class="h-px bg-outline-variant/20 my-1"></div>
+<button class="px-space-md py-1.5 font-label-sm text-label-sm text-tertiary hover:bg-surface-container flex items-center gap-space-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+                  Renovar Ahora
+                </button>
+</div>
+</td>
+</tr>
+<!-- FILA 4 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-space-sm px-space-md align-middle">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-primary font-bold">
+                  AS
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface tracking-tight group-hover:text-primary transition-colors">Aurora Systems</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>USR-7729</span>
+<span>•</span>
+<span class="text-on-surface-variant">Sofia Benítez</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 font-headline-sm text-body-md font-semibold text-on-surface">
+<span>SentinelSecurity #14</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>AG-6701</span>
+<span>[Pod Seguridad]</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle">
+<div class="flex flex-wrap items-center gap-1 max-w-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Smart Contract Sentinel</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Risk Assessment v2</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Web Scraping Pro</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap font-label-sm text-label-sm text-on-surface-variant">
+              01 Mar 2024
+            </td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">01 Mar 2025</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Activo (340d)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle text-right whitespace-nowrap">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-body-md font-bold text-on-surface">€52,400 EUR</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-label-sm font-medium">
+                  Anual Pagado
+                </span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle text-center relative">
+<button class="contract-menu-btn w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" data-contract-id="CTR-2024-5501D" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="contract-menu-panel hidden absolute right-space-md top-10 w-44 bg-surface-container-high rounded shadow-xl py-1 z-30 flex-col text-left">
+<button class="open-detail-btn px-space-md py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-space-xs w-full text-left" data-contract="CTR-2024-9912A" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+                  Ver detalle
+                </button>
+<button class="px-space-md py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-space-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">receipt_long</span>
+                  Descargar Factura
+                </button>
+<div class="h-px bg-outline-variant/20 my-1"></div>
+<button class="px-space-md py-1.5 font-label-sm text-label-sm text-error hover:bg-surface-container flex items-center gap-space-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+                  Suspender
+                </button>
+</div>
+</td>
+</tr>
+<!-- FILA 5 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-space-sm px-space-md align-middle">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm text-error font-bold">
+                  HG
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface tracking-tight group-hover:text-primary transition-colors">HyperGrowth Global</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>USR-6510</span>
+<span>•</span>
+<span class="text-on-surface-variant">Liam Chen</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 font-headline-sm text-body-md font-semibold text-on-surface">
+<span>CustomerSentiment #05</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>AG-1033</span>
+<span>[Pod NLP]</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle">
+<div class="flex flex-wrap items-center gap-1 max-w-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Sentiment Analyzer AI</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Web Scraping Pro</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap font-label-sm text-label-sm text-on-surface-variant">
+              12 Mar 2024
+            </td>
+<td class="py-space-sm px-space-md align-middle whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">12 Jun 2024</span>
+<span class="font-label-sm text-label-sm text-error font-medium">En Pausa</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle text-right whitespace-nowrap">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-body-md font-bold text-on-surface">€19,750 EUR</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-error-container/40 text-error font-label-sm text-label-sm font-medium">
+                  Cuota Excedida
+                </span>
+</div>
+</td>
+<td class="py-space-sm px-space-md align-middle text-center relative">
+<button class="contract-menu-btn w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" data-contract-id="CTR-2024-1188E" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="contract-menu-panel hidden absolute right-space-md top-10 w-44 bg-surface-container-high rounded shadow-xl py-1 z-30 flex-col text-left">
+<button class="open-detail-btn px-space-md py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-space-xs w-full text-left" data-contract="CTR-2024-9912A" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+                  Ver detalle
+                </button>
+<button class="px-space-md py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container flex items-center gap-space-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">receipt_long</span>
+                  Descargar Factura
+                </button>
+<div class="h-px bg-outline-variant/20 my-1"></div>
+<button class="px-space-md py-1.5 font-label-sm text-label-sm text-primary hover:bg-surface-container flex items-center gap-space-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+                  Reactivar
+                </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- PIE DE TABLA / PAGINACIÓN MINIMALISTA -->
+<div class="bg-surface-container-low px-space-md py-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-outline">
+<div class="flex items-center gap-space-md">
+<span>Transacciones validadas en consensus block #449,190</span>
+<span class="text-outline-variant">|</span>
+<span class="text-on-surface-variant">Latencia de telemetría de facturación: 18ms</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface disabled:opacity-50 transition-colors" disabled="">
+          Anterior
+        </button>
+<span class="px-2 py-1 rounded bg-surface-container-high text-primary font-semibold">1</span>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">
+          2
+        </button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">
+          Siguiente
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL DE DESGLOSE: 'VER DETALLE' (CTR-2024-9912A) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-surface-dim/80 backdrop-blur-md hidden transition-opacity" id="contract-detail-modal">
+<div class="relative w-full max-w-2xl bg-surface-container-low rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]" id="modal-container">
+<!-- Modal Header -->
+<div class="bg-surface-container px-space-xl py-space-md flex items-center justify-between shrink-0">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Desglose de Contratación</h3>
+<span class="px-1.5 py-0.5 rounded bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold">CTR-2024-9912A</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Auditoría de cuota base, slots de pod y licencias modulares</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" id="close-modal-x" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body (Scrollable) -->
+<div class="p-space-xl overflow-y-auto flex flex-col gap-space-lg">
+<!-- Metadata Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md bg-surface-container-lowest p-space-md rounded">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Cliente Corporativo</span>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Nexus Dynamics Ltd.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Contacto de Operaciones: Elena Rostova</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Agente Asignado</span>
+<div class="flex items-center gap-1.5 font-headline-sm text-body-md font-semibold text-primary">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+              LiquidityManager #09
+            </div>
+<span class="font-label-sm text-label-sm text-outline">ID: AG-8812 • Runtime Node: Pod DeFi</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Vigencia del Acuerdo</span>
+<span class="font-label-md text-label-md text-on-surface">01/01/2024 – 31/12/2024</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Duración: 365 días (Anual Recurrente)</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Hash de Certificación</span>
+<span class="font-label-sm text-label-sm text-outline truncate" title="0x91fbca82103984fae3b00021c">0x91fbca82...00021c</span>
+<span class="font-label-sm text-label-sm text-primary">Contrato Inteligente Auditado</span>
+</div>
+</div>
+<!-- Tabla de desglose de skills e importes individuales -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Conceptos Facturados &amp; Cuotas de Licencia</span>
+<div class="bg-surface-container-lowest rounded overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container font-label-sm text-label-sm text-outline uppercase">
+<th class="py-space-xs px-space-md font-semibold">Concepto / Módulo</th>
+<th class="py-space-xs px-space-md font-semibold">Versión</th>
+<th class="py-space-xs px-space-md font-semibold text-right">Importe</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-sm text-body-sm text-on-surface">
+<tr class="hover:bg-surface-container/50">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">precision_manufacturing</span>
+<span class="font-semibold">Cuota Base de Agente: LiquidityManager #09</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-label-sm text-label-sm text-outline">v1.2-core</td>
+<td class="py-space-sm px-space-md text-right font-label-md text-label-md font-semibold">€15,000 EUR</td>
+</tr>
+<tr class="hover:bg-surface-container/50">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">extension</span>
+<span>Solana RPC Sync</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-label-sm text-label-sm text-outline">v2.4.1</td>
+<td class="py-space-sm px-space-md text-right font-label-md text-label-md font-semibold">€11,200 EUR</td>
+</tr>
+<tr class="hover:bg-surface-container/50">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">extension</span>
+<span>Liquidity Routing</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-label-sm text-label-sm text-outline">v1.8.0</td>
+<td class="py-space-sm px-space-md text-right font-label-md text-label-md font-semibold">€12,500 EUR</td>
+</tr>
+<tr class="hover:bg-surface-container/50">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">extension</span>
+<span>Risk Assessment v2</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-label-sm text-label-sm text-outline">v2.0.0</td>
+<td class="py-space-sm px-space-md text-right font-label-md text-label-md font-semibold">€9,500 EUR</td>
+</tr>
+</tbody>
+</table>
+<!-- Resumen Financiero -->
+<div class="bg-surface-container p-space-md flex flex-col gap-1.5 mt-px font-label-md text-label-md">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Subtotal Neto:</span>
+<span>€48,200 EUR</span>
+</div>
+<div class="flex items-center justify-between text-outline">
+<span>IVA Aplicado (0% Reverse Charge B2B Intracomunitario):</span>
+<span>€0 EUR</span>
+</div>
+<div class="h-px bg-outline-variant/30 my-0.5"></div>
+<div class="flex items-center justify-between font-headline-sm text-headline-sm text-primary font-bold">
+<span class="text-on-surface">Importe Total Pagado:</span>
+<span>€48,200 EUR</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-surface-container px-space-xl py-space-md flex items-center justify-between shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded bg-surface-container-high text-on-surface hover:bg-surface-bright font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">picture_as_pdf</span>
+          Descargar Comprobante PDF
+        </button>
+<button class="px-space-md py-1.5 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors" id="close-modal-btn" type="button">
+          Cerrar
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVIDAD CONSOLA OPERATIVA -->
+<script>
+  (function () {
+    // Manejo de Dropdown Menús de cada fila
+    const menuButtons = document.querySelectorAll('.contract-menu-btn');
+    const menuPanels = document.querySelectorAll('.contract-menu-panel');
+
+    menuButtons.forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const panel = this.nextElementSibling;
+        const isHidden = panel.classList.contains('hidden');
+
+        // Cerrar todos los demás
+        menuPanels.forEach(p => p.classList.add('hidden'));
+
+        if (isHidden) {
+          panel.classList.remove('hidden');
+          panel.classList.add('flex');
+        }
+      });
+    });
+
+    // Cerrar dropdowns si se hace clic fuera
+    document.addEventListener('click', function () {
+      menuPanels.forEach(p => {
+        p.classList.add('hidden');
+        p.classList.remove('flex');
+      });
+    });
+
+    // Manejo de Modal de Detalle
+    const modal = document.getElementById('contract-detail-modal');
+    const modalContainer = document.getElementById('modal-container');
+    const openDetailButtons = document.querySelectorAll('.open-detail-btn');
+    const closeModalX = document.getElementById('close-modal-x');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    function openModal() {
+      modal.classList.remove('hidden');
+      // cerrar los dropdowns
+      menuPanels.forEach(p => p.classList.add('hidden'));
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+    }
+
+    openDetailButtons.forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        openModal();
+      });
+    });
+
+    closeModalX.addEventListener('click', closeModal);
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Cierre al hacer click en el backdrop desenfocado
+    modal.addEventListener('click', function (e) {
+      if (!modalContainer.contains(e.target)) {
+        closeModal();
+      }
+    });
+
+    // Atajo de teclado Esc para cerrar modal
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    // Micro-filtro en tiempo real para búsqueda de texto
+    const searchInput = document.getElementById('contract-search-input');
+    if (searchInput) {
+      searchInput.addEventListener('input', function (e) {
+        const query = e.target.value.toLowerCase().trim();
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          if (text.includes(query)) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    }
+  })();
+</script></main></div>
+
+</body></html>

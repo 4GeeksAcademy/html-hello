@@ -1,0 +1,856 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"inverse-on-surface":"#283044","outline":"#86948a","secondary":"#c0c1ff","on-tertiary-container":"#523200","inverse-surface":"#dae2fd","on-secondary":"#1000a9","surface-container-high":"#222a3d","on-surface":"#dae2fd","surface-dim":"#0b1326","secondary-fixed-dim":"#c0c1ff","primary-container":"#10b981","on-primary-fixed":"#002113","on-tertiary-fixed":"#2a1700","primary-fixed":"#6ffbbe","on-secondary-fixed":"#07006c","on-primary-fixed-variant":"#005236","on-primary":"#003824","on-surface-variant":"#bbcabf","surface":"#0b1326","secondary-container":"#3131c0","on-primary-container":"#00422b","on-tertiary-fixed-variant":"#653e00","tertiary-fixed-dim":"#ffb95f","error-container":"#93000a","surface-variant":"#2d3449","error":"#ffb4ab","background":"#0b1326","secondary-fixed":"#e1e0ff","tertiary":"#ffb95f","on-secondary-container":"#b0b2ff","primary":"#4edea3","surface-tint":"#4edea3","primary-fixed-dim":"#4edea3","surface-container-highest":"#2d3449","inverse-primary":"#006c49","outline-variant":"#3c4a42","on-error":"#690005","on-tertiary":"#472a00","surface-container-low":"#131b2e","on-background":"#dae2fd","on-error-container":"#ffdad6","surface-bright":"#31394d","tertiary-fixed":"#ffddb8","tertiary-container":"#e29100","on-secondary-fixed-variant":"#2f2ebe","surface-container":"#171f33","surface-container-lowest":"#060e20"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"0.75rem","gutter-desktop":"1.25rem","space-xl":"1.5rem","margin-desktop":"2rem","space-xs":"0.25rem","space-sm":"0.5rem","space-lg":"1rem","gutter":"1rem","margin":"1rem"},"fontFamily":{"body-md":["Inter"],"label-md":["JetBrains Mono"],"body-lg":["Inter"],"headline-md":["Hanken Grotesk"],"display-lg-mobile":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"body-sm":["Inter"],"label-sm":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"headline-lg":["Hanken Grotesk"],"display-lg":["Hanken Grotesk"]},"fontSize":{"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"600"}],"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-xl flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[18px]">hub</span></div><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">AgentHub</span></div><div class="px-space-xl"><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Consola Centralizada</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="usuarios" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Usuarios</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="agentes" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Agentes</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="skills" href="#"><span class="material-symbols-outlined text-[20px]">extension</span><span>Skills</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="contrataciones" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Contrataciones</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md bg-primary-container text-on-primary-container font-semibold transition-colors" data-path="errores" href="#"><span class="material-symbols-outlined text-[20px]">warning</span><span>Errores</span></a></nav></div><div class="px-space-md flex flex-col gap-space-xs"><div class="bg-surface-container-low p-space-md rounded flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant">Fleet Active</span></div><span class="font-label-sm text-label-sm text-primary font-medium">99.98%</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-wider"><span class="text-outline">CONSOLA CENTRALIZADA</span><span class="text-outline-variant font-mono">/</span><span class="text-primary font-semibold">LOG DE ERRORES</span></nav><div class="relative w-80 flex items-center ml-space-md"><span class="material-symbols-outlined absolute left-space-md text-outline text-[18px]">search</span><input class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-12 py-space-xs rounded font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Buscar acuerdos, agentes, contratos..." type="text"><kbd class="absolute right-space-sm px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-outline">⌘K</kbd></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded border border-outline-variant/30"><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Operational</span></div><button aria-label="Toggle theme" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><button aria-label="Notifications" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full px-margin-desktop py-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full gap-space-lg">
+<!-- Page Header & Operational Status Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-xs">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Log de Errores e Incidencias</h1>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm tracking-widest uppercase">v4.2-DIAGNOSTICS</span>
+<div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>LIVE STREAM ACTIVE</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Supervisión en tiempo real de fallos en pods autónomos, degradación de RPC, errores de consenso y cuotas de inferencia agotadas.
+      </p>
+</div>
+<!-- Top Action Buttons -->
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" id="btn-export-logs" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">download</span>
+<span>Exportar Logs</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md transition-colors shadow-sm" id="btn-retry-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-primary-container">refresh</span>
+<span>Reintentar Todos los Fallidos</span>
+</button>
+</div>
+</div>
+<!-- KPI Diagnostic Metrics Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Total Incidencias -->
+<div class="relative overflow-hidden p-space-lg rounded bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">TOTAL INCIDENCIAS (24H)</span>
+<div class="w-7 h-7 rounded bg-error-container/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-[18px]">emergency</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-lg text-display-lg text-on-surface tracking-tight">24</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-error">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+6 vs ciclo previo</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-error h-full w-[65%]"></div>
+</div>
+</div>
+<!-- Errores Críticos / Halt -->
+<div class="relative overflow-hidden p-space-lg rounded bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">ERRORES CRÍTICOS / HALT</span>
+<div class="w-7 h-7 rounded bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-error-container text-[18px]">dangerous</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-lg text-display-lg text-error tracking-tight">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">pods detenidos</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-error h-full w-[25%]"></div>
+</div>
+</div>
+<!-- Timeout & Latencia RPC -->
+<div class="relative overflow-hidden p-space-lg rounded bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">TIMEOUT &amp; LATENCIA RPC</span>
+<div class="w-7 h-7 rounded bg-tertiary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[18px]">timer_off</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-lg text-display-lg text-tertiary tracking-tight">14</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">degradación transitoria</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-tertiary h-full w-[55%]"></div>
+</div>
+</div>
+<!-- MTTR Promedio -->
+<div class="relative overflow-hidden p-space-lg rounded bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">MTTR PROMEDIO</span>
+<div class="w-7 h-7 rounded bg-primary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-lg text-display-lg text-primary tracking-tight">4.2m</span>
+<span class="font-label-sm text-label-sm text-primary">autorecuperación act.</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded overflow-hidden">
+<div class="bg-primary h-full w-[88%]"></div>
+</div>
+</div>
+</div>
+<!-- Filter & Search Console -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<div class="flex flex-1 items-center gap-space-sm flex-wrap">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[260px] max-w-lg">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-14 py-space-xs rounded font-body-sm text-body-sm placeholder:text-outline focus:outline-none" id="error-search-input" placeholder="Buscar por agente, hash, stack trace o pod..." type="text">
+<kbd class="absolute right-space-sm top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-outline">⌘K</kbd>
+</div>
+<!-- Severity Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md pl-3 pr-8 py-2 rounded focus:outline-none cursor-pointer" id="filter-severity">
+<option value="ALL">Severidad: Todas</option>
+<option value="Crítico">Crítico</option>
+<option value="Alta">Alta</option>
+<option value="Media">Media</option>
+<option value="Baja">Baja</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Error Type Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md pl-3 pr-8 py-2 rounded focus:outline-none cursor-pointer" id="filter-type">
+<option value="ALL">Tipo: Todos los tipos</option>
+<option value="TIMEOUT_HALT">TIMEOUT_HALT</option>
+<option value="RATE_LIMIT_EXCEEDED">RATE_LIMIT_EXCEEDED</option>
+<option value="OUT_OF_QUOTA">OUT_OF_QUOTA</option>
+<option value="MEMORY_SPIKE">MEMORY_SPIKE</option>
+<option value="SMART_CONTRACT_REVERT">SMART_CONTRACT_REVERT</option>
+<option value="HANDSHAKE_TIMEOUT">HANDSHAKE_TIMEOUT</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Status Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md pl-3 pr-8 py-2 rounded focus:outline-none cursor-pointer" id="filter-status">
+<option value="ALL">Estado: Todos</option>
+<option value="Pendiente">Pendiente</option>
+<option value="En Investigación">En Investigación</option>
+<option value="Resuelto">Resuelto</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Counter Indicator -->
+<div class="flex items-center justify-between lg:justify-end gap-space-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider" id="filtered-count">Mostrando 6 de 24 incidencias</span>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors" id="btn-reset-filters" title="Restablecer filtros">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+</button>
+</div>
+</div>
+<!-- Structured Error Log Table Card -->
+<div class="bg-surface-container-low rounded overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="errors-table">
+<thead>
+<tr class="bg-surface-container-lowest">
+<th class="py-space-sm px-space-md font-label-sm text-label-sm text-outline uppercase tracking-wider w-32">ESTADO</th>
+<th class="py-space-sm px-space-md font-label-sm text-label-sm text-outline uppercase tracking-wider w-44">TIMESTAMP</th>
+<th class="py-space-sm px-space-md font-label-sm text-label-sm text-outline uppercase tracking-wider w-56">AGENTE &amp; POD</th>
+<th class="py-space-sm px-space-md font-label-sm text-label-sm text-outline uppercase tracking-wider w-48">TIPO DE ERROR</th>
+<th class="py-space-sm px-space-md font-label-sm text-label-sm text-outline uppercase tracking-wider">DESCRIPCIÓN &amp; STACK TRACE</th>
+<th class="py-space-sm px-space-md font-label-sm text-label-sm text-outline uppercase tracking-wider w-28">SEVERIDAD</th>
+<th class="py-space-sm px-space-md font-label-sm text-label-sm text-outline uppercase tracking-wider text-right w-16">ACCIÓN</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container/60 font-body-sm text-body-sm" id="table-body">
+<!-- Row 1: LiquidityManager #09 -->
+<tr class="hover:bg-surface-container/40 transition-colors group error-row" data-agent="LiquidityManager #09" data-code="AG-8812" data-desc="Fallo crítico de heartbeat en quórum de validadores Solana RPC. Pod detenido por seguridad." data-id="ERR-9042" data-pod="Pod DeFi" data-severity="Crítico" data-stack="RPC_TIMEOUT: Cluster unresponsive after 5000ms. Quorum lost at block #294819124. Pod LiquidityManager #09 transitioned into FAILSAFE_HALT. Node: sol-mainnet-beta-rpc-03. Handshake status: DEADLINE_EXCEEDED." data-status="Pendiente" data-time="14:18:22 UTC (Hace 4m)" data-type="TIMEOUT_HALT" data-utc="2025-05-18T14:18:22Z">
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="status-badge inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+<span>Pendiente</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap font-label-md text-label-md text-on-surface-variant">
+              14:18:22 UTC <span class="text-outline text-label-sm block">Hace 4m</span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">LiquidityManager #09</span>
+<span class="font-label-sm text-label-sm text-primary tracking-wide">AG-8812 • <span class="text-on-surface-variant">Pod DeFi</span></span>
+</div>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container/80 text-on-error-container font-semibold tracking-wide">TIMEOUT_HALT</span>
+</td>
+<td class="py-space-sm px-space-md max-w-md">
+<p class="text-on-surface truncate font-body-sm text-body-sm">Fallo crítico de heartbeat en quórum de validadores Solana RPC. Pod detenido por seguridad.</p>
+<span class="font-label-sm text-label-sm text-outline truncate block mt-0.5">rpc-cluster-west.solana.internal // quorum loss</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-error/20 text-error font-medium">
+<span class="material-symbols-outlined text-[14px]">report</span> Crítico
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right relative whitespace-nowrap">
+<button aria-haspopup="true" class="action-menu-btn p-1.5 rounded hover:bg-surface-container-high text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="action-dropdown hidden absolute right-2 mt-1 w-48 rounded bg-surface-container-high shadow-xl z-30 py-1 text-left">
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-view-detail" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-resolve" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span>
+<span>Marcar como resuelto</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-retry" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">replay</span>
+<span>Reintentar ejecución</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Arbitrage-Engine #03 -->
+<tr class="hover:bg-surface-container/40 transition-colors group error-row" data-agent="Arbitrage-Engine #03" data-code="AG-2309" data-desc="Degradación de cuota en nodo RPC Solana tras ráfaga de 1,200 tx/s. Solicitud 429 Too Many Requests." data-id="ERR-8977" data-pod="Pod High Frequency" data-severity="Alta" data-stack="HTTP_429: Rate limit threshold exceeded on /v1/transactions/batch. Quota: 1000req/sec, Observed: 1240req/sec. Backoff window set to 60000ms. Node: quicknode-gateway-eu. Circuit-breaker active." data-status="En Investigación" data-time="13:45:04 UTC (Hace 37m)" data-type="RATE_LIMIT_EXCEEDED" data-utc="2025-05-18T13:45:04Z">
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="status-badge inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-tertiary-container/30 text-tertiary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>En Investigación</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap font-label-md text-label-md text-on-surface-variant">
+              13:45:04 UTC <span class="text-outline text-label-sm block">Hace 37m</span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Arbitrage-Engine #03</span>
+<span class="font-label-sm text-label-sm text-secondary tracking-wide">AG-2309 • <span class="text-on-surface-variant">Pod High Frequency</span></span>
+</div>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-tertiary-container/40 text-tertiary font-semibold tracking-wide">RATE_LIMIT_EXCEEDED</span>
+</td>
+<td class="py-space-sm px-space-md max-w-md">
+<p class="text-on-surface truncate font-body-sm text-body-sm">Degradación de cuota en nodo RPC Solana tras ráfaga de 1,200 tx/s. Solicitud 429 Too Many Requests.</p>
+<span class="font-label-sm text-label-sm text-outline truncate block mt-0.5">rpc-rate-limiter.quicknode // threshold-breach</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-tertiary/20 text-tertiary font-medium">
+<span class="material-symbols-outlined text-[14px]">warning</span> Alta
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right relative whitespace-nowrap">
+<button aria-haspopup="true" class="action-menu-btn p-1.5 rounded hover:bg-surface-container-high text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="action-dropdown hidden absolute right-2 mt-1 w-48 rounded bg-surface-container-high shadow-xl z-30 py-1 text-left">
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-view-detail" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-resolve" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span>
+<span>Marcar como resuelto</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-retry" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">replay</span>
+<span>Reintentar ejecución</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: CustomerSentiment #05 -->
+<tr class="hover:bg-surface-container/40 transition-colors group error-row" data-agent="CustomerSentiment #05" data-code="AG-1033" data-desc="Inference quota exceeded on Llama 3.3 70B endpoint. Límite de tokens mensual alcanzado por cliente HyperGrowth." data-id="ERR-8810" data-pod="Pod NLP" data-severity="Crítico" data-stack="INFERENCE_EXHAUSTED: 402 Payment/Quota Required. Provider: TogetherAI / Llama-3.3-70B-Instruct. Monthly allocation: 50,000,000 tokens exhausted. Sub-account tenant: HYPER_GROWTH_CORP. Agent paused awaiting billing upgrade." data-status="Pendiente" data-time="12:10:19 UTC (Hace 2h)" data-type="OUT_OF_QUOTA" data-utc="2025-05-18T12:10:19Z">
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="status-badge inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+<span>Pendiente</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap font-label-md text-label-md text-on-surface-variant">
+              12:10:19 UTC <span class="text-outline text-label-sm block">Hace 2h</span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">CustomerSentiment #05</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim tracking-wide">AG-1033 • <span class="text-on-surface-variant">Pod NLP</span></span>
+</div>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container/80 text-on-error-container font-semibold tracking-wide">OUT_OF_QUOTA</span>
+</td>
+<td class="py-space-sm px-space-md max-w-md">
+<p class="text-on-surface truncate font-body-sm text-body-sm">Inference quota exceeded on Llama 3.3 70B endpoint. Límite de tokens mensual alcanzado por cliente HyperGrowth.</p>
+<span class="font-label-sm text-label-sm text-outline truncate block mt-0.5">inference-engine.meta // token pool dry</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-error/20 text-error font-medium">
+<span class="material-symbols-outlined text-[14px]">report</span> Crítico
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right relative whitespace-nowrap">
+<button aria-haspopup="true" class="action-menu-btn p-1.5 rounded hover:bg-surface-container-high text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="action-dropdown hidden absolute right-2 mt-1 w-48 rounded bg-surface-container-high shadow-xl z-30 py-1 text-left">
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-view-detail" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-resolve" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span>
+<span>Marcar como resuelto</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-retry" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">replay</span>
+<span>Reintentar ejecución</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: ComplianceAudit #27 -->
+<tr class="hover:bg-surface-container/40 transition-colors group error-row" data-agent="ComplianceAudit #27" data-code="AG-4419" data-desc="Pico de memoria transitorio en container WASM al parsear bloque de 128MB. Pod reiniciado automáticamente." data-id="ERR-8654" data-pod="Pod Auditoría" data-severity="Media" data-stack="WASM_OOM_RECOVERY: Heap allocated reached 512MB threshold during byte array unpack on chunk 0xFA39. Self-healer orchestrated clean sigterm and hot-spawned worker replica in 1.4s. Memory nominal." data-status="Resuelto" data-time="11:22:45 UTC (Hace 3h)" data-type="MEMORY_SPIKE" data-utc="2025-05-18T11:22:45Z">
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="status-badge inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-container/20 text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Resuelto</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap font-label-md text-label-md text-on-surface-variant">
+              11:22:45 UTC <span class="text-outline text-label-sm block">Hace 3h</span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">ComplianceAudit #27</span>
+<span class="font-label-sm text-label-sm text-outline tracking-wide">AG-4419 • <span class="text-on-surface-variant">Pod Auditoría</span></span>
+</div>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-container/40 text-secondary font-semibold tracking-wide">MEMORY_SPIKE</span>
+</td>
+<td class="py-space-sm px-space-md max-w-md">
+<p class="text-on-surface truncate font-body-sm text-body-sm">Pico de memoria transitorio en container WASM al parsear bloque de 128MB. Pod reiniciado automáticamente.</p>
+<span class="font-label-sm text-label-sm text-outline truncate block mt-0.5">wasm-runtime // heap overflow self-healed</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[14px]">info</span> Media
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right relative whitespace-nowrap">
+<button aria-haspopup="true" class="action-menu-btn p-1.5 rounded hover:bg-surface-container-high text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="action-dropdown hidden absolute right-2 mt-1 w-48 rounded bg-surface-container-high shadow-xl z-30 py-1 text-left">
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-view-detail" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-resolve" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span>
+<span>Marcar como resuelto</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-retry" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">replay</span>
+<span>Reintentar ejecución</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: SentinelSecurity #14 -->
+<tr class="hover:bg-surface-container/40 transition-colors group error-row" data-agent="SentinelSecurity #14" data-code="AG-6701" data-desc="Simulación de llamada en mempool EVM revertida: InsufficientLiquidityOrSlippageTolerance." data-id="ERR-8319" data-pod="Pod Seguridad" data-severity="Media" data-stack="EVM_CALL_EXCEPTION: execution reverted: InsufficientLiquidityOrSlippageTolerance. Contract: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D. Method: swapExactTokensForTokens. Simulation gas used: 142,390. Pre-flight aborted safely." data-status="Resuelto" data-time="09:05:12 UTC (Hace 5h)" data-type="SMART_CONTRACT_REVERT" data-utc="2025-05-18T09:05:12Z">
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="status-badge inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-container/20 text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Resuelto</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap font-label-md text-label-md text-on-surface-variant">
+              09:05:12 UTC <span class="text-outline text-label-sm block">Hace 5h</span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">SentinelSecurity #14</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim tracking-wide">AG-6701 • <span class="text-on-surface-variant">Pod Seguridad</span></span>
+</div>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-tertiary-container/30 text-tertiary-fixed font-semibold tracking-wide">SMART_CONTRACT_REVERT</span>
+</td>
+<td class="py-space-sm px-space-md max-w-md">
+<p class="text-on-surface truncate font-body-sm text-body-sm">Simulación de llamada en mempool EVM revertida: InsufficientLiquidityOrSlippageTolerance.</p>
+<span class="font-label-sm text-label-sm text-outline truncate block mt-0.5">mempool-arbiter // pre-flight simulation failed</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[14px]">info</span> Media
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right relative whitespace-nowrap">
+<button aria-haspopup="true" class="action-menu-btn p-1.5 rounded hover:bg-surface-container-high text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="action-dropdown hidden absolute right-2 mt-1 w-48 rounded bg-surface-container-high shadow-xl z-30 py-1 text-left">
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-view-detail" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-resolve" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span>
+<span>Marcar como resuelto</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-retry" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">replay</span>
+<span>Reintentar ejecución</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: LiquidityManager #09 -->
+<tr class="hover:bg-surface-container/40 transition-colors group error-row" data-agent="LiquidityManager #09" data-code="AG-8812" data-desc="Timeout de handshake en WebSocket stream de Raydium V3 pools. Reintento automático exitoso tras 3 intentos." data-id="ERR-8102" data-pod="Pod DeFi" data-severity="Baja" data-stack="WS_DISCONNECT: Remote endpoint closed connection without frame close payload. ws://raydium-streamer-cluster/v3. Exponential backoff triggered (200ms, 400ms, 800ms). Handshake re-established. Zero telemetry data lost." data-status="Resuelto" data-time="07:41:30 UTC (Hace 7h)" data-type="HANDSHAKE_TIMEOUT" data-utc="2025-05-18T07:41:30Z">
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="status-badge inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-container/20 text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Resuelto</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap font-label-md text-label-md text-on-surface-variant">
+              07:41:30 UTC <span class="text-outline text-label-sm block">Hace 7h</span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">LiquidityManager #09</span>
+<span class="font-label-sm text-label-sm text-primary tracking-wide">AG-8812 • <span class="text-on-surface-variant">Pod DeFi</span></span>
+</div>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-semibold tracking-wide">HANDSHAKE_TIMEOUT</span>
+</td>
+<td class="py-space-sm px-space-md max-w-md">
+<p class="text-on-surface truncate font-body-sm text-body-sm">Timeout de handshake en WebSocket stream de Raydium V3 pools. Reintento automático exitoso tras 3 intentos.</p>
+<span class="font-label-sm text-label-sm text-outline truncate block mt-0.5">ws-pool-listener // reconnect succeeded</span>
+</td>
+<td class="py-space-sm px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-highest text-outline font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Baja
+              </span>
+</td>
+<td class="py-space-sm px-space-md text-right relative whitespace-nowrap">
+<button aria-haspopup="true" class="action-menu-btn p-1.5 rounded hover:bg-surface-container-high text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="action-dropdown hidden absolute right-2 mt-1 w-48 rounded bg-surface-container-high shadow-xl z-30 py-1 text-left">
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-view-detail" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-resolve" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span>
+<span>Marcar como resuelto</span>
+</button>
+<button class="w-full flex items-center gap-2 px-3 py-2 text-on-surface hover:bg-surface-container font-body-sm text-body-sm action-retry" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">replay</span>
+<span>Reintentar ejecución</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Telemetry Sync Bar -->
+<div class="p-space-sm bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px] text-primary">sync</span>
+<span>STREAM INGESTION: Sockets WebSocket v4 @ 60fps • Buffer Size: 2,048 records</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Página 1 de 4</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded bg-surface-container text-outline hover:text-on-surface hover:bg-surface-container-high disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="p-1 rounded bg-surface-container text-outline hover:text-on-surface hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Incident Detail Modal (Centrado, Backdrop Desenfoque) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" id="incident-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-surface-container-lowest/80 backdrop-blur-md transition-opacity" id="modal-backdrop"></div>
+<!-- Modal Content Card -->
+<div class="relative w-full max-w-3xl rounded bg-surface-container-low shadow-2xl overflow-hidden flex flex-col max-h-[90vh] z-10">
+<!-- Modal Header -->
+<div class="p-space-lg bg-surface-container-lowest flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-label-md text-primary font-bold tracking-wider" id="modal-incident-id">#ERR-9042</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error/20 text-error font-semibold" id="modal-severity-badge">Crítico</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface font-semibold" id="modal-type-badge">TIMEOUT_HALT</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight mt-1" id="modal-agent-title">LiquidityManager #09 (AG-8812)</h2>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-outline">
+<span id="modal-pod-info">Pod: Pod DeFi</span>
+<span>•</span>
+<span id="modal-timestamp-exact">Timestamp: 2025-05-18 14:18:22 UTC</span>
+</div>
+</div>
+<button aria-label="Cerrar modal" class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-on-surface transition-colors" id="modal-close-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body (Scrollable) -->
+<div class="p-space-lg flex flex-col gap-space-md overflow-y-auto">
+<!-- Root Cause Summary -->
+<div class="p-space-md rounded bg-surface-container-lowest flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Diagnóstico Preliminar</span>
+<p class="font-body-md text-body-md text-on-surface" id="modal-description">
+            Fallo crítico de heartbeat en quórum de validadores Solana RPC. Pod detenido por seguridad.
+          </p>
+</div>
+<!-- Stack Trace & Raw Payload Console Block -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">STACK TRACE &amp; RPC TELEMETRY PAYLOAD</span>
+<button class="flex items-center gap-1 font-label-sm text-label-sm text-primary hover:underline" id="btn-copy-stack">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copiar Payload</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded font-label-md text-label-md text-primary overflow-x-auto select-all leading-relaxed" id="modal-stack-content">
+RPC_TIMEOUT: Cluster unresponsive after 5000ms.
+Quorum lost at block #294819124. Pod LiquidityManager #09 transitioned into FAILSAFE_HALT.
+Node: sol-mainnet-beta-rpc-03.
+Handshake status: DEADLINE_EXCEEDED.
+Call-path: agent::core::defi::arbitrage::execute_flash_arb -&gt; rpc_pool::validate_block()
+State hash: 0x9f88c3a19e2bb47f71932900cda5
+Recovery routine: waiting_for_manual_or_quorum_consensus
+          </div>
+</div>
+<!-- Retry and Heuristics History -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Historial de Reintentos Autónomos &amp; Acciones Recomendadas</span>
+<div class="p-space-md rounded bg-surface-container-lowest flex flex-col gap-space-sm font-body-sm text-body-sm">
+<div class="flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Intento 1/3 (14:18:24 UTC)</span>
+</div>
+<span class="text-outline font-label-sm">Fallo: DEADLINE_EXCEEDED</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Intento 2/3 (14:18:30 UTC)</span>
+</div>
+<span class="text-outline font-label-sm">Fallo: QUORUM_BELOW_MINIMUM (58% &lt; 67%)</span>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Intento 3/3 (14:18:45 UTC)</span>
+</div>
+<span class="text-outline font-label-sm">Abortado: FAILSAFE_INTERLOCK_TRIGGERED</span>
+</div>
+<div class="mt-2 pt-2 text-primary font-label-md text-label-md">
+              &gt; Acción recomendada: Alternar rpc-endpoint a backup Helius EU-Central y ejecutar reinicio en caliente.
+            </div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-md bg-surface-container-lowest flex items-center justify-between gap-space-sm">
+<span class="font-label-sm text-label-sm text-outline">Audit Log Event #9042 • Immutable record</span>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1.5 px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" id="modal-btn-resolve" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Marcar Resuelto</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-space-xs rounded bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md transition-colors font-semibold" id="modal-btn-retry" type="button">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+<span>Reintentar Pod</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Notification -->
+<div class="hidden fixed bottom-6 right-6 z-50 flex items-center gap-2 px-space-md py-space-sm rounded bg-surface-container-highest text-on-surface shadow-2xl transition-all transform duration-300" id="toast-notification">
+<span class="material-symbols-outlined text-[18px] text-primary" id="toast-icon">info</span>
+<span class="font-body-sm text-body-sm font-medium" id="toast-message">Operación realizada con éxito</span>
+</div>
+</div>
+<script>
+  (function() {
+    // State management
+    let activeDropdown = null;
+    let selectedRowForModal = null;
+
+    // Elements
+    const searchInput = document.getElementById('error-search-input');
+    const filterSeverity = document.getElementById('filter-severity');
+    const filterType = document.getElementById('filter-type');
+    const filterStatus = document.getElementById('filter-status');
+    const resetFiltersBtn = document.getElementById('btn-reset-filters');
+    const countDisplay = document.getElementById('filtered-count');
+    const rows = Array.from(document.querySelectorAll('.error-row'));
+
+    const modal = document.getElementById('incident-modal');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalIncidentId = document.getElementById('modal-incident-id');
+    const modalSeverityBadge = document.getElementById('modal-severity-badge');
+    const modalTypeBadge = document.getElementById('modal-type-badge');
+    const modalAgentTitle = document.getElementById('modal-agent-title');
+    const modalPodInfo = document.getElementById('modal-pod-info');
+    const modalTimestampExact = document.getElementById('modal-timestamp-exact');
+    const modalDescription = document.getElementById('modal-description');
+    const modalStackContent = document.getElementById('modal-stack-content');
+    const modalBtnResolve = document.getElementById('modal-btn-resolve');
+    const modalBtnRetry = document.getElementById('modal-btn-retry');
+    const btnCopyStack = document.getElementById('btn-copy-stack');
+
+    const toast = document.getElementById('toast-notification');
+    const toastMessage = document.getElementById('toast-message');
+    const toastIcon = document.getElementById('toast-icon');
+
+    // Toast Trigger
+    function showToast(msg, iconName = 'check_circle', isError = false) {
+      if (!toast) return;
+      toastMessage.textContent = msg;
+      toastIcon.textContent = iconName;
+      toastIcon.className = `material-symbols-outlined text-[18px] ${isError ? 'text-error' : 'text-primary'}`;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+
+    // Close any open dropdowns
+    function closeAllDropdowns() {
+      document.querySelectorAll('.action-dropdown').forEach(dropdown => {
+        dropdown.classList.add('hidden');
+      });
+      activeDropdown = null;
+    }
+
+    // Attach row dropdown toggle
+    document.querySelectorAll('.action-menu-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const parentDropdown = this.parentElement.querySelector('.action-dropdown');
+        if (activeDropdown && activeDropdown !== parentDropdown) {
+          activeDropdown.classList.add('hidden');
+        }
+        parentDropdown.classList.toggle('hidden');
+        activeDropdown = parentDropdown.classList.contains('hidden') ? null : parentDropdown;
+      });
+    });
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', function(e) {
+      if (activeDropdown && !activeDropdown.contains(e.target)) {
+        closeAllDropdowns();
+      }
+    });
+
+    // Resolve action logic
+    function markRowResolved(row) {
+      if (!row) return;
+      row.dataset.status = 'Resuelto';
+      const badge = row.querySelector('.status-badge');
+      if (badge) {
+        badge.className = 'status-badge inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-container/20 text-primary font-semibold';
+        badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span>Resuelto</span>';
+      }
+      showToast(`Incidencia ${row.dataset.id} (${row.dataset.agent}) marcada como resuelta.`);
+      applyFilters();
+    }
+
+    // Row dropdown action buttons
+    document.querySelectorAll('.action-resolve').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeAllDropdowns();
+        const row = this.closest('.error-row');
+        markRowResolved(row);
+      });
+    });
+
+    document.querySelectorAll('.action-retry').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeAllDropdowns();
+        const row = this.closest('.error-row');
+        showToast(`Disparando ciclo de autorecuperación para ${row.dataset.agent}...`, 'replay');
+      });
+    });
+
+    // Open detail modal with populated row dataset
+    function openModalWithRow(row) {
+      if (!row) return;
+      selectedRowForModal = row;
+      modalIncidentId.textContent = `#${row.dataset.id}`;
+      modalAgentTitle.textContent = `${row.dataset.agent} (${row.dataset.code})`;
+      modalPodInfo.textContent = `Pod: ${row.dataset.pod}`;
+      modalTimestampExact.textContent = `Timestamp: ${row.dataset.time} [${row.dataset.utc}]`;
+      modalDescription.textContent = row.dataset.desc;
+      modalStackContent.textContent = row.dataset.stack;
+      modalTypeBadge.textContent = row.dataset.type;
+
+      // Severity formatting
+      const sev = row.dataset.severity;
+      modalSeverityBadge.textContent = sev;
+      if (sev === 'Crítico') {
+        modalSeverityBadge.className = 'px-2 py-0.5 rounded font-label-sm text-label-sm bg-error/20 text-error font-semibold';
+      } else if (sev === 'Alta') {
+        modalSeverityBadge.className = 'px-2 py-0.5 rounded font-label-sm text-label-sm bg-tertiary/20 text-tertiary font-semibold';
+      } else {
+        modalSeverityBadge.className = 'px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant font-semibold';
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    document.querySelectorAll('.action-view-detail').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeAllDropdowns();
+        const row = this.closest('.error-row');
+        openModalWithRow(row);
+      });
+    });
+
+    // Close modal handlers
+    function closeModal() {
+      modal.classList.add('hidden');
+      selectedRowForModal = null;
+    }
+
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+    // Modal action handlers
+    if (modalBtnResolve) {
+      modalBtnResolve.addEventListener('click', function() {
+        if (selectedRowForModal) {
+          markRowResolved(selectedRowForModal);
+          closeModal();
+        }
+      });
+    }
+
+    if (modalBtnRetry) {
+      modalBtnRetry.addEventListener('click', function() {
+        if (selectedRowForModal) {
+          showToast(`Reintentando pod ${selectedRowForModal.dataset.agent}...`, 'play_arrow');
+          closeModal();
+        }
+      });
+    }
+
+    if (btnCopyStack) {
+      btnCopyStack.addEventListener('click', function() {
+        if (modalStackContent) {
+          navigator.clipboard.writeText(modalStackContent.textContent.trim()).then(() => {
+            showToast('Stack trace copiado al portapapeles', 'content_paste');
+          });
+        }
+      });
+    }
+
+    // Top action triggers
+    const exportBtn = document.getElementById('btn-export-logs');
+    if (exportBtn) {
+      exportBtn.addEventListener('click', function() {
+        showToast('Exportando 24 logs en formato JSONL firmado...', 'download');
+      });
+    }
+
+    const retryAllBtn = document.getElementById('btn-retry-all');
+    if (retryAllBtn) {
+      retryAllBtn.addEventListener('click', function() {
+        showToast('Encolando reintento masivo para 3 pods en estado crítico...', 'refresh');
+      });
+    }
+
+    // Filtering logic
+    function applyFilters() {
+      const q = (searchInput ? searchInput.value : '').toLowerCase().trim();
+      const sevFilter = filterSeverity ? filterSeverity.value : 'ALL';
+      const typeFilter = filterType ? filterType.value : 'ALL';
+      const statusFilter = filterStatus ? filterStatus.value : 'ALL';
+
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const textToSearch = [
+          row.dataset.id,
+          row.dataset.agent,
+          row.dataset.code,
+          row.dataset.pod,
+          row.dataset.desc,
+          row.dataset.stack,
+          row.dataset.type
+        ].join(' ').toLowerCase();
+
+        const matchesQuery = !q || textToSearch.includes(q);
+        const matchesSev = sevFilter === 'ALL' || row.dataset.severity === sevFilter;
+        const matchesType = typeFilter === 'ALL' || row.dataset.type === typeFilter;
+        const matchesStatus = statusFilter === 'ALL' || row.dataset.status === statusFilter;
+
+        if (matchesQuery && matchesSev && matchesType && matchesStatus) {
+          row.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+
+      if (countDisplay) {
+        countDisplay.textContent = `Mostrando ${visibleCount} de 24 incidencias`;
+      }
+    }
+
+    if (searchInput) searchInput.addEventListener('input', applyFilters);
+    if (filterSeverity) filterSeverity.addEventListener('change', applyFilters);
+    if (filterType) filterType.addEventListener('change', applyFilters);
+    if (filterStatus) filterStatus.addEventListener('change', applyFilters);
+
+    if (resetFiltersBtn) {
+      resetFiltersBtn.addEventListener('click', function() {
+        if (searchInput) searchInput.value = '';
+        if (filterSeverity) filterSeverity.value = 'ALL';
+        if (filterType) filterType.value = 'ALL';
+        if (filterStatus) filterStatus.value = 'ALL';
+        applyFilters();
+        showToast('Filtros restablecidos');
+      });
+    }
+
+    // Keyboard shortcut for Cmd/Ctrl+K search focus
+    document.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        if (searchInput) {
+          searchInput.focus();
+          searchInput.select();
+        }
+      }
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  })();
+</script></main></div>
+
+</body></html>
