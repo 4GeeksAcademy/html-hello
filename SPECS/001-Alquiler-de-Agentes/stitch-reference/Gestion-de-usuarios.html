@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"inverse-on-surface":"#283044","outline":"#86948a","secondary":"#c0c1ff","on-tertiary-container":"#523200","inverse-surface":"#dae2fd","on-secondary":"#1000a9","surface-container-high":"#222a3d","on-surface":"#dae2fd","surface-dim":"#0b1326","secondary-fixed-dim":"#c0c1ff","primary-container":"#10b981","on-primary-fixed":"#002113","on-tertiary-fixed":"#2a1700","primary-fixed":"#6ffbbe","on-secondary-fixed":"#07006c","on-primary-fixed-variant":"#005236","on-primary":"#003824","on-surface-variant":"#bbcabf","surface":"#0b1326","secondary-container":"#3131c0","on-primary-container":"#00422b","on-tertiary-fixed-variant":"#653e00","tertiary-fixed-dim":"#ffb95f","error-container":"#93000a","surface-variant":"#2d3449","error":"#ffb4ab","background":"#0b1326","secondary-fixed":"#e1e0ff","tertiary":"#ffb95f","on-secondary-container":"#b0b2ff","primary":"#4edea3","surface-tint":"#4edea3","primary-fixed-dim":"#4edea3","surface-container-highest":"#2d3449","inverse-primary":"#006c49","outline-variant":"#3c4a42","on-error":"#690005","on-tertiary":"#472a00","surface-container-low":"#131b2e","on-background":"#dae2fd","on-error-container":"#ffdad6","surface-bright":"#31394d","tertiary-fixed":"#ffddb8","tertiary-container":"#e29100","on-secondary-fixed-variant":"#2f2ebe","surface-container":"#171f33","surface-container-lowest":"#060e20"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"0.75rem","gutter-desktop":"1.25rem","space-xl":"1.5rem","margin-desktop":"2rem","space-xs":"0.25rem","space-sm":"0.5rem","space-lg":"1rem","gutter":"1rem","margin":"1rem"},"fontFamily":{"body-md":["Inter"],"label-md":["JetBrains Mono"],"body-lg":["Inter"],"headline-md":["Hanken Grotesk"],"display-lg-mobile":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"body-sm":["Inter"],"label-sm":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"headline-lg":["Hanken Grotesk"],"display-lg":["Hanken Grotesk"]},"fontSize":{"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"600"}],"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-xl flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[18px]">hub</span></div><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">AgentHub</span></div><div class="px-space-xl"><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Orchestration</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="usuarios" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span>Usuarios</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="agentes" href="#"><span class="material-symbols-outlined text-[18px]">smart_toy</span><span>Agentes</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="skills" href="#"><span class="material-symbols-outlined text-[18px]">extension</span><span>Skills</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="contrataciones" href="#"><span class="material-symbols-outlined text-[18px]">handshake</span><span>Contrataciones</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="errores" href="#"><span class="material-symbols-outlined text-[18px]">report_problem</span><span>Errores</span></a></nav></div><div class="px-space-md flex flex-col gap-space-xs"><div class="bg-surface-container-low p-space-md rounded flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant">Fleet Active</span></div><span class="font-label-sm text-label-sm text-primary">99.98%</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-md w-96"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-md text-outline text-[18px]">search</span><input class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-12 py-space-xs rounded font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search telemetry, agents, traces..." type="text"/><kbd class="absolute right-space-sm px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-outline">⌘K</kbd></div></div><div class="flex items-center gap-space-lg"><button aria-label="Toggle theme" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><button aria-label="Notifications" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full px-margin-desktop py-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Nav State Injector (Sets 'Usuarios' active with shell theme tokens) -->
+<script>
+    (function() {
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'usuarios') {
+          link.className = 'flex items-center gap-space-md px-space-md py-space-sm rounded font-body-md text-body-md bg-primary-container text-on-primary-container font-semibold transition-colors';
+          const icon = link.querySelector('span.material-symbols-outlined');
+          if (icon) icon.className = 'material-symbols-outlined text-[18px] text-on-primary-container';
+        } else {
+          link.className = 'flex items-center gap-space-md px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors';
+        }
+      });
+    })();
+  </script>
+<!-- Section 1: Page Header & Global Controls -->
+<div class="flex flex-col gap-space-md mb-space-xl">
+<!-- Breadcrumb & Telemetry Badge -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm tracking-wider uppercase text-outline">
+<span>CONSOLA CENTRALIZADA</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-semibold">USUARIOS</span>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-xs rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">SINC: OK (LIVE_FEED)</span>
+<span class="font-label-sm text-label-sm text-outline">v2.4.9</span>
+</div>
+</div>
+<!-- Main Title & Operational Actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Gestión de Usuarios</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5 max-w-3xl">
+          Supervisión de accesos de clientes, asignación de planes, cuotas de tokens y estados de suscripción en tiempo real.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<button class="flex items-center gap-space-sm bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-space-sm rounded transition-all active:scale-[0.98]" id="exportCsvBtn" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">file_download</span>
+<span class="font-label-md text-label-md">Exportar CSV</span>
+</button>
+<button class="flex items-center gap-space-sm bg-primary-container hover:bg-primary-fixed text-on-primary-container px-space-md py-space-sm rounded font-label-md text-label-md transition-all active:scale-[0.98]" id="openInviteBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Invitar Usuario</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section 2: Telemetry Metrics / KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop mb-space-xl">
+<!-- Total Users -->
+<div class="bg-surface-container-low p-space-lg rounded flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Total Usuarios</span>
+<span class="material-symbols-outlined text-[20px] text-primary">groups</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">1,280</span>
+<span class="font-label-sm text-label-sm text-primary flex items-center">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>+8.4%
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Registrados en la flota activa</p>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-space-md overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Enterprise Accounts -->
+<div class="bg-surface-container-low p-space-lg rounded flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Planes Enterprise</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">verified</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">342</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center">26.7% flota</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Cuentas con orquestación SLA 99.99%</p>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-space-md overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 64%;"></div>
+</div>
+</div>
+<!-- Token Consumption / Quota -->
+<div class="bg-surface-container-low p-space-lg rounded flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Consumo Medio / Cuota</span>
+<span class="material-symbols-outlined text-[20px] text-tertiary">data_usage</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">71.4%</span>
+<span class="font-label-sm text-label-sm text-tertiary">38.2M Tok/día</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Cuota total asignada: 53.5M</p>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-space-md overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 71.4%;"></div>
+</div>
+</div>
+<!-- Suspended / Under Review -->
+<div class="bg-surface-container-low p-space-lg rounded flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">En Revisión / Pausa</span>
+<span class="material-symbols-outlined text-[20px] text-error">warning</span>
+</div>
+<div class="mt-space-md">
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display-lg text-display-lg text-error font-bold">12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">cuentas flag</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">4 suspendidas por exceso de tokens</p>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-space-md overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 14%;"></div>
+</div>
+</div>
+</div>
+<!-- Section 3: Filter & Query Control Deck -->
+<div class="bg-surface-container-low p-space-md rounded mb-space-md flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex flex-1 items-center gap-space-md w-full">
+<!-- Fast Filter Input -->
+<div class="relative w-full max-w-md flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-outline text-[18px]">filter_list</span>
+<input class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-space-md py-space-xs rounded font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" id="userSearchInput" placeholder="Filtrar por nombre, email o USR-ID..." type="text"/>
+</div>
+<!-- Plan Filter -->
+<div class="hidden sm:flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase pl-space-xs">Plan:</span>
+<select class="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm rounded px-space-md py-space-xs focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer" id="filterPlan">
+<option value="ALL">Todos los planes</option>
+<option value="ENTERPRISE">Enterprise</option>
+<option value="PRO">Pro</option>
+<option value="STARTER">Starter</option>
+</select>
+</div>
+<!-- Status Filter -->
+<div class="hidden sm:flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase pl-space-xs">Estado:</span>
+<select class="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm rounded px-space-md py-space-xs focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer" id="filterStatus">
+<option value="ALL">Todos los estados</option>
+<option value="ACTIVO">Activos</option>
+<option value="PENDIENTE">En Espera</option>
+<option value="SUSPENDIDO">Suspendidos</option>
+</select>
+</div>
+</div>
+<!-- Active Count Counter -->
+<div class="flex items-center gap-space-sm text-outline font-label-sm text-label-sm shrink-0">
+<span>Mostrando</span>
+<span class="font-bold text-on-surface font-label-md text-label-md" id="activeCountDisplay">6</span>
+<span>de 1,280 registros</span>
+</div>
+</div>
+<!-- Section 4: Primary Users Table Viewport -->
+<div class="bg-surface-container-low rounded overflow-x-auto shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest/80 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-md px-space-lg font-medium">Usuario / Identificador</th>
+<th class="py-space-md px-space-md font-medium">Plan</th>
+<th class="py-space-md px-space-md font-medium">Estado</th>
+<th class="py-space-md px-space-md font-medium">Agentes Asignados</th>
+<th class="py-space-md px-space-md font-medium">Fecha Alta</th>
+<th class="py-space-md px-space-md text-right font-medium pr-space-lg">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="usersTableBody">
+<!-- Row 1: Elena Rostova -->
+<tr class="user-row bg-surface-container-low hover:bg-surface-container transition-colors group" data-agents="18" data-date="14 Ene 2024" data-email="elena.rostova@nexusdynamics.io" data-last="Hoy, 10:24 UTC" data-name="Elena Rostova" data-org="Nexus Dynamics Ltd." data-plan="ENTERPRISE" data-quota="84% (4.2M/5M)" data-status="ACTIVO" data-user-id="USR-9041">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded bg-secondary-container text-on-secondary flex items-center justify-center font-label-md text-label-md font-bold shrink-0">
+                ER
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer view-user-trigger">Elena Rostova</span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant truncate">
+<span class="truncate">elena.rostova@nexusdynamics.io</span>
+<span class="text-outline">·</span>
+<span class="text-outline font-mono">USR-9041</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-container/30 text-secondary border border-secondary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Enterprise
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-container/20 text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Activo
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">smart_toy</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">18</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">nodos</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">14 Ene 2024</span>
+<span class="font-label-sm text-label-sm text-outline">Hace 2m</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right pr-space-lg relative">
+<div class="relative inline-block text-left">
+<button aria-label="Opciones" class="row-action-trigger w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="row-menu hidden absolute right-0 mt-1 w-44 bg-surface-container-high rounded-lg shadow-xl py-1 z-30 ring-1 ring-outline-variant">
+<button class="view-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="edit-perms-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">admin_panel_settings</span>
+<span>Editar permisos</span>
+</button>
+<div class="h-px bg-surface-container-highest my-1"></div>
+<button class="delete-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">person_remove</span>
+<span>Eliminar usuario</span>
+</button>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 2: Marcus Vance -->
+<tr class="user-row bg-surface-container-low hover:bg-surface-container transition-colors group" data-agents="8" data-date="03 Feb 2024" data-email="m.vance@quantumbit.co" data-last="Ayer, 18:41 UTC" data-name="Marcus Vance" data-org="QuantumBit Operations" data-plan="PRO" data-quota="58% (1.1M/2M)" data-status="ACTIVO" data-user-id="USR-8812">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-label-md text-label-md font-bold shrink-0">
+                MV
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer view-user-trigger">Marcus Vance</span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant truncate">
+<span class="truncate">m.vance@quantumbit.co</span>
+<span class="text-outline">·</span>
+<span class="text-outline font-mono">USR-8812</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary/10 text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Pro
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-container/20 text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Activo
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">smart_toy</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">nodos</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">03 Feb 2024</span>
+<span class="font-label-sm text-label-sm text-outline">Hace 1m</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right pr-space-lg relative">
+<div class="relative inline-block text-left">
+<button aria-label="Opciones" class="row-action-trigger w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="row-menu hidden absolute right-0 mt-1 w-44 bg-surface-container-high rounded-lg shadow-xl py-1 z-30 ring-1 ring-outline-variant">
+<button class="view-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="edit-perms-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">admin_panel_settings</span>
+<span>Editar permisos</span>
+</button>
+<div class="h-px bg-surface-container-highest my-1"></div>
+<button class="delete-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">person_remove</span>
+<span>Eliminar usuario</span>
+</button>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 3: Sofia Benítez -->
+<tr class="user-row bg-surface-container-low hover:bg-surface-container transition-colors group" data-agents="22" data-date="19 Nov 2023" data-email="s.benitez@aurorasystems.es" data-last="Hoy, 08:15 UTC" data-name="Sofia Benítez" data-org="Aurora Cloud Solutions" data-plan="ENTERPRISE" data-quota="91% (9.1M/10M)" data-status="ACTIVO" data-user-id="USR-7729">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded bg-surface-bright text-on-surface flex items-center justify-center font-label-md text-label-md font-bold shrink-0">
+                SB
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer view-user-trigger">Sofia Benítez</span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant truncate">
+<span class="truncate">s.benitez@aurorasystems.es</span>
+<span class="text-outline">·</span>
+<span class="text-outline font-mono">USR-7729</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-container/30 text-secondary border border-secondary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Enterprise
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-container/20 text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Activo
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">smart_toy</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">22</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">nodos</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">19 Nov 2023</span>
+<span class="font-label-sm text-label-sm text-outline">Hace 4m</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right pr-space-lg relative">
+<div class="relative inline-block text-left">
+<button aria-label="Opciones" class="row-action-trigger w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="row-menu hidden absolute right-0 mt-1 w-44 bg-surface-container-high rounded-lg shadow-xl py-1 z-30 ring-1 ring-outline-variant">
+<button class="view-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="edit-perms-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">admin_panel_settings</span>
+<span>Editar permisos</span>
+</button>
+<div class="h-px bg-surface-container-highest my-1"></div>
+<button class="delete-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">person_remove</span>
+<span>Eliminar usuario</span>
+</button>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 4: Liam Chen -->
+<tr class="user-row bg-surface-container-low hover:bg-surface-container transition-colors group" data-agents="2" data-date="12 Mar 2024" data-email="liam.chen@hypergrowth.ai" data-last="Pendiente validación" data-name="Liam Chen" data-org="HyperGrowth Labs" data-plan="STARTER" data-quota="12% (60k/500k)" data-status="PENDIENTE" data-user-id="USR-6510">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-bold shrink-0">
+                LC
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer view-user-trigger">Liam Chen</span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant truncate">
+<span class="truncate">liam.chen@hypergrowth.ai</span>
+<span class="text-outline">·</span>
+<span class="text-outline font-mono">USR-6510</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant border border-outline-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+              Starter
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-tertiary-container/20 text-tertiary border border-tertiary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+              En Espera
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">smart_toy</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">nodos</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">12 Mar 2024</span>
+<span class="font-label-sm text-label-sm text-outline">Hace 4d</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right pr-space-lg relative">
+<div class="relative inline-block text-left">
+<button aria-label="Opciones" class="row-action-trigger w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="row-menu hidden absolute right-0 mt-1 w-44 bg-surface-container-high rounded-lg shadow-xl py-1 z-30 ring-1 ring-outline-variant">
+<button class="view-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="edit-perms-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">admin_panel_settings</span>
+<span>Editar permisos</span>
+</button>
+<div class="h-px bg-surface-container-highest my-1"></div>
+<button class="delete-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">person_remove</span>
+<span>Eliminar usuario</span>
+</button>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 5: Dr. Aris Thorne -->
+<tr class="user-row bg-surface-container-low hover:bg-surface-container transition-colors group" data-agents="31" data-date="08 Oct 2023" data-email="thorne@syntheticlabs.org" data-last="11 Mar 2024, 03:12 UTC" data-name="Dr. Aris Thorne" data-org="Synthetic Intelligence Labs" data-plan="ENTERPRISE" data-quota="100% (EXCEDIDA)" data-status="SUSPENDIDO" data-user-id="USR-4390">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded bg-error-container text-on-error-container flex items-center justify-center font-label-md text-label-md font-bold shrink-0">
+                AT
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer view-user-trigger">Dr. Aris Thorne</span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant truncate">
+<span class="truncate">thorne@syntheticlabs.org</span>
+<span class="text-outline">·</span>
+<span class="text-outline font-mono">USR-4390</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-container/30 text-secondary border border-secondary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Enterprise
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container/20 text-error border border-error/30">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+              Suspendido
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-error">smart_toy</span>
+<span class="font-label-md text-label-md text-error font-semibold">31</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">pausados</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">08 Oct 2023</span>
+<span class="font-label-sm text-label-sm text-outline">Hace 5m</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right pr-space-lg relative">
+<div class="relative inline-block text-left">
+<button aria-label="Opciones" class="row-action-trigger w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="row-menu hidden absolute right-0 mt-1 w-44 bg-surface-container-high rounded-lg shadow-xl py-1 z-30 ring-1 ring-outline-variant">
+<button class="view-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="edit-perms-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">admin_panel_settings</span>
+<span>Editar permisos</span>
+</button>
+<div class="h-px bg-surface-container-highest my-1"></div>
+<button class="delete-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">person_remove</span>
+<span>Eliminar usuario</span>
+</button>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 6: Carla Méndez -->
+<tr class="user-row bg-surface-container-low hover:bg-surface-container transition-colors group" data-agents="6" data-date="27 Feb 2024" data-email="carla@fintechcore.net" data-last="Hoy, 12:02 UTC" data-name="Carla Méndez" data-org="FinTech Core Global" data-plan="PRO" data-quota="42% (840k/2M)" data-status="ACTIVO" data-user-id="USR-3120">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-8 h-8 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-label-md text-label-md font-bold shrink-0">
+                CM
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer view-user-trigger">Carla Méndez</span>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant truncate">
+<span class="truncate">carla@fintechcore.net</span>
+<span class="text-outline">·</span>
+<span class="text-outline font-mono">USR-3120</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary/10 text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Pro
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary-container/20 text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Activo
+            </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">smart_toy</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">6</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">nodos</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">27 Feb 2024</span>
+<span class="font-label-sm text-label-sm text-outline">Hace 2sem</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right pr-space-lg relative">
+<div class="relative inline-block text-left">
+<button aria-label="Opciones" class="row-action-trigger w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="row-menu hidden absolute right-0 mt-1 w-44 bg-surface-container-high rounded-lg shadow-xl py-1 z-30 ring-1 ring-outline-variant">
+<button class="view-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="edit-perms-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">admin_panel_settings</span>
+<span>Editar permisos</span>
+</button>
+<div class="h-px bg-surface-container-highest my-1"></div>
+<button class="delete-user-btn w-full flex items-center gap-space-sm px-space-md py-space-xs text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">person_remove</span>
+<span>Eliminar usuario</span>
+</button>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Section 5: Pagination and Batch Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md mt-space-md text-outline font-label-sm text-label-sm">
+<div class="flex items-center gap-space-sm">
+<span>Filas por página:</span>
+<select class="bg-surface-container-lowest text-on-surface rounded px-space-sm py-1 focus:outline-none">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+<span class="ml-space-md">Página 1 de 128</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-primary-container text-on-primary-container font-semibold">1</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">2</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">3</button>
+<span class="px-space-xs">...</span>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">128</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Section 6: User Detail Modal Dialog -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-space-md sm:p-space-xl bg-black/60 backdrop-blur-sm transition-opacity duration-200" id="userDetailModal">
+<div class="bg-surface-container-high w-full max-w-2xl rounded-xl shadow-2xl ring-1 ring-outline-variant flex flex-col max-h-[921px] overflow-hidden transform transition-transform" id="modalBox">
+<!-- Modal Header -->
+<div class="flex items-center justify-between px-space-xl py-space-lg bg-surface-container-highest/60 border-b border-surface-container-highest">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-label-lg text-label-lg font-bold" id="modalAvatar">
+            ER
+          </div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface" id="modalUserName">Elena Rostova</h2>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="text-primary font-mono" id="modalUserId">USR-9041</span>
+<span>·</span>
+<span id="modalUserEmail">elena.rostova@nexusdynamics.io</span>
+</div>
+</div>
+</div>
+<button aria-label="Cerrar modal" class="w-8 h-8 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" id="closeModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body (Detailed breakdown) -->
+<div class="p-space-xl overflow-y-auto flex flex-col gap-space-lg">
+<!-- Quick Attribute Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md bg-surface-container-lowest p-space-md rounded">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-outline block">Organización</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate block" id="modalOrg">Nexus Dynamics Ltd.</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-outline block">Plan Actual</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold block mt-0.5" id="modalPlanBadge">Enterprise SLA</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-outline block">Estado</span>
+<span class="font-label-sm text-label-sm text-primary font-bold block mt-0.5" id="modalStatusBadge">Activo</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-outline block">Último Login</span>
+<span class="font-label-sm text-label-sm text-on-surface block mt-0.5" id="modalLastLogin">Hoy, 10:24 UTC</span>
+</div>
+</div>
+<!-- Token Quota Usage Bar -->
+<div class="bg-surface-container p-space-md rounded flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Consumo de Cuota Mensual</span>
+<span class="font-label-sm text-label-sm text-primary font-mono" id="modalQuotaText">84% (4.2M / 5M Tokens)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-300" id="modalQuotaBar" style="width: 84%;"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline mt-1">
+<span>Ciclo reinicia en 12 días</span>
+<span>Límite de seguridad: 5.5M (Hard Cap)</span>
+</div>
+</div>
+<!-- Linked Agent Fleet Table -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Agentes Vinculados en Ejecución</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="modalAgentsCount">18 Agentes asignados</span>
+</div>
+<div class="bg-surface-container-lowest rounded divide-y divide-surface-container overflow-hidden">
+<div class="p-space-sm flex items-center justify-between hover:bg-surface-container/50 transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">smart_toy</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">#09-LiquidityManager</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">CONTRACT_0x9B...38FA</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-container/20 text-primary">ACTIVO</span>
+</div>
+<div class="p-space-sm flex items-center justify-between hover:bg-surface-container/50 transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">smart_toy</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">#03-ArbitrageExecutor</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">CONTRACT_0x44...81EE</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-container/20 text-primary">ACTIVO</span>
+</div>
+<div class="p-space-sm flex items-center justify-between hover:bg-surface-container/50 transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">smart_toy</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">#14-DataHarvestBot</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">CONTRACT_0xFA...771B</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">IDLE</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Log Hint -->
+<div class="bg-surface-container-lowest p-space-md rounded flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">terminal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">ID de Sesión SDK:</span>
+<span class="font-label-sm text-label-sm font-mono text-on-surface">sess_auth_9041_c8b7f2</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-0.5">
+            Ver Logs <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="flex items-center justify-between px-space-xl py-space-md bg-surface-container-highest/40 border-t border-surface-container-highest">
+<button class="flex items-center gap-space-sm bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-space-xs rounded font-label-md text-label-md transition-colors" id="modalActionKeysBtn" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">vpn_key</span>
+<span>Gestionar Claves API</span>
+</button>
+<button class="bg-primary-container hover:bg-primary-fixed text-on-primary-container font-label-md text-label-md px-space-lg py-space-xs rounded transition-colors font-semibold" id="modalCloseBtnBottom" type="button">
+          Cerrar
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Logic Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Dropdown Context Menus
+      let activeOpenMenu = null;
+
+      function closeAllMenus() {
+        document.querySelectorAll('.row-menu').forEach(menu => {
+          menu.classList.add('hidden');
+        });
+        activeOpenMenu = null;
+      }
+
+      document.querySelectorAll('.row-action-trigger').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const menu = trigger.nextElementSibling;
+          if (menu === activeOpenMenu) {
+            closeAllMenus();
+          } else {
+            closeAllMenus();
+            if (menu) {
+              menu.classList.remove('hidden');
+              activeOpenMenu = menu;
+            }
+          }
+        });
+      });
+
+      // Close dropdowns on outside click
+      document.addEventListener('click', () => {
+        closeAllMenus();
+      });
+
+      // Prevent closing when clicking inside the menu itself
+      document.querySelectorAll('.row-menu').forEach(menu => {
+        menu.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      });
+
+      // 2. Modal Details Management
+      const modal = document.getElementById('userDetailModal');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const modalCloseBtnBottom = document.getElementById('modalCloseBtnBottom');
+
+      function openModalWithData(row) {
+        if (!row) return;
+        const name = row.getAttribute('data-name');
+        const email = row.getAttribute('data-email');
+        const id = row.getAttribute('data-user-id');
+        const org = row.getAttribute('data-org');
+        const plan = row.getAttribute('data-plan');
+        const status = row.getAttribute('data-status');
+        const agents = row.getAttribute('data-agents');
+        const last = row.getAttribute('data-last');
+        const quota = row.getAttribute('data-quota');
+
+        // Populate elements
+        document.getElementById('modalUserName').innerText = name;
+        document.getElementById('modalUserId').innerText = id;
+        document.getElementById('modalUserEmail').innerText = email;
+        document.getElementById('modalAvatar').innerText = name.split(' ').map(n => n[0]).join('').substring(0, 2);
+        document.getElementById('modalOrg').innerText = org;
+        document.getElementById('modalPlanBadge').innerText = plan;
+        document.getElementById('modalStatusBadge').innerText = status;
+        document.getElementById('modalLastLogin').innerText = last;
+        document.getElementById('modalQuotaText').innerText = quota;
+        document.getElementById('modalAgentsCount').innerText = `${agents} Agentes vinculados`;
+
+        // Quota bar percentage approximation
+        let percent = '75%';
+        if (quota.includes('84%')) percent = '84%';
+        else if (quota.includes('58%')) percent = '58%';
+        else if (quota.includes('91%')) percent = '91%';
+        else if (quota.includes('12%')) percent = '12%';
+        else if (quota.includes('100%')) percent = '100%';
+        else if (quota.includes('42%')) percent = '42%';
+        document.getElementById('modalQuotaBar').style.width = percent;
+
+        // Show Modal
+        modal.classList.remove('hidden');
+        closeAllMenus();
+      }
+
+      function hideModal() {
+        modal.classList.add('hidden');
+      }
+
+      // Attach click handlers to triggers inside each row
+      document.querySelectorAll('.view-user-trigger').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const row = trigger.closest('tr');
+          openModalWithData(row);
+        });
+      });
+
+      document.querySelectorAll('.view-user-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const row = btn.closest('tr');
+          openModalWithData(row);
+        });
+      });
+
+      // Close handlers
+      closeModalBtn.addEventListener('click', hideModal);
+      modalCloseBtnBottom.addEventListener('click', hideModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) hideModal();
+      });
+
+      // Escape key to close modal or dropdown
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          hideModal();
+          closeAllMenus();
+        }
+      });
+
+      // 3. Search and Filtering logic
+      const searchInput = document.getElementById('userSearchInput');
+      const filterPlan = document.getElementById('filterPlan');
+      const filterStatus = document.getElementById('filterStatus');
+      const countDisplay = document.getElementById('activeCountDisplay');
+      const rows = document.querySelectorAll('#usersTableBody tr.user-row');
+
+      function filterTable() {
+        const query = (searchInput.value || '').toLowerCase().trim();
+        const selectedPlan = filterPlan.value;
+        const selectedStatus = filterStatus.value;
+        let visibleCount = 0;
+
+        rows.forEach(row => {
+          const name = row.getAttribute('data-name').toLowerCase();
+          const email = row.getAttribute('data-email').toLowerCase();
+          const id = row.getAttribute('data-user-id').toLowerCase();
+          const plan = row.getAttribute('data-plan');
+          const status = row.getAttribute('data-status');
+
+          const matchesQuery = !query || name.includes(query) || email.includes(query) || id.includes(query);
+          const matchesPlan = selectedPlan === 'ALL' || plan === selectedPlan;
+          const matchesStatus = selectedStatus === 'ALL' || status === selectedStatus;
+
+          if (matchesQuery && matchesPlan && matchesStatus) {
+            row.style.display = '';
+            visibleCount++;
+          } else {
+            row.style.display = 'none';
+          }
+        });
+
+        if (countDisplay) {
+          countDisplay.innerText = visibleCount;
+        }
+      }
+
+      if (searchInput) searchInput.addEventListener('input', filterTable);
+      if (filterPlan) filterPlan.addEventListener('change', filterTable);
+      if (filterStatus) filterStatus.addEventListener('change', filterTable);
+
+      // 4. Quick Action notifications
+      document.querySelectorAll('.delete-user-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const row = btn.closest('tr');
+          const name = row.getAttribute('data-name');
+          closeAllMenus();
+          if (confirm(`¿Confirma revocación y purga de accesos para el usuario ${name}? Esta acción desconectará sus agentes asociados.`)) {
+            row.remove();
+            filterTable();
+          }
+        });
+      });
+
+      document.querySelectorAll('.edit-perms-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          closeAllMenus();
+          alert('Editor de permisos IAM abierto para el perfil seleccionado.');
+        });
+      });
+
+      const exportBtn = document.getElementById('exportCsvBtn');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', () => {
+          alert('Generando archivo CSV con 1,280 registros de telemetría de usuarios...');
+        });
+      }
+
+      const inviteBtn = document.getElementById('openInviteBtn');
+      if (inviteBtn) {
+        inviteBtn.addEventListener('click', () => {
+          const email = prompt('Introduce el correo electrónico institucional del nuevo usuario:');
+          if (email) {
+            alert(`Invitación de acceso enviada exitosamente a ${email}`);
+          }
+        });
+      }
+    });
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,793 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"inverse-on-surface":"#283044","outline":"#86948a","secondary":"#c0c1ff","on-tertiary-container":"#523200","inverse-surface":"#dae2fd","on-secondary":"#1000a9","surface-container-high":"#222a3d","on-surface":"#dae2fd","surface-dim":"#0b1326","secondary-fixed-dim":"#c0c1ff","primary-container":"#10b981","on-primary-fixed":"#002113","on-tertiary-fixed":"#2a1700","primary-fixed":"#6ffbbe","on-secondary-fixed":"#07006c","on-primary-fixed-variant":"#005236","on-primary":"#003824","on-surface-variant":"#bbcabf","surface":"#0b1326","secondary-container":"#3131c0","on-primary-container":"#00422b","on-tertiary-fixed-variant":"#653e00","tertiary-fixed-dim":"#ffb95f","error-container":"#93000a","surface-variant":"#2d3449","error":"#ffb4ab","background":"#0b1326","secondary-fixed":"#e1e0ff","tertiary":"#ffb95f","on-secondary-container":"#b0b2ff","primary":"#4edea3","surface-tint":"#4edea3","primary-fixed-dim":"#4edea3","surface-container-highest":"#2d3449","inverse-primary":"#006c49","outline-variant":"#3c4a42","on-error":"#690005","on-tertiary":"#472a00","surface-container-low":"#131b2e","on-background":"#dae2fd","on-error-container":"#ffdad6","surface-bright":"#31394d","tertiary-fixed":"#ffddb8","tertiary-container":"#e29100","on-secondary-fixed-variant":"#2f2ebe","surface-container":"#171f33","surface-container-lowest":"#060e20"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"0.75rem","gutter-desktop":"1.25rem","space-xl":"1.5rem","margin-desktop":"2rem","space-xs":"0.25rem","space-sm":"0.5rem","space-lg":"1rem","gutter":"1rem","margin":"1rem"},"fontFamily":{"body-md":["Inter"],"label-md":["JetBrains Mono"],"body-lg":["Inter"],"headline-md":["Hanken Grotesk"],"display-lg-mobile":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"body-sm":["Inter"],"label-sm":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"headline-lg":["Hanken Grotesk"],"display-lg":["Hanken Grotesk"]},"fontSize":{"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"600"}],"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-xl flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[18px]">hub</span></div><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">AgentHub</span></div><div class="px-space-xl"><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Consola Centralizada</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="usuarios" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span>Usuarios</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="agentes" href="#"><span class="material-symbols-outlined text-[18px]">smart_toy</span><span>Agentes</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded" data-path="skills" href="#"><span class="material-symbols-outlined text-[18px]">extension</span><span>Skills</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="contrataciones" href="#"><span class="material-symbols-outlined text-[18px]">description</span><span>Contrataciones</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="errores" href="#"><span class="material-symbols-outlined text-[18px]">warning</span><span>Errores</span></a></nav></div><div class="px-space-md flex flex-col gap-space-xs"><div class="bg-surface-container-low p-space-md rounded flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant">Fleet Active</span></div><span class="font-label-sm text-label-sm text-primary font-medium">99.98%</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-wider"><span class="text-outline">CONSOLA CENTRALIZADA</span><span class="text-outline-variant font-mono">/</span><span class="text-primary font-semibold">SKILLS</span></nav><div class="relative w-80 flex items-center ml-space-md"><span class="material-symbols-outlined absolute left-space-md text-outline text-[18px]">search</span><input class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-12 py-space-xs rounded font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Buscar skills, agentes, dependencias..." type="text"><kbd class="absolute right-space-sm px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-outline">⌘K</kbd></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded border border-outline-variant/30"><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Operational</span></div><button aria-label="Toggle theme" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><button aria-label="Notifications" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full px-margin-desktop py-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg w-full">
+<!-- Top Bar: Title, System Tag & Actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Catálogo de Skills</h1>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+            v2.1-REGISTRY
+          </span>
+<span class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            CLUSTER RPC SYNCED
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Registro modular de habilidades autónomas, herramientas de ejecución distribuida y orquestación de agentes.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Verificar Sandbox</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-primary transition-colors shadow-sm" id="btn-open-register" type="button">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ Registrar Nueva Skill</span>
+</button>
+</div>
+</div>
+<!-- Contextual Explanation Banner -->
+<div class="relative overflow-hidden rounded bg-surface-container-low p-space-lg shadow-sm">
+<div class="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-primary/5 blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-space-md relative z-10">
+<div class="w-9 h-9 rounded bg-surface-container-high flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">¿Qué es una Skill en AgentHub?</h2>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm">ARQUITECTURA MODULAR</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl leading-relaxed">
+            Una <span class="text-on-surface font-medium">Skill</span> es un módulo autónomo de ejecución (tool o capability encapsulada) que dota a un agente de acceso a APIs externas, herramientas de cálculo determinista, scraping o conectores blockchain. Las skills operan en contenedores aislados con control de cuotas y contratos inteligentes independientes.
+          </p>
+<div class="flex items-center gap-space-lg pt-space-xs flex-wrap">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+              Aislamiento WASM &amp; OCI
+            </div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+              Auditoría Criptográfica
+            </div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+              Límite de Gas Dinámico
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Metrics (4 compact metric cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Metric 1 -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col gap-space-xs shadow-sm hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Total en Catálogo</span>
+<span class="material-symbols-outlined text-primary text-[18px]">apps</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">18</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-1.5 py-0.5 rounded font-medium">+3 este mes</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Habilidades validadas</span>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col gap-space-xs shadow-sm hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Agentes con Skills</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">smart_toy</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">39<span class="text-on-surface-variant font-body-md text-body-md font-normal"> / 42</span></span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary/10 px-1.5 py-0.5 rounded font-medium">92.8% flota</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Conectadas y activas</span>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col gap-space-xs shadow-sm hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Invocaciones Hoy</span>
+<span class="material-symbols-outlined text-tertiary text-[18px]">bolt</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">2.84M</span>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary/10 px-1.5 py-0.5 rounded font-medium">+14.2%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Llamadas deterministas</span>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col gap-space-xs shadow-sm hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Tasa de Aprobación</span>
+<span class="material-symbols-outlined text-primary text-[18px]">health_and_safety</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-display-lg text-display-lg text-on-surface font-bold">99.8%</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-1.5 py-0.5 rounded font-medium">SLA Salud</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">0.02% excepciones</span>
+</div>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="bg-surface-container-low p-space-sm rounded flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface pl-8 pr- space-md py-space-xs rounded font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="skill-search-input" placeholder="Buscar skill por nombre, tag o protocolo..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- Category Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container text-on-surface pl-space-md pr-8 py-space-xs rounded font-label-sm text-label-sm focus:outline-none cursor-pointer" id="category-filter">
+<option value="all">Todas las categorías</option>
+<option value="blockchain">Blockchain &amp; Web3</option>
+<option value="defi">DeFi &amp; Trading</option>
+<option value="audit">Auditoría &amp; Riesgo</option>
+<option value="scraping">Datos &amp; Extracción</option>
+<option value="security">Seguridad</option>
+<option value="nlp">NLP &amp; Redes</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Status Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container text-on-surface pl-space-md pr-8 py-space-xs rounded font-label-sm text-label-sm focus:outline-none cursor-pointer" id="status-filter">
+<option value="all">Estado: Todas</option>
+<option value="stable">Estable</option>
+<option value="beta">Beta</option>
+<option value="deprecated">Deprecated</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px] pointer-events-none">expand_more</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest hidden sm:block"></div>
+<div class="font-label-sm text-label-sm text-outline px-space-xs whitespace-nowrap" id="skill-counter">
+          Mostrando <span class="text-on-surface font-semibold">6</span> de <span class="text-on-surface font-semibold">18</span> skills
+        </div>
+</div>
+</div>
+<!-- Skills Grid (6 cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md" id="skills-grid">
+<!-- Card 1: Solana RPC Sync -->
+<div class="skill-card bg-surface-container-low hover:bg-surface-container p-space-md rounded flex flex-col justify-between gap-space-md transition-all shadow-sm group" data-category="blockchain" data-name="solana rpc sync" data-status="stable">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">currency_exchange</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Solana RPC Sync</h3>
+<span class="font-label-sm text-label-sm text-outline">v2.4.1</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Blockchain &amp; Web3</span>
+</div>
+</div>
+<!-- Context Dropdown -->
+<div class="relative dropdown-container">
+<button class="dropdown-trigger w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="dropdown-menu hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl py-1 z-30 font-body-sm text-body-sm">
+<button class="open-modal-btn w-full text-left px-space-md py-1.5 text-on-surface hover:bg-surface-container flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<button class="w-full text-left px-space-md py-1.5 text-on-surface hover:bg-surface-container flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">science</span>
+<span>Configurar Sandbox</span>
+</button>
+<div class="my-1 border-t border-surface-container-highest"></div>
+<button class="w-full text-left px-space-md py-1.5 text-error hover:bg-error-container/30 flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+            Sincronización en tiempo real con clústeres Solana para lectura de estados, confirmación de transacciones y polling optimizado de quórum.
+          </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Activo / Estable
+            </span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">RPC mainnet-beta</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">WebSocket 4.0</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs border-t border-surface-container-highest/40">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Agentes habilitados</span>
+<span class="text-on-surface font-semibold">14 activos</span>
+</div>
+<div class="flex items-center gap-1.5 overflow-hidden">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">LiquidityManager #09</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">Arbitrage #03</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-outline font-label-sm text-label-sm">+12</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+<span>Consumo: <strong class="text-on-surface">4.2 MB/s</strong></span>
+<span>Latencia: <strong class="text-primary">42ms</strong></span>
+</div>
+</div>
+</div>
+<!-- Card 2: Liquidity Routing -->
+<div class="skill-card bg-surface-container-low hover:bg-surface-container p-space-md rounded flex flex-col justify-between gap-space-md transition-all shadow-sm group" data-category="defi" data-name="liquidity routing" data-status="stable">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">alt_route</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Liquidity Routing</h3>
+<span class="font-label-sm text-label-sm text-outline">v1.8.0</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">DeFi &amp; Trading</span>
+</div>
+</div>
+<!-- Context Dropdown -->
+<div class="relative dropdown-container">
+<button class="dropdown-trigger w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="dropdown-menu hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl py-1 z-30 font-body-sm text-body-sm">
+<button class="open-modal-btn w-full text-left px-space-md py-1.5 text-on-surface hover:bg-surface-container flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<div class="my-1 border-t border-surface-container-highest"></div>
+<button class="w-full text-left px-space-md py-1.5 text-error hover:bg-error-container/30 flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+            Algoritmo de enrutamiento óptimo de pools de liquidez y swaps descentralizados minimizando deslizamiento (slippage) y gas.
+          </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Activo / Estable
+            </span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Uniswap V3 / Raydium</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs border-t border-surface-container-highest/40">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Agentes habilitados</span>
+<span class="text-on-surface font-semibold">8 activos</span>
+</div>
+<div class="flex items-center gap-1.5 overflow-hidden">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">LiquidityManager #09</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">Arbitrage-Engine #03</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-outline font-label-sm text-label-sm">+6</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+<span>Consumo: <strong class="text-on-surface">1.8 MB/s</strong></span>
+<span>Latencia: <strong class="text-primary">18ms</strong></span>
+</div>
+</div>
+</div>
+<!-- Card 3: Risk Assessment v2 -->
+<div class="skill-card bg-surface-container-low hover:bg-surface-container p-space-md rounded flex flex-col justify-between gap-space-md transition-all shadow-sm group" data-category="audit" data-name="risk assessment v2" data-status="stable">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Risk Assessment v2</h3>
+<span class="font-label-sm text-label-sm text-outline">v2.0.0</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">Auditoría &amp; Riesgo</span>
+</div>
+</div>
+<!-- Context Dropdown -->
+<div class="relative dropdown-container">
+<button class="dropdown-trigger w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="dropdown-menu hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl py-1 z-30 font-body-sm text-body-sm">
+<button class="open-modal-btn w-full text-left px-space-md py-1.5 text-on-surface hover:bg-surface-container flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<div class="my-1 border-t border-surface-container-highest"></div>
+<button class="w-full text-left px-space-md py-1.5 text-error hover:bg-error-container/30 flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+            Evaluación probabilística de riesgo crediticio y colateral en smart contracts con detección de anomalías en tiempo real.
+          </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Activo / Estable
+            </span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">MonteCarlo SIM</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs border-t border-surface-container-highest/40">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Agentes habilitados</span>
+<span class="text-on-surface font-semibold">19 activos</span>
+</div>
+<div class="flex items-center gap-1.5 overflow-hidden">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">ComplianceAudit #27</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">LiquidityManager #09</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-outline font-label-sm text-label-sm">+17</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+<span>Consumo: <strong class="text-on-surface">850 KB/s</strong></span>
+<span>Latencia: <strong class="text-primary">95ms</strong></span>
+</div>
+</div>
+</div>
+<!-- Card 4: Web Scraping Pro -->
+<div class="skill-card bg-surface-container-low hover:bg-surface-container p-space-md rounded flex flex-col justify-between gap-space-md transition-all shadow-sm group" data-category="scraping" data-name="web scraping pro" data-status="stable">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">travel_explore</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Web Scraping Pro</h3>
+<span class="font-label-sm text-label-sm text-outline">v3.1.2</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Datos &amp; Extracción</span>
+</div>
+</div>
+<!-- Context Dropdown -->
+<div class="relative dropdown-container">
+<button class="dropdown-trigger w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="dropdown-menu hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl py-1 z-30 font-body-sm text-body-sm">
+<button class="open-modal-btn w-full text-left px-space-md py-1.5 text-on-surface hover:bg-surface-container flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<div class="my-1 border-t border-surface-container-highest"></div>
+<button class="w-full text-left px-space-md py-1.5 text-error hover:bg-error-container/30 flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+            Extracción distribuida con bypass de bot-guards, rotación inteligente de proxies residenciales y parseo semántico markdown.
+          </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Activo / Estable
+            </span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Headless Cluster</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs border-t border-surface-container-highest/40">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Agentes habilitados</span>
+<span class="text-on-surface font-semibold">26 activos</span>
+</div>
+<div class="flex items-center gap-1.5 overflow-hidden">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">CustomerSentiment #05</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">SentinelSecurity #14</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-outline font-label-sm text-label-sm">+24</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+<span>Consumo: <strong class="text-on-surface">18.4 MB/s</strong></span>
+<span>Latencia: <strong class="text-primary">180ms</strong></span>
+</div>
+</div>
+</div>
+<!-- Card 5: Smart Contract Sentinel -->
+<div class="skill-card bg-surface-container-low hover:bg-surface-container p-space-md rounded flex flex-col justify-between gap-space-md transition-all shadow-sm group" data-category="security" data-name="smart contract sentinel" data-status="stable">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">security</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Smart Contract Sentinel</h3>
+<span class="font-label-sm text-label-sm text-outline">v1.4.2</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Seguridad</span>
+</div>
+</div>
+<!-- Context Dropdown -->
+<div class="relative dropdown-container">
+<button class="dropdown-trigger w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="dropdown-menu hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl py-1 z-30 font-body-sm text-body-sm">
+<button class="open-modal-btn w-full text-left px-space-md py-1.5 text-on-surface hover:bg-surface-container flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<div class="my-1 border-t border-surface-container-highest"></div>
+<button class="w-full text-left px-space-md py-1.5 text-error hover:bg-error-container/30 flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+            Monitoreo continuo de mempools EVM para detección de front-running, ataques de reentrancy y llamadas sospechosas.
+          </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Activo / Estable
+            </span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Mempool Hook</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs border-t border-surface-container-highest/40">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Agentes habilitados</span>
+<span class="text-on-surface font-semibold">11 activos</span>
+</div>
+<div class="flex items-center gap-1.5 overflow-hidden">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">SentinelSecurity #14</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">ComplianceAudit #27</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-outline font-label-sm text-label-sm">+9</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+<span>Consumo: <strong class="text-on-surface">2.1 MB/s</strong></span>
+<span>Latencia: <strong class="text-primary">64ms</strong></span>
+</div>
+</div>
+</div>
+<!-- Card 6: Sentiment Analyzer AI -->
+<div class="skill-card bg-surface-container-low hover:bg-surface-container p-space-md rounded flex flex-col justify-between gap-space-md transition-all shadow-sm group" data-category="nlp" data-name="sentiment analyzer ai" data-status="beta">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Sentiment Analyzer AI</h3>
+<span class="font-label-sm text-label-sm text-outline">v2.2.0</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">NLP &amp; Redes</span>
+</div>
+</div>
+<!-- Context Dropdown -->
+<div class="relative dropdown-container">
+<button class="dropdown-trigger w-7 h-7 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="dropdown-menu hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl py-1 z-30 font-body-sm text-body-sm">
+<button class="open-modal-btn w-full text-left px-space-md py-1.5 text-on-surface hover:bg-surface-container flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>Ver detalle</span>
+</button>
+<div class="my-1 border-t border-surface-container-highest"></div>
+<button class="w-full text-left px-space-md py-1.5 text-error hover:bg-error-container/30 flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+            Ingesta y puntuación de sentimiento financiero a partir de feeds de X (Twitter), Reddit, Discord y noticias de Reuters en tiempo real.
+          </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-tertiary/10 text-tertiary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+              Beta Sandbox
+            </span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">FinBERT-Large</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs border-t border-surface-container-highest/40">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Agentes habilitados</span>
+<span class="text-on-surface font-semibold">7 activos</span>
+</div>
+<div class="flex items-center gap-1.5 overflow-hidden">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm truncate">CustomerSentiment #05</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-outline font-label-sm text-label-sm">+6</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline pt-1">
+<span>Consumo: <strong class="text-on-surface">5.6 MB/s</strong></span>
+<span>Latencia: <strong class="text-tertiary">310ms</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty state message (hidden by default) -->
+<div class="hidden flex-col items-center justify-center p-space-xl bg-surface-container-low rounded text-center my-space-md" id="empty-state">
+<span class="material-symbols-outlined text-[48px] text-outline mb-space-sm">filter_alt_off</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">No se encontraron skills</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-1">Ajusta los términos de búsqueda o los filtros de categoría para ver resultados coincidentes.</p>
+</div>
+<!-- Telemetry Footnote / Status strip -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm p-space-sm rounded bg-surface-container-lowest font-label-sm text-label-sm text-outline">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>REGISTRY NODE: <strong class="text-on-surface font-mono">core-eu-central-01.agenthub.network</strong></span>
+</div>
+<div class="flex items-center gap-space-md">
+<span>QUOTA REFRESH: <strong class="text-on-surface font-mono">00:04:12 UTC</strong></span>
+<span>SIGNATURE: <strong class="text-primary font-mono">0x9d4a...7c2e</strong></span>
+</div>
+</div>
+</div>
+<!-- Modal: Ver Detalle de Skill -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-space-md bg-surface-container-lowest/80 backdrop-blur-sm transition-opacity" id="skill-detail-modal">
+<div class="relative w-full max-w-2xl bg-surface-container-low rounded-xl shadow-2xl p-space-lg flex flex-col gap-space-lg max-h-[90vh] overflow-y-auto" id="modal-container">
+<!-- Modal Header -->
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">currency_exchange</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Solana RPC Sync</h3>
+<span class="font-label-sm text-label-sm text-outline bg-surface-container px-1.5 py-0.5 rounded">v2.4.1</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Estable
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">ID: SKILL-0091-SOL-SYNC • Categoría: Blockchain &amp; Web3</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" id="btn-close-modal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Technical Description & Endpoints -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md rounded">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Descripción Técnica Extendida</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Controlador de suscripción de alto rendimiento a nodos RPC de Solana (Triton / Jito-Solana). Proporciona sincronización atómica con slots de confirmación finalizada, suscripción por websockets a cuentas de swap y transacciones sin overhead de deserialización.
+        </p>
+<div class="mt-space-xs flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Endpoints Expuestos:</span>
+<div class="font-label-sm text-label-sm font-mono text-primary bg-surface-container-lowest p-2 rounded flex flex-col gap-1">
+<span>GET /v2/solana/slot/latest</span>
+<span>WS  /v2/solana/accounts/subscribe?commitment=confirmed</span>
+<span>POST /v2/solana/transaction/simulate</span>
+</div>
+</div>
+</div>
+<!-- Performance Metrics (24h) -->
+<div class="grid grid-cols-3 gap-space-sm">
+<div class="bg-surface-container p-space-sm rounded flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Invocaciones 24h</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">1,248,390</span>
+<span class="font-label-sm text-label-sm text-primary">+8.4% vs ayer</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Tasa de Fallo</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">0.02%</span>
+<span class="font-label-sm text-label-sm text-primary">Normal (&lt; 0.1%)</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Tiempo Ejecución</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">42ms</span>
+<span class="font-label-sm text-label-sm text-secondary">P95: 68ms</span>
+</div>
+</div>
+<!-- Associated Active Agents List -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Agentes Vinculados Activos (3 de 14)</span>
+<span class="font-label-sm text-label-sm text-primary cursor-pointer hover:underline">Ver los 14 agentes</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<!-- Agent 1 -->
+<div class="flex items-center justify-between bg-surface-container px-space-md py-space-xs rounded">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-primary font-mono">AG-8812</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">LiquidityManager #09</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-outline">Cuota: 250k/d</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+</div>
+<!-- Agent 2 -->
+<div class="flex items-center justify-between bg-surface-container px-space-md py-space-xs rounded">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-primary font-mono">AG-2309</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Arbitrage-Engine #03</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-outline">Cuota: 500k/d</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+</div>
+<!-- Agent 3 -->
+<div class="flex items-center justify-between bg-surface-container px-space-md py-space-xs rounded">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-primary font-mono">AG-6701</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">SentinelSecurity #14</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-outline">Cuota: 100k/d</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Actions -->
+<div class="flex items-center justify-between pt-space-xs border-t border-surface-container-highest/40 mt-space-xs">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>Descargar Logs de Ejecución</span>
+</button>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-space-sm rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" id="btn-close-modal-footer" type="button">
+            Cerrar
+          </button>
+<button class="px-space-md py-space-sm rounded bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-label-md font-semibold transition-colors" type="button">
+            Configurar Cuotas
+          </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    (function initSkillsCatalogue() {
+      // Dropdown toggle logic (exclusive open, close on click outside)
+      const dropdownContainers = document.querySelectorAll('.dropdown-container');
+
+      function closeAllDropdowns() {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.classList.add('hidden');
+        });
+      }
+
+      dropdownContainers.forEach(container => {
+        const trigger = container.querySelector('.dropdown-trigger');
+        const menu = container.querySelector('.dropdown-menu');
+
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isHidden = menu.classList.contains('hidden');
+          closeAllDropdowns();
+          if (isHidden) {
+            menu.classList.remove('hidden');
+          }
+        });
+      });
+
+      document.addEventListener('click', () => {
+        closeAllDropdowns();
+      });
+
+      // Modal logic
+      const modal = document.getElementById('skill-detail-modal');
+      const closeBtn = document.getElementById('btn-close-modal');
+      const closeFooterBtn = document.getElementById('btn-close-modal-footer');
+      const modalContainer = document.getElementById('modal-container');
+      const openModalButtons = document.querySelectorAll('.open-modal-btn');
+
+      function openModal() {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        closeAllDropdowns();
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      openModalButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openModal();
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      closeFooterBtn.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', (e) => {
+        if (!modalContainer.contains(e.target)) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Filters and Search Simulation
+      const searchInput = document.getElementById('skill-search-input');
+      const categoryFilter = document.getElementById('category-filter');
+      const statusFilter = document.getElementById('status-filter');
+      const cards = document.querySelectorAll('.skill-card');
+      const counterEl = document.getElementById('skill-counter');
+      const emptyStateEl = document.getElementById('empty-state');
+
+      function applyFilters() {
+        const query = (searchInput.value || '').trim().toLowerCase();
+        const selectedCat = categoryFilter.value;
+        const selectedStatus = statusFilter.value;
+
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const name = card.getAttribute('data-name') || '';
+          const cat = card.getAttribute('data-category') || '';
+          const status = card.getAttribute('data-status') || '';
+          const textContent = card.innerText.toLowerCase();
+
+          const matchesQuery = !query || name.includes(query) || textContent.includes(query);
+          const matchesCat = (selectedCat === 'all') || (cat === selectedCat);
+          const matchesStatus = (selectedStatus === 'all') || (status === selectedStatus);
+
+          if (matchesQuery && matchesCat && matchesStatus) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Update counter
+        counterEl.innerHTML = 'Mostrando <span class="text-on-surface font-semibold">' + visibleCount + '</span> de <span class="text-on-surface font-semibold">18</span> skills';
+
+        // Empty state visibility
+        if (visibleCount === 0) {
+          emptyStateEl.classList.remove('hidden');
+          emptyStateEl.classList.add('flex');
+        } else {
+          emptyStateEl.classList.add('hidden');
+          emptyStateEl.classList.remove('flex');
+        }
+      }
+
+      if (searchInput) searchInput.addEventListener('input', applyFilters);
+      if (categoryFilter) categoryFilter.addEventListener('change', applyFilters);
+      if (statusFilter) statusFilter.addEventListener('change', applyFilters);
+
+      // Register new skill stub button
+      const registerBtn = document.getElementById('btn-open-register');
+      if (registerBtn) {
+        registerBtn.addEventListener('click', () => {
+          openModal();
+        });
+      }
+    })();
+  </script>
+</div></main></div>
+
+</body></html>

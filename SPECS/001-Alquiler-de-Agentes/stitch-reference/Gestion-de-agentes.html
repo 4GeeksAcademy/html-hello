@@ -1,0 +1,808 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"inverse-on-surface":"#283044","outline":"#86948a","secondary":"#c0c1ff","on-tertiary-container":"#523200","inverse-surface":"#dae2fd","on-secondary":"#1000a9","surface-container-high":"#222a3d","on-surface":"#dae2fd","surface-dim":"#0b1326","secondary-fixed-dim":"#c0c1ff","primary-container":"#10b981","on-primary-fixed":"#002113","on-tertiary-fixed":"#2a1700","primary-fixed":"#6ffbbe","on-secondary-fixed":"#07006c","on-primary-fixed-variant":"#005236","on-primary":"#003824","on-surface-variant":"#bbcabf","surface":"#0b1326","secondary-container":"#3131c0","on-primary-container":"#00422b","on-tertiary-fixed-variant":"#653e00","tertiary-fixed-dim":"#ffb95f","error-container":"#93000a","surface-variant":"#2d3449","error":"#ffb4ab","background":"#0b1326","secondary-fixed":"#e1e0ff","tertiary":"#ffb95f","on-secondary-container":"#b0b2ff","primary":"#4edea3","surface-tint":"#4edea3","primary-fixed-dim":"#4edea3","surface-container-highest":"#2d3449","inverse-primary":"#006c49","outline-variant":"#3c4a42","on-error":"#690005","on-tertiary":"#472a00","surface-container-low":"#131b2e","on-background":"#dae2fd","on-error-container":"#ffdad6","surface-bright":"#31394d","tertiary-fixed":"#ffddb8","tertiary-container":"#e29100","on-secondary-fixed-variant":"#2f2ebe","surface-container":"#171f33","surface-container-lowest":"#060e20"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"0.75rem","gutter-desktop":"1.25rem","space-xl":"1.5rem","margin-desktop":"2rem","space-xs":"0.25rem","space-sm":"0.5rem","space-lg":"1rem","gutter":"1rem","margin":"1rem"},"fontFamily":{"body-md":["Inter"],"label-md":["JetBrains Mono"],"body-lg":["Inter"],"headline-md":["Hanken Grotesk"],"display-lg-mobile":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"body-sm":["Inter"],"label-sm":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"headline-lg":["Hanken Grotesk"],"display-lg":["Hanken Grotesk"]},"fontSize":{"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["26px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.04em","fontWeight":"600"}],"label-lg":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-xl flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[18px]">hub</span></div><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">AgentHub</span></div><div class="px-space-xl"><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Consola Centralizada</span></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24"><rect height="7" rx="1" width="7" x="3" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="14"></rect><rect height="7" rx="1" width="7" x="3" y="14"></rect></svg><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="usuarios" href="#"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>Usuarios</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded" data-path="agentes" href="#"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24"><rect height="12" rx="2" width="18" x="3" y="8"></rect><path d="M12 2v6"></path><path d="M2 14h2"></path><path d="M20 14h2"></path><circle cx="9" cy="13" r="1" fill="currentColor"></circle><circle cx="15" cy="13" r="1" fill="currentColor"></circle><path d="M8 17h8"></path></svg><span>Agentes</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="skills" href="#"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24"><path d="M19.439 7.85c0-1.57.802-2.54 1.561-3.346a.5.5 0 0 0-.354-.854h-3.292a.5.5 0 0 1-.5-.5V1.858a.5.5 0 0 0-.854-.354C15.194 2.263 14.224 3.065 12.654 3.065s-2.54-.802-3.346-1.561a.5.5 0 0 0-.854.354v3.292a.5.5 0 0 1-.5.5H6.662a.5.5 0 0 0-.354.854c.759.806 1.561 1.776 1.561 3.346s-.802 2.54-1.561 3.346a.5.5 0 0 0 .354.854h1.292v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4h1.292a.5.5 0 0 0 .354-.854c-.759-.806-1.561-1.776-1.561-3.346z"></path></svg><span>Skills</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="contrataciones" href="#"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><line x1="10" x2="8" y1="9" y2="9"></line></svg><span>Contrataciones</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="errores" href="#"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg><span>Errores</span></a></nav></div><div class="px-space-md flex flex-col gap-space-xs"><div class="bg-surface-container-low p-space-md rounded flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant">Fleet Active</span></div><span class="font-label-sm text-label-sm text-primary font-medium">99.98%</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-wider"><span class="text-outline">CONSOLA CENTRALIZADA</span><span class="text-outline-variant font-mono">/</span><span class="text-primary font-semibold">AGENTES</span></nav><div class="relative w-80 flex items-center ml-space-md"><span class="material-symbols-outlined absolute left-space-md text-outline text-[18px]">search</span><input class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-12 py-space-xs rounded font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Buscar agentes, traces, telemetría..." type="text"><kbd class="absolute right-space-sm px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-outline">⌘K</kbd></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded border border-outline-variant/30"><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Operational</span></div><button aria-label="Toggle theme" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><button aria-label="Notifications" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 w-full px-margin-desktop py-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full gap-space-xl text-on-surface">
+<!-- Header de Página con Botones de Acción -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-lg text-headline-lg tracking-tight text-on-surface font-semibold">Gestión de Agentes</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-primary">v3.4-PROD</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Supervisión de clústeres autónomos, configuración de prompts de sistema y orquestación de skills modulares en tiempo real.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">tune</span>
+<span>Filtrar por Clúster</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-fixed transition-colors shadow-sm" onclick="openConfigModal('AG-8812', 'LiquidityManager #09')" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>+ Desplegar Nuevo Agente</span>
+</button>
+</div>
+</div>
+<!-- Métricas Rápidas Operativas (4 Tarjetas) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+<!-- Tarjeta 1 -->
+<div class="p-space-lg rounded bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Flota Desplegada</span>
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold tracking-tight text-on-surface">42 <span class="font-label-md text-label-md text-on-surface-variant font-normal">Agentes</span></span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>+2 nuevos esta semana</span>
+</div>
+</div>
+</div>
+<!-- Tarjeta 2 -->
+<div class="p-space-lg rounded bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Tasa de Ejecución</span>
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold tracking-tight text-on-surface">99.4%</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+<span>SLA de respuesta garantizado</span>
+</div>
+</div>
+</div>
+<!-- Tarjeta 3 -->
+<div class="p-space-lg rounded bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Consumo Inferencia</span>
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold tracking-tight text-on-surface">1.48M <span class="font-label-md text-label-md text-on-surface-variant font-normal">t/h</span></span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+8.2% vs ciclo anterior</span>
+</div>
+</div>
+</div>
+<!-- Tarjeta 4 -->
+<div class="p-space-lg rounded bg-surface-container-low flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Alertas Operativas</span>
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold tracking-tight text-on-surface">3 <span class="font-label-md text-label-md text-tertiary font-normal">Revisión/Halt</span></span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-tertiary">info</span>
+<span>1 detenido por cuota de API</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Barra de Filtros, Búsqueda y Metadatos -->
+<div class="p-space-md rounded bg-surface-container-low flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm flex-1">
+<div class="relative flex-1 min-w-[240px]">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-space-md py-space-xs rounded font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" placeholder="Buscar por nombre, propietario o ID..." type="text">
+</div>
+<div class="relative">
+<select class="w-full sm:w-auto appearance-none bg-surface-container-lowest text-on-surface pl-space-md pr-8 py-space-xs rounded font-label-md text-label-md focus:outline-none cursor-pointer">
+<option value="all">Todos los estados</option>
+<option value="active">Activo</option>
+<option value="waiting">En Espera</option>
+<option value="paused">En Pausa</option>
+<option value="stopped">Detenido</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px]">expand_more</span>
+</div>
+<div class="relative">
+<select class="w-full sm:w-auto appearance-none bg-surface-container-lowest text-on-surface pl-space-md pr-8 py-space-xs rounded font-label-md text-label-md focus:outline-none cursor-pointer">
+<option value="all">Arquitectura / Modelo</option>
+<option value="orchestrator">LLM Orquestador</option>
+<option value="analytical">Analítico</option>
+<option value="transactional">Transaccional</option>
+<option value="security">Seguridad y Auditoría</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-outline text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-md shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Mostrando 5 de 42 agentes</span>
+<div class="flex items-center gap-1 bg-surface-container-lowest p-0.5 rounded">
+<button aria-label="Vista de lista" class="p-1 rounded bg-surface-container text-primary" type="button">
+<span class="material-symbols-outlined text-[16px] block">view_list</span>
+</button>
+<button aria-label="Vista de cuadrícula" class="p-1 rounded text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[16px] block">grid_view</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Contenedor de Listado de Agentes -->
+<div class="flex flex-col gap-space-md">
+<!-- AGENTE 1: LiquidityManager #09 (Expandido por defecto para exhibición completa) -->
+<div class="rounded bg-surface-container-low p-space-lg flex flex-col gap-space-md transition-all hover:bg-surface-container/70">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Bloque Identidad Agente -->
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary shrink-0 relative">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">LiquidityManager #09</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-secondary font-mono">AG-8812</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Activo
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+<span>Propietario: <strong class="text-on-surface font-medium">Elena Rostova / Nexus Dynamics</strong></span>
+<span class="hidden sm:inline text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm text-outline">Modelo: Claude 3.5 Sonnet / High Priority</span>
+<span class="hidden sm:inline text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Latencia: 312ms</span>
+</div>
+</div>
+</div>
+<!-- Controles y Acciones -->
+<div class="flex items-center gap-space-sm shrink-0 self-end lg:self-center">
+<!-- Botón de Toggle Skills -->
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="toggleSkills('skills-ag-8812', this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">extension</span>
+<span>Skills asociadas (4)</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-200 rotate-180 toggle-icon">expand_more</span>
+</button>
+<!-- Dropdown Tres Puntos Contextual -->
+<div class="relative dropdown-container">
+<button aria-label="Acciones de LiquidityManager #09" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="toggleDropdown(event, 'menu-ag-8812')" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl p-1 z-30 flex-col gap-0.5" id="menu-ag-8812">
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors text-left" onclick="openConfigModal('AG-8812', 'LiquidityManager #09')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Configurar</span>
+</button>
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors text-left" onclick="toastAction('Pod reiniciado para LiquidityManager #09')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">restart_alt</span>
+<span>Reiniciar Pod</span>
+</button>
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors text-left" onclick="toastAction('Agente AG-8812 enviado a papelera segura')" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Skills Expandibles: Expandidas inicialmente para LiquidityManager -->
+<div class="flex flex-col gap-space-sm pt-space-sm bg-surface-container-lowest/60 p-space-md rounded" id="skills-ag-8812">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Capacidades y Skills Activas en Pod</span>
+<span class="font-label-sm text-label-sm text-primary font-mono">Consumo agregado: 12.4 MB/s</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-space-sm">
+<!-- Skill Item 1 -->
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Solana RPC Sync</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px]">v2.4.1</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Habilitada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+<!-- Skill Item 2 -->
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Liquidity Routing</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px]">v1.8.0</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Habilitada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+<!-- Skill Item 3 -->
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Risk Assessment v2</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px]">v2.0.0</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Habilitada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+<!-- Skill Item 4 -->
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Web Scraping Pro</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px]">v3.1.2</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Habilitada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AGENTE 2: Arbitrage-Engine #03 -->
+<div class="rounded bg-surface-container-low p-space-lg flex flex-col gap-space-md transition-all hover:bg-surface-container/70">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary shrink-0 relative">
+<span class="material-symbols-outlined text-[22px]">currency_exchange</span>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Arbitrage-Engine #03</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-secondary font-mono">AG-2309</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Activo
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+<span>Propietario: <strong class="text-on-surface font-medium">Marcus Vance / QuantumBit</strong></span>
+<span class="hidden sm:inline text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm text-outline">Modelo: GPT-4o / High Frequency</span>
+<span class="hidden sm:inline text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Latencia: 98ms</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end lg:self-center">
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="toggleSkills('skills-ag-2309', this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">extension</span>
+<span>Ver Skills asociadas (3)</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-200 toggle-icon">expand_more</span>
+</button>
+<div class="relative dropdown-container">
+<button aria-label="Acciones de Arbitrage-Engine #03" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="toggleDropdown(event, 'menu-ag-2309')" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl p-1 z-30 flex-col gap-0.5" id="menu-ag-2309">
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors text-left" onclick="openConfigModal('AG-2309', 'Arbitrage-Engine #03')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Configurar</span>
+</button>
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors text-left" onclick="toastAction('Pod reiniciado para Arbitrage-Engine #03')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">restart_alt</span>
+<span>Reiniciar Pod</span>
+</button>
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors text-left" onclick="toastAction('Agente AG-2309 eliminado')" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Skills Ocultas por defecto -->
+<div class="hidden flex-col gap-space-sm pt-space-sm bg-surface-container-lowest/60 p-space-md rounded" id="skills-ag-2309">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Capacidades y Skills Activas en Pod</span>
+<span class="font-label-sm text-label-sm text-primary font-mono">Consumo agregado: 34.1 MB/s</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Mempool Sniper</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px]">v4.0.2</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Habilitada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Multi-DEX Execution</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px]">v1.2.9</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Habilitada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Slippage Guard</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px]">v3.0.0</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Habilitada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AGENTE 3: ComplianceAudit #27 -->
+<div class="rounded bg-surface-container-low p-space-lg flex flex-col gap-space-md transition-all hover:bg-surface-container/70">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-tertiary shrink-0 relative">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">ComplianceAudit #27</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-secondary font-mono">AG-4419</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-tertiary/10 text-tertiary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                En Espera
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+<span>Propietario: <strong class="text-on-surface font-medium">Dr. Aris Thorne / SyntheticLabs</strong></span>
+<span class="hidden sm:inline text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm text-outline">Modelo: Mistral Large / Audits</span>
+<span class="hidden sm:inline text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Awaiting Trigger</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end lg:self-center">
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="toggleSkills('skills-ag-4419', this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">extension</span>
+<span>Ver Skills asociadas (2)</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-200 toggle-icon">expand_more</span>
+</button>
+<div class="relative dropdown-container">
+<button aria-label="Acciones de ComplianceAudit #27" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="toggleDropdown(event, 'menu-ag-4419')" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl p-1 z-30 flex-col gap-0.5" id="menu-ag-4419">
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors text-left" onclick="openConfigModal('AG-4419', 'ComplianceAudit #27')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Configurar</span>
+</button>
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors text-left" onclick="toastAction('Pod reactivado para ComplianceAudit #27')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">restart_alt</span>
+<span>Reiniciar Pod</span>
+</button>
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors text-left" onclick="toastAction('Agente AG-4419 eliminado')" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Skills Ocultas -->
+<div class="hidden flex-col gap-space-sm pt-space-sm bg-surface-container-lowest/60 p-space-md rounded" id="skills-ag-4419">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Capacidades y Skills Activas en Pod</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Consumo: Standby</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Smart Contract Linter</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary/10 text-tertiary font-label-sm text-[10px]">v1.4.0</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>En Reposo</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">GDPR/CCPA Sanitizer</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary/10 text-tertiary font-label-sm text-[10px]">v2.1.0</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>En Reposo</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AGENTE 4: SentinelSecurity #14 -->
+<div class="rounded bg-surface-container-low p-space-lg flex flex-col gap-space-md transition-all hover:bg-surface-container/70">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary shrink-0 relative">
+<span class="material-symbols-outlined text-[22px]">shield</span>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">SentinelSecurity #14</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-secondary font-mono">AG-6701</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Activo
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+<span>Propietario: <strong class="text-on-surface font-medium">Sofia Benítez / Aurora Systems</strong></span>
+<span class="hidden sm:inline text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm text-outline">Modelo: DeepSeek R1 / Reasoning</span>
+<span class="hidden sm:inline text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">Latencia: 540ms</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end lg:self-center">
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="toggleSkills('skills-ag-6701', this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">extension</span>
+<span>Ver Skills asociadas (3)</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-200 toggle-icon">expand_more</span>
+</button>
+<div class="relative dropdown-container">
+<button aria-label="Acciones de SentinelSecurity #14" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="toggleDropdown(event, 'menu-ag-6701')" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl p-1 z-30 flex-col gap-0.5" id="menu-ag-6701">
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors text-left" onclick="openConfigModal('AG-6701', 'SentinelSecurity #14')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Configurar</span>
+</button>
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors text-left" onclick="toastAction('Pod reiniciado para SentinelSecurity #14')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">restart_alt</span>
+<span>Reiniciar Pod</span>
+</button>
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors text-left" onclick="toastAction('Agente AG-6701 eliminado')" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Skills Ocultas -->
+<div class="hidden flex-col gap-space-sm pt-space-sm bg-surface-container-lowest/60 p-space-md rounded" id="skills-ag-6701">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Capacidades y Skills Activas en Pod</span>
+<span class="font-label-sm text-label-sm text-primary font-mono">Consumo agregado: 8.7 MB/s</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Anomalous Trait Engine</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px]">v1.9.3</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Habilitada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Zero-Day Vector Trace</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px]">v3.2.0</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Habilitada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">DNS Tunneling Blocker</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px]">v1.0.4</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Habilitada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AGENTE 5: CustomerSentiment #05 -->
+<div class="rounded bg-surface-container-low p-space-lg flex flex-col gap-space-md transition-all hover:bg-surface-container/70 opacity-90">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-error shrink-0 relative">
+<span class="material-symbols-outlined text-[22px]">sentiment_dissatisfied</span>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-surface-container-low"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">CustomerSentiment #05</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-secondary font-mono">AG-1033</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-error-container/40 text-error font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                Detenido
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+<span>Propietario: <strong class="text-on-surface font-medium">Liam Chen / HyperGrowth</strong></span>
+<span class="hidden sm:inline text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm text-outline">Modelo: Llama 3.3 70B</span>
+<span class="hidden sm:inline text-outline-variant font-mono">•</span>
+<span class="font-label-sm text-label-sm text-error font-mono">Halt: Ingestion Out of Quota</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end lg:self-center">
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="toggleSkills('skills-ag-1033', this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-error">extension</span>
+<span>Ver Skills asociadas (2)</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-200 toggle-icon">expand_more</span>
+</button>
+<div class="relative dropdown-container">
+<button aria-label="Acciones de CustomerSentiment #05" class="w-8 h-8 rounded flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="toggleDropdown(event, 'menu-ag-1033')" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-44 rounded bg-surface-container-high shadow-xl p-1 z-30 flex-col gap-0.5" id="menu-ag-1033">
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container-highest transition-colors text-left" onclick="openConfigModal('AG-1033', 'CustomerSentiment #05')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Configurar</span>
+</button>
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-secondary hover:bg-surface-container-highest transition-colors text-left" onclick="toastAction('Intentando reanudación forzada para AG-1033...')" type="button">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+<span>Reanudar Agente</span>
+</button>
+<button class="w-full flex items-center gap-space-sm px-space-sm py-space-xs rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors text-left" onclick="toastAction('Agente AG-1033 eliminado')" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Eliminar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Skills Ocultas -->
+<div class="hidden flex-col gap-space-sm pt-space-sm bg-surface-container-lowest/60 p-space-md rounded" id="skills-ag-1033">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Capacidades y Skills Desactivadas</span>
+<span class="font-label-sm text-label-sm text-error font-mono">Offline</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1 opacity-70">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Zendesk Ticket Webhook</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-outline font-label-sm text-[10px]">v1.0.0</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Desconectada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1 opacity-70">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Twitter/X Sentiment Analyzer</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-outline font-label-sm text-[10px]">v2.5.8</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Desconectada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Paginación y Estado Global de Clúster -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md p-space-md rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Clúster EU-Central-1: <strong>40 de 42 pods saludables</strong></span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1 rounded bg-surface-container text-outline hover:text-on-surface font-label-md text-label-md" type="button">Anterior</button>
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-label-md text-label-md font-semibold" type="button">1</button>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md" type="button">2</button>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md" type="button">3</button>
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md" type="button">Siguiente</button>
+</div>
+</div>
+<!-- MODAL DE CONFIGURACIÓN DE AGENTE (SPECS.md Requisito) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-space-md sm:p-margin-desktop bg-surface-container-lowest/80 backdrop-blur-md" id="agentConfigModal">
+<!-- Click backdrop to dismiss -->
+<div class="absolute inset-0" onclick="closeConfigModal()"></div>
+<div class="relative w-full max-w-2xl bg-surface-container-low rounded-xl shadow-xl z-10 flex flex-col overflow-hidden max-h-[90vh]">
+<!-- Header Modal -->
+<div class="flex items-center justify-between p-space-lg bg-surface-container">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface" id="modalAgentTitle">Configuración de Agente: LiquidityManager #09</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ajuste de directivas base y prompt de sistema para orquestación de decisiones.</span>
+</div>
+<button aria-label="Cerrar modal" class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="closeConfigModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Contenido / Formulario Modal -->
+<div class="p-space-lg flex flex-col gap-space-lg overflow-y-auto">
+<!-- Textarea Prompt de Sistema -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-semibold" for="systemPrompt">Prompt de Sistema (Core Directives)</label>
+<span class="font-label-sm text-label-sm text-outline font-mono">Markdown &amp; Guardrails Supported</span>
+</div>
+<textarea class="w-full bg-surface-container-lowest text-on-surface p-space-md rounded font-label-md text-label-md focus:outline-none focus:ring-1 focus:ring-primary leading-relaxed resize-y font-mono" id="systemPrompt" rows="7">Eres LiquidityManager #09, un agente autónomo de alta fidelidad diseñado para el rebalanceo dinámico de inventarios de liquidez en pares AMM y pools concentrados.
+
+REGLAS DE ACTUACIÓN:
+1. Jamás autorices una transacción con impacto de deslizamiento (slippage) superior al 0.35% sin validación multi-sig.
+2. Consulta el Skill 'Solana RPC Sync' cada 250ms para contrastar desbalances de precio contra oráculos Pyth y Switchboard.
+3. Si la volatilidad del clúster supera 3.2 desviaciones estándar, entra automáticamente en modo defensivo (Standby Cooldown).
+4. Genera bitácoras monótonas con identificador de nonce en formato JSON para cada orden enrutada.</textarea>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Este prompt se inyecta como contexto zero-shot inmutable en cada invocación de inferencia.</span>
+</div>
+<!-- Parámetros de Inferencia LLM -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="flex flex-col gap-space-xs bg-surface-container-lowest p-space-md rounded">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Temperatura</span>
+<span class="text-primary font-mono font-semibold" id="tempVal">0.2</span>
+</div>
+<input class="w-full accent-primary cursor-pointer mt-1" max="1" min="0" oninput="document.getElementById('tempVal').innerText = this.value" step="0.05" type="range" value="0.2">
+<span class="font-label-sm text-[10px] text-outline">Menor varianza operativa</span>
+</div>
+<div class="flex flex-col gap-space-xs bg-surface-container-lowest p-space-md rounded">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Top-P</span>
+<span class="text-secondary font-mono font-semibold" id="toppVal">0.9</span>
+</div>
+<input class="w-full accent-secondary cursor-pointer mt-1" max="1" min="0" oninput="document.getElementById('toppVal').innerText = this.value" step="0.05" type="range" value="0.9">
+<span class="font-label-sm text-[10px] text-outline">Núcleo de muestreo probabilístico</span>
+</div>
+<div class="flex flex-col gap-space-xs bg-surface-container-lowest p-space-md rounded">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="maxTokens">Límite Max Tokens</label>
+<input class="bg-surface-container text-on-surface px-space-sm py-1 rounded font-label-md text-label-md font-mono focus:outline-none focus:ring-1 focus:ring-primary mt-0.5" id="maxTokens" type="number" value="8192">
+<span class="font-label-sm text-[10px] text-outline">Ventana por sesión context</span>
+</div>
+</div>
+<!-- Checkbox de Sandbox/Safeguards -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-space-md rounded">
+<input checked="" class="w-4 h-4 rounded accent-primary cursor-pointer" id="guardrails" type="checkbox">
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer select-none" for="guardrails">
+            Activar análisis de seguridad con guardrails antes de emitir transacciones en la red de producción.
+          </label>
+</div>
+</div>
+<!-- Footer Modal -->
+<div class="flex items-center justify-end gap-space-sm p-space-lg bg-surface-container">
+<button class="px-space-md py-space-sm rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md" onclick="closeConfigModal()" type="button">
+          Cancelar
+        </button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-fixed transition-colors shadow-sm" onclick="saveDirectives()" type="button">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Guardar Directivas</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Toast de Confirmación / Feedback de Acciones -->
+<div class="hidden fixed bottom-6 right-6 z-50 bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-xl shadow-xl flex items-center gap-space-sm" id="toastNotification">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm" id="toastMessage">Operación realizada con éxito</span>
+</div>
+<!-- Lógica e interactividad en Vanilla JS -->
+<script>
+    // Toggle expandir / colapsar contenedor de skills
+    function toggleSkills(containerId, btn) {
+      const container = document.getElementById(containerId);
+      const icon = btn.querySelector('.toggle-icon');
+      if (!container) return;
+
+      const isHidden = container.classList.contains('hidden');
+      if (isHidden) {
+        container.classList.remove('hidden');
+        if (icon) icon.classList.add('rotate-180');
+      } else {
+        container.classList.add('hidden');
+        if (icon) icon.classList.remove('rotate-180');
+      }
+    }
+
+    // Toggle dropdown ⋮ contextual
+    function toggleDropdown(event, menuId) {
+      event.stopPropagation();
+      const menu = document.getElementById(menuId);
+      const allMenus = document.querySelectorAll('.dropdown-container > div');
+      
+      allMenus.forEach(m => {
+        if (m.id !== menuId) {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+        }
+      });
+
+      if (menu) {
+        if (menu.classList.contains('hidden')) {
+          menu.classList.remove('hidden');
+          menu.classList.add('flex');
+        } else {
+          menu.classList.add('hidden');
+          menu.classList.remove('flex');
+        }
+      }
+    }
+
+    // Modal de Configuración
+    function openConfigModal(agentId, agentName) {
+      const modal = document.getElementById('agentConfigModal');
+      const title = document.getElementById('modalAgentTitle');
+      if (title) {
+        title.innerText = `Configuración de Agente: ${agentName} (${agentId})`;
+      }
+      if (modal) {
+        modal.classList.remove('hidden');
+      }
+      // Cerrar dropdowns si hubiera abierto
+      document.querySelectorAll('.dropdown-container > div').forEach(m => {
+        m.classList.add('hidden');
+        m.classList.remove('flex');
+      });
+    }
+
+    function closeConfigModal() {
+      const modal = document.getElementById('agentConfigModal');
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function saveDirectives() {
+      closeConfigModal();
+      showToast('Directivas de sistema actualizadas y sincronizadas con el cluster.');
+    }
+
+    // Toast flotante de retroalimentación
+    function toastAction(message) {
+      document.querySelectorAll('.dropdown-container > div').forEach(m => {
+        m.classList.add('hidden');
+        m.classList.remove('flex');
+      });
+      showToast(message);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const msg = document.getElementById('toastMessage');
+      if (toast && msg) {
+        msg.innerText = message;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 3400);
+      }
+    }
+
+    // Cerrar dropdowns al hacer clic en cualquier parte fuera
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown-container')) {
+        document.querySelectorAll('.dropdown-container > div').forEach(m => {
+          m.classList.add('hidden');
+          m.classList.remove('flex');
+        });
+      }
+    });
+
+    // Cerrar modal al presionar Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeConfigModal();
+      }
+    });
+  </script>
+</div></main></div>
+
+</body></html>

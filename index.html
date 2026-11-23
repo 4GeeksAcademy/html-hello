@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Consola administrativa AgentHub">
+  <title>AgentHub | Consola de operaciones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#0b1326',
+            surface: '#131b2e',
+            raised: '#222a3d',
+            line: '#3c4a42',
+            ink: '#dae2fd',
+            muted: '#bbcabf',
+            primary: '#4edea3',
+            'primary-container': '#10b981',
+            secondary: '#c0c1ff',
+            warning: '#ffb95f',
+            danger: '#ffb4ab'
+          },
+          fontFamily: {
+            headline: ['Hanken Grotesk', 'Avenir Next', 'Trebuchet MS', 'sans-serif'],
+            body: ['Inter', 'Aptos', 'Segoe UI', 'sans-serif'],
+            mono: ['JetBrains Mono', 'SFMono-Regular', 'Consolas', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .skills-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 260ms ease; }
+    .skills-content[aria-hidden="false"] { grid-template-rows: 1fr; }
+    .skills-inner { min-height: 0; overflow: hidden; }
+    :focus-visible { outline: 2px solid #10b981; outline-offset: 2px; }
+    .dark :focus-visible { outline-color: #4edea3; }
+    @media (prefers-reduced-motion: reduce) { .skills-content { transition: none; } }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-50 font-body text-slate-900 dark:bg-canvas dark:text-ink">
+  <svg class="hidden" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-hub" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="1.5"/><circle cx="19" cy="6" r="1.5"/><circle cx="5" cy="18" r="1.5"/><circle cx="19" cy="18" r="1.5"/><path d="m10 10-4-3m8 3 4-3m-8 7-4 3m8-3 4 3"/></symbol>
+    <symbol id="icon-dashboard" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/><rect x="13" y="10" width="8" height="11" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m16 0v-2a4 4 0 0 0-3-3.87M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-7.87a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="icon-agent" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M12 3v4m-5 5h.01M17 12h.01M9 16h6"/></symbol>
+    <symbol id="icon-skill" viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v2H6a3 3 0 1 0 0 6h3v2a3 3 0 1 0 6 0v-2h3a3 3 0 1 0 0-6h-3V6a3 3 0 0 0-3-3Z"/></symbol>
+    <symbol id="icon-contract" viewBox="0 0 24 24"><path d="m8 12 2 2 6-6m5 4a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></symbol>
+    <symbol id="icon-warning" viewBox="0 0 24 24"><path d="M10.3 4.3 2.7 18a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0ZM12 9v4m0 4h.01"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></symbol>
+    <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-8 13h4"/></symbol>
+    <symbol id="icon-more" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m18 6-12 12M6 6l12 12"/></symbol>
+  </svg>
+  <aside class="fixed inset-y-0 left-0 z-30 flex w-16 flex-col border-r border-slate-200 bg-white dark:border-white/10 dark:bg-slate-950 lg:w-60" aria-label="Navegación principal">
+    <a class="flex h-14 items-center justify-center gap-3 border-b border-slate-200 px-4 dark:border-white/10 lg:justify-start" href="#dashboard" data-nav="dashboard" aria-label="AgentHub, inicio">
+      <svg class="h-7 w-7 rounded bg-primary p-1 text-slate-950" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#icon-hub"></use></svg>
+      <span class="hidden font-headline text-lg font-bold lg:inline">AgentHub</span>
+    </a>
+    <div class="hidden px-5 pt-5 font-mono text-[10px] uppercase tracking-wider text-slate-500 lg:block">Orquestación</div>
+    <nav class="mt-3 flex flex-1 flex-col gap-1 px-2" aria-label="Secciones">
+      <button class="nav-link flex h-10 items-center justify-center gap-3 rounded px-3 text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-muted dark:hover:bg-white/5 dark:hover:text-ink lg:justify-start" type="button" data-nav="dashboard" aria-current="page" title="Dashboard">
+        <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-dashboard"></use></svg><span class="hidden lg:inline">Dashboard</span>
+      </button>
+      <button class="nav-link flex h-10 items-center justify-center gap-3 rounded px-3 text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-muted dark:hover:bg-white/5 dark:hover:text-ink lg:justify-start" type="button" data-nav="usuarios" title="Usuarios">
+        <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-users"></use></svg><span class="hidden lg:inline">Usuarios</span>
+      </button>
+      <button class="nav-link flex h-10 items-center justify-center gap-3 rounded px-3 text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-muted dark:hover:bg-white/5 dark:hover:text-ink lg:justify-start" type="button" data-nav="agentes" title="Agentes">
+        <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-agent"></use></svg><span class="hidden lg:inline">Agentes</span>
+      </button>
+      <button class="nav-link flex h-10 items-center justify-center gap-3 rounded px-3 text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-muted dark:hover:bg-white/5 dark:hover:text-ink lg:justify-start" type="button" data-nav="skills" title="Skills">
+        <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-skill"></use></svg><span class="hidden lg:inline">Skills</span>
+      </button>
+      <button class="nav-link flex h-10 items-center justify-center gap-3 rounded px-3 text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-muted dark:hover:bg-white/5 dark:hover:text-ink lg:justify-start" type="button" data-nav="contrataciones" title="Contrataciones">
+        <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-contract"></use></svg><span class="hidden lg:inline">Contrataciones</span>
+      </button>
+      <button class="nav-link flex h-10 items-center justify-center gap-3 rounded px-3 text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-muted dark:hover:bg-white/5 dark:hover:text-ink lg:justify-start" type="button" data-nav="errores" title="Errores">
+        <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-warning"></use></svg><span class="hidden lg:inline">Errores</span>
+      </button>
+    </nav>
+    <div class="m-2 hidden items-center justify-between rounded bg-slate-100 px-3 py-2 text-xs dark:bg-white/5 lg:flex">
+      <span class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-primary"></span>Flota activa</span><span class="font-mono text-primary">99.98%</span>
+    </div>
+  </aside>
+
+  <div class="ml-16 min-h-screen lg:ml-60">
+    <header class="sticky top-0 z-20 flex h-14 items-center justify-between border-b border-slate-200 bg-white/95 px-4 backdrop-blur dark:border-white/10 dark:bg-canvas/95 sm:px-6 lg:px-8">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="hidden font-mono text-[10px] uppercase tracking-wider text-slate-500 sm:inline">Consola centralizada</span>
+        <span class="text-slate-300 dark:text-white/20">/</span>
+        <span id="current-section-label" class="truncate font-mono text-[10px] uppercase text-emerald-700 dark:text-primary">Dashboard</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="global-search-toggle" class="hidden items-center gap-2 rounded bg-slate-100 px-3 py-1.5 text-xs text-slate-500 dark:bg-white/5 dark:text-muted md:flex" type="button" aria-label="Enfocar búsqueda de la sección actual">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-search"></use></svg>
+          <span>Buscar en consola</span><kbd class="rounded border border-slate-300 px-1 font-mono text-[10px] dark:border-white/10">Ctrl K</kbd>
+        </button>
+        <button id="theme-toggle" class="flex h-9 w-9 items-center justify-center rounded hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 dark:hover:bg-white/10 dark:focus-visible:outline-primary" type="button" aria-label="Cambiar tema" title="Cambiar tema">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-moon"></use></svg>
+        </button>
+        <button class="flex h-9 w-9 items-center justify-center rounded hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 dark:hover:bg-white/10 dark:focus-visible:outline-primary" type="button" aria-label="Notificaciones" title="Notificaciones" data-toast="No hay notificaciones nuevas.">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-bell"></use></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-[1600px] space-y-6 p-4 sm:p-6 lg:p-8">
+      <section id="view-dashboard" class="view-section space-y-6" data-view-panel="dashboard" aria-labelledby="heading-dashboard">
+        <div><p class="font-mono text-[10px] uppercase tracking-wider text-emerald-700 dark:text-primary">AgentHub / Operaciones</p><h1 id="heading-dashboard" class="mt-1 font-headline text-2xl font-semibold">Dashboard General</h1><p class="mt-1 text-sm text-slate-600 dark:text-muted">Resumen operativo del clúster de agentes.</p></div>
+        <div id="dashboard-metrics" class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4"></div>
+        <section class="rounded border border-dashed border-slate-300 p-4 dark:border-white/20" aria-labelledby="activity-heading">
+          <div class="flex flex-wrap items-start justify-between gap-3"><div><h2 id="activity-heading" class="font-headline text-lg font-semibold">Actividad semanal del sistema</h2><p class="mt-1 text-sm text-slate-600 dark:text-muted">Volumen diario de acciones del clúster.</p></div><span class="font-mono text-xs text-slate-500">Últimos 7 días</span></div>
+          <div id="weekly-activity" class="mt-5 grid h-44 grid-cols-7 items-end gap-2" aria-label="Gráfico de actividad semanal"></div>
+        </section>
+        <section class="space-y-3" aria-labelledby="recent-events-heading"><h2 id="recent-events-heading" class="font-headline text-lg font-semibold">Eventos críticos recientes</h2><div id="recent-events" class="grid gap-3 lg:grid-cols-3"></div></section>
+      </section>
+      <section id="view-usuarios" class="view-section hidden space-y-6" data-view-panel="usuarios" aria-labelledby="heading-usuarios">
+        <div><p class="font-mono text-[10px] uppercase tracking-wider text-emerald-700 dark:text-primary">Gestión</p><h1 id="heading-usuarios" class="mt-1 font-headline text-2xl font-semibold">Gestión de Usuarios</h1><p class="mt-1 text-sm text-slate-600 dark:text-muted">Accesos, planes y estado de suscripción.</p></div>
+        <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4" id="user-metrics"></div>
+        <section class="space-y-3" aria-label="Filtros de usuarios"><div class="flex flex-col gap-2 rounded border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-surface sm:flex-row"><label class="min-w-48 flex-1"><span class="sr-only">Buscar usuarios</span><input id="user-search" class="w-full rounded border border-slate-300 bg-transparent px-3 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 dark:border-white/10 dark:focus-visible:outline-primary" type="search" placeholder="Filtrar por nombre, email o ID"></label><label><span class="sr-only">Filtrar por plan</span><select id="user-plan-filter" class="w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-raised"><option value="">Todos los planes</option></select></label><label><span class="sr-only">Filtrar por estado</span><select id="user-status-filter" class="w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-raised"><option value="">Todos los estados</option><option>Activo</option><option>En Espera</option><option>Suspendido</option></select></label><span id="user-count" class="self-center whitespace-nowrap font-mono text-xs text-slate-500"></span></div></section>
+        <div class="overflow-x-auto rounded border border-slate-200 dark:border-white/10"><table class="min-w-[760px] w-full text-left text-sm tabular-nums"><thead class="bg-slate-100 font-mono text-[10px] uppercase text-slate-500 dark:bg-white/5"><tr><th class="p-3">Usuario</th><th class="p-3">Plan</th><th class="p-3">Estado</th><th class="p-3">Agentes</th><th class="p-3">Fecha alta</th><th class="p-3 text-right">Acción</th></tr></thead><tbody id="user-rows" class="divide-y divide-slate-200 dark:divide-white/5"></tbody></table></div>
+      </section>
+      <section id="view-agentes" class="view-section hidden space-y-6" data-view-panel="agentes" aria-labelledby="heading-agentes">
+        <div class="flex flex-wrap items-end justify-between gap-3"><div><p class="font-mono text-[10px] uppercase tracking-wider text-emerald-700 dark:text-primary">Orquestación</p><h1 id="heading-agentes" class="mt-1 font-headline text-2xl font-semibold">Gestión de Agentes</h1><p class="mt-1 text-sm text-slate-600 dark:text-muted">Supervisión de agentes, propietarios y skills.</p></div><span id="agent-count" class="font-mono text-xs text-slate-500"></span></div>
+        <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4" id="agent-metrics"></div>
+        <div class="flex flex-col gap-2 rounded border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-surface sm:flex-row"><label class="flex-1"><span class="sr-only">Buscar agentes</span><input id="agent-search" class="w-full rounded border border-slate-300 bg-transparent px-3 py-2 text-sm dark:border-white/10" type="search" placeholder="Buscar por nombre, propietario o ID"></label><label><span class="sr-only">Filtrar agentes por estado</span><select id="agent-status-filter" class="w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-raised"><option value="">Todos los estados</option><option>Activo</option><option>En Espera</option><option>Detenido</option></select></label></div>
+        <div id="agent-list" class="space-y-3"></div>
+      </section>
+      <section id="view-skills" class="view-section hidden space-y-6" data-view-panel="skills" aria-labelledby="heading-skills">
+        <div><p class="font-mono text-[10px] uppercase tracking-wider text-emerald-700 dark:text-primary">Catálogo</p><h1 id="heading-skills" class="mt-1 font-headline text-2xl font-semibold">Catálogo de Skills</h1><p class="mt-1 text-sm text-slate-600 dark:text-muted">Registro modular de capacidades autónomas.</p></div>
+        <section class="rounded border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-surface" aria-labelledby="skill-definition"><h2 id="skill-definition" class="font-headline text-lg font-semibold">¿Qué es una Skill en AgentHub?</h2><p class="mt-2 max-w-4xl text-sm leading-6 text-slate-600 dark:text-muted">Una skill es una capacidad encapsulada que amplía las funciones de un agente, por ejemplo, conectar con APIs, analizar riesgos o procesar datos. Los agentes pueden combinar varias skills según la tarea asignada.</p></section>
+        <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4" id="skill-metrics"></div>
+        <div class="flex flex-col gap-2 rounded border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-surface sm:flex-row"><label class="flex-1"><span class="sr-only">Buscar skills</span><input id="skill-search" class="w-full rounded border border-slate-300 bg-transparent px-3 py-2 text-sm dark:border-white/10" type="search" placeholder="Buscar skill por nombre o descripción"></label><label><span class="sr-only">Filtrar skills por categoría</span><select id="skill-category-filter" class="w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-raised"><option value="">Todas las categorías</option></select></label><label><span class="sr-only">Filtrar skills por estado</span><select id="skill-status-filter" class="w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-raised"><option value="">Todos los estados</option><option>Estable</option><option>Beta</option></select></label><span id="skill-count" class="self-center whitespace-nowrap font-mono text-xs text-slate-500"></span></div>
+        <div id="skill-list" class="grid gap-3 md:grid-cols-2 xl:grid-cols-3"></div>
+        <p id="skill-empty" class="hidden rounded border border-dashed border-slate-300 p-8 text-center text-sm text-slate-500 dark:border-white/10 dark:text-muted">No se encontraron skills con esos filtros.</p>
+      </section>
+      <section id="view-contrataciones" class="view-section hidden space-y-6" data-view-panel="contrataciones" aria-labelledby="heading-contrataciones">
+        <div><p class="font-mono text-[10px] uppercase tracking-wider text-emerald-700 dark:text-primary">Comercial</p><h1 id="heading-contrataciones" class="mt-1 font-headline text-2xl font-semibold">Contrataciones de Agentes</h1><p class="mt-1 text-sm text-slate-600 dark:text-muted">Acuerdos, skills licenciadas e importes.</p></div>
+        <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4" id="contract-metrics"></div>
+        <div class="flex flex-col gap-2 rounded border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-surface sm:flex-row"><label class="flex-1"><span class="sr-only">Buscar contratos</span><input id="contract-search" class="w-full rounded border border-slate-300 bg-transparent px-3 py-2 text-sm dark:border-white/10" type="search" placeholder="Buscar por contrato, cliente o agente"></label><label><span class="sr-only">Filtrar contratos por estado</span><select id="contract-status-filter" class="w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-raised"><option value="">Todos los estados</option><option>Activo</option><option>En Pausa</option><option>Finalizado</option></select></label><span id="contract-count" class="self-center whitespace-nowrap font-mono text-xs text-slate-500"></span></div>
+        <div class="overflow-x-auto rounded border border-slate-200 dark:border-white/10"><table class="min-w-[900px] w-full text-left text-sm tabular-nums"><thead class="bg-slate-100 font-mono text-[10px] uppercase text-slate-500 dark:bg-white/5"><tr><th class="p-3">Cliente</th><th class="p-3">Agente</th><th class="p-3">Skills contratadas</th><th class="p-3">Inicio</th><th class="p-3">Fin</th><th class="p-3 text-right">Importe</th><th class="p-3 text-right">Acción</th></tr></thead><tbody id="contract-rows" class="divide-y divide-slate-200 dark:divide-white/5"></tbody></table></div>
+      </section>
+      <section id="view-errores" class="view-section hidden space-y-6" data-view-panel="errores" aria-labelledby="heading-errores">
+        <div><p class="font-mono text-[10px] uppercase tracking-wider text-emerald-700 dark:text-primary">Diagnóstico</p><h1 id="heading-errores" class="mt-1 font-headline text-2xl font-semibold">Log de Errores e Incidencias</h1><p class="mt-1 text-sm text-slate-600 dark:text-muted">Incidencias operativas y estado de resolución.</p></div>
+        <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4" id="error-metrics"></div>
+        <div class="flex flex-col gap-2 rounded border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-surface sm:flex-row"><label class="flex-1"><span class="sr-only">Buscar incidencias</span><input id="error-search" class="w-full rounded border border-slate-300 bg-transparent px-3 py-2 text-sm dark:border-white/10" type="search" placeholder="Buscar por agente, código o descripción"></label><label><span class="sr-only">Filtrar incidencias por gravedad</span><select id="error-severity-filter" class="w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-raised"><option value="">Todas las gravedades</option><option>Crítica</option><option>Alta</option><option>Media</option></select></label><label><span class="sr-only">Filtrar incidencias por estado</span><select id="error-status-filter" class="w-full rounded border border-slate-300 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-raised"><option value="">Todos los estados</option><option>Pendiente</option><option>En Investigación</option><option>Resuelto</option></select></label><span id="error-count" class="self-center whitespace-nowrap font-mono text-xs text-slate-500"></span></div>
+        <div class="overflow-x-auto rounded border border-slate-200 dark:border-white/10"><table class="min-w-[900px] w-full text-left text-sm tabular-nums"><thead class="bg-slate-100 font-mono text-[10px] uppercase text-slate-500 dark:bg-white/5"><tr><th class="p-3">Estado</th><th class="p-3">Timestamp</th><th class="p-3">Agente</th><th class="p-3">Tipo</th><th class="p-3">Descripción</th><th class="p-3 text-right">Acción</th></tr></thead><tbody id="error-rows" class="divide-y divide-slate-200 dark:divide-white/5"></tbody></table></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="app-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/60 p-4 dark:bg-black/70" role="presentation">
+    <div class="absolute inset-0" data-modal-backdrop></div>
+    <section class="relative z-10 max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-lg border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-raised" role="dialog" aria-modal="true" aria-labelledby="app-modal-title">
+      <header class="flex items-center justify-between border-b border-slate-200 p-4 dark:border-white/10"><h2 id="app-modal-title" class="font-headline text-lg font-semibold">Detalle</h2><button class="flex h-8 w-8 items-center justify-center rounded hover:bg-slate-100 dark:hover:bg-white/10" type="button" data-modal-close aria-label="Cerrar modal"><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-close"></use></svg></button></header>
+      <div id="app-modal-content" class="p-5 text-sm leading-6 text-slate-600 dark:text-muted"></div>
+    </section>
+  </div>
+  <div id="toast" class="fixed bottom-4 right-4 z-[60] hidden rounded border border-slate-200 bg-white px-4 py-3 text-sm shadow-lg dark:border-white/10 dark:bg-raised" role="status" aria-live="polite"></div>
+
+  <script>
+    (() => {
+      const sectionNames = {
+        dashboard: 'Dashboard', usuarios: 'Usuarios', agentes: 'Agentes',
+        skills: 'Skills', contrataciones: 'Contrataciones', errores: 'Errores'
+      };
+      const panels = [...document.querySelectorAll('[data-view-panel]')];
+      const navLinks = [...document.querySelectorAll('[data-nav]')];
+      const sectionLabel = document.getElementById('current-section-label');
+      const themeToggle = document.getElementById('theme-toggle');
+      const modal = document.getElementById('app-modal');
+      const modalTitle = document.getElementById('app-modal-title');
+      const modalContent = document.getElementById('app-modal-content');
+      const toast = document.getElementById('toast');
+      let toastTimer;
+
+      const users = [
+        { id: 'USR-9041', name: 'Elena Rostova', email: 'elena.rostova@nexusdynamics.io', plan: 'Enterprise', status: 'Activo', org: 'Nexus Dynamics Ltd.', registered: '14 Ene 2024', agents: 18 },
+        { id: 'USR-8812', name: 'Marcus Vance', email: 'm.vance@quantumbit.co', plan: 'Pro', status: 'Activo', org: 'QuantumBit Capital', registered: '03 Feb 2024', agents: 8 },
+        { id: 'USR-7729', name: 'Sofia Benítez', email: 's.benitez@aurorasystems.es', plan: 'Enterprise', status: 'Activo', org: 'Aurora Systems', registered: '19 Nov 2023', agents: 22 },
+        { id: 'USR-6510', name: 'Liam Chen', email: 'liam.chen@hypergrowth.ai', plan: 'Starter', status: 'En Espera', org: 'HyperGrowth Global', registered: '12 Mar 2024', agents: 2 },
+        { id: 'USR-4390', name: 'Dr. Aris Thorne', email: 'thorne@syntheticlabs.org', plan: 'Enterprise', status: 'Suspendido', org: 'SyntheticLabs AI', registered: '08 Oct 2023', agents: 31 },
+        { id: 'USR-3120', name: 'Carla Méndez', email: 'carla@fintechcore.net', plan: 'Pro', status: 'Activo', org: 'Fintech Core', registered: '27 Feb 2024', agents: 6 }
+      ];
+
+      const agents = [
+        { id: 'AG-8812', name: 'LiquidityManager #09', owner: 'Elena Rostova', org: 'Nexus Dynamics', status: 'Activo', model: 'Claude 3.5 Sonnet', latency: '312 ms', skills: ['Solana RPC Sync', 'Liquidity Routing', 'Risk Assessment v2', 'Web Scraping Pro'], prompt: 'Supervisa liquidez y rebalancea posiciones según los umbrales de riesgo aprobados.' },
+        { id: 'AG-2309', name: 'Arbitrage-Engine #03', owner: 'Marcus Vance', org: 'QuantumBit', status: 'Activo', model: 'GPT-4o', latency: '98 ms', skills: ['Solana RPC Sync', 'Liquidity Routing'], prompt: 'Detecta oportunidades de arbitraje y registra cada operación para revisión.' },
+        { id: 'AG-4419', name: 'ComplianceAudit #27', owner: 'Dr. Aris Thorne', org: 'SyntheticLabs', status: 'En Espera', model: 'Mistral Large', latency: 'Awaiting trigger', skills: ['Risk Assessment v2', 'Smart Contract Sentinel'], prompt: 'Audita transacciones y señala desviaciones respecto a las políticas de cumplimiento.' },
+        { id: 'AG-6701', name: 'SentinelSecurity #14', owner: 'Sofia Benítez', org: 'Aurora Systems', status: 'Activo', model: 'DeepSeek R1', latency: '540 ms', skills: ['Smart Contract Sentinel', 'Risk Assessment v2', 'Web Scraping Pro'], prompt: 'Analiza señales de seguridad y escala incidencias de contratos inteligentes.' },
+        { id: 'AG-1033', name: 'CustomerSentiment #05', owner: 'Liam Chen', org: 'HyperGrowth Global', status: 'Detenido', model: 'Llama 3.3 70B', latency: 'Halt: quota exceeded', skills: ['Sentiment Analyzer AI', 'Web Scraping Pro'], prompt: 'Resume señales de sentimiento a partir de fuentes públicas autorizadas.' }
+      ];
+
+      const skills = [
+        { name: 'Solana RPC Sync', category: 'Blockchain', status: 'Estable', version: '2.4.1', description: 'Sincronización en tiempo real con clústeres Solana para leer estados, confirmar transacciones y consultar endpoints RPC.', agents: ['LiquidityManager #09', 'Arbitrage-Engine #03'] },
+        { name: 'Liquidity Routing', category: 'DeFi & Trading', status: 'Estable', version: '1.8.0', description: 'Optimiza el enrutamiento de pools de liquidez y swaps mediante análisis de deslizamiento y gas.', agents: ['LiquidityManager #09', 'Arbitrage-Engine #03'] },
+        { name: 'Risk Assessment v2', category: 'Auditoría & Riesgo', status: 'Estable', version: '2.0.0', description: 'Evalúa exposición y riesgo de crédito para decisiones automatizadas con señales trazables.', agents: ['LiquidityManager #09', 'ComplianceAudit #27', 'SentinelSecurity #14'] },
+        { name: 'Web Scraping Pro', category: 'Datos & Extracción', status: 'Beta', version: '3.1.2', description: 'Extrae datos públicos autorizados con validación de fuentes y control de frecuencia.', agents: ['LiquidityManager #09', 'SentinelSecurity #14', 'CustomerSentiment #05'] },
+        { name: 'Smart Contract Sentinel', category: 'Seguridad', status: 'Estable', version: '1.4.2', description: 'Monitorea eventos de contratos inteligentes y detecta patrones de riesgo.', agents: ['ComplianceAudit #27', 'SentinelSecurity #14'] },
+        { name: 'Sentiment Analyzer AI', category: 'NLP & Redes', status: 'Beta', version: '2.2.0', description: 'Clasifica señales de sentimiento en texto público para análisis y alertas operativas.', agents: ['CustomerSentiment #05'] }
+      ];
+
+      const contracts = [
+        { id: 'CTR-2024-9912A', client: 'Nexus Dynamics Ltd.', contact: 'Elena Rostova', userId: 'USR-9041', agent: 'LiquidityManager #09', agentId: 'AG-8812', skills: ['Solana RPC Sync', 'Liquidity Routing', 'Risk Assessment v2', 'Web Scraping Pro'], prices: [15000, 12000, 11200, 10000], start: '01 Ene 2024', end: '31 Dic 2024', total: 48200, status: 'Activo' },
+        { id: 'CTR-2024-8831B', client: 'QuantumBit Capital', contact: 'Marcus Vance', userId: 'USR-8812', agent: 'Arbitrage-Engine #03', agentId: 'AG-2309', skills: ['Solana RPC Sync', 'Liquidity Routing'], prices: [15000, 14500], start: '15 Feb 2024', end: '15 Ago 2024', total: 29500, status: 'Activo' },
+        { id: 'CTR-2024-4390C', client: 'SyntheticLabs AI', contact: 'Dr. Aris Thorne', userId: 'USR-4390', agent: 'ComplianceAudit #27', agentId: 'AG-4419', skills: ['Risk Assessment v2', 'Smart Contract Sentinel'], prices: [18000, 16800], start: '10 Nov 2023', end: '10 Nov 2024', total: 34800, status: 'En Pausa' },
+        { id: 'CTR-2024-7729D', client: 'Aurora Systems', contact: 'Sofia Benítez', userId: 'USR-7729', agent: 'SentinelSecurity #14', agentId: 'AG-6701', skills: ['Smart Contract Sentinel', 'Risk Assessment v2', 'Web Scraping Pro'], prices: [18000, 16000, 18400], start: '01 Mar 2024', end: '01 Mar 2025', total: 52400, status: 'Activo' },
+        { id: 'CTR-2024-6510E', client: 'HyperGrowth Global', contact: 'Liam Chen', userId: 'USR-6510', agent: 'CustomerSentiment #05', agentId: 'AG-1033', skills: ['Sentiment Analyzer AI', 'Web Scraping Pro'], prices: [11000, 8750], start: '12 Mar 2024', end: '12 Jun 2024', total: 19750, status: 'Finalizado' }
+      ];
+
+      const errors = [
+        { id: 'INC-49021', time: '14:18:22 UTC', agent: 'LiquidityManager #09', agentId: 'AG-8812', pod: 'Pod DeFi', type: 'TIMEOUT_HALT', severity: 'Crítica', status: 'Pendiente', description: 'Fallo crítico de heartbeat en quórum de validadores Solana RPC.', stack: 'rpc-cluster-west.solana.internal / quorum loss' },
+        { id: 'INC-49020', time: '13:45:04 UTC', agent: 'Arbitrage-Engine #03', agentId: 'AG-2309', pod: 'Pod High Frequency', type: 'RATE_LIMIT_EXCEEDED', severity: 'Alta', status: 'En Investigación', description: 'Degradación de cuota en nodo RPC Solana tras ráfaga de solicitudes.', stack: 'rpc-rate-limiter / threshold breach' },
+        { id: 'INC-49019', time: '12:10:19 UTC', agent: 'CustomerSentiment #05', agentId: 'AG-1033', pod: 'Pod NLP', type: 'OUT_OF_QUOTA', severity: 'Crítica', status: 'Pendiente', description: 'Inferencia de cuota excedida en el endpoint del modelo.', stack: 'inference-engine / token pool dry' },
+        { id: 'INC-49018', time: '11:22:43 UTC', agent: 'ComplianceAudit #27', agentId: 'AG-4419', pod: 'Pod Auditoría', type: 'MEMORY_SPIKE', severity: 'Media', status: 'Resuelto', description: 'Pico de memoria transitorio durante el análisis de un bloque.', stack: 'wasm-runtime / heap overflow self-healed' },
+        { id: 'INC-49017', time: '09:05:12 UTC', agent: 'SentinelSecurity #14', agentId: 'AG-6701', pod: 'Pod Seguridad', type: 'SMART_CONTRACT_REVERT', severity: 'Alta', status: 'Resuelto', description: 'Simulación de llamada a contrato inteligente revertida.', stack: 'mempool-arbiter / preflight simulation failed' },
+        { id: 'INC-49016', time: '07:41:30 UTC', agent: 'LiquidityManager #09', agentId: 'AG-8812', pod: 'Pod DeFi', type: 'HANDSHAKE_TIMEOUT', severity: 'Media', status: 'Resuelto', description: 'Tiempo de espera agotado durante handshake del stream WebSocket.', stack: 'ws-pool-listener / reconnect succeeded' }
+      ];
+
+      const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+      const money = value => new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
+      const badge = (value, tone = 'neutral') => `<span class="inline-flex whitespace-nowrap rounded px-2 py-1 font-mono text-[10px] ${tone === 'good' ? 'bg-emerald-500/15 text-emerald-800 dark:text-primary' : tone === 'warn' ? 'bg-amber-500/15 text-amber-800 dark:text-warning' : tone === 'bad' ? 'bg-red-500/15 text-red-800 dark:text-danger' : 'bg-slate-200 text-slate-700 dark:bg-white/10 dark:text-muted'}">${esc(value)}</span>`;
+      const statusBadge = value => badge(value, value === 'Activo' || value === 'Resuelto' ? 'good' : value === 'Suspendido' || value === 'Detenido' || value === 'Pendiente' ? 'bad' : 'warn');
+      const metric = (label, value, note, accent = 'text-emerald-700 dark:text-primary') => `<article class="rounded border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-surface"><p class="font-mono text-[10px] uppercase tracking-wide text-slate-500">${esc(label)}</p><p class="mt-2 font-headline text-2xl font-semibold ${accent}">${esc(value)}</p><p class="mt-1 text-xs text-slate-500 dark:text-muted">${esc(note)}</p></article>`;
+      const actionMenu = (kind, id, actions) => `<div class="dropdown-container relative inline-block text-left"><button class="dropdown-trigger flex h-8 w-8 items-center justify-center rounded hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 dark:hover:bg-white/10 dark:focus-visible:outline-primary" type="button" aria-label="Acciones" aria-expanded="false"><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#icon-more"></use></svg></button><div class="dropdown-menu absolute right-0 top-full z-20 mt-1 hidden min-w-40 rounded border border-slate-200 bg-white p-1 shadow-xl dark:border-white/10 dark:bg-raised">${actions.map(([action, label]) => `<button class="w-full rounded px-3 py-2 text-left text-sm hover:bg-slate-100 dark:hover:bg-white/5" type="button" data-action="${esc(action)}" data-kind="${esc(kind)}" data-id="${esc(id)}">${esc(label)}</button>`).join('')}</div></div>`;
+
+      function populateFilter(id, values) {
+        const select = document.getElementById(id);
+        values.forEach(value => select.add(new Option(value, value)));
+      }
+
+      function renderDashboard() {
+        document.getElementById('dashboard-metrics').innerHTML = [
+          metric('Ingresos totales', money(128450), 'Este mes', 'text-emerald-700 dark:text-primary'),
+          metric('Pérdidas por descuentos', money(4120), 'Deducciones activas', 'text-amber-700 dark:text-warning'),
+          metric('Agentes activos', `${agents.filter(agent => agent.status === 'Activo').length} / ${agents.length}`, 'Desplegados en el clúster', 'text-indigo-700 dark:text-secondary'),
+          metric('Agentes fallando', String(errors.filter(error => error.severity === 'Crítica' && error.status !== 'Resuelto').length), 'Requieren revisión', 'text-red-700 dark:text-danger')
+        ].join('');
+        const activity = [
+          ['Lun', 'h-16', '9.2k'], ['Mar', 'h-24', '11.4k'], ['Mié', 'h-28', '13.1k'],
+          ['Jue', 'h-24', '12.0k'], ['Vie', 'h-32', '14.2k'], ['Sáb', 'h-14', '6.8k'], ['Dom', 'h-12', '5.4k']
+        ];
+        document.getElementById('weekly-activity').innerHTML = activity.map(([day, height, count]) => `<div class="flex h-full flex-col items-center justify-end gap-2"><div class="w-full ${height} rounded-t bg-indigo-600 dark:bg-secondary" role="img" aria-label="${day}: ${count} acciones"></div><span class="font-mono text-[10px] text-slate-500">${day}</span><span class="font-mono text-[10px] text-slate-500">${count}</span></div>`).join('');
+        document.getElementById('recent-events').innerHTML = errors.slice(0, 3).map(error => `<article class="rounded border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-surface"><div class="flex items-center justify-between gap-2">${badge(error.type, error.severity === 'Crítica' ? 'bad' : 'warn')}<span class="font-mono text-[10px] text-slate-500">${esc(error.time)}</span></div><p class="mt-3 text-sm">${esc(error.description)}</p><p class="mt-2 font-mono text-xs text-slate-500">${esc(error.agentId)} · ${esc(error.agent)}</p></article>`).join('');
+      }
+
+      function renderUsers() {
+        const query = document.getElementById('user-search').value.trim().toLowerCase();
+        const plan = document.getElementById('user-plan-filter').value;
+        const status = document.getElementById('user-status-filter').value;
+        const visible = users.filter(user => `${user.name} ${user.email} ${user.id}`.toLowerCase().includes(query) && (!plan || user.plan === plan) && (!status || user.status === status));
+        document.getElementById('user-metrics').innerHTML = [
+          metric('Total usuarios', String(users.length), 'Usuarios en esta muestra'),
+          metric('Planes Enterprise', String(users.filter(user => user.plan === 'Enterprise').length), 'Cuentas de nivel Enterprise', 'text-indigo-700 dark:text-secondary'),
+          metric('Consumo medio / cuota', '71.4%', 'Cuota total asignada: 53.5M', 'text-amber-700 dark:text-warning'),
+          metric('En revisión / pausa', String(users.filter(user => user.status !== 'Activo').length), 'Cuentas que requieren atención', 'text-red-700 dark:text-danger')
+        ].join('');
+        document.getElementById('user-count').textContent = `Mostrando ${visible.length} de ${users.length} usuarios`;
+        document.getElementById('user-rows').innerHTML = visible.length ? visible.map(user => `<tr class="hover:bg-slate-50 dark:hover:bg-white/5"><td class="p-3"><div class="font-medium">${esc(user.name)}</div><div class="text-xs text-slate-500">${esc(user.email)} · ${esc(user.id)}</div></td><td class="p-3">${badge(user.plan, user.plan === 'Enterprise' ? 'neutral' : 'good')}</td><td class="p-3">${statusBadge(user.status)}</td><td class="p-3">${user.agents} nodos</td><td class="p-3">${esc(user.registered)}</td><td class="p-3 text-right">${actionMenu('user', user.id, [['user-detail', 'Ver detalle'], ['user-delete', 'Eliminar']])}</td></tr>`).join('') : '<tr><td class="p-6 text-center text-slate-500" colspan="6">No hay usuarios que coincidan con los filtros.</td></tr>';
+      }
+
+      function renderAgents() {
+        const query = document.getElementById('agent-search').value.trim().toLowerCase();
+        const status = document.getElementById('agent-status-filter').value;
+        const visible = agents.filter(agent => `${agent.id} ${agent.name} ${agent.owner}`.toLowerCase().includes(query) && (!status || agent.status === status));
+        document.getElementById('agent-metrics').innerHTML = [
+          metric('Flota desplegada', String(agents.length), 'Agentes configurados'),
+          metric('Tasa de ejecución', '99.4%', 'SLA de respuesta garantizado'),
+          metric('Consumo inferencia', '1.48M t/h', 'Ciclo anterior +8.2%', 'text-indigo-700 dark:text-secondary'),
+          metric('Alertas operativas', String(agents.filter(agent => agent.status !== 'Activo').length), 'Revisión o detención', 'text-amber-700 dark:text-warning')
+        ].join('');
+        document.getElementById('agent-count').textContent = `Mostrando ${visible.length} de ${agents.length} agentes`;
+        document.getElementById('agent-list').innerHTML = visible.length ? visible.map(agent => `<article class="rounded border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-surface"><div class="flex flex-wrap items-start justify-between gap-3"><div class="min-w-0"><div class="flex flex-wrap items-center gap-2"><h2 class="font-headline text-lg font-semibold">${esc(agent.name)}</h2>${badge(agent.id)}${statusBadge(agent.status)}</div><p class="mt-1 text-sm text-slate-600 dark:text-muted">Propietario: ${esc(agent.owner)} / ${esc(agent.org)}</p><p class="mt-1 font-mono text-xs text-slate-500">Modelo: ${esc(agent.model)} · Latencia: ${esc(agent.latency)}</p></div><div class="flex items-center gap-2"><button class="skills-toggle rounded border border-slate-300 px-3 py-2 text-sm dark:border-white/10" type="button" data-agent-skills="${esc(agent.id)}" aria-expanded="false" aria-controls="agent-skills-${esc(agent.id)}">Skills asociadas (${agent.skills.length})</button>${actionMenu('agent', agent.id, [['agent-config', 'Configurar'], ['agent-delete', 'Eliminar']])}</div></div><div id="agent-skills-${esc(agent.id)}" class="skills-content" aria-hidden="true"><div class="skills-inner"><div class="mt-3 flex flex-wrap gap-2 border-t border-slate-200 pt-3 dark:border-white/10">${agent.skills.map(name => badge(name, 'neutral')).join('')}</div></div></div></article>`).join('') : '<p class="rounded border border-dashed border-slate-300 p-6 text-center text-sm text-slate-500 dark:border-white/10">No hay agentes que coincidan con los filtros.</p>';
+      }
+
+      function renderSkills() {
+        const query = document.getElementById('skill-search').value.trim().toLowerCase();
+        const category = document.getElementById('skill-category-filter').value;
+        const status = document.getElementById('skill-status-filter').value;
+        const visible = skills.filter(skill => `${skill.name} ${skill.description}`.toLowerCase().includes(query) && (!category || skill.category === category) && (!status || skill.status === status));
+        document.getElementById('skill-metrics').innerHTML = [
+          metric('Total en catálogo', String(skills.length), 'Habilidades disponibles'),
+          metric('Agentes con skills', String(new Set(skills.flatMap(skill => skill.agents)).size), `${agents.length} agentes en catálogo`, 'text-indigo-700 dark:text-secondary'),
+          metric('Invocaciones hoy', '2.84M', 'Llamadas deterministas'),
+          metric('Tasa de aprobación', '99.8%', '0.02% excepciones')
+        ].join('');
+        document.getElementById('skill-count').textContent = `Mostrando ${visible.length} de ${skills.length} skills`;
+        document.getElementById('skill-empty').classList.toggle('hidden', visible.length > 0);
+        document.getElementById('skill-list').innerHTML = visible.map(skill => `<article class="flex flex-col gap-3 rounded border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-surface"><div class="flex items-start justify-between gap-2"><div><h2 class="font-headline text-lg font-semibold">${esc(skill.name)}</h2><p class="font-mono text-[10px] text-emerald-700 dark:text-primary">${esc(skill.category)} · v${esc(skill.version)}</p></div>${actionMenu('skill', skill.name, [['skill-detail', 'Ver detalle'], ['skill-delete', 'Eliminar']])}</div><p class="text-sm leading-6 text-slate-600 dark:text-muted">${esc(skill.description)}</p><div class="mt-auto flex items-center justify-between border-t border-slate-200 pt-3 text-xs dark:border-white/10">${statusBadge(skill.status)}<span>${skill.agents.length} agentes habilitados</span></div></article>`).join('');
+      }
+
+      function renderContracts() {
+        const query = document.getElementById('contract-search').value.trim().toLowerCase();
+        const status = document.getElementById('contract-status-filter').value;
+        const visible = contracts.filter(contract => `${contract.id} ${contract.client} ${contract.agent}`.toLowerCase().includes(query) && (!status || contract.status === status));
+        document.getElementById('contract-metrics').innerHTML = [
+          metric('Facturación activa', money(184650), 'Volumen contratado'),
+          metric('Contratos en vigor', String(contracts.filter(contract => contract.status === 'Activo').length), 'Capacidad de flota', 'text-indigo-700 dark:text-secondary'),
+          metric('Skills promedio / contrato', (contracts.reduce((sum, item) => sum + item.skills.length, 0) / contracts.length).toFixed(1), 'Skills por agente'),
+          metric('Pendientes de renovación', String(contracts.filter(contract => contract.status === 'En Pausa').length), 'Requieren seguimiento', 'text-amber-700 dark:text-warning')
+        ].join('');
+        document.getElementById('contract-count').textContent = `Mostrando ${visible.length} de ${contracts.length} contratos`;
+        document.getElementById('contract-rows').innerHTML = visible.length ? visible.map(contract => `<tr class="hover:bg-slate-50 dark:hover:bg-white/5"><td class="p-3"><div class="font-medium">${esc(contract.client)}</div><div class="text-xs text-slate-500">${esc(contract.userId)} · ${esc(contract.contact)}</div></td><td class="p-3"><div>${esc(contract.agent)}</div><div class="font-mono text-xs text-slate-500">${esc(contract.agentId)}</div></td><td class="p-3"><div class="flex max-w-sm flex-wrap gap-1">${contract.skills.map(name => badge(name)).join('')}</div></td><td class="whitespace-nowrap p-3">${esc(contract.start)}</td><td class="whitespace-nowrap p-3">${esc(contract.end)}<div class="mt-1">${statusBadge(contract.status)}</div></td><td class="whitespace-nowrap p-3 text-right font-semibold">${money(contract.total)}</td><td class="p-3 text-right">${actionMenu('contract', contract.id, [['contract-detail', 'Ver detalle']])}</td></tr>`).join('') : '<tr><td class="p-6 text-center text-slate-500" colspan="7">No hay contratos que coincidan con los filtros.</td></tr>';
+      }
+
+      function renderErrors() {
+        const query = document.getElementById('error-search').value.trim().toLowerCase();
+        const severity = document.getElementById('error-severity-filter').value;
+        const status = document.getElementById('error-status-filter').value;
+        const visible = errors.filter(error => `${error.id} ${error.agent} ${error.type} ${error.description} ${error.stack}`.toLowerCase().includes(query) && (!severity || error.severity === severity) && (!status || error.status === status));
+        document.getElementById('error-metrics').innerHTML = [
+          metric('Total incidencias (24h)', String(errors.length), 'Incidencias en esta muestra'),
+          metric('Errores críticos', String(errors.filter(error => error.severity === 'Crítica' && error.status !== 'Resuelto').length), 'Incidencias pendientes', 'text-red-700 dark:text-danger'),
+          metric('Timeout y latencia RPC', String(errors.filter(error => /TIMEOUT/.test(error.type)).length), 'Degradación transitoria', 'text-amber-700 dark:text-warning'),
+          metric('MTTR promedio', '4.2 min', 'Autorecuperación activa', 'text-emerald-700 dark:text-primary')
+        ].join('');
+        document.getElementById('error-count').textContent = `Mostrando ${visible.length} de ${errors.length} incidencias`;
+        document.getElementById('error-rows').innerHTML = visible.length ? visible.map(error => `<tr class="hover:bg-slate-50 dark:hover:bg-white/5"><td class="p-3">${statusBadge(error.status)}</td><td class="whitespace-nowrap p-3 font-mono text-xs">${esc(error.time)}</td><td class="p-3"><div>${esc(error.agent)}</div><div class="font-mono text-xs text-slate-500">${esc(error.agentId)} · ${esc(error.pod)}</div></td><td class="p-3">${badge(error.type, error.severity === 'Crítica' ? 'bad' : error.severity === 'Alta' ? 'warn' : 'neutral')}</td><td class="max-w-md p-3"><p>${esc(error.description)}</p><p class="mt-1 truncate font-mono text-[10px] text-slate-500">${esc(error.stack)}</p></td><td class="p-3 text-right">${actionMenu('error', error.id, [['error-detail', 'Ver detalle'], ...(error.status === 'Resuelto' ? [] : [['error-resolve', 'Marcar como resuelto']])])}</td></tr>`).join('') : '<tr><td class="p-6 text-center text-slate-500" colspan="6">No hay incidencias que coincidan con los filtros.</td></tr>';
+      }
+
+      populateFilter('user-plan-filter', [...new Set(users.map(user => user.plan))]);
+      populateFilter('skill-category-filter', [...new Set(skills.map(skill => skill.category))]);
+      renderDashboard();
+      renderUsers();
+      renderAgents();
+      renderSkills();
+      renderContracts();
+      renderErrors();
+
+      function handleAction(action, kind, id) {
+        if (kind === 'user' && action === 'user-detail') {
+          const user = users.find(item => item.id === id);
+          if (user) openModal(user.name, `<dl class="grid gap-3 sm:grid-cols-2"><div><dt class="text-xs text-slate-500">Email</dt><dd>${esc(user.email)}</dd></div><div><dt class="text-xs text-slate-500">Identificador</dt><dd class="font-mono">${esc(user.id)}</dd></div><div><dt class="text-xs text-slate-500">Plan</dt><dd>${esc(user.plan)}</dd></div><div><dt class="text-xs text-slate-500">Estado</dt><dd>${statusBadge(user.status)}</dd></div><div><dt class="text-xs text-slate-500">Fecha de registro</dt><dd>${esc(user.registered)}</dd></div><div><dt class="text-xs text-slate-500">Agentes vinculados</dt><dd>${user.agents}</dd></div></dl>`, true);
+        } else if (kind === 'user' && action === 'user-delete') {
+          const index = users.findIndex(item => item.id === id);
+          if (index >= 0 && confirm(`¿Eliminar de forma simulada a ${users[index].name}?`)) {
+            users.splice(index, 1);
+            renderUsers();
+            showToast('Usuario eliminado de la vista.');
+          }
+        } else if (kind === 'agent' && action === 'agent-config') {
+          const agent = agents.find(item => item.id === id);
+          if (agent) openModal(`Configurar ${agent.name}`, `<form class="space-y-4" data-agent-form="${esc(agent.id)}"><label class="block"><span class="mb-2 block text-sm font-medium">Prompt de sistema</span><textarea id="agent-prompt" class="min-h-40 w-full rounded border border-slate-300 bg-transparent p-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-600 dark:border-white/10 dark:focus-visible:outline-primary">${esc(agent.prompt)}</textarea></label><div class="flex justify-end gap-2"><button class="rounded border border-slate-300 px-3 py-2 text-sm dark:border-white/10" type="button" data-modal-close>Cancelar</button><button class="rounded bg-primary px-3 py-2 text-sm font-medium text-slate-950" type="button" data-action="agent-save" data-kind="agent" data-id="${esc(agent.id)}">Guardar prompt</button></div></form>`, true);
+        } else if (kind === 'agent' && action === 'agent-save') {
+          const agent = agents.find(item => item.id === id);
+          if (agent) {
+            agent.prompt = document.getElementById('agent-prompt').value;
+            closeModal();
+            showToast('Prompt guardado en la sesión actual.');
+          }
+        } else if (kind === 'agent' && action === 'agent-delete') {
+          const index = agents.findIndex(item => item.id === id);
+          if (index >= 0 && confirm(`¿Eliminar de forma simulada a ${agents[index].name}?`)) {
+            const removed = agents.splice(index, 1)[0];
+            skills.forEach(skill => { skill.agents = skill.agents.filter(name => name !== removed.name); });
+            renderAgents();
+            renderSkills();
+            renderDashboard();
+            showToast('Agente eliminado de la vista.');
+          }
+        } else if (kind === 'skill' && action === 'skill-detail') {
+          const skill = skills.find(item => item.name === id);
+          if (skill) openModal(skill.name, `<p class="mb-4">${esc(skill.description)}</p><dl class="grid gap-3 sm:grid-cols-2"><div><dt class="text-xs text-slate-500">Categoría</dt><dd>${esc(skill.category)}</dd></div><div><dt class="text-xs text-slate-500">Versión</dt><dd>${esc(skill.version)} · ${esc(skill.status)}</dd></div></dl><h3 class="mb-2 mt-5 font-medium">Agentes asociados (${skill.agents.length})</h3><ul class="list-inside list-disc space-y-1">${skill.agents.length ? skill.agents.map(name => `<li>${esc(name)}</li>`).join('') : '<li>Sin agentes asociados.</li>'}</ul>`, true);
+        } else if (kind === 'skill' && action === 'skill-delete') {
+          const index = skills.findIndex(item => item.name === id);
+          if (index >= 0 && confirm(`¿Eliminar de forma simulada la skill ${skills[index].name}?`)) {
+            skills.splice(index, 1);
+            agents.forEach(agent => { agent.skills = agent.skills.filter(name => name !== id); });
+            renderSkills();
+            renderAgents();
+            showToast('Skill eliminada de la vista.');
+          }
+        } else if (kind === 'contract' && action === 'contract-detail') {
+          const contract = contracts.find(item => item.id === id);
+          if (contract) openModal(`Contrato ${contract.id}`, `<dl class="grid gap-3 sm:grid-cols-2"><div><dt class="text-xs text-slate-500">Cliente</dt><dd>${esc(contract.client)} · ${esc(contract.contact)}</dd></div><div><dt class="text-xs text-slate-500">Agente</dt><dd>${esc(contract.agent)} (${esc(contract.agentId)})</dd></div><div><dt class="text-xs text-slate-500">Inicio</dt><dd>${esc(contract.start)}</dd></div><div><dt class="text-xs text-slate-500">Fin</dt><dd>${esc(contract.end)}</dd></div></dl><h3 class="mb-2 mt-5 font-medium">Skills contratadas</h3><ul class="divide-y divide-slate-200 dark:divide-white/10">${contract.skills.map((name, index) => `<li class="flex justify-between gap-4 py-2"><span>${esc(name)}</span><span class="whitespace-nowrap font-mono">${money(contract.prices[index])}</span></li>`).join('')}</ul><p class="mt-4 flex justify-between border-t border-slate-200 pt-3 font-semibold dark:border-white/10"><span>Importe total</span><span>${money(contract.total)}</span></p>`, true);
+        } else if (kind === 'error' && action === 'error-detail') {
+          const error = errors.find(item => item.id === id);
+          if (error) openModal(`Incidencia ${error.id}`, `<dl class="grid gap-3 sm:grid-cols-2"><div><dt class="text-xs text-slate-500">Agente</dt><dd>${esc(error.agent)} (${esc(error.agentId)})</dd></div><div><dt class="text-xs text-slate-500">Timestamp</dt><dd>${esc(error.time)}</dd></div><div><dt class="text-xs text-slate-500">Tipo</dt><dd>${badge(error.type, error.severity === 'Crítica' ? 'bad' : 'warn')}</dd></div><div><dt class="text-xs text-slate-500">Estado</dt><dd>${statusBadge(error.status)}</dd></div></dl><p class="mt-4">${esc(error.description)}</p><pre class="mt-4 overflow-x-auto rounded bg-slate-100 p-3 font-mono text-xs dark:bg-slate-950">${esc(error.stack)}</pre>`, true);
+        } else if (kind === 'error' && action === 'error-resolve') {
+          const error = errors.find(item => item.id === id);
+          if (error) {
+            error.status = 'Resuelto';
+            renderErrors();
+            renderDashboard();
+            showToast(`Incidencia ${error.id} marcada como resuelta.`);
+          }
+        }
+      }
+
+      [
+        ['user-search', 'input', renderUsers], ['user-plan-filter', 'change', renderUsers], ['user-status-filter', 'change', renderUsers],
+        ['agent-search', 'input', renderAgents], ['agent-status-filter', 'change', renderAgents],
+        ['skill-search', 'input', renderSkills], ['skill-category-filter', 'change', renderSkills], ['skill-status-filter', 'change', renderSkills],
+        ['contract-search', 'input', renderContracts], ['contract-status-filter', 'change', renderContracts],
+        ['error-search', 'input', renderErrors], ['error-severity-filter', 'change', renderErrors], ['error-status-filter', 'change', renderErrors]
+      ].forEach(([id, type, render]) => document.getElementById(id).addEventListener(type, render));
+
+      const globalSearchToggle = document.getElementById('global-search-toggle');
+      function focusSectionSearch() {
+        const search = document.querySelector('[data-view-panel]:not(.hidden) input[type="search"]');
+        if (search) search.focus();
+      }
+      globalSearchToggle.addEventListener('click', focusSectionSearch);
+
+      function showSection(name) {
+        if (!sectionNames[name]) return;
+        panels.forEach(panel => panel.classList.toggle('hidden', panel.dataset.viewPanel !== name));
+        navLinks.forEach(link => {
+          const active = link.dataset.nav === name;
+          if (link.matches('button')) {
+            link.setAttribute('aria-current', active ? 'page' : 'false');
+            link.classList.toggle('bg-emerald-600', active);
+            link.classList.toggle('text-white', active);
+            link.classList.toggle('dark:bg-primary-container', active);
+            link.classList.toggle('dark:text-slate-950', active);
+          }
+        });
+        sectionLabel.textContent = sectionNames[name];
+        history.replaceState(null, '', `#${name}`);
+      }
+
+      function closeDropdowns(except = null) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          if (menu !== except) menu.classList.add('hidden');
+        });
+        document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+          const menu = trigger.parentElement.querySelector('.dropdown-menu');
+          if (menu !== except) trigger.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      function openModal(title, content, useMarkup = false) {
+        modalTitle.textContent = title;
+        modalContent.replaceChildren();
+        if (useMarkup) modalContent.innerHTML = content;
+        else if (content instanceof Node) modalContent.append(content);
+        else modalContent.textContent = content;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        closeDropdowns();
+        modal.querySelector('[data-modal-close]').focus();
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.remove('hidden');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.add('hidden'), 2800);
+      }
+
+      navLinks.forEach(link => link.addEventListener('click', event => {
+        event.preventDefault();
+        showSection(link.dataset.nav);
+      }));
+
+      document.addEventListener('click', event => {
+        const skillsButton = event.target.closest('.skills-toggle');
+        if (skillsButton) {
+          const panel = document.getElementById(`agent-skills-${skillsButton.dataset.agentSkills}`);
+          const isOpen = skillsButton.getAttribute('aria-expanded') === 'true';
+          skillsButton.setAttribute('aria-expanded', String(!isOpen));
+          panel.setAttribute('aria-hidden', String(isOpen));
+          return;
+        }
+        const actionButton = event.target.closest('[data-action]');
+        if (actionButton) {
+          event.stopPropagation();
+          handleAction(actionButton.dataset.action, actionButton.dataset.kind, actionButton.dataset.id);
+          closeDropdowns();
+          return;
+        }
+        const trigger = event.target.closest('.dropdown-trigger');
+        if (trigger) {
+          event.stopPropagation();
+          const menu = trigger.parentElement.querySelector('.dropdown-menu');
+          const shouldOpen = menu.classList.contains('hidden');
+          closeDropdowns();
+          if (shouldOpen) menu.classList.remove('hidden');
+          trigger.setAttribute('aria-expanded', String(shouldOpen));
+          return;
+        }
+        if (event.target.closest('.dropdown-menu')) return;
+        closeDropdowns();
+
+        const openButton = event.target.closest('[data-modal-open]');
+        if (openButton) openModal(openButton.dataset.modalTitle, openButton.dataset.modalContent || '');
+        const closeButton = event.target.closest('[data-modal-close]');
+        if (closeButton) closeModal();
+        const toastButton = event.target.closest('[data-toast]');
+        if (toastButton) showToast(toastButton.dataset.toast);
+        if (event.target.matches('[data-modal-backdrop]')) closeModal();
+      });
+
+      document.addEventListener('keydown', event => {
+        if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+          event.preventDefault();
+          focusSectionSearch();
+        }
+        if (event.key === 'Escape') {
+          closeModal();
+          closeDropdowns();
+        }
+      });
+
+      themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('agenthub-theme', isDark ? 'dark' : 'light');
+        themeToggle.querySelector('use').setAttribute('href', isDark ? '#icon-moon' : '#icon-sun');
+      });
+
+      const savedTheme = localStorage.getItem('agenthub-theme');
+      if (savedTheme === 'light') document.documentElement.classList.remove('dark');
+      if (savedTheme === 'dark') document.documentElement.classList.add('dark');
+      themeToggle.querySelector('use').setAttribute('href', document.documentElement.classList.contains('dark') ? '#icon-moon' : '#icon-sun');
+      const initialView = location.hash.slice(1);
+      showSection(sectionNames[initialView] ? initialView : 'dashboard');
+    })();
+  </script>
+</body>
+</html>
